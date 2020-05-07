@@ -1,0 +1,12 @@
+/* CSS Document */
+tr.shareable td {
+	background-color: #FC6;
+}
+
+td {
+	font-weight: bold;	
+}
+
+tfoot {
+    display: table-header-group;
+}

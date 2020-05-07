@@ -1,0 +1,16 @@
+﻿.new-folder-wrapper .popover {
+    max-width: 100%;
+}
+
+#AddJobsToFolderModal .modal-dialog{
+    width: 800px;
+}
+
+td.jobs-details-control {
+    background: url('/assets/images/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+
+tr.shown td.jobs-details-control {
+    background: url('/assets/images/details_close.png') no-repeat center center;
+}

@@ -1,0 +1,249 @@
+/* CSS Document */
+a,
+.btn-link {
+  text-decoration: underline;
+}
+label {
+  margin-bottom: 0;
+}
+.display_none {
+  display: none;
+}
+
+.quantity {
+  font-weight: bold;
+}
+
+input.unsaved-change,
+select.unsaved-change,
+textarea.unsaved-change {
+  background-color: #ffcc66;
+}
+
+.original-value-change,
+input.original-value-change,
+select.original-value-change,
+textarea.original-value-change,
+.highlight,
+input.highlight,
+select.highlight,
+textarea.highlight {
+  color: red !important;
+}
+
+input.error,
+select.error,
+textarea.error {
+  border: 1px solid red;
+  background-color: #ffcc66;
+}
+
+input.disabled,
+select.disabled,
+textarea.disabled,
+.disabled {
+  background-color: #cccccc;
+  color: #999999;
+}
+
+em,
+td.em,
+th.em {
+  color: red;
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#messageBox {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  min-width: 500px;
+  z-index: 999999;
+}
+
+#messageBox .messageBoxText {
+  font-size: 14px;
+}
+
+.message {
+  display: none;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.message-block {
+  display: block !important;
+}
+
+.loading {
+  background-image: url(../assets/images/loading.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+}
+
+.inactive {
+  background-color: ButtonShadow !important;
+  color: slategray !important;
+}
+
+div.message-wrapper {
+  float: left;
+}
+
+.whitebgfill {
+  background-color: white !important;
+}
+
+/* Bootstrap */
+/* xs form elements */
+.input-xs {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 12px;
+  height: 20px;
+  /* line-height: 1.5; */
+  padding: 1px;
+}
+select.input-xs {
+  height: 20px;
+  line-height: 20px;
+}
+
+select {
+  background-color: #ffffff;
+  border: 1px solid #d5d5d5;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.tko-input-group {
+  float: left;
+  width: 10px;
+}
+
+.tko-input-group-right {
+  float: right;
+  width: 10px;
+}
+
+.dynamic-modal {
+  position: relative;
+  display: table;
+  overflow-y: auto;
+  overflow-x: auto;
+  width: auto;
+  min-width: 450px;
+}
+
+.hide {
+  display: none;
+}
+
+.width-35 {
+  width: 35px !important;
+}
+.width-45 {
+  width: 45px !important;
+}
+.width-60 {
+  width: 60px !important;
+}
+.width-75 {
+  width: 75px !important;
+}
+.width-90 {
+  width: 90px !important;
+}
+
+.width-120 {
+  width: 120px !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-justify {
+  text-align: justify !important;
+}
+
+.important-value {
+  font-weight: bold;
+}
+
+.grand-total,
+.grand-total td {
+  font-size: 1.2em;
+}
+
+.table > thead > tr > th {
+  background-color: var(--primary-color);
+  /* background-color: #337ab7; */
+  color: white;
+}
+
+.table tr.selected td {
+  background-color: #aab7d1;
+}
+
+.page-title {
+  padding-top: 10px;
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+td.thick-border-top {
+  border-top: 3px solid black !important;
+}
+
+table.dataTable tfoot th input {
+  width: 120px;
+}
+
+#PageHeader.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.page-header-section {
+  height: 51px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 0;
+  border-bottom: 1px solid rgb(200, 199, 204);
+  padding-top: 10px;
+}
+
+.page-header-section h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 2px;
+}
+
+.page-header-section h2 {
+  font-size: 13px;
+  margin: 0 auto;
+  padding: 2px;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}

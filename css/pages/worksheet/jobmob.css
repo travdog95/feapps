@@ -1,0 +1,46 @@
+.fts-inactive td, .fts-inactive td input {
+	background-color:#555 !important;
+	border-color:#555;
+}
+
+.sunday-travel-sub div.col-md-2 {
+    text-align: center;
+}
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 0;
+    padding-left: 15px;
+    max-width: 100px;
+    text-align: center;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}

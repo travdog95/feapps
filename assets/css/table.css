@@ -1,0 +1,356 @@
+/***************************************************************************/
+/* CUSTOM TABLE CSS FOR RECAP */
+/***************************************************************************/
+
+.custom-table > thead > tr > th,
+.custom-table > tbody > tr > th,
+.custom-table > tfoot > tr > th,
+.custom-table > thead > tr > td,
+.custom-table > tbody > tr > td,
+.custom-table > tfoot > tr > td {
+  border-top: 1px solid #000000;
+  /*color: #707070;*/
+}
+
+.custom-table > thead > tr > th {
+    vertical-align: bottom;
+    /*border-bottom: 2px solid #afafaf;*/
+    border-bottom: 2px solid #000;
+}
+
+
+
+.custom-table > caption + thead > tr:first-child > th,
+.custom-table > colgroup + thead > tr:first-child > th,
+.custom-table > thead:first-child > tr:first-child > th,
+.custom-table > caption + thead > tr:first-child > td,
+.custom-table > colgroup + thead > tr:first-child > td,
+.custom-table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+
+.custom-table > tbody + tbody {
+  border-top: 2px solid #000;
+}
+
+.custom-table {
+  border: 1px solid #000;
+}
+
+.custom-table > thead > tr > th {
+    text-align: center;
+    border: 1px solid #000;
+}
+
+.custom-table > tbody > tr > th,
+.custom-table > tfoot > tr > th,
+.custom-table > thead > tr > td,
+.custom-table > tbody > tr > td,
+.custom-table > tfoot > tr > td {
+  border: 1px solid #000;  
+  text-align: right;
+}
+
+.custom-table > thead > tr > th,
+.custom-table > thead > tr > td {
+  border-bottom-width: 2px;
+}
+
+.custom-table > tbody > tr:nth-child(odd) > td,
+.custom-table > tbody > tr:nth-child(odd) > th {
+  background-color: #ddd;
+}
+
+
+    .custom-table > thead > tr > td.danger,
+    .custom-table > tbody > tr > td.danger,
+    .custom-table > tfoot > tr > td.danger,
+    .custom-table > thead > tr > th.danger,
+    .custom-table > tbody > tr > th.danger,
+    .custom-table > tfoot > tr > th.danger,
+    .custom-table > thead > tr.danger > td,
+    .custom-table > tbody > tr.danger > td,
+    .custom-table > tfoot > tr.danger > td,
+    .custom-table > thead > tr.danger > th,
+    .custom-table > tbody > tr.danger > th,
+    .custom-table > tfoot > tr.danger > th {
+        /*background-color: #FFFFB3;*/
+        background-color: var(--danger-color);
+    }
+
+.custom-table > thead > tr > td.worksheet-total,
+.custom-table > tbody > tr > td.worksheet-total,
+.custom-table > tfoot > tr > td.worksheet-total,
+.custom-table > thead > tr > th.worksheet-total,
+.custom-table > tbody > tr > th.worksheet-total,
+.custom-table > tfoot > tr > th.worksheet-total,
+.custom-table > thead > tr.worksheet-total > td,
+.custom-table > tbody > tr.worksheet-total > td,
+.custom-table > tfoot > tr.worksheet-total > td,
+.custom-table > thead > tr.worksheet-total > th,
+.custom-table > tbody > tr.worksheet-total > th,
+.custom-table > tfoot > tr.worksheet-total > th {
+  background-color: #d6d6d6;
+}
+
+
+/***************************************************************************/
+/* RESPONSIVE TABLE BORDER */
+/***************************************************************************/
+
+@media (max-width: 767px) {
+  .table-responsive {
+    border: 1px solid #000;
+  }
+
+}
+
+
+.table > tbody > tr > td.nobgfill {
+  background: none;
+}
+
+
+
+.table-striped > tbody > tr > td.rowdisabled,
+.table-striped > tbody > tr.rowdisabled,
+.table-striped > thead > tr.rowdisabled,
+.table-striped > tbody > tr.rowdisabled:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background: #808080;
+  color: #fff;
+}
+
+/***************************************************************************/
+/* MISC */
+/***************************************************************************/
+.custom-table a {
+    color: red;
+
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.light {
+  font-weight: normal;
+}
+
+.uc {
+  text-transform: uppercase;
+}
+
+.ucn {
+  text-transform: none;
+}
+/***************************************************************************/
+/* ALL ABOUT ALIGNMENT */
+/***************************************************************************/
+.custom-table > tbody > tr > td:first-child {
+  text-align: left;
+}
+
+.custom-table .left-aligned,
+.table-centered.custom-table .left-aligned {
+  text-align: left;
+}
+
+.custom-table .right-aligned,
+.table-centered.custom-table .right-aligned {
+  text-align: right;
+}
+
+.table-left-aligned.custom-table .text-center {
+  text-align: center;
+}
+
+.custom-table > tbody > tr > td div.to-left {
+  float: left;
+}
+
+.custom-table .fr {
+    float: right;
+}
+
+.custom-table .fl {
+    float: left;
+}
+
+
+.custom-table .special-bg {
+    background: #fc76f3;
+    color: #fff;
+}
+
+.custom-table .red-text {
+  color: red;
+}
+
+.custom-table .special-bg[type="text"] {
+    color: #fff;
+}
+
+.custom-table.table-centered > tbody > tr > th,
+.custom-table.table-centered > tfoot > tr > th,
+.custom-table.table-centered > thead > tr > td,
+.custom-table.table-centered > tbody > tr > td,
+.custom-table.table-centered > tfoot > tr > td {
+  text-align: center;
+}
+/***************************************************************************/
+/* RECAP, RECAP-1 TABLE */
+/***************************************************************************/
+.esf-par {
+  position: relative;
+}
+
+.esf {
+  position: absolute;
+  left: 15%;
+  font-weight: bold;
+  color: #808080;
+}
+
+
+.custom-table > tbody > tr > td input[type="text"] {
+ /* width: 40%; */
+  text-align: center;
+  /* margin-right: 0.3em; */
+  color: #000;
+}
+
+textarea.notes {
+    width: 100%;
+}
+
+.custom-table thead tr {
+    /*
+  text-transform: uppercase;
+*/
+}
+
+
+
+.custom-table > tbody > tr > td > div.percent-capacity {
+  text-align: right;
+}
+
+
+
+.custom-table > tbody > tr > td div.percent-capacity input[type="text"] {
+  width: 15%;
+}
+
+.custom-table > tbody > tr > td.compact {
+  line-height: 10px;
+  padding-top: 10px;
+}
+
+.custom-table > tbody > tr > td.total {
+  text-align: right;
+  font-size: 20px;
+}
+
+
+/***************************************************************************/
+/* BUTTONS */
+/***************************************************************************/
+
+.feci-buttons input[type="submit"],
+.feci-buttons button {
+    border: none;
+    outline: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+    .feci-buttons input[type="submit"].primary,
+    .feci-buttons button.primary {
+        padding: 10px 25px;
+        margin-bottom: 5px;
+        /*background: #337ab7;*/
+        background: var(--primary-color);
+        color: #fff;
+    }
+
+.feci-buttons input[type="submit"].secondary, 
+.feci-buttons button.secondary {
+  padding: 10px 32px;
+  color: #ffffff;
+  background: #404040;
+}
+
+.feci-buttons input[type="submit"].danger, 
+.feci-buttons button.danger {
+  padding: 10px 25px;
+  margin-bottom: 5px;
+  background: red;
+  color: #fff;
+}
+
+
+.buttons-recap {
+  float: right;
+  margin-right: 140px;
+}
+
+/***************************************************************************/
+/* SELECT - RADIO - INPUT STYLE */
+/***************************************************************************/
+.pipe-heading label {
+  margin-right: 10px;
+}
+
+.bottom-aligned {
+  margin-top: 20px;
+}
+
+.custom-table.table-centered > tbody > tr > td input[type="text"],
+.custom-table.table-centered > tfoot > tr > td input[type="text"] {
+  /*width: 70%;*/
+  margin: 0;
+  /*font-weight: bold;*/
+  /*color: #707070;*/
+  text-align: right;
+}
+
+
+.custom-table.table-centered > tbody > tr > td .fullwidth {
+    width: 100%;
+}
+
+.custom-table.table-centered > tbody > tr > td .halfwidth {
+    width: 50%;
+}
+
+.custom-table.table-centered > tbody > tr > td input.tiny {
+    width: 20%;
+}
+
+.onscroll-title {
+  color: #D9D9D9;
+  font-family: "Raleway", sans-serif;
+  min-width: 60%;
+  display: none;
+}
+
+.onscroll-title h5 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+    padding: 2px;
+}

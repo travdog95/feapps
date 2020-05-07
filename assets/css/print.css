@@ -1,0 +1,75 @@
+.navbar {
+	display: none;
+}
+.main-navigation{
+	display: none;
+}
+.hidden-print {
+	display: none;
+}
+.breadcrumb {
+	display: none;
+}
+.page-header {
+	display: none;
+}
+.footer {
+	display: none;
+}
+.main-container {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.main-content .container{
+	min-height: auto !important;
+	border: none !important;
+}
+
+.message {
+    display: none;
+}
+
+/* Worksheets */
+.print-my-value {
+    display: none;
+}
+
+.panel-heading {
+    font-size: 9px !important;
+    height: auto !important;
+    margin: 2px !important;
+    padding: 2px !important;
+}
+
+h1, h2 {
+    font-size: 10px !important;
+}
+
+h3 {
+    font-size: 9px !important;
+}
+
+td, th {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+a[href]::after {
+    content: none !important;
+}
+
+body, td, th {
+    font-size: 8px;
+}
+
+.cke {
+    display: none !important;
+}
+
+button, input[type=submit], .glyphicon, input[type=checkbox], input[type=button] {
+    display: none !important;
+}
+
+.print-me {
+    display: unset !important;
+}

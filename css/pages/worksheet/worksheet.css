@@ -1,0 +1,224 @@
+﻿#cart_modal .modal-dialog {
+    width: 850px;
+    margin-right: 0;
+}
+
+.cart-message {
+    line-height: 32px;    
+    font-style: italic; 
+    float: left;
+}
+
+.cart-parms {
+    float: left;
+    width: 34%;
+}
+
+.cart-results {
+    float: right;
+    width: 65%;
+}
+
+.cart-results-table > tbody > tr > td, .cart-results-table > tbody > tr > th, .cart-results-table > tfoot > tr > td, .cart-results-table > tfoot > tr > th, .cart-results-table > thead > tr > td, .cart-results-table > thead > tr > th {
+    padding: 3px;
+    line-height: 1;
+}
+
+.cart-quantity, .cart-assembly-quantity {
+    width: 35px;
+}
+
+.cart-product-material, .cart-product-field, .cart-product-shop, .cart-price {
+    text-align: right;
+}
+
+table.cart-results-table td, table.cart-results-table th, table.cart-results-table input {
+    font-size: 12px;
+    /*padding: 0;*/
+}
+
+#cart_modal .tab-content {
+    min-height: 400px; 
+    padding: 5px;
+}
+
+.cart-parms label {
+    margin-bottom: 0;
+}
+
+.cart-parms .checkbox, .cart-parms .radio {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.cart-parms div.checkbox {
+    padding: 0 3px;
+}
+
+.cart-grid-container {
+    display: grid;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    grid-template-columns: auto auto auto;
+    padding: 0;
+}
+
+.cart-grid-item {
+    padding: 2px;
+    text-align: left;
+}
+
+#cart_modal .modal-header, #cart_modal .modal-body, #cart_modal .modal-footer {
+    padding: 10px 15px;
+}
+
+.cart-results-footer {
+    border: 1px solid #aaa;
+    -moz-box-shadow: 2px 2px 3px #aaa;
+    -webkit-box-shadow: 2px 2px 3px #aaa;
+    box-shadow: 2px 2px 3px #aaa;
+    font-size: 16px;
+    margin-top: 8px;
+    padding: 3px 10px;
+}
+
+.cart-results-footer .assembly-name {
+    float: left;
+    width: 75%;
+}
+
+.cart-results-footer .assembly-price {
+    float: right;
+    width: 24%;
+    text-align: right;
+}
+
+.results-qty {
+    width: 50px;
+}
+
+.span-right {
+    display: block;
+    text-align: right;
+}
+
+.span-center {
+    display: block;
+    text-align: center;
+}
+
+.worksheet-total {
+    font-weight: bold;
+    /*height: 40px;*/
+}
+
+.worksheet-total select {
+    font-weight: normal;
+}
+
+.text-highlight {
+    color: red;
+}
+
+.panel-heading {
+    padding: 5px;
+    /*height: 35px;*/
+}
+
+.assembly:hover, .eq-brace:hover {
+    cursor: pointer;
+}
+
+.popover {
+    max-width: 800px !important;
+}
+
+.form-horizontal .checkbox, .form-horizontal .radio {
+  min-height: 0;
+  padding: 0;
+}
+
+.form-horizontal .checkbox label, .form-horizontal .radio label {
+  margin: 0 auto;
+}
+
+#AddAreaModal .modal-dialog, #AddCrossmainWorksheetModal .modal-dialog {
+    width: 500px;
+}
+
+#PipeWorksheetParmsContainer {
+    margin-bottom: 10px;
+}
+
+#WorksheetParmsTable {
+    margin-bottom: 0;
+}
+
+#WorksheetParms {
+    margin: 0;
+    padding: 0;
+    border: solid 1px black;
+}
+
+#WorksheetParms #LeftParms {
+    padding: 10px 0 0 0;
+    text-align: center;
+}
+
+#WorksheetParms #LeftParms label {
+    margin-right: 5px;
+}
+
+#WorksheetParms #RightParms {
+    border-left: 1px solid black;
+    padding-bottom: 3px;
+}
+
+#WorksheetParms #RightParms div.row {
+   line-height: 24px !important;
+}        
+.product-name {
+    position: relative;
+}
+
+.category-watermark {
+    position:absolute;
+    right:5px;
+    opacity:0.5;
+    z-index:99;
+    color:lightcoral;
+}
+
+td.thick-border-right, th.thick-border-right, tr.thick-border-right td, tr.thick-border-right th {
+    border-right: solid 2px black !important;
+}
+
+td.thick-border-top, tr.thick-border-top td, th.thick-border-top, tr.thick-border-top th {
+    border-top: solid 2px black !important;
+}
+
+td.thick-border-bottom, tr.thick-border-bottom td, th.thick-border-bottom, tr.thick-border-bottom th {
+    border-bottom: solid 2px black !important;
+}
+
+td.thick-border-left, tr.thick-border-left td, th.thick-border-left, tr.thick-border-left th {
+    border-left: solid 2px black !important;
+}
+
+.close {
+    line-height: .6;
+    opacity: .6;
+}
+
+.close:hover {
+    cursor:pointer;
+}
+
+
+#CopyFromJobDiv {
+    margin-bottom: 15px;
+}
+
+#SelectJobModal .modal-dialog {
+    width: 750px;
+}
