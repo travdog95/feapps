@@ -178,8 +178,8 @@ $SystemTypes_add->showMessage();
 $selwrk = ConvertToBool($SystemTypes_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="SystemTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_265905" value="1"<?php echo $selwrk ?><?php echo $SystemTypes_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_265905"></label>
+	<input type="checkbox" class="custom-control-input" data-table="SystemTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_778822" value="1"<?php echo $selwrk ?><?php echo $SystemTypes_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_778822"></label>
 </div>
 </span>
 <?php echo $SystemTypes_add->ActiveFlag->CustomMsg ?></div></div>

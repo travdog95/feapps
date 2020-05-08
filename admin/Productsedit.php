@@ -835,8 +835,8 @@ $Products_edit->showMessage();
 $selwrk = ConvertToBool($Products_edit->ApplyToAdjustmentFactorsFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_ApplyToAdjustmentFactorsFlag" data-page="1" name="x_ApplyToAdjustmentFactorsFlag[]" id="x_ApplyToAdjustmentFactorsFlag[]_951703" value="1"<?php echo $selwrk ?><?php echo $Products_edit->ApplyToAdjustmentFactorsFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ApplyToAdjustmentFactorsFlag[]_951703"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_ApplyToAdjustmentFactorsFlag" data-page="1" name="x_ApplyToAdjustmentFactorsFlag[]" id="x_ApplyToAdjustmentFactorsFlag[]_792695" value="1"<?php echo $selwrk ?><?php echo $Products_edit->ApplyToAdjustmentFactorsFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ApplyToAdjustmentFactorsFlag[]_792695"></label>
 </div>
 </span>
 <?php echo $Products_edit->ApplyToAdjustmentFactorsFlag->CustomMsg ?></div></div>
@@ -851,8 +851,8 @@ $selwrk = ConvertToBool($Products_edit->ApplyToAdjustmentFactorsFlag->CurrentVal
 $selwrk = ConvertToBool($Products_edit->ApplyToContingencyFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_ApplyToContingencyFlag" data-page="1" name="x_ApplyToContingencyFlag[]" id="x_ApplyToContingencyFlag[]_821683" value="1"<?php echo $selwrk ?><?php echo $Products_edit->ApplyToContingencyFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ApplyToContingencyFlag[]_821683"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_ApplyToContingencyFlag" data-page="1" name="x_ApplyToContingencyFlag[]" id="x_ApplyToContingencyFlag[]_217809" value="1"<?php echo $selwrk ?><?php echo $Products_edit->ApplyToContingencyFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ApplyToContingencyFlag[]_217809"></label>
 </div>
 </span>
 <?php echo $Products_edit->ApplyToContingencyFlag->CustomMsg ?></div></div>
@@ -867,8 +867,8 @@ $selwrk = ConvertToBool($Products_edit->ApplyToContingencyFlag->CurrentValue) ? 
 $selwrk = ConvertToBool($Products_edit->IsMainComponent->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_IsMainComponent" data-page="1" name="x_IsMainComponent[]" id="x_IsMainComponent[]_142722" value="1"<?php echo $selwrk ?><?php echo $Products_edit->IsMainComponent->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsMainComponent[]_142722"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_IsMainComponent" data-page="1" name="x_IsMainComponent[]" id="x_IsMainComponent[]_394845" value="1"<?php echo $selwrk ?><?php echo $Products_edit->IsMainComponent->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsMainComponent[]_394845"></label>
 </div>
 </span>
 <?php echo $Products_edit->IsMainComponent->CustomMsg ?></div></div>
@@ -883,8 +883,8 @@ $selwrk = ConvertToBool($Products_edit->IsMainComponent->CurrentValue) ? " check
 $selwrk = ConvertToBool($Products_edit->DomesticFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_DomesticFlag" data-page="1" name="x_DomesticFlag[]" id="x_DomesticFlag[]_108784" value="1"<?php echo $selwrk ?><?php echo $Products_edit->DomesticFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DomesticFlag[]_108784"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_DomesticFlag" data-page="1" name="x_DomesticFlag[]" id="x_DomesticFlag[]_663478" value="1"<?php echo $selwrk ?><?php echo $Products_edit->DomesticFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DomesticFlag[]_663478"></label>
 </div>
 </span>
 <?php echo $Products_edit->DomesticFlag->CustomMsg ?></div></div>
@@ -899,8 +899,8 @@ $selwrk = ConvertToBool($Products_edit->DomesticFlag->CurrentValue) ? " checked"
 $selwrk = ConvertToBool($Products_edit->LoadFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_LoadFlag" data-page="1" name="x_LoadFlag[]" id="x_LoadFlag[]_473644" value="1"<?php echo $selwrk ?><?php echo $Products_edit->LoadFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_LoadFlag[]_473644"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_LoadFlag" data-page="1" name="x_LoadFlag[]" id="x_LoadFlag[]_741060" value="1"<?php echo $selwrk ?><?php echo $Products_edit->LoadFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_LoadFlag[]_741060"></label>
 </div>
 </span>
 <?php echo $Products_edit->LoadFlag->CustomMsg ?></div></div>
@@ -915,8 +915,8 @@ $selwrk = ConvertToBool($Products_edit->LoadFlag->CurrentValue) ? " checked" : "
 $selwrk = ConvertToBool($Products_edit->AutoLoadFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_AutoLoadFlag" data-page="1" name="x_AutoLoadFlag[]" id="x_AutoLoadFlag[]_208509" value="1"<?php echo $selwrk ?><?php echo $Products_edit->AutoLoadFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_AutoLoadFlag[]_208509"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_AutoLoadFlag" data-page="1" name="x_AutoLoadFlag[]" id="x_AutoLoadFlag[]_557384" value="1"<?php echo $selwrk ?><?php echo $Products_edit->AutoLoadFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_AutoLoadFlag[]_557384"></label>
 </div>
 </span>
 <?php echo $Products_edit->AutoLoadFlag->CustomMsg ?></div></div>
@@ -931,8 +931,8 @@ $selwrk = ConvertToBool($Products_edit->AutoLoadFlag->CurrentValue) ? " checked"
 $selwrk = ConvertToBool($Products_edit->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_ActiveFlag" data-page="1" name="x_ActiveFlag[]" id="x_ActiveFlag[]_322437" value="1"<?php echo $selwrk ?><?php echo $Products_edit->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_322437"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_ActiveFlag" data-page="1" name="x_ActiveFlag[]" id="x_ActiveFlag[]_780797" value="1"<?php echo $selwrk ?><?php echo $Products_edit->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_780797"></label>
 </div>
 </span>
 <?php echo $Products_edit->ActiveFlag->CustomMsg ?></div></div>
@@ -994,8 +994,8 @@ $selwrk = ConvertToBool($Products_edit->ActiveFlag->CurrentValue) ? " checked" :
 $selwrk = ConvertToBool($Products_edit->SeamlessFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_SeamlessFlag" data-page="2" name="x_SeamlessFlag[]" id="x_SeamlessFlag[]_600643" value="1"<?php echo $selwrk ?><?php echo $Products_edit->SeamlessFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_SeamlessFlag[]_600643"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_SeamlessFlag" data-page="2" name="x_SeamlessFlag[]" id="x_SeamlessFlag[]_283831" value="1"<?php echo $selwrk ?><?php echo $Products_edit->SeamlessFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_SeamlessFlag[]_283831"></label>
 </div>
 </span>
 <?php echo $Products_edit->SeamlessFlag->CustomMsg ?></div></div>
@@ -1010,8 +1010,8 @@ $selwrk = ConvertToBool($Products_edit->SeamlessFlag->CurrentValue) ? " checked"
 $selwrk = ConvertToBool($Products_edit->FMJobFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_FMJobFlag" data-page="2" name="x_FMJobFlag[]" id="x_FMJobFlag[]_670796" value="1"<?php echo $selwrk ?><?php echo $Products_edit->FMJobFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_FMJobFlag[]_670796"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_FMJobFlag" data-page="2" name="x_FMJobFlag[]" id="x_FMJobFlag[]_554750" value="1"<?php echo $selwrk ?><?php echo $Products_edit->FMJobFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_FMJobFlag[]_554750"></label>
 </div>
 </span>
 <?php echo $Products_edit->FMJobFlag->CustomMsg ?></div></div>
@@ -1245,8 +1245,8 @@ $selwrk = ConvertToBool($Products_edit->FMJobFlag->CurrentValue) ? " checked" : 
 $selwrk = ConvertToBool($Products_edit->TrimPackageFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_TrimPackageFlag" data-page="3" name="x_TrimPackageFlag[]" id="x_TrimPackageFlag[]_645151" value="1"<?php echo $selwrk ?><?php echo $Products_edit->TrimPackageFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_TrimPackageFlag[]_645151"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_TrimPackageFlag" data-page="3" name="x_TrimPackageFlag[]" id="x_TrimPackageFlag[]_231666" value="1"<?php echo $selwrk ?><?php echo $Products_edit->TrimPackageFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_TrimPackageFlag[]_231666"></label>
 </div>
 </span>
 <?php echo $Products_edit->TrimPackageFlag->CustomMsg ?></div></div>
@@ -1261,8 +1261,8 @@ $selwrk = ConvertToBool($Products_edit->TrimPackageFlag->CurrentValue) ? " check
 $selwrk = ConvertToBool($Products_edit->ListedFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_ListedFlag" data-page="3" name="x_ListedFlag[]" id="x_ListedFlag[]_728250" value="1"<?php echo $selwrk ?><?php echo $Products_edit->ListedFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ListedFlag[]_728250"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_ListedFlag" data-page="3" name="x_ListedFlag[]" id="x_ListedFlag[]_375707" value="1"<?php echo $selwrk ?><?php echo $Products_edit->ListedFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ListedFlag[]_375707"></label>
 </div>
 </span>
 <?php echo $Products_edit->ListedFlag->CustomMsg ?></div></div>
@@ -1291,8 +1291,8 @@ $selwrk = ConvertToBool($Products_edit->ListedFlag->CurrentValue) ? " checked" :
 $selwrk = ConvertToBool($Products_edit->IsFirePump->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_IsFirePump" data-page="4" name="x_IsFirePump[]" id="x_IsFirePump[]_390547" value="1"<?php echo $selwrk ?><?php echo $Products_edit->IsFirePump->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsFirePump[]_390547"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_IsFirePump" data-page="4" name="x_IsFirePump[]" id="x_IsFirePump[]_665833" value="1"<?php echo $selwrk ?><?php echo $Products_edit->IsFirePump->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsFirePump[]_665833"></label>
 </div>
 </span>
 <?php echo $Products_edit->IsFirePump->CustomMsg ?></div></div>
@@ -1332,8 +1332,8 @@ $selwrk = ConvertToBool($Products_edit->IsFirePump->CurrentValue) ? " checked" :
 $selwrk = ConvertToBool($Products_edit->IsDieselFuel->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_IsDieselFuel" data-page="4" name="x_IsDieselFuel[]" id="x_IsDieselFuel[]_415345" value="1"<?php echo $selwrk ?><?php echo $Products_edit->IsDieselFuel->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsDieselFuel[]_415345"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_IsDieselFuel" data-page="4" name="x_IsDieselFuel[]" id="x_IsDieselFuel[]_542406" value="1"<?php echo $selwrk ?><?php echo $Products_edit->IsDieselFuel->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsDieselFuel[]_542406"></label>
 </div>
 </span>
 <?php echo $Products_edit->IsDieselFuel->CustomMsg ?></div></div>
@@ -1348,8 +1348,8 @@ $selwrk = ConvertToBool($Products_edit->IsDieselFuel->CurrentValue) ? " checked"
 $selwrk = ConvertToBool($Products_edit->IsSolution->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_IsSolution" data-page="4" name="x_IsSolution[]" id="x_IsSolution[]_921509" value="1"<?php echo $selwrk ?><?php echo $Products_edit->IsSolution->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsSolution[]_921509"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Products" data-field="x_IsSolution" data-page="4" name="x_IsSolution[]" id="x_IsSolution[]_282926" value="1"<?php echo $selwrk ?><?php echo $Products_edit->IsSolution->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsSolution[]_282926"></label>
 </div>
 </span>
 <?php echo $Products_edit->IsSolution->CustomMsg ?></div></div>

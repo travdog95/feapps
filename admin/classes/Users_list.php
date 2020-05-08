@@ -816,6 +816,7 @@ class Users_list extends Users
 		$this->Password->Visible = FALSE;
 		$this->IsContractor->setVisibility();
 		$this->IsAdmin->setVisibility();
+		$this->ReadOnly->setVisibility();
 		$this->ActiveFlag->setVisibility();
 		$this->hideFieldsForAddEdit();
 
@@ -1528,6 +1529,8 @@ class Users_list extends Users
 			return FALSE;
 		if ($CurrentForm->hasValue("x_IsAdmin") && $CurrentForm->hasValue("o_IsAdmin") && ConvertToBool($this->IsAdmin->CurrentValue) != ConvertToBool($this->IsAdmin->OldValue))
 			return FALSE;
+		if ($CurrentForm->hasValue("x_ReadOnly") && $CurrentForm->hasValue("o_ReadOnly") && ConvertToBool($this->ReadOnly->CurrentValue) != ConvertToBool($this->ReadOnly->OldValue))
+			return FALSE;
 		if ($CurrentForm->hasValue("x_ActiveFlag") && $CurrentForm->hasValue("o_ActiveFlag") && ConvertToBool($this->ActiveFlag->CurrentValue) != ConvertToBool($this->ActiveFlag->OldValue))
 			return FALSE;
 		return TRUE;
@@ -1621,6 +1624,7 @@ class Users_list extends Users
 		$filterList = Concat($filterList, $this->Password->AdvancedSearch->toJson(), ","); // Field Password
 		$filterList = Concat($filterList, $this->IsContractor->AdvancedSearch->toJson(), ","); // Field IsContractor
 		$filterList = Concat($filterList, $this->IsAdmin->AdvancedSearch->toJson(), ","); // Field IsAdmin
+		$filterList = Concat($filterList, $this->ReadOnly->AdvancedSearch->toJson(), ","); // Field ReadOnly
 		$filterList = Concat($filterList, $this->ActiveFlag->AdvancedSearch->toJson(), ","); // Field ActiveFlag
 		if ($this->BasicSearch->Keyword != "") {
 			$wrk = "\"" . Config("TABLE_BASIC_SEARCH") . "\":\"" . JsEncode($this->BasicSearch->Keyword) . "\",\"" . Config("TABLE_BASIC_SEARCH_TYPE") . "\":\"" . JsEncode($this->BasicSearch->Type) . "\"";
@@ -1731,6 +1735,14 @@ class Users_list extends Users
 		$this->IsAdmin->AdvancedSearch->SearchValue2 = @$filter["y_IsAdmin"];
 		$this->IsAdmin->AdvancedSearch->SearchOperator2 = @$filter["w_IsAdmin"];
 		$this->IsAdmin->AdvancedSearch->save();
+
+		// Field ReadOnly
+		$this->ReadOnly->AdvancedSearch->SearchValue = @$filter["x_ReadOnly"];
+		$this->ReadOnly->AdvancedSearch->SearchOperator = @$filter["z_ReadOnly"];
+		$this->ReadOnly->AdvancedSearch->SearchCondition = @$filter["v_ReadOnly"];
+		$this->ReadOnly->AdvancedSearch->SearchValue2 = @$filter["y_ReadOnly"];
+		$this->ReadOnly->AdvancedSearch->SearchOperator2 = @$filter["w_ReadOnly"];
+		$this->ReadOnly->AdvancedSearch->save();
 
 		// Field ActiveFlag
 		$this->ActiveFlag->AdvancedSearch->SearchValue = @$filter["x_ActiveFlag"];
@@ -1917,6 +1929,7 @@ class Users_list extends Users
 			$this->updateSort($this->_Email); // Email
 			$this->updateSort($this->IsContractor); // IsContractor
 			$this->updateSort($this->IsAdmin); // IsAdmin
+			$this->updateSort($this->ReadOnly); // ReadOnly
 			$this->updateSort($this->ActiveFlag); // ActiveFlag
 			$this->setStartRecordNumber(1); // Reset start position
 		}
@@ -1963,6 +1976,7 @@ class Users_list extends Users
 				$this->_Email->setSort("");
 				$this->IsContractor->setSort("");
 				$this->IsAdmin->setSort("");
+				$this->ReadOnly->setSort("");
 				$this->ActiveFlag->setSort("");
 			}
 
@@ -2409,22 +2423,24 @@ class Users_list extends Users
 	{
 		$this->User_Idn->CurrentValue = NULL;
 		$this->User_Idn->OldValue = $this->User_Idn->CurrentValue;
-		$this->FirstName->CurrentValue = "NULL";
+		$this->FirstName->CurrentValue = NULL;
 		$this->FirstName->OldValue = $this->FirstName->CurrentValue;
-		$this->LastName->CurrentValue = "NULL";
+		$this->LastName->CurrentValue = NULL;
 		$this->LastName->OldValue = $this->LastName->CurrentValue;
-		$this->UserName->CurrentValue = "NULL";
+		$this->UserName->CurrentValue = NULL;
 		$this->UserName->OldValue = $this->UserName->CurrentValue;
 		$this->Department_Idn->CurrentValue = NULL;
 		$this->Department_Idn->OldValue = $this->Department_Idn->CurrentValue;
-		$this->_Email->CurrentValue = "NULL";
+		$this->_Email->CurrentValue = NULL;
 		$this->_Email->OldValue = $this->_Email->CurrentValue;
-		$this->Password->CurrentValue = "NULL";
+		$this->Password->CurrentValue = NULL;
 		$this->Password->OldValue = $this->Password->CurrentValue;
 		$this->IsContractor->CurrentValue = 0;
 		$this->IsContractor->OldValue = $this->IsContractor->CurrentValue;
 		$this->IsAdmin->CurrentValue = 0;
 		$this->IsAdmin->OldValue = $this->IsAdmin->CurrentValue;
+		$this->ReadOnly->CurrentValue = 0;
+		$this->ReadOnly->OldValue = $this->ReadOnly->CurrentValue;
 		$this->ActiveFlag->CurrentValue = 1;
 		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
@@ -2527,6 +2543,17 @@ class Users_list extends Users
 		if ($CurrentForm->hasValue("o_IsAdmin"))
 			$this->IsAdmin->setOldValue($CurrentForm->getValue("o_IsAdmin"));
 
+		// Check field name 'ReadOnly' first before field var 'x_ReadOnly'
+		$val = $CurrentForm->hasValue("ReadOnly") ? $CurrentForm->getValue("ReadOnly") : $CurrentForm->getValue("x_ReadOnly");
+		if (!$this->ReadOnly->IsDetailKey) {
+			if (IsApi() && $val == NULL)
+				$this->ReadOnly->Visible = FALSE; // Disable update for API request
+			else
+				$this->ReadOnly->setFormValue($val);
+		}
+		if ($CurrentForm->hasValue("o_ReadOnly"))
+			$this->ReadOnly->setOldValue($CurrentForm->getValue("o_ReadOnly"));
+
 		// Check field name 'ActiveFlag' first before field var 'x_ActiveFlag'
 		$val = $CurrentForm->hasValue("ActiveFlag") ? $CurrentForm->getValue("ActiveFlag") : $CurrentForm->getValue("x_ActiveFlag");
 		if (!$this->ActiveFlag->IsDetailKey) {
@@ -2552,6 +2579,7 @@ class Users_list extends Users
 		$this->_Email->CurrentValue = $this->_Email->FormValue;
 		$this->IsContractor->CurrentValue = $this->IsContractor->FormValue;
 		$this->IsAdmin->CurrentValue = $this->IsAdmin->FormValue;
+		$this->ReadOnly->CurrentValue = $this->ReadOnly->FormValue;
 		$this->ActiveFlag->CurrentValue = $this->ActiveFlag->FormValue;
 	}
 
@@ -2628,6 +2656,7 @@ class Users_list extends Users
 		$this->Password->setDbValue($row['Password']);
 		$this->IsContractor->setDbValue((ConvertToBool($row['IsContractor']) ? "1" : "0"));
 		$this->IsAdmin->setDbValue((ConvertToBool($row['IsAdmin']) ? "1" : "0"));
+		$this->ReadOnly->setDbValue((ConvertToBool($row['ReadOnly']) ? "1" : "0"));
 		$this->ActiveFlag->setDbValue((ConvertToBool($row['ActiveFlag']) ? "1" : "0"));
 	}
 
@@ -2645,6 +2674,7 @@ class Users_list extends Users
 		$row['Password'] = $this->Password->CurrentValue;
 		$row['IsContractor'] = $this->IsContractor->CurrentValue;
 		$row['IsAdmin'] = $this->IsAdmin->CurrentValue;
+		$row['ReadOnly'] = $this->ReadOnly->CurrentValue;
 		$row['ActiveFlag'] = $this->ActiveFlag->CurrentValue;
 		return $row;
 	}
@@ -2698,6 +2728,7 @@ class Users_list extends Users
 		// Password
 		// IsContractor
 		// IsAdmin
+		// ReadOnly
 		// ActiveFlag
 
 		if ($this->RowType == ROWTYPE_VIEW) { // View row
@@ -2764,6 +2795,14 @@ class Users_list extends Users
 			}
 			$this->IsAdmin->ViewCustomAttributes = "";
 
+			// ReadOnly
+			if (ConvertToBool($this->ReadOnly->CurrentValue)) {
+				$this->ReadOnly->ViewValue = $this->ReadOnly->tagCaption(1) != "" ? $this->ReadOnly->tagCaption(1) : "Yes";
+			} else {
+				$this->ReadOnly->ViewValue = $this->ReadOnly->tagCaption(2) != "" ? $this->ReadOnly->tagCaption(2) : "No";
+			}
+			$this->ReadOnly->ViewCustomAttributes = "";
+
 			// ActiveFlag
 			if (ConvertToBool($this->ActiveFlag->CurrentValue)) {
 				$this->ActiveFlag->ViewValue = $this->ActiveFlag->tagCaption(1) != "" ? $this->ActiveFlag->tagCaption(1) : "Yes";
@@ -2811,6 +2850,11 @@ class Users_list extends Users
 			$this->IsAdmin->LinkCustomAttributes = "";
 			$this->IsAdmin->HrefValue = "";
 			$this->IsAdmin->TooltipValue = "";
+
+			// ReadOnly
+			$this->ReadOnly->LinkCustomAttributes = "";
+			$this->ReadOnly->HrefValue = "";
+			$this->ReadOnly->TooltipValue = "";
 
 			// ActiveFlag
 			$this->ActiveFlag->LinkCustomAttributes = "";
@@ -2884,6 +2928,10 @@ class Users_list extends Users
 			$this->IsAdmin->EditCustomAttributes = "";
 			$this->IsAdmin->EditValue = $this->IsAdmin->options(FALSE);
 
+			// ReadOnly
+			$this->ReadOnly->EditCustomAttributes = "";
+			$this->ReadOnly->EditValue = $this->ReadOnly->options(FALSE);
+
 			// ActiveFlag
 			$this->ActiveFlag->EditCustomAttributes = "";
 			$this->ActiveFlag->EditValue = $this->ActiveFlag->options(FALSE);
@@ -2921,6 +2969,10 @@ class Users_list extends Users
 			// IsAdmin
 			$this->IsAdmin->LinkCustomAttributes = "";
 			$this->IsAdmin->HrefValue = "";
+
+			// ReadOnly
+			$this->ReadOnly->LinkCustomAttributes = "";
+			$this->ReadOnly->HrefValue = "";
 
 			// ActiveFlag
 			$this->ActiveFlag->LinkCustomAttributes = "";
@@ -2997,6 +3049,10 @@ class Users_list extends Users
 			$this->IsAdmin->EditCustomAttributes = "";
 			$this->IsAdmin->EditValue = $this->IsAdmin->options(FALSE);
 
+			// ReadOnly
+			$this->ReadOnly->EditCustomAttributes = "";
+			$this->ReadOnly->EditValue = $this->ReadOnly->options(FALSE);
+
 			// ActiveFlag
 			$this->ActiveFlag->EditCustomAttributes = "";
 			$this->ActiveFlag->EditValue = $this->ActiveFlag->options(FALSE);
@@ -3034,6 +3090,10 @@ class Users_list extends Users
 			// IsAdmin
 			$this->IsAdmin->LinkCustomAttributes = "";
 			$this->IsAdmin->HrefValue = "";
+
+			// ReadOnly
+			$this->ReadOnly->LinkCustomAttributes = "";
+			$this->ReadOnly->HrefValue = "";
 
 			// ActiveFlag
 			$this->ActiveFlag->LinkCustomAttributes = "";
@@ -3096,6 +3156,11 @@ class Users_list extends Users
 		if ($this->IsAdmin->Required) {
 			if ($this->IsAdmin->FormValue == "") {
 				AddMessage($FormError, str_replace("%s", $this->IsAdmin->caption(), $this->IsAdmin->RequiredErrorMessage));
+			}
+		}
+		if ($this->ReadOnly->Required) {
+			if ($this->ReadOnly->FormValue == "") {
+				AddMessage($FormError, str_replace("%s", $this->ReadOnly->caption(), $this->ReadOnly->RequiredErrorMessage));
 			}
 		}
 		if ($this->ActiveFlag->Required) {
@@ -3251,6 +3316,12 @@ class Users_list extends Users
 				$tmpBool = !empty($tmpBool) ? "1" : "0";
 			$this->IsAdmin->setDbValueDef($rsnew, $tmpBool, NULL, $this->IsAdmin->ReadOnly);
 
+			// ReadOnly
+			$tmpBool = $this->ReadOnly->CurrentValue;
+			if ($tmpBool != "1" && $tmpBool != "0")
+				$tmpBool = !empty($tmpBool) ? "1" : "0";
+			$this->ReadOnly->setDbValueDef($rsnew, $tmpBool, NULL, $this->ReadOnly->ReadOnly);
+
 			// ActiveFlag
 			$tmpBool = $this->ActiveFlag->CurrentValue;
 			if ($tmpBool != "1" && $tmpBool != "0")
@@ -3340,6 +3411,7 @@ class Users_list extends Users
 		$hash .= GetFieldHash($rs->fields('Email')); // Email
 		$hash .= GetFieldHash($rs->fields('IsContractor')); // IsContractor
 		$hash .= GetFieldHash($rs->fields('IsAdmin')); // IsAdmin
+		$hash .= GetFieldHash($rs->fields('ReadOnly')); // ReadOnly
 		$hash .= GetFieldHash($rs->fields('ActiveFlag')); // ActiveFlag
 		return md5($hash);
 	}
@@ -3382,6 +3454,12 @@ class Users_list extends Users
 		if ($tmpBool != "1" && $tmpBool != "0")
 			$tmpBool = !empty($tmpBool) ? "1" : "0";
 		$this->IsAdmin->setDbValueDef($rsnew, $tmpBool, NULL, strval($this->IsAdmin->CurrentValue) == "");
+
+		// ReadOnly
+		$tmpBool = $this->ReadOnly->CurrentValue;
+		if ($tmpBool != "1" && $tmpBool != "0")
+			$tmpBool = !empty($tmpBool) ? "1" : "0";
+		$this->ReadOnly->setDbValueDef($rsnew, $tmpBool, NULL, strval($this->ReadOnly->CurrentValue) == "");
 
 		// ActiveFlag
 		$tmpBool = $this->ActiveFlag->CurrentValue;
@@ -3690,6 +3768,8 @@ class Users_list extends Users
 				case "x_IsContractor":
 					break;
 				case "x_IsAdmin":
+					break;
+				case "x_ReadOnly":
 					break;
 				case "x_ActiveFlag":
 					break;

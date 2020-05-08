@@ -820,7 +820,8 @@ class EngineeringAdditionalCosts_add extends EngineeringAdditionalCosts
 		$this->ManHours->CurrentValue = 0;
 		$this->Rank->CurrentValue = 0;
 		$this->Parent_Idn->CurrentValue = 0;
-		$this->DefaultFlag->CurrentValue = 0;
+		$this->DefaultFlag->CurrentValue = NULL;
+		$this->DefaultFlag->OldValue = $this->DefaultFlag->CurrentValue;
 	}
 
 	// Load form values

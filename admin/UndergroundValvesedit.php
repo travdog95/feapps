@@ -178,8 +178,8 @@ $UndergroundValves_edit->showMessage();
 $selwrk = ConvertToBool($UndergroundValves_edit->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="UndergroundValves" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_205153" value="1"<?php echo $selwrk ?><?php echo $UndergroundValves_edit->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_205153"></label>
+	<input type="checkbox" class="custom-control-input" data-table="UndergroundValves" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_850915" value="1"<?php echo $selwrk ?><?php echo $UndergroundValves_edit->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_850915"></label>
 </div>
 </span>
 <?php echo $UndergroundValves_edit->ActiveFlag->CustomMsg ?></div></div>

@@ -396,8 +396,8 @@ $PipeTypes_list->ListOptions->render("body", "left", $PipeTypes_list->RowCount);
 $selwrk = ConvertToBool($PipeTypes_list->IsUnderground->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_IsUnderground" name="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_624354" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->IsUnderground->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_624354"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_IsUnderground" name="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_313498" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->IsUnderground->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_313498"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeTypes" data-field="x_IsUnderground" name="o<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" id="o<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" value="<?php echo HtmlEncode($PipeTypes_list->IsUnderground->OldValue) ?>">
@@ -418,8 +418,8 @@ $selwrk = ConvertToBool($PipeTypes_list->IsUnderground->CurrentValue) ? " checke
 $selwrk = ConvertToBool($PipeTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_ActiveFlag" name="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_219041" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_219041"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_ActiveFlag" name="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_656122" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_656122"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeTypes" data-field="x_ActiveFlag" name="o<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PipeTypes_list->ActiveFlag->OldValue) ?>">
@@ -628,8 +628,8 @@ $PipeTypes_list->ListOptions->render("body", "left", $PipeTypes_list->RowCount);
 $selwrk = ConvertToBool($PipeTypes_list->IsUnderground->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_IsUnderground" name="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_919343" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->IsUnderground->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_919343"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_IsUnderground" name="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_764344" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->IsUnderground->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_764344"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeTypes" data-field="x_IsUnderground" name="o<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" id="o<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" value="<?php echo HtmlEncode($PipeTypes_list->IsUnderground->OldValue) ?>">
@@ -640,8 +640,8 @@ $selwrk = ConvertToBool($PipeTypes_list->IsUnderground->CurrentValue) ? " checke
 $selwrk = ConvertToBool($PipeTypes_list->IsUnderground->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_IsUnderground" name="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_516851" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->IsUnderground->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_516851"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_IsUnderground" name="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_212147" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->IsUnderground->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_212147"></label>
 </div>
 </span>
 <?php } ?>
@@ -680,8 +680,8 @@ $selwrk = ConvertToBool($PipeTypes_list->IsUnderground->CurrentValue) ? " checke
 $selwrk = ConvertToBool($PipeTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_ActiveFlag" name="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_369468" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_369468"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_ActiveFlag" name="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_671543" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_671543"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeTypes" data-field="x_ActiveFlag" name="o<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PipeTypes_list->ActiveFlag->OldValue) ?>">
@@ -692,8 +692,8 @@ $selwrk = ConvertToBool($PipeTypes_list->ActiveFlag->CurrentValue) ? " checked" 
 $selwrk = ConvertToBool($PipeTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_ActiveFlag" name="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_510667" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_510667"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_ActiveFlag" name="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_768706" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_768706"></label>
 </div>
 </span>
 <?php } ?>
@@ -783,8 +783,8 @@ $PipeTypes_list->ListOptions->render("body", "left", $PipeTypes_list->RowIndex);
 $selwrk = ConvertToBool($PipeTypes_list->IsUnderground->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_IsUnderground" name="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_261918" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->IsUnderground->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_261918"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_IsUnderground" name="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_216221" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->IsUnderground->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]_216221"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeTypes" data-field="x_IsUnderground" name="o<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" id="o<?php echo $PipeTypes_list->RowIndex ?>_IsUnderground[]" value="<?php echo HtmlEncode($PipeTypes_list->IsUnderground->OldValue) ?>">
@@ -805,8 +805,8 @@ $selwrk = ConvertToBool($PipeTypes_list->IsUnderground->CurrentValue) ? " checke
 $selwrk = ConvertToBool($PipeTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_ActiveFlag" name="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_941447" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_941447"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_ActiveFlag" name="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_234904" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]_234904"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeTypes" data-field="x_ActiveFlag" name="o<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PipeTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PipeTypes_list->ActiveFlag->OldValue) ?>">

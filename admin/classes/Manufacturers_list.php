@@ -2326,7 +2326,7 @@ class Manufacturers_list extends Manufacturers
 		$this->Manufacturer_Idn->OldValue = $this->Manufacturer_Idn->CurrentValue;
 		$this->Name->CurrentValue = NULL;
 		$this->Name->OldValue = $this->Name->CurrentValue;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
 		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 

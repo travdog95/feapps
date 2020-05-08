@@ -1095,6 +1095,12 @@ class Job extends CI_Controller
             }
         }
 
+        $summary_data = array(
+			"total_sqft" => $Job->job['total_sqft'],
+			"total_heads" => $this->get_total_heads($job_number)
+        );
+        
+		$data['recap_summary'] = $this->load->view('job/recap_summary', $summary_data, true);
         $this->load->view('job/recap', $data);
     }
 
@@ -1159,7 +1165,8 @@ class Job extends CI_Controller
             'is_parts_smarts' => (empty($job_defaults[80]['AlphaValue']) || $job_defaults[80]['AlphaValue'] == "N") ? "N" : "Y",
             'parts_smarts_field_labor_rate' => $job_defaults[80]['NumericValue'],
             'estimate_type_idn' => 0,
-            'job_type_idn' => ($department_idn == 1) ? 1 : 0 //default to Fire Alarm for Electronic Division jobs
+            'job_type_idn' => ($department_idn == 1) ? 1 : 0, //default to Fire Alarm for Electronic Division jobs
+            'total_sqft' => 0,
         );
         
         //Load labor rates
@@ -1247,7 +1254,8 @@ class Job extends CI_Controller
                 'parts_smarts_field_labor_rate' => $job_parms[80]['NumericValue'],
                 'estimate_type_idn' => $job['EstimateType_Idn'],
                 'has_overtime' => (empty($job_parms[82]['AlphaValue']) || $job_parms[82]['AlphaValue'] == "Y") ? "Y" : "N",
-                'job_type_idn' => $job['JobType_Idn']
+                'job_type_idn' => $job['JobType_Idn'],
+				'total_sqft' => $job['TotalSqft'],
             );
             
             //Load labor rates
@@ -2110,9 +2118,17 @@ class Job extends CI_Controller
                 $results['return_code'] = -1;
             }
             
-            //Notes
-            $job_results = $this->m_job->save($data['job_number'], array('Notes' => $data['notes']));
+            //total sqft
+            $total_sqft = str_replace(",","",$data['bs_total_sqft']);
 
+            $job_recap_data = array(
+                'Notes' => $data['notes'],
+                'TotalSqft' => $total_sqft
+            );
+
+            //Save job data on Jobs record
+            $job_results = $this->m_job->save($data['job_number'], $job_recap_data);        
+            
             job_update($data['job_number']);
         } else {
             $results['message'] = "Error saving recap.";
@@ -2477,6 +2493,36 @@ class Job extends CI_Controller
 
         return $total;
     }
+
+    public function get_total_heads($job_number = 0)
+	{
+		$total_heads = 0;
+		$job_keys = array();
+		$where = array();
+		$query;
+
+		if (!empty($job_number))
+		{
+			$job_keys = get_job_keys($job_number);
+			$where = array(
+				"Job_Idn" => $job_keys[0],
+				"ChangeOrder" => $job_keys[1],
+				"WorksheetMaster_Idn" => 9
+			);
+
+			//sum Qty of Branchline worksheets
+			$query = $this->db
+				->select("sum(Quantity) AS TotalHeads")
+				->from("Worksheets")
+				->where($where)
+				->get()
+				->row();
+
+			$total_heads = ($query->TotalHeads == null) ? 0 : $query->TotalHeads;;
+		}
+
+		return $total_heads;
+	}
 }
 /* End of file job.php */
 /* Location: ./application/controllers/job.php */

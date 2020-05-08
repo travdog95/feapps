@@ -532,8 +532,8 @@ $AdjustmentSubFactors_grid->ListOptions->render("body", "left", $AdjustmentSubFa
 $selwrk = ConvertToBool($AdjustmentSubFactors_grid->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_986813" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_grid->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_986813"></label>
+	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_319020" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_grid->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_319020"></label>
 </div>
 </span>
 <input type="hidden" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="o<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]" id="o<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($AdjustmentSubFactors_grid->ActiveFlag->OldValue) ?>">
@@ -544,8 +544,8 @@ $selwrk = ConvertToBool($AdjustmentSubFactors_grid->ActiveFlag->CurrentValue) ? 
 $selwrk = ConvertToBool($AdjustmentSubFactors_grid->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_739349" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_grid->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_739349"></label>
+	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_911668" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_grid->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_911668"></label>
 </div>
 </span>
 <?php } ?>
@@ -721,8 +721,8 @@ $AdjustmentSubFactors_grid->ListOptions->render("body", "left", $AdjustmentSubFa
 $selwrk = ConvertToBool($AdjustmentSubFactors_grid->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_915832" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_grid->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_915832"></label>
+	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_450625" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_grid->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_grid->RowIndex ?>_ActiveFlag[]_450625"></label>
 </div>
 </span>
 <?php } else { ?>

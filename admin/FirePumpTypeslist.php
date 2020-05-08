@@ -357,8 +357,8 @@ $FirePumpTypes_list->ListOptions->render("body", "left", $FirePumpTypes_list->Ro
 $selwrk = ConvertToBool($FirePumpTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FirePumpTypes" data-field="x_ActiveFlag" name="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_331544" value="1"<?php echo $selwrk ?><?php echo $FirePumpTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_331544"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FirePumpTypes" data-field="x_ActiveFlag" name="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_437679" value="1"<?php echo $selwrk ?><?php echo $FirePumpTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_437679"></label>
 </div>
 </span>
 <input type="hidden" data-table="FirePumpTypes" data-field="x_ActiveFlag" name="o<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($FirePumpTypes_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $FirePumpTypes_list->ListOptions->render("body", "left", $FirePumpTypes_list->Ro
 $selwrk = ConvertToBool($FirePumpTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FirePumpTypes" data-field="x_ActiveFlag" name="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_446000" value="1"<?php echo $selwrk ?><?php echo $FirePumpTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_446000"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FirePumpTypes" data-field="x_ActiveFlag" name="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_220268" value="1"<?php echo $selwrk ?><?php echo $FirePumpTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_220268"></label>
 </div>
 </span>
 <input type="hidden" data-table="FirePumpTypes" data-field="x_ActiveFlag" name="o<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($FirePumpTypes_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($FirePumpTypes_list->ActiveFlag->CurrentValue) ? " check
 $selwrk = ConvertToBool($FirePumpTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FirePumpTypes" data-field="x_ActiveFlag" name="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_399594" value="1"<?php echo $selwrk ?><?php echo $FirePumpTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_399594"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FirePumpTypes" data-field="x_ActiveFlag" name="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_717577" value="1"<?php echo $selwrk ?><?php echo $FirePumpTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_717577"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $FirePumpTypes_list->ListOptions->render("body", "left", $FirePumpTypes_list->Ro
 $selwrk = ConvertToBool($FirePumpTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FirePumpTypes" data-field="x_ActiveFlag" name="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_709270" value="1"<?php echo $selwrk ?><?php echo $FirePumpTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_709270"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FirePumpTypes" data-field="x_ActiveFlag" name="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_590710" value="1"<?php echo $selwrk ?><?php echo $FirePumpTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]_590710"></label>
 </div>
 </span>
 <input type="hidden" data-table="FirePumpTypes" data-field="x_ActiveFlag" name="o<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $FirePumpTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($FirePumpTypes_list->ActiveFlag->OldValue) ?>">

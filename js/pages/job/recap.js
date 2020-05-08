@@ -193,7 +193,11 @@ function recap_handlers() {
             check_case();
         });
 
-    })
+    });
+
+    $("#bs_total_sqft").on("change", function(e) {
+        calc_budget_summary();
+    });
 }
 
 function validate_recap() {
@@ -417,6 +421,8 @@ function calc_recap() {
     //Case 2
     FECI.job.case2_totals.total = FECI.job.case2_totals.gross_receipt + FECI.job.case2_totals.total_after_cost_of_bond;
     $("#case2_total").text(number_format(FECI.job.case2_totals.total, 0, ','));
+
+    calc_budget_summary();
 }
 
 function initialize_totals() {
@@ -1078,4 +1084,34 @@ function add_parent_modal_handlers() {
             console.error("The following error occured: " + textStatus, errorThrown);
         });
     });
+}
+
+function calc_budget_summary() {
+    //Load amounts for calculations
+    let total_sqft = parseInt(strip_comma($("#bs_total_sqft").val()));
+    let total_heads = parseFloat(strip_comma($("#bs_total_heads").text()));
+    let material = parseFloat(strip_comma($("#total_direct_cost_4").text()));
+    let field = Math.ceil(FECI.job.field_hours);
+    let shop = Math.ceil(FECI.job.shop_hours);
+    let eng = Math.ceil(FECI.job.engineer_hours);
+    let cost = parseFloat(strip_comma($("#total_capacity_cost").text()));
+    let price = parseFloat(strip_comma($("#total").val()));
+    
+    //Calculations
+    let sqft_per_head = (total_heads > 0) ? total_sqft / total_heads : 0;
+    let material_per_head = (total_heads > 0) ? material / total_heads: 0;
+    let field_per_head = (total_heads > 0) ? field / total_heads : 0;
+    let eng_per_head = (total_heads > 0) ? eng / total_heads : 0;
+    let shop_per_head = shop / total_heads;
+    let cost_per_sqft = (total_sqft > 0) ? cost / total_sqft : 0;
+    let price_per_sqft = (total_sqft > 0) ? price / total_sqft : 0;
+
+    //Display calculations
+    $("#bs_sqft_per_head").text(number_format(sqft_per_head, 2, ","));
+    $("#bs_material_per_head").text(number_format(material_per_head, 2, ","));
+    $("#bs_field_per_head").text(number_format(field_per_head, 2, ","));
+    $("#bs_eng_per_head").text(number_format(eng_per_head, 2, ","));
+    $("#bs_shop_per_head").text(number_format(shop_per_head, 2, ","));
+    $("#bs_cost_per_sqft").text(number_format(cost_per_sqft, 2, ","));
+    $("#bs_price_per_sqft").text(number_format(price_per_sqft, 2, ","));
 }

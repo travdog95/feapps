@@ -220,8 +220,8 @@ $BondRates_add->showMessage();
 $selwrk = ConvertToBool($BondRates_add->IsSubcontract->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_IsSubcontract" name="x_IsSubcontract[]" id="x_IsSubcontract[]_276473" value="1"<?php echo $selwrk ?><?php echo $BondRates_add->IsSubcontract->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsSubcontract[]_276473"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_IsSubcontract" name="x_IsSubcontract[]" id="x_IsSubcontract[]_267128" value="1"<?php echo $selwrk ?><?php echo $BondRates_add->IsSubcontract->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsSubcontract[]_267128"></label>
 </div>
 </span>
 <?php echo $BondRates_add->IsSubcontract->CustomMsg ?></div></div>
@@ -236,8 +236,8 @@ $selwrk = ConvertToBool($BondRates_add->IsSubcontract->CurrentValue) ? " checked
 $selwrk = ConvertToBool($BondRates_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_160869" value="1"<?php echo $selwrk ?><?php echo $BondRates_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_160869"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_380410" value="1"<?php echo $selwrk ?><?php echo $BondRates_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_380410"></label>
 </div>
 </span>
 <?php echo $BondRates_add->ActiveFlag->CustomMsg ?></div></div>

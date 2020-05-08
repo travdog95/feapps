@@ -34,6 +34,7 @@ class Users extends DbTable
 	public $Password;
 	public $IsContractor;
 	public $IsAdmin;
+	public $ReadOnly;
 	public $ActiveFlag;
 
 	// Constructor
@@ -128,6 +129,14 @@ class Users extends DbTable
 		$this->IsAdmin->Lookup = new Lookup('IsAdmin', 'Users', FALSE, '', ["","","",""], [], [], [], [], [], [], '', '');
 		$this->IsAdmin->OptionCount = 2;
 		$this->fields['IsAdmin'] = &$this->IsAdmin;
+
+		// ReadOnly
+		$this->ReadOnly = new DbField('Users', 'Users', 'x_ReadOnly', 'ReadOnly', '[ReadOnly]', '[ReadOnly]', 11, 2, -1, FALSE, '[ReadOnly]', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'CHECKBOX');
+		$this->ReadOnly->Sortable = TRUE; // Allow sort
+		$this->ReadOnly->DataType = DATATYPE_BOOLEAN;
+		$this->ReadOnly->Lookup = new Lookup('ReadOnly', 'Users', FALSE, '', ["","","",""], [], [], [], [], [], [], '', '');
+		$this->ReadOnly->OptionCount = 2;
+		$this->fields['ReadOnly'] = &$this->ReadOnly;
 
 		// ActiveFlag
 		$this->ActiveFlag = new DbField('Users', 'Users', 'x_ActiveFlag', 'ActiveFlag', '[ActiveFlag]', '[ActiveFlag]', 11, 2, -1, FALSE, '[ActiveFlag]', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'CHECKBOX');
@@ -498,6 +507,7 @@ class Users extends DbTable
 		$this->Password->DbValue = $row['Password'];
 		$this->IsContractor->DbValue = (ConvertToBool($row['IsContractor']) ? "1" : "0");
 		$this->IsAdmin->DbValue = (ConvertToBool($row['IsAdmin']) ? "1" : "0");
+		$this->ReadOnly->DbValue = (ConvertToBool($row['ReadOnly']) ? "1" : "0");
 		$this->ActiveFlag->DbValue = (ConvertToBool($row['ActiveFlag']) ? "1" : "0");
 	}
 
@@ -738,6 +748,7 @@ class Users extends DbTable
 		$this->Password->setDbValue($rs->fields('Password'));
 		$this->IsContractor->setDbValue(ConvertToBool($rs->fields('IsContractor')) ? "1" : "0");
 		$this->IsAdmin->setDbValue(ConvertToBool($rs->fields('IsAdmin')) ? "1" : "0");
+		$this->ReadOnly->setDbValue(ConvertToBool($rs->fields('ReadOnly')) ? "1" : "0");
 		$this->ActiveFlag->setDbValue(ConvertToBool($rs->fields('ActiveFlag')) ? "1" : "0");
 	}
 
@@ -759,6 +770,7 @@ class Users extends DbTable
 		// Password
 		// IsContractor
 		// IsAdmin
+		// ReadOnly
 		// ActiveFlag
 		// User_Idn
 
@@ -823,6 +835,14 @@ class Users extends DbTable
 		}
 		$this->IsAdmin->ViewCustomAttributes = "";
 
+		// ReadOnly
+		if (ConvertToBool($this->ReadOnly->CurrentValue)) {
+			$this->ReadOnly->ViewValue = $this->ReadOnly->tagCaption(1) != "" ? $this->ReadOnly->tagCaption(1) : "Yes";
+		} else {
+			$this->ReadOnly->ViewValue = $this->ReadOnly->tagCaption(2) != "" ? $this->ReadOnly->tagCaption(2) : "No";
+		}
+		$this->ReadOnly->ViewCustomAttributes = "";
+
 		// ActiveFlag
 		if (ConvertToBool($this->ActiveFlag->CurrentValue)) {
 			$this->ActiveFlag->ViewValue = $this->ActiveFlag->tagCaption(1) != "" ? $this->ActiveFlag->tagCaption(1) : "Yes";
@@ -875,6 +895,11 @@ class Users extends DbTable
 		$this->IsAdmin->LinkCustomAttributes = "";
 		$this->IsAdmin->HrefValue = "";
 		$this->IsAdmin->TooltipValue = "";
+
+		// ReadOnly
+		$this->ReadOnly->LinkCustomAttributes = "";
+		$this->ReadOnly->HrefValue = "";
+		$this->ReadOnly->TooltipValue = "";
 
 		// ActiveFlag
 		$this->ActiveFlag->LinkCustomAttributes = "";
@@ -954,6 +979,10 @@ class Users extends DbTable
 		$this->IsAdmin->EditCustomAttributes = "";
 		$this->IsAdmin->EditValue = $this->IsAdmin->options(FALSE);
 
+		// ReadOnly
+		$this->ReadOnly->EditCustomAttributes = "";
+		$this->ReadOnly->EditValue = $this->ReadOnly->options(FALSE);
+
 		// ActiveFlag
 		$this->ActiveFlag->EditCustomAttributes = "";
 		$this->ActiveFlag->EditValue = $this->ActiveFlag->options(FALSE);
@@ -995,6 +1024,7 @@ class Users extends DbTable
 					$doc->exportCaption($this->_Email);
 					$doc->exportCaption($this->IsContractor);
 					$doc->exportCaption($this->IsAdmin);
+					$doc->exportCaption($this->ReadOnly);
 					$doc->exportCaption($this->ActiveFlag);
 				} else {
 					$doc->exportCaption($this->User_Idn);
@@ -1006,6 +1036,7 @@ class Users extends DbTable
 					$doc->exportCaption($this->Password);
 					$doc->exportCaption($this->IsContractor);
 					$doc->exportCaption($this->IsAdmin);
+					$doc->exportCaption($this->ReadOnly);
 					$doc->exportCaption($this->ActiveFlag);
 				}
 				$doc->endExportRow();
@@ -1046,6 +1077,7 @@ class Users extends DbTable
 						$doc->exportField($this->_Email);
 						$doc->exportField($this->IsContractor);
 						$doc->exportField($this->IsAdmin);
+						$doc->exportField($this->ReadOnly);
 						$doc->exportField($this->ActiveFlag);
 					} else {
 						$doc->exportField($this->User_Idn);
@@ -1057,6 +1089,7 @@ class Users extends DbTable
 						$doc->exportField($this->Password);
 						$doc->exportField($this->IsContractor);
 						$doc->exportField($this->IsAdmin);
+						$doc->exportField($this->ReadOnly);
 						$doc->exportField($this->ActiveFlag);
 					}
 					$doc->endExportRow($rowCnt);

@@ -58,7 +58,7 @@ class Authentication extends CI_Controller {
 					'department_idn' => $this->user->department_idn,
 					'is_contractor' => $this->user->is_contractor,
 					'is_admin' => $this->user->is_admin,
-					'read_only' => $this->user->read_only,
+					'read_only' => $this->user->read_only, 
 					'last_access' => time()
 				);
 

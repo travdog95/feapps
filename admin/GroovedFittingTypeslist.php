@@ -357,8 +357,8 @@ $GroovedFittingTypes_list->ListOptions->render("body", "left", $GroovedFittingTy
 $selwrk = ConvertToBool($GroovedFittingTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GroovedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_825062" value="1"<?php echo $selwrk ?><?php echo $GroovedFittingTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_825062"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GroovedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_179011" value="1"<?php echo $selwrk ?><?php echo $GroovedFittingTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_179011"></label>
 </div>
 </span>
 <input type="hidden" data-table="GroovedFittingTypes" data-field="x_ActiveFlag" name="o<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($GroovedFittingTypes_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $GroovedFittingTypes_list->ListOptions->render("body", "left", $GroovedFittingTy
 $selwrk = ConvertToBool($GroovedFittingTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GroovedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_196915" value="1"<?php echo $selwrk ?><?php echo $GroovedFittingTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_196915"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GroovedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_929136" value="1"<?php echo $selwrk ?><?php echo $GroovedFittingTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_929136"></label>
 </div>
 </span>
 <input type="hidden" data-table="GroovedFittingTypes" data-field="x_ActiveFlag" name="o<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($GroovedFittingTypes_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($GroovedFittingTypes_list->ActiveFlag->CurrentValue) ? "
 $selwrk = ConvertToBool($GroovedFittingTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GroovedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_388233" value="1"<?php echo $selwrk ?><?php echo $GroovedFittingTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_388233"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GroovedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_529279" value="1"<?php echo $selwrk ?><?php echo $GroovedFittingTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_529279"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $GroovedFittingTypes_list->ListOptions->render("body", "left", $GroovedFittingTy
 $selwrk = ConvertToBool($GroovedFittingTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GroovedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_130532" value="1"<?php echo $selwrk ?><?php echo $GroovedFittingTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_130532"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GroovedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_424706" value="1"<?php echo $selwrk ?><?php echo $GroovedFittingTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]_424706"></label>
 </div>
 </span>
 <input type="hidden" data-table="GroovedFittingTypes" data-field="x_ActiveFlag" name="o<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $GroovedFittingTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($GroovedFittingTypes_list->ActiveFlag->OldValue) ?>">

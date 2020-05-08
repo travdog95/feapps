@@ -809,7 +809,8 @@ class ControlValves_add extends ControlValves
 		$this->ControlValve_Idn->OldValue = $this->ControlValve_Idn->CurrentValue;
 		$this->Name->CurrentValue = "NULL";
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

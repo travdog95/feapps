@@ -79,11 +79,16 @@ $adjustment_factors = $this->m_reference_table->get_where("AdjustmentSubFactors"
 <tbody id="AdjustmentFactors">
     <tr class="worksheet-total">
         <td colspan="7">
+        <?php if ($this->session->userdata('read_only') == 0): ?>
             <select id="AdjustmentFactorsSelect" class="btn btn-sm" multiple="multiple">
                 <?php foreach($adjustment_factors as $af): ?>
                 <option value="<?php echo $af['AdjustmentSubFactor_Idn']; ?>" data-value="<?php echo $af['Value']; ?>"><?php echo quotes_to_entities($af['Name']); ?></option>
                 <?php endforeach; ?>
             </select>
+        <?php else: ?>
+            <strong>Adjustment Factors</strong>
+        <?php endif; ?>
+
         </td>
     </tr>
     <?php 
@@ -108,15 +113,19 @@ $adjustment_factors = $this->m_reference_table->get_where("AdjustmentSubFactors"
 <tbody id="AdditionalCosts">
     <tr class="worksheet-total">
         <td colspan="7">
-            <?php
-            //Get Adjustment factors
-            $additional_costs = $this->m_reference_table->get_where("EngineeringAdditionalCosts", "Parent_Idn = 0 AND DefaultFlag = 0", "Rank ASC");
-            ?>
-            <select id="AdditionalCostsSelect" class="btn btn-sm" multiple="multiple">
-                <?php foreach($additional_costs as $ac): ?>
-                <option value="<?php echo $ac['EngineeringAdditionalCost_Idn']; ?>" data-manhours="<?php echo $ac['ManHours']; ?>" data-quantity="<?php echo $ac['Quantity']; ?>" data-defaultflag="<?php echo $ac['DefaultFlag']; ?>" data-rank="<?php echo $ac['Rank']; ?>"><?php echo quotes_to_entities($ac['Name']); ?></option>
-                <?php endforeach; ?>
-            </select>
+            <?php if ($this->session->userdata('read_only') == 0): ?>
+
+                <?php
+                //Get Adjustment factors
+                $additional_costs = $this->m_reference_table->get_where("EngineeringAdditionalCosts", "Parent_Idn = 0 AND DefaultFlag = 0", "Rank ASC");
+                ?>
+                <select id="AdditionalCostsSelect" class="btn btn-sm" multiple="multiple">
+                    <?php foreach($additional_costs as $ac): ?>
+                    <option value="<?php echo $ac['EngineeringAdditionalCost_Idn']; ?>" data-manhours="<?php echo $ac['ManHours']; ?>" data-quantity="<?php echo $ac['Quantity']; ?>" data-defaultflag="<?php echo $ac['DefaultFlag']; ?>" data-rank="<?php echo $ac['Rank']; ?>"><?php echo quotes_to_entities($ac['Name']); ?></option>
+                    <?php endforeach; ?>
+                </select>
+            <?php endif; ?>
+
         </td>
     </tr>
     <?php

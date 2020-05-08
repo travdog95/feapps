@@ -2592,7 +2592,7 @@ class WorksheetCategories_list extends WorksheetCategories
 	{
 		$this->WorksheetCategory_Idn->CurrentValue = NULL;
 		$this->WorksheetCategory_Idn->OldValue = $this->WorksheetCategory_Idn->CurrentValue;
-		$this->Name->CurrentValue = "NULL";
+		$this->Name->CurrentValue = NULL;
 		$this->Name->OldValue = $this->Name->CurrentValue;
 		$this->ShortName->CurrentValue = "NULL";
 		$this->ShortName->OldValue = $this->ShortName->CurrentValue;
@@ -2608,7 +2608,7 @@ class WorksheetCategories_list extends WorksheetCategories
 		$this->IsShared->OldValue = $this->IsShared->CurrentValue;
 		$this->IsAssembly->CurrentValue = 0;
 		$this->IsAssembly->OldValue = $this->IsAssembly->CurrentValue;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
 		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 

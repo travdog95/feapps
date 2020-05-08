@@ -383,8 +383,8 @@ $PipeLengths_list->ListOptions->render("body", "left", $PipeLengths_list->RowCou
 $selwrk = ConvertToBool($PipeLengths_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeLengths" data-field="x_ActiveFlag" name="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_514513" value="1"<?php echo $selwrk ?><?php echo $PipeLengths_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_514513"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeLengths" data-field="x_ActiveFlag" name="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_958121" value="1"<?php echo $selwrk ?><?php echo $PipeLengths_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_958121"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeLengths" data-field="x_ActiveFlag" name="o<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PipeLengths_list->ActiveFlag->OldValue) ?>">
@@ -603,8 +603,8 @@ $PipeLengths_list->ListOptions->render("body", "left", $PipeLengths_list->RowCou
 $selwrk = ConvertToBool($PipeLengths_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeLengths" data-field="x_ActiveFlag" name="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_491126" value="1"<?php echo $selwrk ?><?php echo $PipeLengths_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_491126"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeLengths" data-field="x_ActiveFlag" name="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_331889" value="1"<?php echo $selwrk ?><?php echo $PipeLengths_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_331889"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeLengths" data-field="x_ActiveFlag" name="o<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PipeLengths_list->ActiveFlag->OldValue) ?>">
@@ -615,8 +615,8 @@ $selwrk = ConvertToBool($PipeLengths_list->ActiveFlag->CurrentValue) ? " checked
 $selwrk = ConvertToBool($PipeLengths_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeLengths" data-field="x_ActiveFlag" name="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_249918" value="1"<?php echo $selwrk ?><?php echo $PipeLengths_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_249918"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeLengths" data-field="x_ActiveFlag" name="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_422099" value="1"<?php echo $selwrk ?><?php echo $PipeLengths_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_422099"></label>
 </div>
 </span>
 <?php } ?>
@@ -709,8 +709,8 @@ $PipeLengths_list->ListOptions->render("body", "left", $PipeLengths_list->RowInd
 $selwrk = ConvertToBool($PipeLengths_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeLengths" data-field="x_ActiveFlag" name="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_479561" value="1"<?php echo $selwrk ?><?php echo $PipeLengths_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_479561"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeLengths" data-field="x_ActiveFlag" name="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_426177" value="1"<?php echo $selwrk ?><?php echo $PipeLengths_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]_426177"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeLengths" data-field="x_ActiveFlag" name="o<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PipeLengths_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PipeLengths_list->ActiveFlag->OldValue) ?>">

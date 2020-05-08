@@ -814,7 +814,8 @@ class PipeExposures_add extends PipeExposures
 		$this->Name->CurrentValue = "NULL";
 		$this->AdjustmentFactor_Idn->CurrentValue = 0;
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

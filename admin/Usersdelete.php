@@ -94,6 +94,9 @@ $Users_delete->showMessage();
 <?php if ($Users_delete->IsAdmin->Visible) { // IsAdmin ?>
 		<th class="<?php echo $Users_delete->IsAdmin->headerCellClass() ?>"><span id="elh_Users_IsAdmin" class="Users_IsAdmin"><?php echo $Users_delete->IsAdmin->caption() ?></span></th>
 <?php } ?>
+<?php if ($Users_delete->ReadOnly->Visible) { // ReadOnly ?>
+		<th class="<?php echo $Users_delete->ReadOnly->headerCellClass() ?>"><span id="elh_Users_ReadOnly" class="Users_ReadOnly"><?php echo $Users_delete->ReadOnly->caption() ?></span></th>
+<?php } ?>
 <?php if ($Users_delete->ActiveFlag->Visible) { // ActiveFlag ?>
 		<th class="<?php echo $Users_delete->ActiveFlag->headerCellClass() ?>"><span id="elh_Users_ActiveFlag" class="Users_ActiveFlag"><?php echo $Users_delete->ActiveFlag->caption() ?></span></th>
 <?php } ?>
@@ -171,6 +174,13 @@ while (!$Users_delete->Recordset->EOF) {
 		<td <?php echo $Users_delete->IsAdmin->cellAttributes() ?>>
 <span id="el<?php echo $Users_delete->RowCount ?>_Users_IsAdmin" class="Users_IsAdmin">
 <span<?php echo $Users_delete->IsAdmin->viewAttributes() ?>><div class="custom-control custom-checkbox d-inline-block"><input type="checkbox" id="x_IsAdmin" class="custom-control-input" value="<?php echo $Users_delete->IsAdmin->getViewValue() ?>" disabled<?php if (ConvertToBool($Users_delete->IsAdmin->CurrentValue)) { ?> checked<?php } ?>><label class="custom-control-label" for="x_IsAdmin"></label></div></span>
+</span>
+</td>
+<?php } ?>
+<?php if ($Users_delete->ReadOnly->Visible) { // ReadOnly ?>
+		<td <?php echo $Users_delete->ReadOnly->cellAttributes() ?>>
+<span id="el<?php echo $Users_delete->RowCount ?>_Users_ReadOnly" class="Users_ReadOnly">
+<span<?php echo $Users_delete->ReadOnly->viewAttributes() ?>><div class="custom-control custom-checkbox d-inline-block"><input type="checkbox" id="x_ReadOnly" class="custom-control-input" value="<?php echo $Users_delete->ReadOnly->getViewValue() ?>" disabled<?php if (ConvertToBool($Users_delete->ReadOnly->CurrentValue)) { ?> checked<?php } ?>><label class="custom-control-label" for="x_ReadOnly"></label></div></span>
 </span>
 </td>
 <?php } ?>

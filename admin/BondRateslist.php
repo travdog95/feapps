@@ -409,8 +409,8 @@ $BondRates_list->ListOptions->render("body", "left", $BondRates_list->RowCount);
 $selwrk = ConvertToBool($BondRates_list->IsSubcontract->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_IsSubcontract" name="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" id="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_318476" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->IsSubcontract->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_318476"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_IsSubcontract" name="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" id="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_889710" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->IsSubcontract->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_889710"></label>
 </div>
 </span>
 <input type="hidden" data-table="BondRates" data-field="x_IsSubcontract" name="o<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" id="o<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" value="<?php echo HtmlEncode($BondRates_list->IsSubcontract->OldValue) ?>">
@@ -423,8 +423,8 @@ $selwrk = ConvertToBool($BondRates_list->IsSubcontract->CurrentValue) ? " checke
 $selwrk = ConvertToBool($BondRates_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_ActiveFlag" name="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_264858" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_264858"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_ActiveFlag" name="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_111887" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_111887"></label>
 </div>
 </span>
 <input type="hidden" data-table="BondRates" data-field="x_ActiveFlag" name="o<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($BondRates_list->ActiveFlag->OldValue) ?>">
@@ -683,8 +683,8 @@ $BondRates_list->ListOptions->render("body", "left", $BondRates_list->RowCount);
 $selwrk = ConvertToBool($BondRates_list->IsSubcontract->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_IsSubcontract" name="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" id="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_462309" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->IsSubcontract->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_462309"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_IsSubcontract" name="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" id="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_678335" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->IsSubcontract->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_678335"></label>
 </div>
 </span>
 <input type="hidden" data-table="BondRates" data-field="x_IsSubcontract" name="o<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" id="o<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" value="<?php echo HtmlEncode($BondRates_list->IsSubcontract->OldValue) ?>">
@@ -695,8 +695,8 @@ $selwrk = ConvertToBool($BondRates_list->IsSubcontract->CurrentValue) ? " checke
 $selwrk = ConvertToBool($BondRates_list->IsSubcontract->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_IsSubcontract" name="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" id="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_923027" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->IsSubcontract->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_923027"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_IsSubcontract" name="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" id="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_822637" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->IsSubcontract->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_822637"></label>
 </div>
 </span>
 <?php } ?>
@@ -715,8 +715,8 @@ $selwrk = ConvertToBool($BondRates_list->IsSubcontract->CurrentValue) ? " checke
 $selwrk = ConvertToBool($BondRates_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_ActiveFlag" name="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_396172" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_396172"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_ActiveFlag" name="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_336378" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_336378"></label>
 </div>
 </span>
 <input type="hidden" data-table="BondRates" data-field="x_ActiveFlag" name="o<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($BondRates_list->ActiveFlag->OldValue) ?>">
@@ -727,8 +727,8 @@ $selwrk = ConvertToBool($BondRates_list->ActiveFlag->CurrentValue) ? " checked" 
 $selwrk = ConvertToBool($BondRates_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_ActiveFlag" name="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_668123" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_668123"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_ActiveFlag" name="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_120270" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_120270"></label>
 </div>
 </span>
 <?php } ?>
@@ -837,8 +837,8 @@ $BondRates_list->ListOptions->render("body", "left", $BondRates_list->RowIndex);
 $selwrk = ConvertToBool($BondRates_list->IsSubcontract->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_IsSubcontract" name="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" id="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_598341" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->IsSubcontract->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_598341"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_IsSubcontract" name="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" id="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_826894" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->IsSubcontract->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]_826894"></label>
 </div>
 </span>
 <input type="hidden" data-table="BondRates" data-field="x_IsSubcontract" name="o<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" id="o<?php echo $BondRates_list->RowIndex ?>_IsSubcontract[]" value="<?php echo HtmlEncode($BondRates_list->IsSubcontract->OldValue) ?>">
@@ -851,8 +851,8 @@ $selwrk = ConvertToBool($BondRates_list->IsSubcontract->CurrentValue) ? " checke
 $selwrk = ConvertToBool($BondRates_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_ActiveFlag" name="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_249805" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_249805"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BondRates" data-field="x_ActiveFlag" name="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_745260" value="1"<?php echo $selwrk ?><?php echo $BondRates_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]_745260"></label>
 </div>
 </span>
 <input type="hidden" data-table="BondRates" data-field="x_ActiveFlag" name="o<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $BondRates_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($BondRates_list->ActiveFlag->OldValue) ?>">

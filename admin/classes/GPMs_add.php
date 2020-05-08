@@ -811,7 +811,8 @@ class GPMs_add extends GPMs
 		$this->GPM_Idn->OldValue = $this->GPM_Idn->CurrentValue;
 		$this->Name->CurrentValue = "NULL";
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

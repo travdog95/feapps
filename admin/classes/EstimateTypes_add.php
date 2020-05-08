@@ -814,7 +814,8 @@ class EstimateTypes_add extends EstimateTypes
 		$this->Name->OldValue = $this->Name->CurrentValue;
 		$this->Rank->CurrentValue = 0;
 		$this->Department_Idn->CurrentValue = 1;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

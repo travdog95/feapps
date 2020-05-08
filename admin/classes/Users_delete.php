@@ -577,6 +577,7 @@ class Users_delete extends Users
 		$this->Password->Visible = FALSE;
 		$this->IsContractor->setVisibility();
 		$this->IsAdmin->setVisibility();
+		$this->ReadOnly->setVisibility();
 		$this->ActiveFlag->setVisibility();
 		$this->hideFieldsForAddEdit();
 
@@ -733,6 +734,7 @@ class Users_delete extends Users
 		$this->Password->setDbValue($row['Password']);
 		$this->IsContractor->setDbValue((ConvertToBool($row['IsContractor']) ? "1" : "0"));
 		$this->IsAdmin->setDbValue((ConvertToBool($row['IsAdmin']) ? "1" : "0"));
+		$this->ReadOnly->setDbValue((ConvertToBool($row['ReadOnly']) ? "1" : "0"));
 		$this->ActiveFlag->setDbValue((ConvertToBool($row['ActiveFlag']) ? "1" : "0"));
 	}
 
@@ -749,6 +751,7 @@ class Users_delete extends Users
 		$row['Password'] = NULL;
 		$row['IsContractor'] = NULL;
 		$row['IsAdmin'] = NULL;
+		$row['ReadOnly'] = NULL;
 		$row['ActiveFlag'] = NULL;
 		return $row;
 	}
@@ -773,6 +776,7 @@ class Users_delete extends Users
 		// Password
 		// IsContractor
 		// IsAdmin
+		// ReadOnly
 		// ActiveFlag
 
 		if ($this->RowType == ROWTYPE_VIEW) { // View row
@@ -839,6 +843,14 @@ class Users_delete extends Users
 			}
 			$this->IsAdmin->ViewCustomAttributes = "";
 
+			// ReadOnly
+			if (ConvertToBool($this->ReadOnly->CurrentValue)) {
+				$this->ReadOnly->ViewValue = $this->ReadOnly->tagCaption(1) != "" ? $this->ReadOnly->tagCaption(1) : "Yes";
+			} else {
+				$this->ReadOnly->ViewValue = $this->ReadOnly->tagCaption(2) != "" ? $this->ReadOnly->tagCaption(2) : "No";
+			}
+			$this->ReadOnly->ViewCustomAttributes = "";
+
 			// ActiveFlag
 			if (ConvertToBool($this->ActiveFlag->CurrentValue)) {
 				$this->ActiveFlag->ViewValue = $this->ActiveFlag->tagCaption(1) != "" ? $this->ActiveFlag->tagCaption(1) : "Yes";
@@ -886,6 +898,11 @@ class Users_delete extends Users
 			$this->IsAdmin->LinkCustomAttributes = "";
 			$this->IsAdmin->HrefValue = "";
 			$this->IsAdmin->TooltipValue = "";
+
+			// ReadOnly
+			$this->ReadOnly->LinkCustomAttributes = "";
+			$this->ReadOnly->HrefValue = "";
+			$this->ReadOnly->TooltipValue = "";
 
 			// ActiveFlag
 			$this->ActiveFlag->LinkCustomAttributes = "";
@@ -1018,6 +1035,8 @@ class Users_delete extends Users
 				case "x_IsContractor":
 					break;
 				case "x_IsAdmin":
+					break;
+				case "x_ReadOnly":
 					break;
 				case "x_ActiveFlag":
 					break;

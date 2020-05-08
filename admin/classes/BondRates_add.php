@@ -819,7 +819,8 @@ class BondRates_add extends BondRates
 		$this->Rate->CurrentValue = 0;
 		$this->Rank->CurrentValue = 0;
 		$this->IsSubcontract->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

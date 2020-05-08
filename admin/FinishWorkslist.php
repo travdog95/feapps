@@ -383,8 +383,8 @@ $FinishWorks_list->ListOptions->render("body", "left", $FinishWorks_list->RowCou
 $selwrk = ConvertToBool($FinishWorks_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FinishWorks" data-field="x_ActiveFlag" name="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_363865" value="1"<?php echo $selwrk ?><?php echo $FinishWorks_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_363865"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FinishWorks" data-field="x_ActiveFlag" name="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_105385" value="1"<?php echo $selwrk ?><?php echo $FinishWorks_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_105385"></label>
 </div>
 </span>
 <input type="hidden" data-table="FinishWorks" data-field="x_ActiveFlag" name="o<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($FinishWorks_list->ActiveFlag->OldValue) ?>">
@@ -603,8 +603,8 @@ $FinishWorks_list->ListOptions->render("body", "left", $FinishWorks_list->RowCou
 $selwrk = ConvertToBool($FinishWorks_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FinishWorks" data-field="x_ActiveFlag" name="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_783399" value="1"<?php echo $selwrk ?><?php echo $FinishWorks_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_783399"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FinishWorks" data-field="x_ActiveFlag" name="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_106831" value="1"<?php echo $selwrk ?><?php echo $FinishWorks_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_106831"></label>
 </div>
 </span>
 <input type="hidden" data-table="FinishWorks" data-field="x_ActiveFlag" name="o<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($FinishWorks_list->ActiveFlag->OldValue) ?>">
@@ -615,8 +615,8 @@ $selwrk = ConvertToBool($FinishWorks_list->ActiveFlag->CurrentValue) ? " checked
 $selwrk = ConvertToBool($FinishWorks_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FinishWorks" data-field="x_ActiveFlag" name="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_326410" value="1"<?php echo $selwrk ?><?php echo $FinishWorks_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_326410"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FinishWorks" data-field="x_ActiveFlag" name="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_432151" value="1"<?php echo $selwrk ?><?php echo $FinishWorks_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_432151"></label>
 </div>
 </span>
 <?php } ?>
@@ -709,8 +709,8 @@ $FinishWorks_list->ListOptions->render("body", "left", $FinishWorks_list->RowInd
 $selwrk = ConvertToBool($FinishWorks_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FinishWorks" data-field="x_ActiveFlag" name="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_248360" value="1"<?php echo $selwrk ?><?php echo $FinishWorks_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_248360"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FinishWorks" data-field="x_ActiveFlag" name="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_464906" value="1"<?php echo $selwrk ?><?php echo $FinishWorks_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]_464906"></label>
 </div>
 </span>
 <input type="hidden" data-table="FinishWorks" data-field="x_ActiveFlag" name="o<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $FinishWorks_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($FinishWorks_list->ActiveFlag->OldValue) ?>">

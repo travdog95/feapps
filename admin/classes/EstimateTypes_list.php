@@ -2358,7 +2358,7 @@ class EstimateTypes_list extends EstimateTypes
 		$this->Rank->OldValue = $this->Rank->CurrentValue;
 		$this->Department_Idn->CurrentValue = 1;
 		$this->Department_Idn->OldValue = $this->Department_Idn->CurrentValue;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
 		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 

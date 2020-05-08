@@ -383,8 +383,8 @@ $EstimateTypes_list->ListOptions->render("body", "left", $EstimateTypes_list->Ro
 $selwrk = ConvertToBool($EstimateTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="EstimateTypes" data-field="x_ActiveFlag" name="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_435019" value="1"<?php echo $selwrk ?><?php echo $EstimateTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_435019"></label>
+	<input type="checkbox" class="custom-control-input" data-table="EstimateTypes" data-field="x_ActiveFlag" name="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_705494" value="1"<?php echo $selwrk ?><?php echo $EstimateTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_705494"></label>
 </div>
 </span>
 <input type="hidden" data-table="EstimateTypes" data-field="x_ActiveFlag" name="o<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($EstimateTypes_list->ActiveFlag->OldValue) ?>">
@@ -603,8 +603,8 @@ $EstimateTypes_list->ListOptions->render("body", "left", $EstimateTypes_list->Ro
 $selwrk = ConvertToBool($EstimateTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="EstimateTypes" data-field="x_ActiveFlag" name="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_485561" value="1"<?php echo $selwrk ?><?php echo $EstimateTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_485561"></label>
+	<input type="checkbox" class="custom-control-input" data-table="EstimateTypes" data-field="x_ActiveFlag" name="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_442696" value="1"<?php echo $selwrk ?><?php echo $EstimateTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_442696"></label>
 </div>
 </span>
 <input type="hidden" data-table="EstimateTypes" data-field="x_ActiveFlag" name="o<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($EstimateTypes_list->ActiveFlag->OldValue) ?>">
@@ -615,8 +615,8 @@ $selwrk = ConvertToBool($EstimateTypes_list->ActiveFlag->CurrentValue) ? " check
 $selwrk = ConvertToBool($EstimateTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="EstimateTypes" data-field="x_ActiveFlag" name="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_492306" value="1"<?php echo $selwrk ?><?php echo $EstimateTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_492306"></label>
+	<input type="checkbox" class="custom-control-input" data-table="EstimateTypes" data-field="x_ActiveFlag" name="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_964506" value="1"<?php echo $selwrk ?><?php echo $EstimateTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_964506"></label>
 </div>
 </span>
 <?php } ?>
@@ -709,8 +709,8 @@ $EstimateTypes_list->ListOptions->render("body", "left", $EstimateTypes_list->Ro
 $selwrk = ConvertToBool($EstimateTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="EstimateTypes" data-field="x_ActiveFlag" name="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_738627" value="1"<?php echo $selwrk ?><?php echo $EstimateTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_738627"></label>
+	<input type="checkbox" class="custom-control-input" data-table="EstimateTypes" data-field="x_ActiveFlag" name="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_954959" value="1"<?php echo $selwrk ?><?php echo $EstimateTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]_954959"></label>
 </div>
 </span>
 <input type="hidden" data-table="EstimateTypes" data-field="x_ActiveFlag" name="o<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $EstimateTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($EstimateTypes_list->ActiveFlag->OldValue) ?>">

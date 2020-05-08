@@ -363,8 +363,8 @@ $ControlValves_list->ListOptions->render("body", "left", $ControlValves_list->Ro
 $selwrk = ConvertToBool($ControlValves_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ControlValves" data-field="x_ActiveFlag" name="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_562033" value="1"<?php echo $selwrk ?><?php echo $ControlValves_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_562033"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ControlValves" data-field="x_ActiveFlag" name="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_112276" value="1"<?php echo $selwrk ?><?php echo $ControlValves_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_112276"></label>
 </div>
 </span>
 <input type="hidden" data-table="ControlValves" data-field="x_ActiveFlag" name="o<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ControlValves_list->ActiveFlag->OldValue) ?>">
@@ -563,8 +563,8 @@ $ControlValves_list->ListOptions->render("body", "left", $ControlValves_list->Ro
 $selwrk = ConvertToBool($ControlValves_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ControlValves" data-field="x_ActiveFlag" name="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_744407" value="1"<?php echo $selwrk ?><?php echo $ControlValves_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_744407"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ControlValves" data-field="x_ActiveFlag" name="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_455805" value="1"<?php echo $selwrk ?><?php echo $ControlValves_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_455805"></label>
 </div>
 </span>
 <input type="hidden" data-table="ControlValves" data-field="x_ActiveFlag" name="o<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ControlValves_list->ActiveFlag->OldValue) ?>">
@@ -575,8 +575,8 @@ $selwrk = ConvertToBool($ControlValves_list->ActiveFlag->CurrentValue) ? " check
 $selwrk = ConvertToBool($ControlValves_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ControlValves" data-field="x_ActiveFlag" name="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_448893" value="1"<?php echo $selwrk ?><?php echo $ControlValves_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_448893"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ControlValves" data-field="x_ActiveFlag" name="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_161792" value="1"<?php echo $selwrk ?><?php echo $ControlValves_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_161792"></label>
 </div>
 </span>
 <?php } ?>
@@ -663,8 +663,8 @@ $ControlValves_list->ListOptions->render("body", "left", $ControlValves_list->Ro
 $selwrk = ConvertToBool($ControlValves_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ControlValves" data-field="x_ActiveFlag" name="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_931591" value="1"<?php echo $selwrk ?><?php echo $ControlValves_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_931591"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ControlValves" data-field="x_ActiveFlag" name="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_457000" value="1"<?php echo $selwrk ?><?php echo $ControlValves_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]_457000"></label>
 </div>
 </span>
 <input type="hidden" data-table="ControlValves" data-field="x_ActiveFlag" name="o<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ControlValves_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ControlValves_list->ActiveFlag->OldValue) ?>">

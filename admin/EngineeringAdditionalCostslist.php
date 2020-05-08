@@ -465,8 +465,8 @@ $EngineeringAdditionalCosts_list->ListOptions->render("body", "left", $Engineeri
 $selwrk = ConvertToBool($EngineeringAdditionalCosts_list->DefaultFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" id="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_302553" value="1"<?php echo $selwrk ?><?php echo $EngineeringAdditionalCosts_list->DefaultFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_302553"></label>
+	<input type="checkbox" class="custom-control-input" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" id="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_288005" value="1"<?php echo $selwrk ?><?php echo $EngineeringAdditionalCosts_list->DefaultFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_288005"></label>
 </div>
 </span>
 <input type="hidden" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="o<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" id="o<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" value="<?php echo HtmlEncode($EngineeringAdditionalCosts_list->DefaultFlag->OldValue) ?>">
@@ -755,8 +755,8 @@ $EngineeringAdditionalCosts_list->ListOptions->render("body", "left", $Engineeri
 $selwrk = ConvertToBool($EngineeringAdditionalCosts_list->DefaultFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" id="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_924107" value="1"<?php echo $selwrk ?><?php echo $EngineeringAdditionalCosts_list->DefaultFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_924107"></label>
+	<input type="checkbox" class="custom-control-input" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" id="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_534839" value="1"<?php echo $selwrk ?><?php echo $EngineeringAdditionalCosts_list->DefaultFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_534839"></label>
 </div>
 </span>
 <input type="hidden" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="o<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" id="o<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" value="<?php echo HtmlEncode($EngineeringAdditionalCosts_list->DefaultFlag->OldValue) ?>">
@@ -767,8 +767,8 @@ $selwrk = ConvertToBool($EngineeringAdditionalCosts_list->DefaultFlag->CurrentVa
 $selwrk = ConvertToBool($EngineeringAdditionalCosts_list->DefaultFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" id="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_591737" value="1"<?php echo $selwrk ?><?php echo $EngineeringAdditionalCosts_list->DefaultFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_591737"></label>
+	<input type="checkbox" class="custom-control-input" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" id="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_793067" value="1"<?php echo $selwrk ?><?php echo $EngineeringAdditionalCosts_list->DefaultFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_793067"></label>
 </div>
 </span>
 <?php } ?>
@@ -890,8 +890,8 @@ $EngineeringAdditionalCosts_list->ListOptions->render("body", "left", $Engineeri
 $selwrk = ConvertToBool($EngineeringAdditionalCosts_list->DefaultFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" id="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_589328" value="1"<?php echo $selwrk ?><?php echo $EngineeringAdditionalCosts_list->DefaultFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_589328"></label>
+	<input type="checkbox" class="custom-control-input" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" id="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_572301" value="1"<?php echo $selwrk ?><?php echo $EngineeringAdditionalCosts_list->DefaultFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]_572301"></label>
 </div>
 </span>
 <input type="hidden" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="o<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" id="o<?php echo $EngineeringAdditionalCosts_list->RowIndex ?>_DefaultFlag[]" value="<?php echo HtmlEncode($EngineeringAdditionalCosts_list->DefaultFlag->OldValue) ?>">

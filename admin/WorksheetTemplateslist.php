@@ -302,8 +302,8 @@ $WorksheetTemplates_list->ListOptions->render("body", "left", $WorksheetTemplate
 $selwrk = ConvertToBool($WorksheetTemplates_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_208072" value="1"<?php echo $selwrk ?><?php echo $WorksheetTemplates_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_208072"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_622637" value="1"<?php echo $selwrk ?><?php echo $WorksheetTemplates_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_622637"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="o<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($WorksheetTemplates_list->ActiveFlag->OldValue) ?>">
@@ -501,8 +501,8 @@ $WorksheetTemplates_list->ListOptions->render("body", "left", $WorksheetTemplate
 $selwrk = ConvertToBool($WorksheetTemplates_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_185819" value="1"<?php echo $selwrk ?><?php echo $WorksheetTemplates_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_185819"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_104341" value="1"<?php echo $selwrk ?><?php echo $WorksheetTemplates_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_104341"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="o<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($WorksheetTemplates_list->ActiveFlag->OldValue) ?>">
@@ -513,8 +513,8 @@ $selwrk = ConvertToBool($WorksheetTemplates_list->ActiveFlag->CurrentValue) ? " 
 $selwrk = ConvertToBool($WorksheetTemplates_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_895235" value="1"<?php echo $selwrk ?><?php echo $WorksheetTemplates_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_895235"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_814260" value="1"<?php echo $selwrk ?><?php echo $WorksheetTemplates_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_814260"></label>
 </div>
 </span>
 <?php } ?>
@@ -603,8 +603,8 @@ $WorksheetTemplates_list->ListOptions->render("body", "left", $WorksheetTemplate
 $selwrk = ConvertToBool($WorksheetTemplates_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_863853" value="1"<?php echo $selwrk ?><?php echo $WorksheetTemplates_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_863853"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_337049" value="1"<?php echo $selwrk ?><?php echo $WorksheetTemplates_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]_337049"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="o<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $WorksheetTemplates_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($WorksheetTemplates_list->ActiveFlag->OldValue) ?>">

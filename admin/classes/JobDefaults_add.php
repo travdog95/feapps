@@ -821,12 +821,14 @@ class JobDefaults_add extends JobDefaults
 		$this->JobDefaultType_Idn->CurrentValue = 0;
 		$this->Department_Idn->CurrentValue = 0;
 		$this->ParentJobDefault_Idn->CurrentValue = 0;
-		$this->Name->CurrentValue = "NULL";
+		$this->Name->CurrentValue = NULL;
+		$this->Name->OldValue = $this->Name->CurrentValue;
 		$this->NumericValue->CurrentValue = 0;
 		$this->AlphaValue->CurrentValue = "NULL";
 		$this->LoadFromJobDefault_Idn->CurrentValue = 0;
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

@@ -2436,7 +2436,7 @@ class JobDefaults_list extends JobDefaults
 		$this->Department_Idn->OldValue = $this->Department_Idn->CurrentValue;
 		$this->ParentJobDefault_Idn->CurrentValue = 0;
 		$this->ParentJobDefault_Idn->OldValue = $this->ParentJobDefault_Idn->CurrentValue;
-		$this->Name->CurrentValue = "NULL";
+		$this->Name->CurrentValue = NULL;
 		$this->Name->OldValue = $this->Name->CurrentValue;
 		$this->NumericValue->CurrentValue = 0;
 		$this->NumericValue->OldValue = $this->NumericValue->CurrentValue;
@@ -2446,7 +2446,7 @@ class JobDefaults_list extends JobDefaults
 		$this->LoadFromJobDefault_Idn->OldValue = $this->LoadFromJobDefault_Idn->CurrentValue;
 		$this->Rank->CurrentValue = 0;
 		$this->Rank->OldValue = $this->Rank->CurrentValue;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
 		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 

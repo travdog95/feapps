@@ -357,8 +357,8 @@ $ThreadedFittingTypes_list->ListOptions->render("body", "left", $ThreadedFitting
 $selwrk = ConvertToBool($ThreadedFittingTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ThreadedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_555685" value="1"<?php echo $selwrk ?><?php echo $ThreadedFittingTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_555685"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ThreadedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_756442" value="1"<?php echo $selwrk ?><?php echo $ThreadedFittingTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_756442"></label>
 </div>
 </span>
 <input type="hidden" data-table="ThreadedFittingTypes" data-field="x_ActiveFlag" name="o<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ThreadedFittingTypes_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $ThreadedFittingTypes_list->ListOptions->render("body", "left", $ThreadedFitting
 $selwrk = ConvertToBool($ThreadedFittingTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ThreadedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_753717" value="1"<?php echo $selwrk ?><?php echo $ThreadedFittingTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_753717"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ThreadedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_807284" value="1"<?php echo $selwrk ?><?php echo $ThreadedFittingTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_807284"></label>
 </div>
 </span>
 <input type="hidden" data-table="ThreadedFittingTypes" data-field="x_ActiveFlag" name="o<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ThreadedFittingTypes_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($ThreadedFittingTypes_list->ActiveFlag->CurrentValue) ? 
 $selwrk = ConvertToBool($ThreadedFittingTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ThreadedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_313688" value="1"<?php echo $selwrk ?><?php echo $ThreadedFittingTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_313688"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ThreadedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_114512" value="1"<?php echo $selwrk ?><?php echo $ThreadedFittingTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_114512"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $ThreadedFittingTypes_list->ListOptions->render("body", "left", $ThreadedFitting
 $selwrk = ConvertToBool($ThreadedFittingTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ThreadedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_240105" value="1"<?php echo $selwrk ?><?php echo $ThreadedFittingTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_240105"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ThreadedFittingTypes" data-field="x_ActiveFlag" name="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_420228" value="1"<?php echo $selwrk ?><?php echo $ThreadedFittingTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]_420228"></label>
 </div>
 </span>
 <input type="hidden" data-table="ThreadedFittingTypes" data-field="x_ActiveFlag" name="o<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ThreadedFittingTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ThreadedFittingTypes_list->ActiveFlag->OldValue) ?>">

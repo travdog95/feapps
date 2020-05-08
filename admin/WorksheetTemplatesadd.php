@@ -167,8 +167,8 @@ $WorksheetTemplates_add->showMessage();
 $selwrk = ConvertToBool($WorksheetTemplates_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_373184" value="1"<?php echo $selwrk ?><?php echo $WorksheetTemplates_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_373184"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetTemplates" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_460859" value="1"<?php echo $selwrk ?><?php echo $WorksheetTemplates_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_460859"></label>
 </div>
 </span>
 <?php echo $WorksheetTemplates_add->ActiveFlag->CustomMsg ?></div></div>

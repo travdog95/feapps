@@ -839,7 +839,8 @@ class WorksheetMasterCategories_add extends WorksheetMasterCategories
 		$this->AutoLoadFlag->CurrentValue = 0;
 		$this->LoadFlag->CurrentValue = 0;
 		$this->AddMiscFlag->CurrentValue = 0;
-		$this->ChildWorksheetMaster_Idn->CurrentValue = 0;
+		$this->ChildWorksheetMaster_Idn->CurrentValue = NULL;
+		$this->ChildWorksheetMaster_Idn->OldValue = $this->ChildWorksheetMaster_Idn->CurrentValue;
 	}
 
 	// Load form values

@@ -178,8 +178,8 @@ $HangerTypes_edit->showMessage();
 $selwrk = ConvertToBool($HangerTypes_edit->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="HangerTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_438611" value="1"<?php echo $selwrk ?><?php echo $HangerTypes_edit->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_438611"></label>
+	<input type="checkbox" class="custom-control-input" data-table="HangerTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_359820" value="1"<?php echo $selwrk ?><?php echo $HangerTypes_edit->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_359820"></label>
 </div>
 </span>
 <?php echo $HangerTypes_edit->ActiveFlag->CustomMsg ?></div></div>

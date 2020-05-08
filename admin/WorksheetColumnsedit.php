@@ -178,8 +178,8 @@ $WorksheetColumns_edit->showMessage();
 $selwrk = ConvertToBool($WorksheetColumns_edit->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_193345" value="1"<?php echo $selwrk ?><?php echo $WorksheetColumns_edit->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_193345"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_155547" value="1"<?php echo $selwrk ?><?php echo $WorksheetColumns_edit->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_155547"></label>
 </div>
 </span>
 <?php echo $WorksheetColumns_edit->ActiveFlag->CustomMsg ?></div></div>

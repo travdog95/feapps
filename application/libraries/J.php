@@ -124,6 +124,7 @@ class J
                     "price_update_datetime" => $job_price_update_datetime,
                     "formated_price_update_datetime" => date_format(date_create($job_price_update_datetime), "M j, Y g:i:s A"),
                     "prices_outdated" => ($job_price_update_datetime < get_latest_price_update("datetime")),
+                    "total_sqft" => $job['TotalSqft'],
 			    );
 
 			    //Load labor rates
@@ -180,6 +181,7 @@ class J
         //Calculate Field and Shop hours
         $this->_calc_shop_hours();
         $this->_calc_field_hours();
+        $this->_calc_eng_hours();
 
         //put labor hours in array for recap rows that need it
         $labor_hours = array(
@@ -230,7 +232,7 @@ class J
      *
      * Calculates shop hours by job
      *
-     * @access  public
+     * @access  private
      * @return  void
      */
     private function _calc_shop_hours()
@@ -245,6 +247,22 @@ class J
                 $this->shop_hours += ceil($recap_row->shop_hours);
             }
         }
+    }
+
+    /**
+     * _calc_eng_hours
+     *
+     * Calculates shop hours by job
+     *
+     * @access  private
+     * @return  void
+     */
+    private function _calc_eng_hours()
+    {
+        $recap_row_idn = ($this->job['department_idn'] == 1) ? 31 : 7;
+
+        //Total engineer hours
+        $this->engineer_hours = $this->RRs[$recap_row_idn]->engineer_hours;
     }
 
     /**

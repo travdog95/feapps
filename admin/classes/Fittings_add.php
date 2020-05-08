@@ -822,7 +822,8 @@ class Fittings_add extends Fittings
 		$this->WorksheetCategory_Idn->CurrentValue = 0;
 		$this->PartOfSetFlag->CurrentValue = 0;
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

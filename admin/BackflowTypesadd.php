@@ -174,8 +174,8 @@ $BackflowTypes_add->showMessage();
 $selwrk = ConvertToBool($BackflowTypes_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BackflowTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_969263" value="1"<?php echo $selwrk ?><?php echo $BackflowTypes_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_969263"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BackflowTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_962505" value="1"<?php echo $selwrk ?><?php echo $BackflowTypes_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_962505"></label>
 </div>
 </span>
 <?php echo $BackflowTypes_add->ActiveFlag->CustomMsg ?></div></div>

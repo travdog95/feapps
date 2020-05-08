@@ -174,8 +174,8 @@ $PipeLengths_add->showMessage();
 $selwrk = ConvertToBool($PipeLengths_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeLengths" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_892344" value="1"<?php echo $selwrk ?><?php echo $PipeLengths_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_892344"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeLengths" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_431482" value="1"<?php echo $selwrk ?><?php echo $PipeLengths_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_431482"></label>
 </div>
 </span>
 <?php echo $PipeLengths_add->ActiveFlag->CustomMsg ?></div></div>

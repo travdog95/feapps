@@ -357,8 +357,8 @@ $PressureTypes_list->ListOptions->render("body", "left", $PressureTypes_list->Ro
 $selwrk = ConvertToBool($PressureTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PressureTypes" data-field="x_ActiveFlag" name="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_490710" value="1"<?php echo $selwrk ?><?php echo $PressureTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_490710"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PressureTypes" data-field="x_ActiveFlag" name="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_412546" value="1"<?php echo $selwrk ?><?php echo $PressureTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_412546"></label>
 </div>
 </span>
 <input type="hidden" data-table="PressureTypes" data-field="x_ActiveFlag" name="o<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PressureTypes_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $PressureTypes_list->ListOptions->render("body", "left", $PressureTypes_list->Ro
 $selwrk = ConvertToBool($PressureTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PressureTypes" data-field="x_ActiveFlag" name="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_626477" value="1"<?php echo $selwrk ?><?php echo $PressureTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_626477"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PressureTypes" data-field="x_ActiveFlag" name="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_283680" value="1"<?php echo $selwrk ?><?php echo $PressureTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_283680"></label>
 </div>
 </span>
 <input type="hidden" data-table="PressureTypes" data-field="x_ActiveFlag" name="o<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PressureTypes_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($PressureTypes_list->ActiveFlag->CurrentValue) ? " check
 $selwrk = ConvertToBool($PressureTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PressureTypes" data-field="x_ActiveFlag" name="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_209731" value="1"<?php echo $selwrk ?><?php echo $PressureTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_209731"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PressureTypes" data-field="x_ActiveFlag" name="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_855033" value="1"<?php echo $selwrk ?><?php echo $PressureTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_855033"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $PressureTypes_list->ListOptions->render("body", "left", $PressureTypes_list->Ro
 $selwrk = ConvertToBool($PressureTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PressureTypes" data-field="x_ActiveFlag" name="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_239713" value="1"<?php echo $selwrk ?><?php echo $PressureTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_239713"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PressureTypes" data-field="x_ActiveFlag" name="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_397452" value="1"<?php echo $selwrk ?><?php echo $PressureTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]_397452"></label>
 </div>
 </span>
 <input type="hidden" data-table="PressureTypes" data-field="x_ActiveFlag" name="o<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PressureTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PressureTypes_list->ActiveFlag->OldValue) ?>">

@@ -1536,7 +1536,7 @@ class WorksheetMasterCategories_grid extends WorksheetMasterCategories
 		$this->LoadFlag->OldValue = $this->LoadFlag->CurrentValue;
 		$this->AddMiscFlag->CurrentValue = 0;
 		$this->AddMiscFlag->OldValue = $this->AddMiscFlag->CurrentValue;
-		$this->ChildWorksheetMaster_Idn->CurrentValue = 0;
+		$this->ChildWorksheetMaster_Idn->CurrentValue = NULL;
 		$this->ChildWorksheetMaster_Idn->OldValue = $this->ChildWorksheetMaster_Idn->CurrentValue;
 	}
 

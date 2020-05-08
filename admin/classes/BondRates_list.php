@@ -2084,7 +2084,7 @@ class BondRates_list extends BondRates
 		$this->Rank->OldValue = $this->Rank->CurrentValue;
 		$this->IsSubcontract->CurrentValue = 0;
 		$this->IsSubcontract->OldValue = $this->IsSubcontract->CurrentValue;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
 		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 

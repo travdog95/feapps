@@ -357,8 +357,8 @@ $WorksheetColumns_list->ListOptions->render("body", "left", $WorksheetColumns_li
 $selwrk = ConvertToBool($WorksheetColumns_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_919792" value="1"<?php echo $selwrk ?><?php echo $WorksheetColumns_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_919792"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_250308" value="1"<?php echo $selwrk ?><?php echo $WorksheetColumns_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_250308"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="o<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($WorksheetColumns_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $WorksheetColumns_list->ListOptions->render("body", "left", $WorksheetColumns_li
 $selwrk = ConvertToBool($WorksheetColumns_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_576722" value="1"<?php echo $selwrk ?><?php echo $WorksheetColumns_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_576722"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_435927" value="1"<?php echo $selwrk ?><?php echo $WorksheetColumns_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_435927"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="o<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($WorksheetColumns_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($WorksheetColumns_list->ActiveFlag->CurrentValue) ? " ch
 $selwrk = ConvertToBool($WorksheetColumns_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_385981" value="1"<?php echo $selwrk ?><?php echo $WorksheetColumns_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_385981"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_754232" value="1"<?php echo $selwrk ?><?php echo $WorksheetColumns_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_754232"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $WorksheetColumns_list->ListOptions->render("body", "left", $WorksheetColumns_li
 $selwrk = ConvertToBool($WorksheetColumns_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_975497" value="1"<?php echo $selwrk ?><?php echo $WorksheetColumns_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_975497"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_858439" value="1"<?php echo $selwrk ?><?php echo $WorksheetColumns_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]_858439"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetColumns" data-field="x_ActiveFlag" name="o<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $WorksheetColumns_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($WorksheetColumns_list->ActiveFlag->OldValue) ?>">

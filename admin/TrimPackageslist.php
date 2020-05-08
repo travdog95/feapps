@@ -357,8 +357,8 @@ $TrimPackages_list->ListOptions->render("body", "left", $TrimPackages_list->RowC
 $selwrk = ConvertToBool($TrimPackages_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="TrimPackages" data-field="x_ActiveFlag" name="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_599005" value="1"<?php echo $selwrk ?><?php echo $TrimPackages_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_599005"></label>
+	<input type="checkbox" class="custom-control-input" data-table="TrimPackages" data-field="x_ActiveFlag" name="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_877585" value="1"<?php echo $selwrk ?><?php echo $TrimPackages_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_877585"></label>
 </div>
 </span>
 <input type="hidden" data-table="TrimPackages" data-field="x_ActiveFlag" name="o<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($TrimPackages_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $TrimPackages_list->ListOptions->render("body", "left", $TrimPackages_list->RowC
 $selwrk = ConvertToBool($TrimPackages_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="TrimPackages" data-field="x_ActiveFlag" name="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_240681" value="1"<?php echo $selwrk ?><?php echo $TrimPackages_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_240681"></label>
+	<input type="checkbox" class="custom-control-input" data-table="TrimPackages" data-field="x_ActiveFlag" name="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_426559" value="1"<?php echo $selwrk ?><?php echo $TrimPackages_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_426559"></label>
 </div>
 </span>
 <input type="hidden" data-table="TrimPackages" data-field="x_ActiveFlag" name="o<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($TrimPackages_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($TrimPackages_list->ActiveFlag->CurrentValue) ? " checke
 $selwrk = ConvertToBool($TrimPackages_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="TrimPackages" data-field="x_ActiveFlag" name="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_485791" value="1"<?php echo $selwrk ?><?php echo $TrimPackages_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_485791"></label>
+	<input type="checkbox" class="custom-control-input" data-table="TrimPackages" data-field="x_ActiveFlag" name="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_685201" value="1"<?php echo $selwrk ?><?php echo $TrimPackages_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_685201"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $TrimPackages_list->ListOptions->render("body", "left", $TrimPackages_list->RowI
 $selwrk = ConvertToBool($TrimPackages_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="TrimPackages" data-field="x_ActiveFlag" name="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_292288" value="1"<?php echo $selwrk ?><?php echo $TrimPackages_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_292288"></label>
+	<input type="checkbox" class="custom-control-input" data-table="TrimPackages" data-field="x_ActiveFlag" name="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_851350" value="1"<?php echo $selwrk ?><?php echo $TrimPackages_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]_851350"></label>
 </div>
 </span>
 <input type="hidden" data-table="TrimPackages" data-field="x_ActiveFlag" name="o<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $TrimPackages_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($TrimPackages_list->ActiveFlag->OldValue) ?>">

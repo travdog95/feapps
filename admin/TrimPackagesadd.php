@@ -156,8 +156,8 @@ $TrimPackages_add->showMessage();
 $selwrk = ConvertToBool($TrimPackages_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="TrimPackages" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_253707" value="1"<?php echo $selwrk ?><?php echo $TrimPackages_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_253707"></label>
+	<input type="checkbox" class="custom-control-input" data-table="TrimPackages" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_868882" value="1"<?php echo $selwrk ?><?php echo $TrimPackages_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_868882"></label>
 </div>
 </span>
 <?php echo $TrimPackages_add->ActiveFlag->CustomMsg ?></div></div>

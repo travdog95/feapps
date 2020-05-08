@@ -357,8 +357,8 @@ $UndergroundValves_list->ListOptions->render("body", "left", $UndergroundValves_
 $selwrk = ConvertToBool($UndergroundValves_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="UndergroundValves" data-field="x_ActiveFlag" name="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_613119" value="1"<?php echo $selwrk ?><?php echo $UndergroundValves_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_613119"></label>
+	<input type="checkbox" class="custom-control-input" data-table="UndergroundValves" data-field="x_ActiveFlag" name="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_350544" value="1"<?php echo $selwrk ?><?php echo $UndergroundValves_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_350544"></label>
 </div>
 </span>
 <input type="hidden" data-table="UndergroundValves" data-field="x_ActiveFlag" name="o<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($UndergroundValves_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $UndergroundValves_list->ListOptions->render("body", "left", $UndergroundValves_
 $selwrk = ConvertToBool($UndergroundValves_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="UndergroundValves" data-field="x_ActiveFlag" name="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_151741" value="1"<?php echo $selwrk ?><?php echo $UndergroundValves_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_151741"></label>
+	<input type="checkbox" class="custom-control-input" data-table="UndergroundValves" data-field="x_ActiveFlag" name="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_719228" value="1"<?php echo $selwrk ?><?php echo $UndergroundValves_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_719228"></label>
 </div>
 </span>
 <input type="hidden" data-table="UndergroundValves" data-field="x_ActiveFlag" name="o<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($UndergroundValves_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($UndergroundValves_list->ActiveFlag->CurrentValue) ? " c
 $selwrk = ConvertToBool($UndergroundValves_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="UndergroundValves" data-field="x_ActiveFlag" name="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_993213" value="1"<?php echo $selwrk ?><?php echo $UndergroundValves_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_993213"></label>
+	<input type="checkbox" class="custom-control-input" data-table="UndergroundValves" data-field="x_ActiveFlag" name="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_828123" value="1"<?php echo $selwrk ?><?php echo $UndergroundValves_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_828123"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $UndergroundValves_list->ListOptions->render("body", "left", $UndergroundValves_
 $selwrk = ConvertToBool($UndergroundValves_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="UndergroundValves" data-field="x_ActiveFlag" name="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_265108" value="1"<?php echo $selwrk ?><?php echo $UndergroundValves_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_265108"></label>
+	<input type="checkbox" class="custom-control-input" data-table="UndergroundValves" data-field="x_ActiveFlag" name="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_480496" value="1"<?php echo $selwrk ?><?php echo $UndergroundValves_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]_480496"></label>
 </div>
 </span>
 <input type="hidden" data-table="UndergroundValves" data-field="x_ActiveFlag" name="o<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $UndergroundValves_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($UndergroundValves_list->ActiveFlag->OldValue) ?>">

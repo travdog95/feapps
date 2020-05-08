@@ -2413,7 +2413,7 @@ class Fittings_list extends Fittings
 		$this->PartOfSetFlag->OldValue = $this->PartOfSetFlag->CurrentValue;
 		$this->Rank->CurrentValue = 0;
 		$this->Rank->OldValue = $this->Rank->CurrentValue;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
 		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 

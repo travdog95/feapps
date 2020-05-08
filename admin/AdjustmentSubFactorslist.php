@@ -463,8 +463,8 @@ $AdjustmentSubFactors_list->ListOptions->render("body", "left", $AdjustmentSubFa
 $selwrk = ConvertToBool($AdjustmentSubFactors_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_419899" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_419899"></label>
+	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_477184" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_477184"></label>
 </div>
 </span>
 <input type="hidden" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="o<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($AdjustmentSubFactors_list->ActiveFlag->OldValue) ?>">
@@ -757,8 +757,8 @@ $AdjustmentSubFactors_list->ListOptions->render("body", "left", $AdjustmentSubFa
 $selwrk = ConvertToBool($AdjustmentSubFactors_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_900643" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_900643"></label>
+	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_623524" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_623524"></label>
 </div>
 </span>
 <input type="hidden" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="o<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($AdjustmentSubFactors_list->ActiveFlag->OldValue) ?>">
@@ -769,8 +769,8 @@ $selwrk = ConvertToBool($AdjustmentSubFactors_list->ActiveFlag->CurrentValue) ? 
 $selwrk = ConvertToBool($AdjustmentSubFactors_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_763442" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_763442"></label>
+	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_952291" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_952291"></label>
 </div>
 </span>
 <?php } ?>
@@ -896,8 +896,8 @@ $AdjustmentSubFactors_list->ListOptions->render("body", "left", $AdjustmentSubFa
 $selwrk = ConvertToBool($AdjustmentSubFactors_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_285308" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_285308"></label>
+	<input type="checkbox" class="custom-control-input" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_764529" value="1"<?php echo $selwrk ?><?php echo $AdjustmentSubFactors_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]_764529"></label>
 </div>
 </span>
 <input type="hidden" data-table="AdjustmentSubFactors" data-field="x_ActiveFlag" name="o<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $AdjustmentSubFactors_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($AdjustmentSubFactors_list->ActiveFlag->OldValue) ?>">

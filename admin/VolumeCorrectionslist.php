@@ -409,8 +409,8 @@ $VolumeCorrections_list->ListOptions->render("body", "left", $VolumeCorrections_
 $selwrk = ConvertToBool($VolumeCorrections_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_552744" value="1"<?php echo $selwrk ?><?php echo $VolumeCorrections_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_552744"></label>
+	<input type="checkbox" class="custom-control-input" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_822928" value="1"<?php echo $selwrk ?><?php echo $VolumeCorrections_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_822928"></label>
 </div>
 </span>
 <input type="hidden" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="o<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($VolumeCorrections_list->ActiveFlag->OldValue) ?>">
@@ -649,8 +649,8 @@ $VolumeCorrections_list->ListOptions->render("body", "left", $VolumeCorrections_
 $selwrk = ConvertToBool($VolumeCorrections_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_636644" value="1"<?php echo $selwrk ?><?php echo $VolumeCorrections_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_636644"></label>
+	<input type="checkbox" class="custom-control-input" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_715755" value="1"<?php echo $selwrk ?><?php echo $VolumeCorrections_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_715755"></label>
 </div>
 </span>
 <input type="hidden" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="o<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($VolumeCorrections_list->ActiveFlag->OldValue) ?>">
@@ -661,8 +661,8 @@ $selwrk = ConvertToBool($VolumeCorrections_list->ActiveFlag->CurrentValue) ? " c
 $selwrk = ConvertToBool($VolumeCorrections_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_911296" value="1"<?php echo $selwrk ?><?php echo $VolumeCorrections_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_911296"></label>
+	<input type="checkbox" class="custom-control-input" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_177604" value="1"<?php echo $selwrk ?><?php echo $VolumeCorrections_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_177604"></label>
 </div>
 </span>
 <?php } ?>
@@ -763,8 +763,8 @@ $VolumeCorrections_list->ListOptions->render("body", "left", $VolumeCorrections_
 $selwrk = ConvertToBool($VolumeCorrections_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_230009" value="1"<?php echo $selwrk ?><?php echo $VolumeCorrections_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_230009"></label>
+	<input type="checkbox" class="custom-control-input" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_777359" value="1"<?php echo $selwrk ?><?php echo $VolumeCorrections_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]_777359"></label>
 </div>
 </span>
 <input type="hidden" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="o<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $VolumeCorrections_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($VolumeCorrections_list->ActiveFlag->OldValue) ?>">

@@ -163,8 +163,8 @@ $FirePumpAttributes_add->showMessage();
 $selwrk = ConvertToBool($FirePumpAttributes_add->DefaultFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FirePumpAttributes" data-field="x_DefaultFlag" name="x_DefaultFlag[]" id="x_DefaultFlag[]_966386" value="1"<?php echo $selwrk ?><?php echo $FirePumpAttributes_add->DefaultFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DefaultFlag[]_966386"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FirePumpAttributes" data-field="x_DefaultFlag" name="x_DefaultFlag[]" id="x_DefaultFlag[]_935361" value="1"<?php echo $selwrk ?><?php echo $FirePumpAttributes_add->DefaultFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DefaultFlag[]_935361"></label>
 </div>
 </span>
 <?php echo $FirePumpAttributes_add->DefaultFlag->CustomMsg ?></div></div>
@@ -179,8 +179,8 @@ $selwrk = ConvertToBool($FirePumpAttributes_add->DefaultFlag->CurrentValue) ? " 
 $selwrk = ConvertToBool($FirePumpAttributes_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FirePumpAttributes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_404164" value="1"<?php echo $selwrk ?><?php echo $FirePumpAttributes_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_404164"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FirePumpAttributes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_229806" value="1"<?php echo $selwrk ?><?php echo $FirePumpAttributes_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_229806"></label>
 </div>
 </span>
 <?php echo $FirePumpAttributes_add->ActiveFlag->CustomMsg ?></div></div>

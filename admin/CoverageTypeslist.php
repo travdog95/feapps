@@ -380,8 +380,8 @@ $CoverageTypes_list->ListOptions->render("body", "left", $CoverageTypes_list->Ro
 $selwrk = ConvertToBool($CoverageTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="CoverageTypes" data-field="x_ActiveFlag" name="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_440390" value="1"<?php echo $selwrk ?><?php echo $CoverageTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_440390"></label>
+	<input type="checkbox" class="custom-control-input" data-table="CoverageTypes" data-field="x_ActiveFlag" name="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_803359" value="1"<?php echo $selwrk ?><?php echo $CoverageTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_803359"></label>
 </div>
 </span>
 <input type="hidden" data-table="CoverageTypes" data-field="x_ActiveFlag" name="o<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($CoverageTypes_list->ActiveFlag->OldValue) ?>">
@@ -600,8 +600,8 @@ $CoverageTypes_list->ListOptions->render("body", "left", $CoverageTypes_list->Ro
 $selwrk = ConvertToBool($CoverageTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="CoverageTypes" data-field="x_ActiveFlag" name="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_192881" value="1"<?php echo $selwrk ?><?php echo $CoverageTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_192881"></label>
+	<input type="checkbox" class="custom-control-input" data-table="CoverageTypes" data-field="x_ActiveFlag" name="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_201012" value="1"<?php echo $selwrk ?><?php echo $CoverageTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_201012"></label>
 </div>
 </span>
 <input type="hidden" data-table="CoverageTypes" data-field="x_ActiveFlag" name="o<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($CoverageTypes_list->ActiveFlag->OldValue) ?>">
@@ -612,8 +612,8 @@ $selwrk = ConvertToBool($CoverageTypes_list->ActiveFlag->CurrentValue) ? " check
 $selwrk = ConvertToBool($CoverageTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="CoverageTypes" data-field="x_ActiveFlag" name="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_259058" value="1"<?php echo $selwrk ?><?php echo $CoverageTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_259058"></label>
+	<input type="checkbox" class="custom-control-input" data-table="CoverageTypes" data-field="x_ActiveFlag" name="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_420469" value="1"<?php echo $selwrk ?><?php echo $CoverageTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_420469"></label>
 </div>
 </span>
 <?php } ?>
@@ -706,8 +706,8 @@ $CoverageTypes_list->ListOptions->render("body", "left", $CoverageTypes_list->Ro
 $selwrk = ConvertToBool($CoverageTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="CoverageTypes" data-field="x_ActiveFlag" name="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_567402" value="1"<?php echo $selwrk ?><?php echo $CoverageTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_567402"></label>
+	<input type="checkbox" class="custom-control-input" data-table="CoverageTypes" data-field="x_ActiveFlag" name="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_351820" value="1"<?php echo $selwrk ?><?php echo $CoverageTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]_351820"></label>
 </div>
 </span>
 <input type="hidden" data-table="CoverageTypes" data-field="x_ActiveFlag" name="o<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $CoverageTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($CoverageTypes_list->ActiveFlag->OldValue) ?>">

@@ -811,7 +811,8 @@ class CheckValves_add extends CheckValves
 		$this->CheckValve_Idn->OldValue = $this->CheckValve_Idn->CurrentValue;
 		$this->Name->CurrentValue = "NULL";
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

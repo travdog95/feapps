@@ -308,8 +308,8 @@ $WorksheetMasters_add->showMessage();
 $selwrk = ConvertToBool($WorksheetMasters_add->AllowMultiple->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="x_AllowMultiple[]" id="x_AllowMultiple[]_667663" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->AllowMultiple->editAttributes() ?>>
-	<label class="custom-control-label" for="x_AllowMultiple[]_667663"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="x_AllowMultiple[]" id="x_AllowMultiple[]_915078" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->AllowMultiple->editAttributes() ?>>
+	<label class="custom-control-label" for="x_AllowMultiple[]_915078"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->AllowMultiple->CustomMsg ?></div></div>
@@ -324,8 +324,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->AllowMultiple->CurrentValue) ? " 
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayAdjustmentFactors->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayAdjustmentFactors" name="x_DisplayAdjustmentFactors[]" id="x_DisplayAdjustmentFactors[]_476364" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayAdjustmentFactors->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayAdjustmentFactors[]_476364"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayAdjustmentFactors" name="x_DisplayAdjustmentFactors[]" id="x_DisplayAdjustmentFactors[]_386649" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayAdjustmentFactors->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayAdjustmentFactors[]_386649"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayAdjustmentFactors->CustomMsg ?></div></div>
@@ -340,8 +340,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayAdjustmentFactors->Current
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayWorksheetDetails->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayWorksheetDetails" name="x_DisplayWorksheetDetails[]" id="x_DisplayWorksheetDetails[]_775347" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayWorksheetDetails->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayWorksheetDetails[]_775347"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayWorksheetDetails" name="x_DisplayWorksheetDetails[]" id="x_DisplayWorksheetDetails[]_290945" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayWorksheetDetails->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayWorksheetDetails[]_290945"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayWorksheetDetails->CustomMsg ?></div></div>
@@ -356,8 +356,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayWorksheetDetails->CurrentV
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayShopFabrication->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayShopFabrication" name="x_DisplayShopFabrication[]" id="x_DisplayShopFabrication[]_761401" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayShopFabrication->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayShopFabrication[]_761401"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayShopFabrication" name="x_DisplayShopFabrication[]" id="x_DisplayShopFabrication[]_421909" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayShopFabrication->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayShopFabrication[]_421909"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayShopFabrication->CustomMsg ?></div></div>
@@ -372,8 +372,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayShopFabrication->CurrentVa
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayWorksheetName->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayWorksheetName" name="x_DisplayWorksheetName[]" id="x_DisplayWorksheetName[]_624154" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayWorksheetName->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayWorksheetName[]_624154"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayWorksheetName" name="x_DisplayWorksheetName[]" id="x_DisplayWorksheetName[]_541073" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayWorksheetName->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayWorksheetName[]_541073"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayWorksheetName->CustomMsg ?></div></div>
@@ -388,8 +388,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayWorksheetName->CurrentValu
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayWorksheetHeader->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayWorksheetHeader" name="x_DisplayWorksheetHeader[]" id="x_DisplayWorksheetHeader[]_646533" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayWorksheetHeader->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayWorksheetHeader[]_646533"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayWorksheetHeader" name="x_DisplayWorksheetHeader[]" id="x_DisplayWorksheetHeader[]_497253" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayWorksheetHeader->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayWorksheetHeader[]_497253"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayWorksheetHeader->CustomMsg ?></div></div>
@@ -404,8 +404,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayWorksheetHeader->CurrentVa
 $selwrk = ConvertToBool($WorksheetMasters_add->UseRadioButtonsForSizes->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_UseRadioButtonsForSizes" name="x_UseRadioButtonsForSizes[]" id="x_UseRadioButtonsForSizes[]_884810" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->UseRadioButtonsForSizes->editAttributes() ?>>
-	<label class="custom-control-label" for="x_UseRadioButtonsForSizes[]_884810"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_UseRadioButtonsForSizes" name="x_UseRadioButtonsForSizes[]" id="x_UseRadioButtonsForSizes[]_632220" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->UseRadioButtonsForSizes->editAttributes() ?>>
+	<label class="custom-control-label" for="x_UseRadioButtonsForSizes[]_632220"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->UseRadioButtonsForSizes->CustomMsg ?></div></div>
@@ -420,8 +420,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->UseRadioButtonsForSizes->CurrentV
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayFieldHoursOverride->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayFieldHoursOverride" name="x_DisplayFieldHoursOverride[]" id="x_DisplayFieldHoursOverride[]_822351" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayFieldHoursOverride->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayFieldHoursOverride[]_822351"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayFieldHoursOverride" name="x_DisplayFieldHoursOverride[]" id="x_DisplayFieldHoursOverride[]_615654" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayFieldHoursOverride->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayFieldHoursOverride[]_615654"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayFieldHoursOverride->CustomMsg ?></div></div>
@@ -436,8 +436,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayFieldHoursOverride->Curren
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayShopHours->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayShopHours" name="x_DisplayShopHours[]" id="x_DisplayShopHours[]_107651" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayShopHours->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayShopHours[]_107651"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayShopHours" name="x_DisplayShopHours[]" id="x_DisplayShopHours[]_238486" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayShopHours->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayShopHours[]_238486"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayShopHours->CustomMsg ?></div></div>
@@ -452,8 +452,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayShopHours->CurrentValue) ?
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayShopHoursOverride->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayShopHoursOverride" name="x_DisplayShopHoursOverride[]" id="x_DisplayShopHoursOverride[]_606662" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayShopHoursOverride->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayShopHoursOverride[]_606662"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayShopHoursOverride" name="x_DisplayShopHoursOverride[]" id="x_DisplayShopHoursOverride[]_214952" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayShopHoursOverride->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayShopHoursOverride[]_214952"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayShopHoursOverride->CustomMsg ?></div></div>
@@ -468,8 +468,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayShopHoursOverride->Current
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayUserShopHoursOnly->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayUserShopHoursOnly" name="x_DisplayUserShopHoursOnly[]" id="x_DisplayUserShopHoursOnly[]_794288" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayUserShopHoursOnly->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayUserShopHoursOnly[]_794288"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayUserShopHoursOnly" name="x_DisplayUserShopHoursOnly[]" id="x_DisplayUserShopHoursOnly[]_184052" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayUserShopHoursOnly->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayUserShopHoursOnly[]_184052"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayUserShopHoursOnly->CustomMsg ?></div></div>
@@ -484,8 +484,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayUserShopHoursOnly->Current
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayPipeExposure->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayPipeExposure" name="x_DisplayPipeExposure[]" id="x_DisplayPipeExposure[]_110538" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayPipeExposure->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayPipeExposure[]_110538"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayPipeExposure" name="x_DisplayPipeExposure[]" id="x_DisplayPipeExposure[]_128114" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayPipeExposure->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayPipeExposure[]_128114"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayPipeExposure->CustomMsg ?></div></div>
@@ -500,8 +500,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayPipeExposure->CurrentValue
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayVolumeCorrection->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayVolumeCorrection" name="x_DisplayVolumeCorrection[]" id="x_DisplayVolumeCorrection[]_605737" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayVolumeCorrection->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayVolumeCorrection[]_605737"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayVolumeCorrection" name="x_DisplayVolumeCorrection[]" id="x_DisplayVolumeCorrection[]_245861" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayVolumeCorrection->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayVolumeCorrection[]_245861"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayVolumeCorrection->CustomMsg ?></div></div>
@@ -516,8 +516,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayVolumeCorrection->CurrentV
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayManhourAdjustment->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayManhourAdjustment" name="x_DisplayManhourAdjustment[]" id="x_DisplayManhourAdjustment[]_782468" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayManhourAdjustment->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayManhourAdjustment[]_782468"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayManhourAdjustment" name="x_DisplayManhourAdjustment[]" id="x_DisplayManhourAdjustment[]_462209" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayManhourAdjustment->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayManhourAdjustment[]_462209"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayManhourAdjustment->CustomMsg ?></div></div>
@@ -532,8 +532,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayManhourAdjustment->Current
 $selwrk = ConvertToBool($WorksheetMasters_add->IsSubcontractWorksheet->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_IsSubcontractWorksheet" name="x_IsSubcontractWorksheet[]" id="x_IsSubcontractWorksheet[]_741727" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->IsSubcontractWorksheet->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsSubcontractWorksheet[]_741727"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_IsSubcontractWorksheet" name="x_IsSubcontractWorksheet[]" id="x_IsSubcontractWorksheet[]_992550" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->IsSubcontractWorksheet->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsSubcontractWorksheet[]_992550"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->IsSubcontractWorksheet->CustomMsg ?></div></div>
@@ -548,8 +548,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->IsSubcontractWorksheet->CurrentVa
 $selwrk = ConvertToBool($WorksheetMasters_add->DisplayDeleteItemsButtons->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayDeleteItemsButtons" name="x_DisplayDeleteItemsButtons[]" id="x_DisplayDeleteItemsButtons[]_737736" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayDeleteItemsButtons->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayDeleteItemsButtons[]_737736"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_DisplayDeleteItemsButtons" name="x_DisplayDeleteItemsButtons[]" id="x_DisplayDeleteItemsButtons[]_119150" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->DisplayDeleteItemsButtons->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayDeleteItemsButtons[]_119150"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->DisplayDeleteItemsButtons->CustomMsg ?></div></div>
@@ -564,8 +564,8 @@ $selwrk = ConvertToBool($WorksheetMasters_add->DisplayDeleteItemsButtons->Curren
 $selwrk = ConvertToBool($WorksheetMasters_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_552477" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_552477"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_149779" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_149779"></label>
 </div>
 </span>
 <?php echo $WorksheetMasters_add->ActiveFlag->CustomMsg ?></div></div>

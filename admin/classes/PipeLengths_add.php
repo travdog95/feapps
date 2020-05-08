@@ -813,7 +813,8 @@ class PipeLengths_add extends PipeLengths
 		$this->Name->CurrentValue = "NULL";
 		$this->Value->CurrentValue = 0;
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

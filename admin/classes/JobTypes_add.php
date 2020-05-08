@@ -813,7 +813,8 @@ class JobTypes_add extends JobTypes
 		$this->Name->OldValue = $this->Name->CurrentValue;
 		$this->Rank->CurrentValue = NULL;
 		$this->Rank->OldValue = $this->Rank->CurrentValue;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

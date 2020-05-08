@@ -811,7 +811,8 @@ class GroovedFittingTypes_add extends GroovedFittingTypes
 		$this->GroovedFittingType_Idn->OldValue = $this->GroovedFittingType_Idn->CurrentValue;
 		$this->Name->CurrentValue = "NULL";
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

@@ -357,8 +357,8 @@ $RecapTotalCategories_list->ListOptions->render("body", "left", $RecapTotalCateg
 $selwrk = ConvertToBool($RecapTotalCategories_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RecapTotalCategories" data-field="x_ActiveFlag" name="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_779525" value="1"<?php echo $selwrk ?><?php echo $RecapTotalCategories_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_779525"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RecapTotalCategories" data-field="x_ActiveFlag" name="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_146511" value="1"<?php echo $selwrk ?><?php echo $RecapTotalCategories_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_146511"></label>
 </div>
 </span>
 <input type="hidden" data-table="RecapTotalCategories" data-field="x_ActiveFlag" name="o<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($RecapTotalCategories_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $RecapTotalCategories_list->ListOptions->render("body", "left", $RecapTotalCateg
 $selwrk = ConvertToBool($RecapTotalCategories_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RecapTotalCategories" data-field="x_ActiveFlag" name="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_794526" value="1"<?php echo $selwrk ?><?php echo $RecapTotalCategories_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_794526"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RecapTotalCategories" data-field="x_ActiveFlag" name="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_997887" value="1"<?php echo $selwrk ?><?php echo $RecapTotalCategories_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_997887"></label>
 </div>
 </span>
 <input type="hidden" data-table="RecapTotalCategories" data-field="x_ActiveFlag" name="o<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($RecapTotalCategories_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($RecapTotalCategories_list->ActiveFlag->CurrentValue) ? 
 $selwrk = ConvertToBool($RecapTotalCategories_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RecapTotalCategories" data-field="x_ActiveFlag" name="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_987916" value="1"<?php echo $selwrk ?><?php echo $RecapTotalCategories_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_987916"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RecapTotalCategories" data-field="x_ActiveFlag" name="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_828855" value="1"<?php echo $selwrk ?><?php echo $RecapTotalCategories_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_828855"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $RecapTotalCategories_list->ListOptions->render("body", "left", $RecapTotalCateg
 $selwrk = ConvertToBool($RecapTotalCategories_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RecapTotalCategories" data-field="x_ActiveFlag" name="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_603567" value="1"<?php echo $selwrk ?><?php echo $RecapTotalCategories_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_603567"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RecapTotalCategories" data-field="x_ActiveFlag" name="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_607464" value="1"<?php echo $selwrk ?><?php echo $RecapTotalCategories_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]_607464"></label>
 </div>
 </span>
 <input type="hidden" data-table="RecapTotalCategories" data-field="x_ActiveFlag" name="o<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $RecapTotalCategories_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($RecapTotalCategories_list->ActiveFlag->OldValue) ?>">

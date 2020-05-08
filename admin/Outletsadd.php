@@ -156,8 +156,8 @@ $Outlets_add->showMessage();
 $selwrk = ConvertToBool($Outlets_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Outlets" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_873206" value="1"<?php echo $selwrk ?><?php echo $Outlets_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_873206"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Outlets" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_283491" value="1"<?php echo $selwrk ?><?php echo $Outlets_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_283491"></label>
 </div>
 </span>
 <?php echo $Outlets_add->ActiveFlag->CustomMsg ?></div></div>

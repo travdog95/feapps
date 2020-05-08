@@ -823,7 +823,8 @@ class HangerSubTypes_add extends HangerSubTypes
 		$this->HangerType_Idn->CurrentValue = 0;
 		$this->Name->CurrentValue = "NULL";
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

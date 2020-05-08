@@ -363,8 +363,8 @@ $BackflowTypes_list->ListOptions->render("body", "left", $BackflowTypes_list->Ro
 $selwrk = ConvertToBool($BackflowTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BackflowTypes" data-field="x_ActiveFlag" name="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_467190" value="1"<?php echo $selwrk ?><?php echo $BackflowTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_467190"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BackflowTypes" data-field="x_ActiveFlag" name="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_449873" value="1"<?php echo $selwrk ?><?php echo $BackflowTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_449873"></label>
 </div>
 </span>
 <input type="hidden" data-table="BackflowTypes" data-field="x_ActiveFlag" name="o<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($BackflowTypes_list->ActiveFlag->OldValue) ?>">
@@ -563,8 +563,8 @@ $BackflowTypes_list->ListOptions->render("body", "left", $BackflowTypes_list->Ro
 $selwrk = ConvertToBool($BackflowTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BackflowTypes" data-field="x_ActiveFlag" name="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_298538" value="1"<?php echo $selwrk ?><?php echo $BackflowTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_298538"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BackflowTypes" data-field="x_ActiveFlag" name="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_426267" value="1"<?php echo $selwrk ?><?php echo $BackflowTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_426267"></label>
 </div>
 </span>
 <input type="hidden" data-table="BackflowTypes" data-field="x_ActiveFlag" name="o<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($BackflowTypes_list->ActiveFlag->OldValue) ?>">
@@ -575,8 +575,8 @@ $selwrk = ConvertToBool($BackflowTypes_list->ActiveFlag->CurrentValue) ? " check
 $selwrk = ConvertToBool($BackflowTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BackflowTypes" data-field="x_ActiveFlag" name="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_343313" value="1"<?php echo $selwrk ?><?php echo $BackflowTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_343313"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BackflowTypes" data-field="x_ActiveFlag" name="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_916924" value="1"<?php echo $selwrk ?><?php echo $BackflowTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_916924"></label>
 </div>
 </span>
 <?php } ?>
@@ -663,8 +663,8 @@ $BackflowTypes_list->ListOptions->render("body", "left", $BackflowTypes_list->Ro
 $selwrk = ConvertToBool($BackflowTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="BackflowTypes" data-field="x_ActiveFlag" name="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_878065" value="1"<?php echo $selwrk ?><?php echo $BackflowTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_878065"></label>
+	<input type="checkbox" class="custom-control-input" data-table="BackflowTypes" data-field="x_ActiveFlag" name="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_117412" value="1"<?php echo $selwrk ?><?php echo $BackflowTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]_117412"></label>
 </div>
 </span>
 <input type="hidden" data-table="BackflowTypes" data-field="x_ActiveFlag" name="o<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $BackflowTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($BackflowTypes_list->ActiveFlag->OldValue) ?>">

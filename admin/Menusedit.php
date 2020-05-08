@@ -281,8 +281,8 @@ $Menus_edit->showMessage();
 $selwrk = ConvertToBool($Menus_edit->IsParent->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Menus" data-field="x_IsParent" name="x_IsParent[]" id="x_IsParent[]_321384" value="1"<?php echo $selwrk ?><?php echo $Menus_edit->IsParent->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsParent[]_321384"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Menus" data-field="x_IsParent" name="x_IsParent[]" id="x_IsParent[]_204162" value="1"<?php echo $selwrk ?><?php echo $Menus_edit->IsParent->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsParent[]_204162"></label>
 </div>
 </span>
 <?php echo $Menus_edit->IsParent->CustomMsg ?></div></div>
@@ -297,8 +297,8 @@ $selwrk = ConvertToBool($Menus_edit->IsParent->CurrentValue) ? " checked" : "";
 $selwrk = ConvertToBool($Menus_edit->AdminOnly->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Menus" data-field="x_AdminOnly" name="x_AdminOnly[]" id="x_AdminOnly[]_899999" value="1"<?php echo $selwrk ?><?php echo $Menus_edit->AdminOnly->editAttributes() ?>>
-	<label class="custom-control-label" for="x_AdminOnly[]_899999"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Menus" data-field="x_AdminOnly" name="x_AdminOnly[]" id="x_AdminOnly[]_975896" value="1"<?php echo $selwrk ?><?php echo $Menus_edit->AdminOnly->editAttributes() ?>>
+	<label class="custom-control-label" for="x_AdminOnly[]_975896"></label>
 </div>
 </span>
 <?php echo $Menus_edit->AdminOnly->CustomMsg ?></div></div>
@@ -313,8 +313,8 @@ $selwrk = ConvertToBool($Menus_edit->AdminOnly->CurrentValue) ? " checked" : "";
 $selwrk = ConvertToBool($Menus_edit->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Menus" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_813124" value="1"<?php echo $selwrk ?><?php echo $Menus_edit->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_813124"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Menus" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_764693" value="1"<?php echo $selwrk ?><?php echo $Menus_edit->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_764693"></label>
 </div>
 </span>
 <?php echo $Menus_edit->ActiveFlag->CustomMsg ?></div></div>

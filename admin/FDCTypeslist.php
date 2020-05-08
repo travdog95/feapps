@@ -357,8 +357,8 @@ $FDCTypes_list->ListOptions->render("body", "left", $FDCTypes_list->RowCount);
 $selwrk = ConvertToBool($FDCTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FDCTypes" data-field="x_ActiveFlag" name="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_962139" value="1"<?php echo $selwrk ?><?php echo $FDCTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_962139"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FDCTypes" data-field="x_ActiveFlag" name="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_789059" value="1"<?php echo $selwrk ?><?php echo $FDCTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_789059"></label>
 </div>
 </span>
 <input type="hidden" data-table="FDCTypes" data-field="x_ActiveFlag" name="o<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($FDCTypes_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $FDCTypes_list->ListOptions->render("body", "left", $FDCTypes_list->RowCount);
 $selwrk = ConvertToBool($FDCTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FDCTypes" data-field="x_ActiveFlag" name="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_609091" value="1"<?php echo $selwrk ?><?php echo $FDCTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_609091"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FDCTypes" data-field="x_ActiveFlag" name="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_672331" value="1"<?php echo $selwrk ?><?php echo $FDCTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_672331"></label>
 </div>
 </span>
 <input type="hidden" data-table="FDCTypes" data-field="x_ActiveFlag" name="o<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($FDCTypes_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($FDCTypes_list->ActiveFlag->CurrentValue) ? " checked" :
 $selwrk = ConvertToBool($FDCTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FDCTypes" data-field="x_ActiveFlag" name="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_827456" value="1"<?php echo $selwrk ?><?php echo $FDCTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_827456"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FDCTypes" data-field="x_ActiveFlag" name="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_559087" value="1"<?php echo $selwrk ?><?php echo $FDCTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_559087"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $FDCTypes_list->ListOptions->render("body", "left", $FDCTypes_list->RowIndex);
 $selwrk = ConvertToBool($FDCTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="FDCTypes" data-field="x_ActiveFlag" name="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_464669" value="1"<?php echo $selwrk ?><?php echo $FDCTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_464669"></label>
+	<input type="checkbox" class="custom-control-input" data-table="FDCTypes" data-field="x_ActiveFlag" name="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_424351" value="1"<?php echo $selwrk ?><?php echo $FDCTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]_424351"></label>
 </div>
 </span>
 <input type="hidden" data-table="FDCTypes" data-field="x_ActiveFlag" name="o<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $FDCTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($FDCTypes_list->ActiveFlag->OldValue) ?>">

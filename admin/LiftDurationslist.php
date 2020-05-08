@@ -357,8 +357,8 @@ $LiftDurations_list->ListOptions->render("body", "left", $LiftDurations_list->Ro
 $selwrk = ConvertToBool($LiftDurations_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="LiftDurations" data-field="x_ActiveFlag" name="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_610696" value="1"<?php echo $selwrk ?><?php echo $LiftDurations_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_610696"></label>
+	<input type="checkbox" class="custom-control-input" data-table="LiftDurations" data-field="x_ActiveFlag" name="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_544737" value="1"<?php echo $selwrk ?><?php echo $LiftDurations_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_544737"></label>
 </div>
 </span>
 <input type="hidden" data-table="LiftDurations" data-field="x_ActiveFlag" name="o<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($LiftDurations_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $LiftDurations_list->ListOptions->render("body", "left", $LiftDurations_list->Ro
 $selwrk = ConvertToBool($LiftDurations_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="LiftDurations" data-field="x_ActiveFlag" name="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_570158" value="1"<?php echo $selwrk ?><?php echo $LiftDurations_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_570158"></label>
+	<input type="checkbox" class="custom-control-input" data-table="LiftDurations" data-field="x_ActiveFlag" name="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_453356" value="1"<?php echo $selwrk ?><?php echo $LiftDurations_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_453356"></label>
 </div>
 </span>
 <input type="hidden" data-table="LiftDurations" data-field="x_ActiveFlag" name="o<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($LiftDurations_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($LiftDurations_list->ActiveFlag->CurrentValue) ? " check
 $selwrk = ConvertToBool($LiftDurations_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="LiftDurations" data-field="x_ActiveFlag" name="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_730209" value="1"<?php echo $selwrk ?><?php echo $LiftDurations_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_730209"></label>
+	<input type="checkbox" class="custom-control-input" data-table="LiftDurations" data-field="x_ActiveFlag" name="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_782402" value="1"<?php echo $selwrk ?><?php echo $LiftDurations_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_782402"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $LiftDurations_list->ListOptions->render("body", "left", $LiftDurations_list->Ro
 $selwrk = ConvertToBool($LiftDurations_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="LiftDurations" data-field="x_ActiveFlag" name="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_552461" value="1"<?php echo $selwrk ?><?php echo $LiftDurations_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_552461"></label>
+	<input type="checkbox" class="custom-control-input" data-table="LiftDurations" data-field="x_ActiveFlag" name="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_677661" value="1"<?php echo $selwrk ?><?php echo $LiftDurations_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]_677661"></label>
 </div>
 </span>
 <input type="hidden" data-table="LiftDurations" data-field="x_ActiveFlag" name="o<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $LiftDurations_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($LiftDurations_list->ActiveFlag->OldValue) ?>">

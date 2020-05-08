@@ -156,8 +156,8 @@ $JobTypes_add->showMessage();
 $selwrk = ConvertToBool($JobTypes_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="JobTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_704908" value="1"<?php echo $selwrk ?><?php echo $JobTypes_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_704908"></label>
+	<input type="checkbox" class="custom-control-input" data-table="JobTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_659973" value="1"<?php echo $selwrk ?><?php echo $JobTypes_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_659973"></label>
 </div>
 </span>
 <?php echo $JobTypes_add->ActiveFlag->CustomMsg ?></div></div>

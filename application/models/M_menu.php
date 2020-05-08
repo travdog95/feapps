@@ -98,6 +98,8 @@ class M_menu extends CI_Model {
     {
         $menu_items = array();
         $job_keys = array();
+        $menu_idn_exclusions = array();
+        $menus = array();
 
         $where = array(
             "ActiveFlag" => 1,
@@ -108,7 +110,7 @@ class M_menu extends CI_Model {
         if (empty($job_number))
         {
             $where['MenuType_Idn'] = 1;
-            $where['Menu_Idn <>'] = "9";
+            array_push($menu_idn_exclusions, 9);
         }
         else
         {
@@ -125,17 +127,47 @@ class M_menu extends CI_Model {
         $is_parent = is_parent($job_number);
         if ($is_parent == 1)
         {
-            $where['Menu_Idn <>'] = "8";
+            array_push($menu_idn_exclusions, 8);
         }
 
 		//If not admin, exclude admin menu items
-        //if ($this->session->userdata('user_right_idn') != 2)
         if ($this->session->userdata('is_admin') == 0)
 		{
 			$where['AdminOnly'] = 0;
-		}
+        }
+        
+        if ($this->session->userdata('read_only') == 1)
+		{
+            array_push($menu_idn_exclusions, 1);
+            array_push($menu_idn_exclusions, 4);
+            array_push($menu_idn_exclusions, 10);
+        }
 
-        $menus = $this->m_reference_table->get_where("Menus", $where, "MenuType_Idn ASC, Rank ASC");
+        $this->db
+            ->select('*')
+            ->from("Menus")
+            ->where($where)
+            ->order_by("MenuType_Idn ASC, Rank ASC");
+
+        if (!empty($menu_idn_exclusions))
+        {
+            $this->db->where_not_in("Menu_Idn",$menu_idn_exclusions);
+        }
+
+        $query = $this->db->get();
+        
+        if ($query == false)
+        {
+            write_feci_log(array("Message" => "SQL Error ".$this->db->last_query(), "Script" => get_caller_info()));
+        }
+        else
+        {
+            foreach ($query->result_array() as $row)
+            {
+                $menus[] = $row;
+            }
+        }
+
         $item = array();
 
         foreach($menus as $menu)
@@ -185,7 +217,6 @@ class M_menu extends CI_Model {
         }
 
 		//Add admin link
-		//if ($this->session->userdata("user_right_idn") == 2 && $menu_type_idn == 1)
 		if ($this->session->userdata("is_admin") == 1 && $menu_type_idn == 1)
 		{
 			$item = array(

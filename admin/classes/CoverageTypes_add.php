@@ -810,10 +810,12 @@ class CoverageTypes_add extends CoverageTypes
 	{
 		$this->CoverageType_Idn->CurrentValue = NULL;
 		$this->CoverageType_Idn->OldValue = $this->CoverageType_Idn->CurrentValue;
-		$this->Name->CurrentValue = "NULL";
+		$this->Name->CurrentValue = NULL;
+		$this->Name->OldValue = $this->Name->CurrentValue;
 		$this->ShortName->CurrentValue = "NULL";
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

@@ -145,7 +145,7 @@ class User
             $this->is_contractor = $user->IsContractor;
             $this->department_idn = $user->Department_Idn;
             $this->is_admin = $user->IsAdmin;
-            $this->read_only = $user->ReadOnly;
+            $this->read_only = $user->ReadOnly; 
         }
     }
 

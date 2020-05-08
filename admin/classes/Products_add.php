@@ -911,7 +911,8 @@ class Products_add extends Products
 		$this->DefaultQuantity->CurrentValue = NULL;
 		$this->DefaultQuantity->OldValue = $this->DefaultQuantity->CurrentValue;
 		$this->ProductSize_Idn->CurrentValue = 0;
-		$this->Description->CurrentValue = "NULL";
+		$this->Description->CurrentValue = NULL;
+		$this->Description->OldValue = $this->Description->CurrentValue;
 		$this->PipeType_Idn->CurrentValue = 0;
 		$this->ScheduleType_Idn->CurrentValue = 0;
 		$this->Fitting_Idn->CurrentValue = 0;
@@ -955,7 +956,8 @@ class Products_add extends Products
 		$this->FirePumpAttribute_Idn->CurrentValue = 0;
 		$this->IsDieselFuel->CurrentValue = 0;
 		$this->IsSolution->CurrentValue = 0;
-		$this->Position_Idn->CurrentValue = 0;
+		$this->Position_Idn->CurrentValue = NULL;
+		$this->Position_Idn->OldValue = $this->Position_Idn->CurrentValue;
 	}
 
 	// Load form values

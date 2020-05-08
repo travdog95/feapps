@@ -357,8 +357,8 @@ $RiserTypes_list->ListOptions->render("body", "left", $RiserTypes_list->RowCount
 $selwrk = ConvertToBool($RiserTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RiserTypes" data-field="x_ActiveFlag" name="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_613412" value="1"<?php echo $selwrk ?><?php echo $RiserTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_613412"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RiserTypes" data-field="x_ActiveFlag" name="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_963842" value="1"<?php echo $selwrk ?><?php echo $RiserTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_963842"></label>
 </div>
 </span>
 <input type="hidden" data-table="RiserTypes" data-field="x_ActiveFlag" name="o<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($RiserTypes_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $RiserTypes_list->ListOptions->render("body", "left", $RiserTypes_list->RowCount
 $selwrk = ConvertToBool($RiserTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RiserTypes" data-field="x_ActiveFlag" name="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_313079" value="1"<?php echo $selwrk ?><?php echo $RiserTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_313079"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RiserTypes" data-field="x_ActiveFlag" name="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_264838" value="1"<?php echo $selwrk ?><?php echo $RiserTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_264838"></label>
 </div>
 </span>
 <input type="hidden" data-table="RiserTypes" data-field="x_ActiveFlag" name="o<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($RiserTypes_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($RiserTypes_list->ActiveFlag->CurrentValue) ? " checked"
 $selwrk = ConvertToBool($RiserTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RiserTypes" data-field="x_ActiveFlag" name="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_381822" value="1"<?php echo $selwrk ?><?php echo $RiserTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_381822"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RiserTypes" data-field="x_ActiveFlag" name="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_198746" value="1"<?php echo $selwrk ?><?php echo $RiserTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_198746"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $RiserTypes_list->ListOptions->render("body", "left", $RiserTypes_list->RowIndex
 $selwrk = ConvertToBool($RiserTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RiserTypes" data-field="x_ActiveFlag" name="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_371507" value="1"<?php echo $selwrk ?><?php echo $RiserTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_371507"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RiserTypes" data-field="x_ActiveFlag" name="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_601077" value="1"<?php echo $selwrk ?><?php echo $RiserTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]_601077"></label>
 </div>
 </span>
 <input type="hidden" data-table="RiserTypes" data-field="x_ActiveFlag" name="o<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $RiserTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($RiserTypes_list->ActiveFlag->OldValue) ?>">

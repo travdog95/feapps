@@ -156,8 +156,8 @@ $LiftDurations_add->showMessage();
 $selwrk = ConvertToBool($LiftDurations_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="LiftDurations" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_720572" value="1"<?php echo $selwrk ?><?php echo $LiftDurations_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_720572"></label>
+	<input type="checkbox" class="custom-control-input" data-table="LiftDurations" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_309723" value="1"<?php echo $selwrk ?><?php echo $LiftDurations_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_309723"></label>
 </div>
 </span>
 <?php echo $LiftDurations_add->ActiveFlag->CustomMsg ?></div></div>

@@ -192,8 +192,8 @@ $VolumeCorrections_add->showMessage();
 $selwrk = ConvertToBool($VolumeCorrections_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_226705" value="1"<?php echo $selwrk ?><?php echo $VolumeCorrections_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_226705"></label>
+	<input type="checkbox" class="custom-control-input" data-table="VolumeCorrections" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_221473" value="1"<?php echo $selwrk ?><?php echo $VolumeCorrections_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_221473"></label>
 </div>
 </span>
 <?php echo $VolumeCorrections_add->ActiveFlag->CustomMsg ?></div></div>

@@ -3606,7 +3606,7 @@ class Products_list extends Products
 		$this->DefaultQuantity->OldValue = $this->DefaultQuantity->CurrentValue;
 		$this->ProductSize_Idn->CurrentValue = 0;
 		$this->ProductSize_Idn->OldValue = $this->ProductSize_Idn->CurrentValue;
-		$this->Description->CurrentValue = "NULL";
+		$this->Description->CurrentValue = NULL;
 		$this->Description->OldValue = $this->Description->CurrentValue;
 		$this->PipeType_Idn->CurrentValue = 0;
 		$this->PipeType_Idn->OldValue = $this->PipeType_Idn->CurrentValue;
@@ -3694,7 +3694,7 @@ class Products_list extends Products
 		$this->IsDieselFuel->OldValue = $this->IsDieselFuel->CurrentValue;
 		$this->IsSolution->CurrentValue = 0;
 		$this->IsSolution->OldValue = $this->IsSolution->CurrentValue;
-		$this->Position_Idn->CurrentValue = 0;
+		$this->Position_Idn->CurrentValue = NULL;
 		$this->Position_Idn->OldValue = $this->Position_Idn->CurrentValue;
 	}
 

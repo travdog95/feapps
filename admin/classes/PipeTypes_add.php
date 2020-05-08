@@ -816,7 +816,8 @@ class PipeTypes_add extends PipeTypes
 		$this->Department_Idn->CurrentValue = 0;
 		$this->IsUnderground->CurrentValue = 0;
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

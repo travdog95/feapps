@@ -196,8 +196,8 @@ $ProductSizes_add->showMessage();
 $selwrk = ConvertToBool($ProductSizes_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ProductSizes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_944061" value="1"<?php echo $selwrk ?><?php echo $ProductSizes_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_944061"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ProductSizes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_296529" value="1"<?php echo $selwrk ?><?php echo $ProductSizes_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_296529"></label>
 </div>
 </span>
 <?php echo $ProductSizes_add->ActiveFlag->CustomMsg ?></div></div>

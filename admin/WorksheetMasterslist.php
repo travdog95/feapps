@@ -497,8 +497,8 @@ $WorksheetMasters_list->ListOptions->render("body", "left", $WorksheetMasters_li
 $selwrk = ConvertToBool($WorksheetMasters_list->AllowMultiple->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_112831" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->AllowMultiple->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_112831"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_722855" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->AllowMultiple->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_722855"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="o<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" id="o<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" value="<?php echo HtmlEncode($WorksheetMasters_list->AllowMultiple->OldValue) ?>">
@@ -511,8 +511,8 @@ $selwrk = ConvertToBool($WorksheetMasters_list->AllowMultiple->CurrentValue) ? "
 $selwrk = ConvertToBool($WorksheetMasters_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_248543" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_248543"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_721767" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_721767"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="o<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($WorksheetMasters_list->ActiveFlag->OldValue) ?>">
@@ -761,8 +761,8 @@ $WorksheetMasters_list->ListOptions->render("body", "left", $WorksheetMasters_li
 $selwrk = ConvertToBool($WorksheetMasters_list->AllowMultiple->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_939560" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->AllowMultiple->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_939560"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_346407" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->AllowMultiple->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_346407"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="o<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" id="o<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" value="<?php echo HtmlEncode($WorksheetMasters_list->AllowMultiple->OldValue) ?>">
@@ -773,8 +773,8 @@ $selwrk = ConvertToBool($WorksheetMasters_list->AllowMultiple->CurrentValue) ? "
 $selwrk = ConvertToBool($WorksheetMasters_list->AllowMultiple->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_811228" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->AllowMultiple->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_811228"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_283099" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->AllowMultiple->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_283099"></label>
 </div>
 </span>
 <?php } ?>
@@ -793,8 +793,8 @@ $selwrk = ConvertToBool($WorksheetMasters_list->AllowMultiple->CurrentValue) ? "
 $selwrk = ConvertToBool($WorksheetMasters_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_937030" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_937030"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_284876" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_284876"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="o<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($WorksheetMasters_list->ActiveFlag->OldValue) ?>">
@@ -805,8 +805,8 @@ $selwrk = ConvertToBool($WorksheetMasters_list->ActiveFlag->CurrentValue) ? " ch
 $selwrk = ConvertToBool($WorksheetMasters_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_334191" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_334191"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_357893" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_357893"></label>
 </div>
 </span>
 <?php } ?>
@@ -912,8 +912,8 @@ $WorksheetMasters_list->ListOptions->render("body", "left", $WorksheetMasters_li
 $selwrk = ConvertToBool($WorksheetMasters_list->AllowMultiple->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_376336" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->AllowMultiple->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_376336"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_332995" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->AllowMultiple->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]_332995"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetMasters" data-field="x_AllowMultiple" name="o<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" id="o<?php echo $WorksheetMasters_list->RowIndex ?>_AllowMultiple[]" value="<?php echo HtmlEncode($WorksheetMasters_list->AllowMultiple->OldValue) ?>">
@@ -926,8 +926,8 @@ $selwrk = ConvertToBool($WorksheetMasters_list->AllowMultiple->CurrentValue) ? "
 $selwrk = ConvertToBool($WorksheetMasters_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_684078" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_684078"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_557398" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasters_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]_557398"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetMasters" data-field="x_ActiveFlag" name="o<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $WorksheetMasters_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($WorksheetMasters_list->ActiveFlag->OldValue) ?>">

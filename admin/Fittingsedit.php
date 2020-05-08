@@ -243,8 +243,8 @@ $Fittings_edit->showMessage();
 $selwrk = ConvertToBool($Fittings_edit->PartOfSetFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Fittings" data-field="x_PartOfSetFlag" name="x_PartOfSetFlag[]" id="x_PartOfSetFlag[]_806929" value="1"<?php echo $selwrk ?><?php echo $Fittings_edit->PartOfSetFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_PartOfSetFlag[]_806929"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Fittings" data-field="x_PartOfSetFlag" name="x_PartOfSetFlag[]" id="x_PartOfSetFlag[]_885087" value="1"<?php echo $selwrk ?><?php echo $Fittings_edit->PartOfSetFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_PartOfSetFlag[]_885087"></label>
 </div>
 </span>
 <?php echo $Fittings_edit->PartOfSetFlag->CustomMsg ?></div></div>
@@ -269,8 +269,8 @@ $selwrk = ConvertToBool($Fittings_edit->PartOfSetFlag->CurrentValue) ? " checked
 $selwrk = ConvertToBool($Fittings_edit->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Fittings" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_628337" value="1"<?php echo $selwrk ?><?php echo $Fittings_edit->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_628337"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Fittings" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_477292" value="1"<?php echo $selwrk ?><?php echo $Fittings_edit->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_477292"></label>
 </div>
 </span>
 <?php echo $Fittings_edit->ActiveFlag->CustomMsg ?></div></div>

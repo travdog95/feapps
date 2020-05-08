@@ -2358,7 +2358,7 @@ class FirePumpAttributes_list extends FirePumpAttributes
 		$this->Rank->OldValue = $this->Rank->CurrentValue;
 		$this->DefaultFlag->CurrentValue = 0;
 		$this->DefaultFlag->OldValue = $this->DefaultFlag->CurrentValue;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
 		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 

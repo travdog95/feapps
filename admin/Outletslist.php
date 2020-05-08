@@ -357,8 +357,8 @@ $Outlets_list->ListOptions->render("body", "left", $Outlets_list->RowCount);
 $selwrk = ConvertToBool($Outlets_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Outlets" data-field="x_ActiveFlag" name="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_726041" value="1"<?php echo $selwrk ?><?php echo $Outlets_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_726041"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Outlets" data-field="x_ActiveFlag" name="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_446296" value="1"<?php echo $selwrk ?><?php echo $Outlets_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_446296"></label>
 </div>
 </span>
 <input type="hidden" data-table="Outlets" data-field="x_ActiveFlag" name="o<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($Outlets_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $Outlets_list->ListOptions->render("body", "left", $Outlets_list->RowCount);
 $selwrk = ConvertToBool($Outlets_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Outlets" data-field="x_ActiveFlag" name="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_528127" value="1"<?php echo $selwrk ?><?php echo $Outlets_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_528127"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Outlets" data-field="x_ActiveFlag" name="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_847501" value="1"<?php echo $selwrk ?><?php echo $Outlets_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_847501"></label>
 </div>
 </span>
 <input type="hidden" data-table="Outlets" data-field="x_ActiveFlag" name="o<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($Outlets_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($Outlets_list->ActiveFlag->CurrentValue) ? " checked" : 
 $selwrk = ConvertToBool($Outlets_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Outlets" data-field="x_ActiveFlag" name="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_600526" value="1"<?php echo $selwrk ?><?php echo $Outlets_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_600526"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Outlets" data-field="x_ActiveFlag" name="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_349857" value="1"<?php echo $selwrk ?><?php echo $Outlets_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_349857"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $Outlets_list->ListOptions->render("body", "left", $Outlets_list->RowIndex);
 $selwrk = ConvertToBool($Outlets_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Outlets" data-field="x_ActiveFlag" name="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_660105" value="1"<?php echo $selwrk ?><?php echo $Outlets_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_660105"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Outlets" data-field="x_ActiveFlag" name="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_422661" value="1"<?php echo $selwrk ?><?php echo $Outlets_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]_422661"></label>
 </div>
 </span>
 <input type="hidden" data-table="Outlets" data-field="x_ActiveFlag" name="o<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $Outlets_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($Outlets_list->ActiveFlag->OldValue) ?>">

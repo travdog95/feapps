@@ -295,15 +295,19 @@ echo form_open('job/save_information', $form_attributes);
         </div>
     </div>
 	</div>
-    <div class="row">
-        <div class="buttons-recap feci-buttons">
-            <p>
-                <input type="submit" id="save" name="save" class="save-button primary" value="Save">
-                <input type="submit" id="save_goto_recap" name="save_goto_recap" class="save-button primary" value="Save &amp; Go recap">
-            </p>
-            <input type="hidden" name="button_clicked" id="button_clicked" value="" />
+    <?php if ($this->session->userdata('read_only') == 0): ?>
+
+        <div class="row">
+            <div class="buttons-recap feci-buttons">
+                <p>
+                    <input type="submit" id="save" name="save" class="save-button primary" value="Save">
+                    <input type="submit" id="save_goto_recap" name="save_goto_recap" class="save-button primary" value="Save &amp; Go recap">
+                </p>
+                <input type="hidden" name="button_clicked" id="button_clicked" value="" />
+            </div>
         </div>
-    </div>
+    <?php endif; ?>
+    
         <?php echo form_close(); ?>
     </div> <!-- END: container -->
 </div> <!-- end: MAIN-CONTENT -->

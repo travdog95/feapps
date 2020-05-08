@@ -232,8 +232,8 @@ $EngineeringAdditionalCosts_add->showMessage();
 $selwrk = ConvertToBool($EngineeringAdditionalCosts_add->DefaultFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="x_DefaultFlag[]" id="x_DefaultFlag[]_799662" value="1"<?php echo $selwrk ?><?php echo $EngineeringAdditionalCosts_add->DefaultFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DefaultFlag[]_799662"></label>
+	<input type="checkbox" class="custom-control-input" data-table="EngineeringAdditionalCosts" data-field="x_DefaultFlag" name="x_DefaultFlag[]" id="x_DefaultFlag[]_967815" value="1"<?php echo $selwrk ?><?php echo $EngineeringAdditionalCosts_add->DefaultFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DefaultFlag[]_967815"></label>
 </div>
 </span>
 <?php echo $EngineeringAdditionalCosts_add->DefaultFlag->CustomMsg ?></div></div>

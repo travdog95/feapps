@@ -175,8 +175,8 @@ $PipeTypes_add->showMessage();
 $selwrk = ConvertToBool($PipeTypes_add->IsUnderground->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_IsUnderground" name="x_IsUnderground[]" id="x_IsUnderground[]_509747" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_add->IsUnderground->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsUnderground[]_509747"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_IsUnderground" name="x_IsUnderground[]" id="x_IsUnderground[]_941632" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_add->IsUnderground->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsUnderground[]_941632"></label>
 </div>
 </span>
 <?php echo $PipeTypes_add->IsUnderground->CustomMsg ?></div></div>
@@ -201,8 +201,8 @@ $selwrk = ConvertToBool($PipeTypes_add->IsUnderground->CurrentValue) ? " checked
 $selwrk = ConvertToBool($PipeTypes_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_926571" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_926571"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_452568" value="1"<?php echo $selwrk ?><?php echo $PipeTypes_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_452568"></label>
 </div>
 </span>
 <?php echo $PipeTypes_add->ActiveFlag->CustomMsg ?></div></div>

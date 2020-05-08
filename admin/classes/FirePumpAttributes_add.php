@@ -813,7 +813,8 @@ class FirePumpAttributes_add extends FirePumpAttributes
 		$this->Name->CurrentValue = "NULL";
 		$this->Rank->CurrentValue = 0;
 		$this->DefaultFlag->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

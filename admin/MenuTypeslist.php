@@ -357,8 +357,8 @@ $MenuTypes_list->ListOptions->render("body", "left", $MenuTypes_list->RowCount);
 $selwrk = ConvertToBool($MenuTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="MenuTypes" data-field="x_ActiveFlag" name="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_985934" value="1"<?php echo $selwrk ?><?php echo $MenuTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_985934"></label>
+	<input type="checkbox" class="custom-control-input" data-table="MenuTypes" data-field="x_ActiveFlag" name="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_514666" value="1"<?php echo $selwrk ?><?php echo $MenuTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_514666"></label>
 </div>
 </span>
 <input type="hidden" data-table="MenuTypes" data-field="x_ActiveFlag" name="o<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($MenuTypes_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $MenuTypes_list->ListOptions->render("body", "left", $MenuTypes_list->RowCount);
 $selwrk = ConvertToBool($MenuTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="MenuTypes" data-field="x_ActiveFlag" name="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_435834" value="1"<?php echo $selwrk ?><?php echo $MenuTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_435834"></label>
+	<input type="checkbox" class="custom-control-input" data-table="MenuTypes" data-field="x_ActiveFlag" name="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_207145" value="1"<?php echo $selwrk ?><?php echo $MenuTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_207145"></label>
 </div>
 </span>
 <input type="hidden" data-table="MenuTypes" data-field="x_ActiveFlag" name="o<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($MenuTypes_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($MenuTypes_list->ActiveFlag->CurrentValue) ? " checked" 
 $selwrk = ConvertToBool($MenuTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="MenuTypes" data-field="x_ActiveFlag" name="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_530233" value="1"<?php echo $selwrk ?><?php echo $MenuTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_530233"></label>
+	<input type="checkbox" class="custom-control-input" data-table="MenuTypes" data-field="x_ActiveFlag" name="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_473651" value="1"<?php echo $selwrk ?><?php echo $MenuTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_473651"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $MenuTypes_list->ListOptions->render("body", "left", $MenuTypes_list->RowIndex);
 $selwrk = ConvertToBool($MenuTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="MenuTypes" data-field="x_ActiveFlag" name="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_354670" value="1"<?php echo $selwrk ?><?php echo $MenuTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_354670"></label>
+	<input type="checkbox" class="custom-control-input" data-table="MenuTypes" data-field="x_ActiveFlag" name="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_145384" value="1"<?php echo $selwrk ?><?php echo $MenuTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]_145384"></label>
 </div>
 </span>
 <input type="hidden" data-table="MenuTypes" data-field="x_ActiveFlag" name="o<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $MenuTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($MenuTypes_list->ActiveFlag->OldValue) ?>">

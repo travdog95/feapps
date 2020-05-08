@@ -823,7 +823,8 @@ class HangerTypes_add extends HangerTypes
 		$this->HangerType_Idn->OldValue = $this->HangerType_Idn->CurrentValue;
 		$this->Name->CurrentValue = "NULL";
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

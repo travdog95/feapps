@@ -152,26 +152,30 @@ echo form_open('', $form_attributes);
 					</div> <!-- end: div.table-responsive -->
                         
                     <!-- WORKSHEET MESSAGE -->
-                    <div class="message-wrapper feci-buttons">
-                        <?php if ($worksheet_master['DisplayDeleteItemsButtons'] == 1): ?>
-                        <p>
-                            <button type="button" id="DeleteProductsConfirmation" class="danger">Delete Selected Items</button>
-                        </p>
-                        <p>
-                            <button type="button" id="DeleteZeroQuantityItemsConfirmation" class="secondary">Delete Zero Quantity Items</button>
-                        </p>
-                        <?php endif; ?>
-                    </div>
-					<!-- BUTTONS -->
-					<div class="buttons-recap feci-buttons">
-						<p>
-                            <input type="submit" id="save" name="save" class="save-button primary" value="Save Worksheet">
-							<input type="submit" id="save_goto_recap" name="save_goto_recap" class="save-button primary" value="Save Worksheet &amp; Go recap">
-						</p>
-						<p>
-                            <button type="button" id="DeleteWorksheetConfirmation" class="secondary">Delete Worksheet</button>
-						</p>
-					</div>
+                    <?php if ($this->session->userdata('read_only') == 0): ?>
+                        <div class="message-wrapper feci-buttons">
+                            <?php if ($worksheet_master['DisplayDeleteItemsButtons'] == 1): ?>
+                            <p>
+                                <button type="button" id="DeleteProductsConfirmation" class="danger">Delete Selected Items</button>
+                            </p>
+                            <p>
+                                <button type="button" id="DeleteZeroQuantityItemsConfirmation" class="secondary">Delete Zero Quantity Items</button>
+                                <button type="button" id="DeleteWorksheetConfirmation" class="secondary">Delete Worksheet</button>
+
+                            </p>
+                            <?php endif; ?>
+                        </div>
+                        <!-- BUTTONS -->
+                        <div class="buttons-recap feci-buttons">
+                            <p>
+                                <input type="submit" id="save" name="save" class="save-button primary" value="Save Worksheet">
+                                <input type="submit" id="save_goto_recap" name="save_goto_recap" class="save-button primary" value="Save Worksheet &amp; Go recap">
+                            </p>
+                            <!-- <p>
+                                <button type="button" id="DeleteWorksheetConfirmation" class="secondary">Delete Worksheet</button>
+                            </p> -->
+                        </div>
+                    <?php endif; ?>
 				</div> <!-- end: div.panel-body -->
 			</div> <!-- end: div.panel -->
 		</div> <!-- end: div.col-md-12 -->

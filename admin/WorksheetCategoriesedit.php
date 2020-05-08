@@ -243,8 +243,8 @@ $WorksheetCategories_edit->showMessage();
 $selwrk = ConvertToBool($WorksheetCategories_edit->IsFitting->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetCategories" data-field="x_IsFitting" name="x_IsFitting[]" id="x_IsFitting[]_287112" value="1"<?php echo $selwrk ?><?php echo $WorksheetCategories_edit->IsFitting->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsFitting[]_287112"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetCategories" data-field="x_IsFitting" name="x_IsFitting[]" id="x_IsFitting[]_226423" value="1"<?php echo $selwrk ?><?php echo $WorksheetCategories_edit->IsFitting->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsFitting[]_226423"></label>
 </div>
 </span>
 <?php echo $WorksheetCategories_edit->IsFitting->CustomMsg ?></div></div>
@@ -259,8 +259,8 @@ $selwrk = ConvertToBool($WorksheetCategories_edit->IsFitting->CurrentValue) ? " 
 $selwrk = ConvertToBool($WorksheetCategories_edit->CartFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetCategories" data-field="x_CartFlag" name="x_CartFlag[]" id="x_CartFlag[]_307115" value="1"<?php echo $selwrk ?><?php echo $WorksheetCategories_edit->CartFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_CartFlag[]_307115"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetCategories" data-field="x_CartFlag" name="x_CartFlag[]" id="x_CartFlag[]_231224" value="1"<?php echo $selwrk ?><?php echo $WorksheetCategories_edit->CartFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_CartFlag[]_231224"></label>
 </div>
 </span>
 <?php echo $WorksheetCategories_edit->CartFlag->CustomMsg ?></div></div>
@@ -275,8 +275,8 @@ $selwrk = ConvertToBool($WorksheetCategories_edit->CartFlag->CurrentValue) ? " c
 $selwrk = ConvertToBool($WorksheetCategories_edit->IsShared->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetCategories" data-field="x_IsShared" name="x_IsShared[]" id="x_IsShared[]_364166" value="1"<?php echo $selwrk ?><?php echo $WorksheetCategories_edit->IsShared->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsShared[]_364166"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetCategories" data-field="x_IsShared" name="x_IsShared[]" id="x_IsShared[]_629830" value="1"<?php echo $selwrk ?><?php echo $WorksheetCategories_edit->IsShared->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsShared[]_629830"></label>
 </div>
 </span>
 <?php echo $WorksheetCategories_edit->IsShared->CustomMsg ?></div></div>
@@ -291,8 +291,8 @@ $selwrk = ConvertToBool($WorksheetCategories_edit->IsShared->CurrentValue) ? " c
 $selwrk = ConvertToBool($WorksheetCategories_edit->IsAssembly->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetCategories" data-field="x_IsAssembly" name="x_IsAssembly[]" id="x_IsAssembly[]_724443" value="1"<?php echo $selwrk ?><?php echo $WorksheetCategories_edit->IsAssembly->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsAssembly[]_724443"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetCategories" data-field="x_IsAssembly" name="x_IsAssembly[]" id="x_IsAssembly[]_542782" value="1"<?php echo $selwrk ?><?php echo $WorksheetCategories_edit->IsAssembly->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsAssembly[]_542782"></label>
 </div>
 </span>
 <?php echo $WorksheetCategories_edit->IsAssembly->CustomMsg ?></div></div>
@@ -307,8 +307,8 @@ $selwrk = ConvertToBool($WorksheetCategories_edit->IsAssembly->CurrentValue) ? "
 $selwrk = ConvertToBool($WorksheetCategories_edit->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetCategories" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_500241" value="1"<?php echo $selwrk ?><?php echo $WorksheetCategories_edit->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_500241"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetCategories" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_698214" value="1"<?php echo $selwrk ?><?php echo $WorksheetCategories_edit->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_698214"></label>
 </div>
 </span>
 <?php echo $WorksheetCategories_edit->ActiveFlag->CustomMsg ?></div></div>

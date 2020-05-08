@@ -2408,7 +2408,7 @@ class EngineeringAdditionalCosts_list extends EngineeringAdditionalCosts
 		$this->Rank->OldValue = $this->Rank->CurrentValue;
 		$this->Parent_Idn->CurrentValue = 0;
 		$this->Parent_Idn->OldValue = $this->Parent_Idn->CurrentValue;
-		$this->DefaultFlag->CurrentValue = 0;
+		$this->DefaultFlag->CurrentValue = NULL;
 		$this->DefaultFlag->OldValue = $this->DefaultFlag->CurrentValue;
 	}
 

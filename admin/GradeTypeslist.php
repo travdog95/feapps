@@ -357,8 +357,8 @@ $GradeTypes_list->ListOptions->render("body", "left", $GradeTypes_list->RowCount
 $selwrk = ConvertToBool($GradeTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GradeTypes" data-field="x_ActiveFlag" name="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_681156" value="1"<?php echo $selwrk ?><?php echo $GradeTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_681156"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GradeTypes" data-field="x_ActiveFlag" name="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_417576" value="1"<?php echo $selwrk ?><?php echo $GradeTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_417576"></label>
 </div>
 </span>
 <input type="hidden" data-table="GradeTypes" data-field="x_ActiveFlag" name="o<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($GradeTypes_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $GradeTypes_list->ListOptions->render("body", "left", $GradeTypes_list->RowCount
 $selwrk = ConvertToBool($GradeTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GradeTypes" data-field="x_ActiveFlag" name="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_303386" value="1"<?php echo $selwrk ?><?php echo $GradeTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_303386"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GradeTypes" data-field="x_ActiveFlag" name="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_945500" value="1"<?php echo $selwrk ?><?php echo $GradeTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_945500"></label>
 </div>
 </span>
 <input type="hidden" data-table="GradeTypes" data-field="x_ActiveFlag" name="o<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($GradeTypes_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($GradeTypes_list->ActiveFlag->CurrentValue) ? " checked"
 $selwrk = ConvertToBool($GradeTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GradeTypes" data-field="x_ActiveFlag" name="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_556683" value="1"<?php echo $selwrk ?><?php echo $GradeTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_556683"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GradeTypes" data-field="x_ActiveFlag" name="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_898239" value="1"<?php echo $selwrk ?><?php echo $GradeTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_898239"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $GradeTypes_list->ListOptions->render("body", "left", $GradeTypes_list->RowIndex
 $selwrk = ConvertToBool($GradeTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GradeTypes" data-field="x_ActiveFlag" name="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_279479" value="1"<?php echo $selwrk ?><?php echo $GradeTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_279479"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GradeTypes" data-field="x_ActiveFlag" name="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_647937" value="1"<?php echo $selwrk ?><?php echo $GradeTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]_647937"></label>
 </div>
 </span>
 <input type="hidden" data-table="GradeTypes" data-field="x_ActiveFlag" name="o<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $GradeTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($GradeTypes_list->ActiveFlag->OldValue) ?>">

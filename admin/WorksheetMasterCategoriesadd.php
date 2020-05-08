@@ -224,8 +224,8 @@ $WorksheetMasterCategories_add->showMessage();
 $selwrk = ConvertToBool($WorksheetMasterCategories_add->AutoLoadFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AutoLoadFlag" name="x_AutoLoadFlag[]" id="x_AutoLoadFlag[]_705169" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_add->AutoLoadFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_AutoLoadFlag[]_705169"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AutoLoadFlag" name="x_AutoLoadFlag[]" id="x_AutoLoadFlag[]_497734" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_add->AutoLoadFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_AutoLoadFlag[]_497734"></label>
 </div>
 </span>
 <?php echo $WorksheetMasterCategories_add->AutoLoadFlag->CustomMsg ?></div></div>
@@ -240,8 +240,8 @@ $selwrk = ConvertToBool($WorksheetMasterCategories_add->AutoLoadFlag->CurrentVal
 $selwrk = ConvertToBool($WorksheetMasterCategories_add->LoadFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_LoadFlag" name="x_LoadFlag[]" id="x_LoadFlag[]_322356" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_add->LoadFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_LoadFlag[]_322356"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_LoadFlag" name="x_LoadFlag[]" id="x_LoadFlag[]_838842" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_add->LoadFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_LoadFlag[]_838842"></label>
 </div>
 </span>
 <?php echo $WorksheetMasterCategories_add->LoadFlag->CustomMsg ?></div></div>
@@ -256,8 +256,8 @@ $selwrk = ConvertToBool($WorksheetMasterCategories_add->LoadFlag->CurrentValue) 
 $selwrk = ConvertToBool($WorksheetMasterCategories_add->AddMiscFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AddMiscFlag" name="x_AddMiscFlag[]" id="x_AddMiscFlag[]_302516" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_add->AddMiscFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_AddMiscFlag[]_302516"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AddMiscFlag" name="x_AddMiscFlag[]" id="x_AddMiscFlag[]_517987" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_add->AddMiscFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_AddMiscFlag[]_517987"></label>
 </div>
 </span>
 <?php echo $WorksheetMasterCategories_add->AddMiscFlag->CustomMsg ?></div></div>

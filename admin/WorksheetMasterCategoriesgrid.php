@@ -469,8 +469,8 @@ $WorksheetMasterCategories_grid->ListOptions->render("body", "left", $WorksheetM
 $selwrk = ConvertToBool($WorksheetMasterCategories_grid->AutoLoadFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AutoLoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_643801" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AutoLoadFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_643801"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AutoLoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_477107" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AutoLoadFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_477107"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetMasterCategories" data-field="x_AutoLoadFlag" name="o<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]" id="o<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]" value="<?php echo HtmlEncode($WorksheetMasterCategories_grid->AutoLoadFlag->OldValue) ?>">
@@ -481,8 +481,8 @@ $selwrk = ConvertToBool($WorksheetMasterCategories_grid->AutoLoadFlag->CurrentVa
 $selwrk = ConvertToBool($WorksheetMasterCategories_grid->AutoLoadFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AutoLoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_712285" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AutoLoadFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_712285"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AutoLoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_428846" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AutoLoadFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_428846"></label>
 </div>
 </span>
 <?php } ?>
@@ -508,8 +508,8 @@ $selwrk = ConvertToBool($WorksheetMasterCategories_grid->AutoLoadFlag->CurrentVa
 $selwrk = ConvertToBool($WorksheetMasterCategories_grid->LoadFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_LoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_776386" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->LoadFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_776386"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_LoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_493562" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->LoadFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_493562"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetMasterCategories" data-field="x_LoadFlag" name="o<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]" id="o<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]" value="<?php echo HtmlEncode($WorksheetMasterCategories_grid->LoadFlag->OldValue) ?>">
@@ -520,8 +520,8 @@ $selwrk = ConvertToBool($WorksheetMasterCategories_grid->LoadFlag->CurrentValue)
 $selwrk = ConvertToBool($WorksheetMasterCategories_grid->LoadFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_LoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_857674" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->LoadFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_857674"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_LoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_572664" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->LoadFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_572664"></label>
 </div>
 </span>
 <?php } ?>
@@ -547,8 +547,8 @@ $selwrk = ConvertToBool($WorksheetMasterCategories_grid->LoadFlag->CurrentValue)
 $selwrk = ConvertToBool($WorksheetMasterCategories_grid->AddMiscFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AddMiscFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_259575" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AddMiscFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_259575"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AddMiscFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_587714" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AddMiscFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_587714"></label>
 </div>
 </span>
 <input type="hidden" data-table="WorksheetMasterCategories" data-field="x_AddMiscFlag" name="o<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]" id="o<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]" value="<?php echo HtmlEncode($WorksheetMasterCategories_grid->AddMiscFlag->OldValue) ?>">
@@ -559,8 +559,8 @@ $selwrk = ConvertToBool($WorksheetMasterCategories_grid->AddMiscFlag->CurrentVal
 $selwrk = ConvertToBool($WorksheetMasterCategories_grid->AddMiscFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AddMiscFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_965465" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AddMiscFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_965465"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AddMiscFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_536680" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AddMiscFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_536680"></label>
 </div>
 </span>
 <?php } ?>
@@ -732,8 +732,8 @@ $WorksheetMasterCategories_grid->ListOptions->render("body", "left", $WorksheetM
 $selwrk = ConvertToBool($WorksheetMasterCategories_grid->AutoLoadFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AutoLoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_695463" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AutoLoadFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_695463"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AutoLoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_817428" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AutoLoadFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AutoLoadFlag[]_817428"></label>
 </div>
 </span>
 <?php } else { ?>
@@ -753,8 +753,8 @@ $selwrk = ConvertToBool($WorksheetMasterCategories_grid->AutoLoadFlag->CurrentVa
 $selwrk = ConvertToBool($WorksheetMasterCategories_grid->LoadFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_LoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_389819" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->LoadFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_389819"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_LoadFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_701628" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->LoadFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_LoadFlag[]_701628"></label>
 </div>
 </span>
 <?php } else { ?>
@@ -774,8 +774,8 @@ $selwrk = ConvertToBool($WorksheetMasterCategories_grid->LoadFlag->CurrentValue)
 $selwrk = ConvertToBool($WorksheetMasterCategories_grid->AddMiscFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AddMiscFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_894812" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AddMiscFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_894812"></label>
+	<input type="checkbox" class="custom-control-input" data-table="WorksheetMasterCategories" data-field="x_AddMiscFlag" name="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]" id="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_830550" value="1"<?php echo $selwrk ?><?php echo $WorksheetMasterCategories_grid->AddMiscFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $WorksheetMasterCategories_grid->RowIndex ?>_AddMiscFlag[]_830550"></label>
 </div>
 </span>
 <?php } else { ?>

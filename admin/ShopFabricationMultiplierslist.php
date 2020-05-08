@@ -318,8 +318,8 @@ $ShopFabricationMultipliers_list->ListOptions->render("body", "left", $ShopFabri
 $selwrk = ConvertToBool($ShopFabricationMultipliers_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ShopFabricationMultipliers" data-field="x_ActiveFlag" name="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_104999" value="1"<?php echo $selwrk ?><?php echo $ShopFabricationMultipliers_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_104999"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ShopFabricationMultipliers" data-field="x_ActiveFlag" name="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_187929" value="1"<?php echo $selwrk ?><?php echo $ShopFabricationMultipliers_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_187929"></label>
 </div>
 </span>
 <input type="hidden" data-table="ShopFabricationMultipliers" data-field="x_ActiveFlag" name="o<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ShopFabricationMultipliers_list->ActiveFlag->OldValue) ?>">
@@ -528,8 +528,8 @@ $ShopFabricationMultipliers_list->ListOptions->render("body", "left", $ShopFabri
 $selwrk = ConvertToBool($ShopFabricationMultipliers_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ShopFabricationMultipliers" data-field="x_ActiveFlag" name="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_242057" value="1"<?php echo $selwrk ?><?php echo $ShopFabricationMultipliers_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_242057"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ShopFabricationMultipliers" data-field="x_ActiveFlag" name="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_426443" value="1"<?php echo $selwrk ?><?php echo $ShopFabricationMultipliers_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_426443"></label>
 </div>
 </span>
 <input type="hidden" data-table="ShopFabricationMultipliers" data-field="x_ActiveFlag" name="o<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ShopFabricationMultipliers_list->ActiveFlag->OldValue) ?>">
@@ -540,8 +540,8 @@ $selwrk = ConvertToBool($ShopFabricationMultipliers_list->ActiveFlag->CurrentVal
 $selwrk = ConvertToBool($ShopFabricationMultipliers_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ShopFabricationMultipliers" data-field="x_ActiveFlag" name="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_679296" value="1"<?php echo $selwrk ?><?php echo $ShopFabricationMultipliers_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_679296"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ShopFabricationMultipliers" data-field="x_ActiveFlag" name="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_105484" value="1"<?php echo $selwrk ?><?php echo $ShopFabricationMultipliers_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_105484"></label>
 </div>
 </span>
 <?php } ?>
@@ -631,8 +631,8 @@ $ShopFabricationMultipliers_list->ListOptions->render("body", "left", $ShopFabri
 $selwrk = ConvertToBool($ShopFabricationMultipliers_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ShopFabricationMultipliers" data-field="x_ActiveFlag" name="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_671315" value="1"<?php echo $selwrk ?><?php echo $ShopFabricationMultipliers_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_671315"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ShopFabricationMultipliers" data-field="x_ActiveFlag" name="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_966993" value="1"<?php echo $selwrk ?><?php echo $ShopFabricationMultipliers_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]_966993"></label>
 </div>
 </span>
 <input type="hidden" data-table="ShopFabricationMultipliers" data-field="x_ActiveFlag" name="o<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ShopFabricationMultipliers_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ShopFabricationMultipliers_list->ActiveFlag->OldValue) ?>">

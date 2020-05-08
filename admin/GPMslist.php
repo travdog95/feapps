@@ -357,8 +357,8 @@ $GPMs_list->ListOptions->render("body", "left", $GPMs_list->RowCount);
 $selwrk = ConvertToBool($GPMs_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GPMs" data-field="x_ActiveFlag" name="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_257170" value="1"<?php echo $selwrk ?><?php echo $GPMs_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_257170"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GPMs" data-field="x_ActiveFlag" name="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_296152" value="1"<?php echo $selwrk ?><?php echo $GPMs_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_296152"></label>
 </div>
 </span>
 <input type="hidden" data-table="GPMs" data-field="x_ActiveFlag" name="o<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($GPMs_list->ActiveFlag->OldValue) ?>">
@@ -557,8 +557,8 @@ $GPMs_list->ListOptions->render("body", "left", $GPMs_list->RowCount);
 $selwrk = ConvertToBool($GPMs_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GPMs" data-field="x_ActiveFlag" name="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_377097" value="1"<?php echo $selwrk ?><?php echo $GPMs_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_377097"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GPMs" data-field="x_ActiveFlag" name="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_902397" value="1"<?php echo $selwrk ?><?php echo $GPMs_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_902397"></label>
 </div>
 </span>
 <input type="hidden" data-table="GPMs" data-field="x_ActiveFlag" name="o<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($GPMs_list->ActiveFlag->OldValue) ?>">
@@ -569,8 +569,8 @@ $selwrk = ConvertToBool($GPMs_list->ActiveFlag->CurrentValue) ? " checked" : "";
 $selwrk = ConvertToBool($GPMs_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GPMs" data-field="x_ActiveFlag" name="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_537632" value="1"<?php echo $selwrk ?><?php echo $GPMs_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_537632"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GPMs" data-field="x_ActiveFlag" name="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_378271" value="1"<?php echo $selwrk ?><?php echo $GPMs_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_378271"></label>
 </div>
 </span>
 <?php } ?>
@@ -655,8 +655,8 @@ $GPMs_list->ListOptions->render("body", "left", $GPMs_list->RowIndex);
 $selwrk = ConvertToBool($GPMs_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GPMs" data-field="x_ActiveFlag" name="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_369665" value="1"<?php echo $selwrk ?><?php echo $GPMs_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_369665"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GPMs" data-field="x_ActiveFlag" name="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_918173" value="1"<?php echo $selwrk ?><?php echo $GPMs_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]_918173"></label>
 </div>
 </span>
 <input type="hidden" data-table="GPMs" data-field="x_ActiveFlag" name="o<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $GPMs_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($GPMs_list->ActiveFlag->OldValue) ?>">

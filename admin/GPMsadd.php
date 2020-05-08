@@ -156,8 +156,8 @@ $GPMs_add->showMessage();
 $selwrk = ConvertToBool($GPMs_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GPMs" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_808267" value="1"<?php echo $selwrk ?><?php echo $GPMs_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_808267"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GPMs" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_834223" value="1"<?php echo $selwrk ?><?php echo $GPMs_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_834223"></label>
 </div>
 </span>
 <?php echo $GPMs_add->ActiveFlag->CustomMsg ?></div></div>

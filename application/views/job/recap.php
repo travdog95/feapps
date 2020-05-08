@@ -333,19 +333,12 @@ $this->load->view('inc/site_header', $site_header_data);
                                                 <td colspan="2" class="bold">Notes &amp; Exclusions</td>
                                                 <td colspan="3" class="bold left-aligned">TOTAL AFTER CAPACITY COSTS</td>
                                                 <td>$<span id="total_capacity_cost"></span></td>
-                                                <td rowspan="14"></td>
+                                                <td rowspan="14" style="vertical-align: top;">
+                                                    <?php echo $recap_summary; ?>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td colspan="2" rowspan="11" class="nobgfill" style="vertical-align:top">
-                                            <!--
-                                                <div id="inline-columns" class="row">
-                                                    <div class="col-sm-12">
-                                                        <div contenteditable="true">
-                                                            <p>Edit content Here. </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            //-->
                                                 <textarea name="notes" id="notes"><?php echo quotes_to_entities($job['notes']); ?></textarea>
 												<span id="notes-print" class="display_none print-me"></span>
                                             </td>
@@ -520,11 +513,14 @@ $this->load->view('inc/site_header', $site_header_data);
                                  <!-- /END RESPONSIVE TABLE -->
 
                             <!-- BUTTONS -->
-                            <div class="buttons-recap feci-buttons">
-                                <p>
-                                    <input type="submit" class="primary" id="save_recap" value="save recap" />
-                                </p>
-                            </div>
+                            <?php if ($this->session->userdata('read_only') == 0): ?>
+
+                                <div class="buttons-recap feci-buttons">
+                                    <p>
+                                        <input type="submit" class="primary" id="save_recap" value="save recap" /> 
+                                    </p>
+                                </div>
+                            <?php endif; ?>
                              <!-- /END BUTTONS -->
 
                             <?php echo form_close(); ?>
@@ -551,8 +547,6 @@ $this->load->view('inc/site_header', $site_header_data);
 
 <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 <script src="<?php echo base_url();?>assets/js/index.js"></script>
-<!-- <script src="<?php echo base_url();?>lib/CKEditor-4.2.1/ckeditor.js"></script>
-<script src="<?php echo base_url();?>lib/CKEditor-4.2.1/adapters/jquery.js"></script> -->
 <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 
 <?php $this->load->view('js/user'); ?>

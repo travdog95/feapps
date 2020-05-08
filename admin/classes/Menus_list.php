@@ -2443,9 +2443,9 @@ class Menus_list extends Menus
 	{
 		$this->Menu_Idn->CurrentValue = NULL;
 		$this->Menu_Idn->OldValue = $this->Menu_Idn->CurrentValue;
-		$this->Name->CurrentValue = "NULL";
+		$this->Name->CurrentValue = NULL;
 		$this->Name->OldValue = $this->Name->CurrentValue;
-		$this->ShortName->CurrentValue = "NULL";
+		$this->ShortName->CurrentValue = NULL;
 		$this->ShortName->OldValue = $this->ShortName->CurrentValue;
 		$this->Link->CurrentValue = "NULL";
 		$this->Link->OldValue = $this->Link->CurrentValue;

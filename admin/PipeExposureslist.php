@@ -387,8 +387,8 @@ $PipeExposures_list->ListOptions->render("body", "left", $PipeExposures_list->Ro
 $selwrk = ConvertToBool($PipeExposures_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeExposures" data-field="x_ActiveFlag" name="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_416041" value="1"<?php echo $selwrk ?><?php echo $PipeExposures_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_416041"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeExposures" data-field="x_ActiveFlag" name="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_913768" value="1"<?php echo $selwrk ?><?php echo $PipeExposures_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_913768"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeExposures" data-field="x_ActiveFlag" name="o<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PipeExposures_list->ActiveFlag->OldValue) ?>">
@@ -617,8 +617,8 @@ $PipeExposures_list->ListOptions->render("body", "left", $PipeExposures_list->Ro
 $selwrk = ConvertToBool($PipeExposures_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeExposures" data-field="x_ActiveFlag" name="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_856545" value="1"<?php echo $selwrk ?><?php echo $PipeExposures_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_856545"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeExposures" data-field="x_ActiveFlag" name="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_649699" value="1"<?php echo $selwrk ?><?php echo $PipeExposures_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_649699"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeExposures" data-field="x_ActiveFlag" name="o<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PipeExposures_list->ActiveFlag->OldValue) ?>">
@@ -629,8 +629,8 @@ $selwrk = ConvertToBool($PipeExposures_list->ActiveFlag->CurrentValue) ? " check
 $selwrk = ConvertToBool($PipeExposures_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeExposures" data-field="x_ActiveFlag" name="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_177906" value="1"<?php echo $selwrk ?><?php echo $PipeExposures_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_177906"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeExposures" data-field="x_ActiveFlag" name="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_924196" value="1"<?php echo $selwrk ?><?php echo $PipeExposures_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_924196"></label>
 </div>
 </span>
 <?php } ?>
@@ -728,8 +728,8 @@ $PipeExposures_list->ListOptions->render("body", "left", $PipeExposures_list->Ro
 $selwrk = ConvertToBool($PipeExposures_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="PipeExposures" data-field="x_ActiveFlag" name="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_144692" value="1"<?php echo $selwrk ?><?php echo $PipeExposures_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_144692"></label>
+	<input type="checkbox" class="custom-control-input" data-table="PipeExposures" data-field="x_ActiveFlag" name="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_825068" value="1"<?php echo $selwrk ?><?php echo $PipeExposures_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]_825068"></label>
 </div>
 </span>
 <input type="hidden" data-table="PipeExposures" data-field="x_ActiveFlag" name="o<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $PipeExposures_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($PipeExposures_list->ActiveFlag->OldValue) ?>">

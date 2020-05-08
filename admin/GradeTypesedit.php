@@ -178,8 +178,8 @@ $GradeTypes_edit->showMessage();
 $selwrk = ConvertToBool($GradeTypes_edit->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="GradeTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_125129" value="1"<?php echo $selwrk ?><?php echo $GradeTypes_edit->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_125129"></label>
+	<input type="checkbox" class="custom-control-input" data-table="GradeTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_983710" value="1"<?php echo $selwrk ?><?php echo $GradeTypes_edit->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_983710"></label>
 </div>
 </span>
 <?php echo $GradeTypes_edit->ActiveFlag->CustomMsg ?></div></div>

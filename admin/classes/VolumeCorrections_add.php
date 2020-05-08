@@ -815,7 +815,8 @@ class VolumeCorrections_add extends VolumeCorrections
 		$this->Value->CurrentValue = 0;
 		$this->Hours->CurrentValue = 0;
 		$this->Rank->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

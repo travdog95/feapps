@@ -10,10 +10,16 @@
             </button>
 			-->
             <span class="area-name" data-worksheet_area_idn="<?php echo $Row['WorksheetArea_Idn']; ?>">
-                <a href="#" id="WorksheetAreaName<?php echo $Row['WorksheetArea_Idn']; ?>" class="area-name-inline" data-pk="<?php echo $Row['WorksheetArea_Idn']; ?>" ><?php echo quotes_to_entities($Row['Name']); ?></a>
+                <?php if ($this->session->userdata('read_only') == 0): ?>
+                    <a href="#" id="WorksheetAreaName<?php echo $Row['WorksheetArea_Idn']; ?>" class="area-name-inline" data-pk="<?php echo $Row['WorksheetArea_Idn']; ?>" ><?php echo quotes_to_entities($Row['Name']); ?></a>
+                <?php else: ?>
+                    <?php echo quotes_to_entities($Row['Name']); ?>
+                <?php endif; ?>
             </span>
-            <button id="AddWorksheetToArea<?php echo $Row['WorksheetArea_Idn']; ?>" class="btn btn-link btn-xs add-worksheet-to-area" value="<?php echo $Row['WorksheetArea_Idn']; ?>" data-worksheet_master_idn="9">Add Worksheet</button>
-            <button id="AddMiscellaneousItemToArea<?php echo $Row['WorksheetArea_Idn']; ?>" class="btn btn-link btn-xs add-miscellaneous" data-source="138" value="<?php echo $Row['WorksheetArea_Idn']; ?>">Add Misc Item</button>
+            <?php if ($this->session->userdata('read_only') == 0): ?>
+                <button id="AddWorksheetToArea<?php echo $Row['WorksheetArea_Idn']; ?>" class="btn btn-link btn-xs add-worksheet-to-area" value="<?php echo $Row['WorksheetArea_Idn']; ?>" data-worksheet_master_idn="9">Add Worksheet</button>
+                <button id="AddMiscellaneousItemToArea<?php echo $Row['WorksheetArea_Idn']; ?>" class="btn btn-link btn-xs add-miscellaneous" data-source="138" value="<?php echo $Row['WorksheetArea_Idn']; ?>">Add Misc Item</button>
+            <?php endif; ?>
         </span>
     </td>
 </tr>

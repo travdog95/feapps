@@ -410,8 +410,8 @@ $ScheduleTypes_list->ListOptions->render("body", "left", $ScheduleTypes_list->Ro
 $selwrk = ConvertToBool($ScheduleTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ScheduleTypes" data-field="x_ActiveFlag" name="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_702041" value="1"<?php echo $selwrk ?><?php echo $ScheduleTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_702041"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ScheduleTypes" data-field="x_ActiveFlag" name="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_507823" value="1"<?php echo $selwrk ?><?php echo $ScheduleTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_507823"></label>
 </div>
 </span>
 <input type="hidden" data-table="ScheduleTypes" data-field="x_ActiveFlag" name="o<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ScheduleTypes_list->ActiveFlag->OldValue) ?>">
@@ -660,8 +660,8 @@ $ScheduleTypes_list->ListOptions->render("body", "left", $ScheduleTypes_list->Ro
 $selwrk = ConvertToBool($ScheduleTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ScheduleTypes" data-field="x_ActiveFlag" name="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_559597" value="1"<?php echo $selwrk ?><?php echo $ScheduleTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_559597"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ScheduleTypes" data-field="x_ActiveFlag" name="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_506213" value="1"<?php echo $selwrk ?><?php echo $ScheduleTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_506213"></label>
 </div>
 </span>
 <input type="hidden" data-table="ScheduleTypes" data-field="x_ActiveFlag" name="o<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ScheduleTypes_list->ActiveFlag->OldValue) ?>">
@@ -672,8 +672,8 @@ $selwrk = ConvertToBool($ScheduleTypes_list->ActiveFlag->CurrentValue) ? " check
 $selwrk = ConvertToBool($ScheduleTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ScheduleTypes" data-field="x_ActiveFlag" name="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_508487" value="1"<?php echo $selwrk ?><?php echo $ScheduleTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_508487"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ScheduleTypes" data-field="x_ActiveFlag" name="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_901930" value="1"<?php echo $selwrk ?><?php echo $ScheduleTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_901930"></label>
 </div>
 </span>
 <?php } ?>
@@ -779,8 +779,8 @@ $ScheduleTypes_list->ListOptions->render("body", "left", $ScheduleTypes_list->Ro
 $selwrk = ConvertToBool($ScheduleTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="ScheduleTypes" data-field="x_ActiveFlag" name="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_320499" value="1"<?php echo $selwrk ?><?php echo $ScheduleTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_320499"></label>
+	<input type="checkbox" class="custom-control-input" data-table="ScheduleTypes" data-field="x_ActiveFlag" name="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_386022" value="1"<?php echo $selwrk ?><?php echo $ScheduleTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]_386022"></label>
 </div>
 </span>
 <input type="hidden" data-table="ScheduleTypes" data-field="x_ActiveFlag" name="o<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $ScheduleTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($ScheduleTypes_list->ActiveFlag->OldValue) ?>">

@@ -171,8 +171,8 @@ $CoverageTypes_add->showMessage();
 $selwrk = ConvertToBool($CoverageTypes_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="CoverageTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_787192" value="1"<?php echo $selwrk ?><?php echo $CoverageTypes_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_787192"></label>
+	<input type="checkbox" class="custom-control-input" data-table="CoverageTypes" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_204559" value="1"<?php echo $selwrk ?><?php echo $CoverageTypes_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_204559"></label>
 </div>
 </span>
 <?php echo $CoverageTypes_add->ActiveFlag->CustomMsg ?></div></div>

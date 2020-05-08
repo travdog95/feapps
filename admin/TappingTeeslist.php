@@ -363,8 +363,8 @@ $TappingTees_list->ListOptions->render("body", "left", $TappingTees_list->RowCou
 $selwrk = ConvertToBool($TappingTees_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="TappingTees" data-field="x_ActiveFlag" name="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_474049" value="1"<?php echo $selwrk ?><?php echo $TappingTees_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_474049"></label>
+	<input type="checkbox" class="custom-control-input" data-table="TappingTees" data-field="x_ActiveFlag" name="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_393627" value="1"<?php echo $selwrk ?><?php echo $TappingTees_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_393627"></label>
 </div>
 </span>
 <input type="hidden" data-table="TappingTees" data-field="x_ActiveFlag" name="o<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($TappingTees_list->ActiveFlag->OldValue) ?>">
@@ -563,8 +563,8 @@ $TappingTees_list->ListOptions->render("body", "left", $TappingTees_list->RowCou
 $selwrk = ConvertToBool($TappingTees_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="TappingTees" data-field="x_ActiveFlag" name="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_926581" value="1"<?php echo $selwrk ?><?php echo $TappingTees_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_926581"></label>
+	<input type="checkbox" class="custom-control-input" data-table="TappingTees" data-field="x_ActiveFlag" name="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_780526" value="1"<?php echo $selwrk ?><?php echo $TappingTees_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_780526"></label>
 </div>
 </span>
 <input type="hidden" data-table="TappingTees" data-field="x_ActiveFlag" name="o<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($TappingTees_list->ActiveFlag->OldValue) ?>">
@@ -575,8 +575,8 @@ $selwrk = ConvertToBool($TappingTees_list->ActiveFlag->CurrentValue) ? " checked
 $selwrk = ConvertToBool($TappingTees_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="TappingTees" data-field="x_ActiveFlag" name="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_697017" value="1"<?php echo $selwrk ?><?php echo $TappingTees_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_697017"></label>
+	<input type="checkbox" class="custom-control-input" data-table="TappingTees" data-field="x_ActiveFlag" name="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_348568" value="1"<?php echo $selwrk ?><?php echo $TappingTees_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_348568"></label>
 </div>
 </span>
 <?php } ?>
@@ -663,8 +663,8 @@ $TappingTees_list->ListOptions->render("body", "left", $TappingTees_list->RowInd
 $selwrk = ConvertToBool($TappingTees_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="TappingTees" data-field="x_ActiveFlag" name="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_583931" value="1"<?php echo $selwrk ?><?php echo $TappingTees_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_583931"></label>
+	<input type="checkbox" class="custom-control-input" data-table="TappingTees" data-field="x_ActiveFlag" name="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_860416" value="1"<?php echo $selwrk ?><?php echo $TappingTees_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]_860416"></label>
 </div>
 </span>
 <input type="hidden" data-table="TappingTees" data-field="x_ActiveFlag" name="o<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $TappingTees_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($TappingTees_list->ActiveFlag->OldValue) ?>">

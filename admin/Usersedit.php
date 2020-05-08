@@ -101,6 +101,11 @@ loadjs.ready("head", function() {
 				if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
 					return this.onError(elm, "<?php echo JsEncode(str_replace("%s", $Users_edit->IsAdmin->caption(), $Users_edit->IsAdmin->RequiredErrorMessage)) ?>");
 			<?php } ?>
+			<?php if ($Users_edit->ReadOnly->Required) { ?>
+				elm = this.getElements("x" + infix + "_ReadOnly[]");
+				if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
+					return this.onError(elm, "<?php echo JsEncode(str_replace("%s", $Users_edit->ReadOnly->caption(), $Users_edit->ReadOnly->RequiredErrorMessage)) ?>");
+			<?php } ?>
 			<?php if ($Users_edit->ActiveFlag->Required) { ?>
 				elm = this.getElements("x" + infix + "_ActiveFlag[]");
 				if (elm && !ew.isHidden(elm) && !ew.hasValue(elm))
@@ -140,6 +145,8 @@ loadjs.ready("head", function() {
 	fUsersedit.lists["x_IsContractor[]"].options = <?php echo JsonEncode($Users_edit->IsContractor->options(FALSE, TRUE)) ?>;
 	fUsersedit.lists["x_IsAdmin[]"] = <?php echo $Users_edit->IsAdmin->Lookup->toClientList($Users_edit) ?>;
 	fUsersedit.lists["x_IsAdmin[]"].options = <?php echo JsonEncode($Users_edit->IsAdmin->options(FALSE, TRUE)) ?>;
+	fUsersedit.lists["x_ReadOnly[]"] = <?php echo $Users_edit->ReadOnly->Lookup->toClientList($Users_edit) ?>;
+	fUsersedit.lists["x_ReadOnly[]"].options = <?php echo JsonEncode($Users_edit->ReadOnly->options(FALSE, TRUE)) ?>;
 	fUsersedit.lists["x_ActiveFlag[]"] = <?php echo $Users_edit->ActiveFlag->Lookup->toClientList($Users_edit) ?>;
 	fUsersedit.lists["x_ActiveFlag[]"].options = <?php echo JsonEncode($Users_edit->ActiveFlag->options(FALSE, TRUE)) ?>;
 	loadjs.done("fUsersedit");
@@ -256,8 +263,8 @@ $Users_edit->showMessage();
 $selwrk = ConvertToBool($Users_edit->IsContractor->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Users" data-field="x_IsContractor" name="x_IsContractor[]" id="x_IsContractor[]_811459" value="1"<?php echo $selwrk ?><?php echo $Users_edit->IsContractor->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsContractor[]_811459"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Users" data-field="x_IsContractor" name="x_IsContractor[]" id="x_IsContractor[]_655479" value="1"<?php echo $selwrk ?><?php echo $Users_edit->IsContractor->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsContractor[]_655479"></label>
 </div>
 </span>
 <?php echo $Users_edit->IsContractor->CustomMsg ?></div></div>
@@ -272,11 +279,27 @@ $selwrk = ConvertToBool($Users_edit->IsContractor->CurrentValue) ? " checked" : 
 $selwrk = ConvertToBool($Users_edit->IsAdmin->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Users" data-field="x_IsAdmin" name="x_IsAdmin[]" id="x_IsAdmin[]_677001" value="1"<?php echo $selwrk ?><?php echo $Users_edit->IsAdmin->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsAdmin[]_677001"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Users" data-field="x_IsAdmin" name="x_IsAdmin[]" id="x_IsAdmin[]_219812" value="1"<?php echo $selwrk ?><?php echo $Users_edit->IsAdmin->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsAdmin[]_219812"></label>
 </div>
 </span>
 <?php echo $Users_edit->IsAdmin->CustomMsg ?></div></div>
+	</div>
+<?php } ?>
+<?php if ($Users_edit->ReadOnly->Visible) { // ReadOnly ?>
+	<div id="r_ReadOnly" class="form-group row">
+		<label id="elh_Users_ReadOnly" class="<?php echo $Users_edit->LeftColumnClass ?>"><?php echo $Users_edit->ReadOnly->caption() ?><?php echo $Users_edit->ReadOnly->Required ? $Language->phrase("FieldRequiredIndicator") : "" ?></label>
+		<div class="<?php echo $Users_edit->RightColumnClass ?>"><div <?php echo $Users_edit->ReadOnly->cellAttributes() ?>>
+<span id="el_Users_ReadOnly">
+<?php
+$selwrk = ConvertToBool($Users_edit->ReadOnly->CurrentValue) ? " checked" : "";
+?>
+<div class="custom-control custom-checkbox d-inline-block">
+	<input type="checkbox" class="custom-control-input" data-table="Users" data-field="x_ReadOnly" name="x_ReadOnly[]" id="x_ReadOnly[]_787015" value="1"<?php echo $selwrk ?><?php echo $Users_edit->ReadOnly->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ReadOnly[]_787015"></label>
+</div>
+</span>
+<?php echo $Users_edit->ReadOnly->CustomMsg ?></div></div>
 	</div>
 <?php } ?>
 <?php if ($Users_edit->ActiveFlag->Visible) { // ActiveFlag ?>
@@ -288,8 +311,8 @@ $selwrk = ConvertToBool($Users_edit->IsAdmin->CurrentValue) ? " checked" : "";
 $selwrk = ConvertToBool($Users_edit->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="Users" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_889451" value="1"<?php echo $selwrk ?><?php echo $Users_edit->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_889451"></label>
+	<input type="checkbox" class="custom-control-input" data-table="Users" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_102563" value="1"<?php echo $selwrk ?><?php echo $Users_edit->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_102563"></label>
 </div>
 </span>
 <?php echo $Users_edit->ActiveFlag->CustomMsg ?></div></div>

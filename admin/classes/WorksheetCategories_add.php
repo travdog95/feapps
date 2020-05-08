@@ -828,7 +828,8 @@ class WorksheetCategories_add extends WorksheetCategories
 	{
 		$this->WorksheetCategory_Idn->CurrentValue = NULL;
 		$this->WorksheetCategory_Idn->OldValue = $this->WorksheetCategory_Idn->CurrentValue;
-		$this->Name->CurrentValue = "NULL";
+		$this->Name->CurrentValue = NULL;
+		$this->Name->OldValue = $this->Name->CurrentValue;
 		$this->ShortName->CurrentValue = "NULL";
 		$this->Department_Idn->CurrentValue = NULL;
 		$this->Department_Idn->OldValue = $this->Department_Idn->CurrentValue;
@@ -837,7 +838,8 @@ class WorksheetCategories_add extends WorksheetCategories
 		$this->CartFlag->CurrentValue = 1;
 		$this->IsShared->CurrentValue = 0;
 		$this->IsAssembly->CurrentValue = 0;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
+		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
 	// Load form values

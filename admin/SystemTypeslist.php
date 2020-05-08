@@ -387,8 +387,8 @@ $SystemTypes_list->ListOptions->render("body", "left", $SystemTypes_list->RowCou
 $selwrk = ConvertToBool($SystemTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="SystemTypes" data-field="x_ActiveFlag" name="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_108655" value="1"<?php echo $selwrk ?><?php echo $SystemTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_108655"></label>
+	<input type="checkbox" class="custom-control-input" data-table="SystemTypes" data-field="x_ActiveFlag" name="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_190195" value="1"<?php echo $selwrk ?><?php echo $SystemTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_190195"></label>
 </div>
 </span>
 <input type="hidden" data-table="SystemTypes" data-field="x_ActiveFlag" name="o<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($SystemTypes_list->ActiveFlag->OldValue) ?>">
@@ -617,8 +617,8 @@ $SystemTypes_list->ListOptions->render("body", "left", $SystemTypes_list->RowCou
 $selwrk = ConvertToBool($SystemTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="SystemTypes" data-field="x_ActiveFlag" name="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_104635" value="1"<?php echo $selwrk ?><?php echo $SystemTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_104635"></label>
+	<input type="checkbox" class="custom-control-input" data-table="SystemTypes" data-field="x_ActiveFlag" name="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_220356" value="1"<?php echo $selwrk ?><?php echo $SystemTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_220356"></label>
 </div>
 </span>
 <input type="hidden" data-table="SystemTypes" data-field="x_ActiveFlag" name="o<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($SystemTypes_list->ActiveFlag->OldValue) ?>">
@@ -629,8 +629,8 @@ $selwrk = ConvertToBool($SystemTypes_list->ActiveFlag->CurrentValue) ? " checked
 $selwrk = ConvertToBool($SystemTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="SystemTypes" data-field="x_ActiveFlag" name="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_425477" value="1"<?php echo $selwrk ?><?php echo $SystemTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_425477"></label>
+	<input type="checkbox" class="custom-control-input" data-table="SystemTypes" data-field="x_ActiveFlag" name="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_877783" value="1"<?php echo $selwrk ?><?php echo $SystemTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_877783"></label>
 </div>
 </span>
 <?php } ?>
@@ -728,8 +728,8 @@ $SystemTypes_list->ListOptions->render("body", "left", $SystemTypes_list->RowInd
 $selwrk = ConvertToBool($SystemTypes_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="SystemTypes" data-field="x_ActiveFlag" name="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_562268" value="1"<?php echo $selwrk ?><?php echo $SystemTypes_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_562268"></label>
+	<input type="checkbox" class="custom-control-input" data-table="SystemTypes" data-field="x_ActiveFlag" name="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_753505" value="1"<?php echo $selwrk ?><?php echo $SystemTypes_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]_753505"></label>
 </div>
 </span>
 <input type="hidden" data-table="SystemTypes" data-field="x_ActiveFlag" name="o<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $SystemTypes_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($SystemTypes_list->ActiveFlag->OldValue) ?>">

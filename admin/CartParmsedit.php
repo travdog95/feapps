@@ -263,8 +263,8 @@ $CartParms_edit->showMessage();
 $selwrk = ConvertToBool($CartParms_edit->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="CartParms" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_486354" value="1"<?php echo $selwrk ?><?php echo $CartParms_edit->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_486354"></label>
+	<input type="checkbox" class="custom-control-input" data-table="CartParms" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_535692" value="1"<?php echo $selwrk ?><?php echo $CartParms_edit->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_535692"></label>
 </div>
 </span>
 <?php echo $CartParms_edit->ActiveFlag->CustomMsg ?></div></div>

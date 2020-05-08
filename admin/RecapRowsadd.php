@@ -189,8 +189,8 @@ $RecapRows_add->showMessage();
 $selwrk = ConvertToBool($RecapRows_add->CalcShopFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RecapRows" data-field="x_CalcShopFlag" name="x_CalcShopFlag[]" id="x_CalcShopFlag[]_340581" value="1"<?php echo $selwrk ?><?php echo $RecapRows_add->CalcShopFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_CalcShopFlag[]_340581"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RecapRows" data-field="x_CalcShopFlag" name="x_CalcShopFlag[]" id="x_CalcShopFlag[]_366300" value="1"<?php echo $selwrk ?><?php echo $RecapRows_add->CalcShopFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_CalcShopFlag[]_366300"></label>
 </div>
 </span>
 <?php echo $RecapRows_add->CalcShopFlag->CustomMsg ?></div></div>
@@ -205,8 +205,8 @@ $selwrk = ConvertToBool($RecapRows_add->CalcShopFlag->CurrentValue) ? " checked"
 $selwrk = ConvertToBool($RecapRows_add->IsWorksheetFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RecapRows" data-field="x_IsWorksheetFlag" name="x_IsWorksheetFlag[]" id="x_IsWorksheetFlag[]_468287" value="1"<?php echo $selwrk ?><?php echo $RecapRows_add->IsWorksheetFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_IsWorksheetFlag[]_468287"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RecapRows" data-field="x_IsWorksheetFlag" name="x_IsWorksheetFlag[]" id="x_IsWorksheetFlag[]_653046" value="1"<?php echo $selwrk ?><?php echo $RecapRows_add->IsWorksheetFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_IsWorksheetFlag[]_653046"></label>
 </div>
 </span>
 <?php echo $RecapRows_add->IsWorksheetFlag->CustomMsg ?></div></div>
@@ -221,8 +221,8 @@ $selwrk = ConvertToBool($RecapRows_add->IsWorksheetFlag->CurrentValue) ? " check
 $selwrk = ConvertToBool($RecapRows_add->DisplayFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RecapRows" data-field="x_DisplayFlag" name="x_DisplayFlag[]" id="x_DisplayFlag[]_554507" value="1"<?php echo $selwrk ?><?php echo $RecapRows_add->DisplayFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_DisplayFlag[]_554507"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RecapRows" data-field="x_DisplayFlag" name="x_DisplayFlag[]" id="x_DisplayFlag[]_216424" value="1"<?php echo $selwrk ?><?php echo $RecapRows_add->DisplayFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_DisplayFlag[]_216424"></label>
 </div>
 </span>
 <?php echo $RecapRows_add->DisplayFlag->CustomMsg ?></div></div>
@@ -247,8 +247,8 @@ $selwrk = ConvertToBool($RecapRows_add->DisplayFlag->CurrentValue) ? " checked" 
 $selwrk = ConvertToBool($RecapRows_add->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RecapRows" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_478366" value="1"<?php echo $selwrk ?><?php echo $RecapRows_add->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_478366"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RecapRows" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_700445" value="1"<?php echo $selwrk ?><?php echo $RecapRows_add->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_700445"></label>
 </div>
 </span>
 <?php echo $RecapRows_add->ActiveFlag->CustomMsg ?></div></div>

@@ -523,8 +523,8 @@ $JobDefaults_list->ListOptions->render("body", "left", $JobDefaults_list->RowCou
 $selwrk = ConvertToBool($JobDefaults_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="JobDefaults" data-field="x_ActiveFlag" name="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_300832" value="1"<?php echo $selwrk ?><?php echo $JobDefaults_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_300832"></label>
+	<input type="checkbox" class="custom-control-input" data-table="JobDefaults" data-field="x_ActiveFlag" name="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_463872" value="1"<?php echo $selwrk ?><?php echo $JobDefaults_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_463872"></label>
 </div>
 </span>
 <input type="hidden" data-table="JobDefaults" data-field="x_ActiveFlag" name="o<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($JobDefaults_list->ActiveFlag->OldValue) ?>">
@@ -875,8 +875,8 @@ $JobDefaults_list->ListOptions->render("body", "left", $JobDefaults_list->RowCou
 $selwrk = ConvertToBool($JobDefaults_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="JobDefaults" data-field="x_ActiveFlag" name="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_625870" value="1"<?php echo $selwrk ?><?php echo $JobDefaults_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_625870"></label>
+	<input type="checkbox" class="custom-control-input" data-table="JobDefaults" data-field="x_ActiveFlag" name="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_534781" value="1"<?php echo $selwrk ?><?php echo $JobDefaults_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_534781"></label>
 </div>
 </span>
 <input type="hidden" data-table="JobDefaults" data-field="x_ActiveFlag" name="o<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($JobDefaults_list->ActiveFlag->OldValue) ?>">
@@ -887,8 +887,8 @@ $selwrk = ConvertToBool($JobDefaults_list->ActiveFlag->CurrentValue) ? " checked
 $selwrk = ConvertToBool($JobDefaults_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="JobDefaults" data-field="x_ActiveFlag" name="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_820879" value="1"<?php echo $selwrk ?><?php echo $JobDefaults_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_820879"></label>
+	<input type="checkbox" class="custom-control-input" data-table="JobDefaults" data-field="x_ActiveFlag" name="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_186564" value="1"<?php echo $selwrk ?><?php echo $JobDefaults_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_186564"></label>
 </div>
 </span>
 <?php } ?>
@@ -1037,8 +1037,8 @@ $JobDefaults_list->ListOptions->render("body", "left", $JobDefaults_list->RowInd
 $selwrk = ConvertToBool($JobDefaults_list->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="JobDefaults" data-field="x_ActiveFlag" name="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_914138" value="1"<?php echo $selwrk ?><?php echo $JobDefaults_list->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_914138"></label>
+	<input type="checkbox" class="custom-control-input" data-table="JobDefaults" data-field="x_ActiveFlag" name="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" id="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_171199" value="1"<?php echo $selwrk ?><?php echo $JobDefaults_list->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]_171199"></label>
 </div>
 </span>
 <input type="hidden" data-table="JobDefaults" data-field="x_ActiveFlag" name="o<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" id="o<?php echo $JobDefaults_list->RowIndex ?>_ActiveFlag[]" value="<?php echo HtmlEncode($JobDefaults_list->ActiveFlag->OldValue) ?>">

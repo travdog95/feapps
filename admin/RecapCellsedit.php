@@ -167,8 +167,8 @@ $RecapCells_edit->showMessage();
 $selwrk = ConvertToBool($RecapCells_edit->ActiveFlag->CurrentValue) ? " checked" : "";
 ?>
 <div class="custom-control custom-checkbox d-inline-block">
-	<input type="checkbox" class="custom-control-input" data-table="RecapCells" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_398871" value="1"<?php echo $selwrk ?><?php echo $RecapCells_edit->ActiveFlag->editAttributes() ?>>
-	<label class="custom-control-label" for="x_ActiveFlag[]_398871"></label>
+	<input type="checkbox" class="custom-control-input" data-table="RecapCells" data-field="x_ActiveFlag" name="x_ActiveFlag[]" id="x_ActiveFlag[]_431277" value="1"<?php echo $selwrk ?><?php echo $RecapCells_edit->ActiveFlag->editAttributes() ?>>
+	<label class="custom-control-label" for="x_ActiveFlag[]_431277"></label>
 </div>
 </span>
 <?php echo $RecapCells_edit->ActiveFlag->CustomMsg ?></div></div>

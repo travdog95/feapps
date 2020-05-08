@@ -2342,7 +2342,7 @@ class JobStatuses_list extends JobStatuses
 		$this->Name->OldValue = $this->Name->CurrentValue;
 		$this->Rank->CurrentValue = 0;
 		$this->Rank->OldValue = $this->Rank->CurrentValue;
-		$this->ActiveFlag->CurrentValue = 1;
+		$this->ActiveFlag->CurrentValue = NULL;
 		$this->ActiveFlag->OldValue = $this->ActiveFlag->CurrentValue;
 	}
 
