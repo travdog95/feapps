@@ -84,6 +84,6 @@ defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
-
 //TKO
-define('FECI_SITE_TITLE',                       'FECI 5.1.1');
+$site_title = ($_SERVER['SERVER_NAME'] == "wisp-dev2016") ? 'FECI 5.1.1 <<<TEST>>>' : 'FECI 5.1.1';
+define('FECI_SITE_TITLE', $site_title);

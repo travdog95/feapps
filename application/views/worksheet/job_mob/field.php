@@ -30,7 +30,7 @@ $fts_sections = (isset($worksheet['WorksheetParms']['ParmValues']['FTSSections']
         $<span id="F_TRK_EXP_OFF_TOT"></span>
 	</td>
 	<td>
-        <input type="text" name="F_TRK_EXP_OFF_TRIPS" id="F_TRK_EXP_OFF_TRIPS" value="<?php echo $jm['f_trk_exp_off_trips']; ?>" title="Office Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['f_trk_exp_off_trips']; ?>" />
+        <input type="text" name="F_TRK_EXP_OFF_TRIPS" id="F_TRK_EXP_OFF_TRIPS" value="<?php echo $jm['f_trk_exp_off_trips']; ?>" title="Office Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['f_trk_exp_off_trips']; ?>" />
 	</td>
 	<td rowspan="2">
         $<span id="F_TRK_EXP_SUB_TOT" class="fts_total"></span>
@@ -44,7 +44,7 @@ $fts_sections = (isset($worksheet['WorksheetParms']['ParmValues']['FTSSections']
         $<span id="F_TRK_EXP_HOT_TOT"></span>
 	</td>
 	<td>
-        <input type="text" name="F_TRK_EXP_HOT_TRIPS" id="F_TRK_EXP_HOT_TRIPS" value="<?php echo $jm['f_trk_exp_hot_trips']; ?>" title="Hotel Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['f_trk_exp_hot_trips']; ?>" />
+        <input type="text" name="F_TRK_EXP_HOT_TRIPS" id="F_TRK_EXP_HOT_TRIPS" value="<?php echo $jm['f_trk_exp_hot_trips']; ?>" title="Hotel Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['f_trk_exp_hot_trips']; ?>" />
 	</td>
 </tr>
 <tr class="fts2">
@@ -59,7 +59,7 @@ $fts_sections = (isset($worksheet['WorksheetParms']['ParmValues']['FTSSections']
 	    $<input type="text" name="F_VEH_EXP_AIR_RATE" id="F_VEH_EXP_AIR_RATE" value="<?php echo $jm['f_veh_exp_air_rate']; ?>" title="Field Airfare" class="input-xs calc-jobmob-worksheet monitor-change check_num2 width-75 print-my-value" data-recent-value="<?php echo $jm['f_veh_exp_air_rate']; ?>" /> Airfare
 	</td>
 	<td>
-	    <input type="text" name="F_VEH_EXP_AIR_TRIPS" id="F_VEH_EXP_AIR_TRIPS" value="<?php echo $jm['f_veh_exp_air_trips']; ?>" title="Field Air Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['f_veh_exp_air_trips']; ?>" />
+	    <input type="text" name="F_VEH_EXP_AIR_TRIPS" id="F_VEH_EXP_AIR_TRIPS" value="<?php echo $jm['f_veh_exp_air_trips']; ?>" title="Field Air Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['f_veh_exp_air_trips']; ?>" />
 	</td>
 	<td rowspan="2">
         $<span id="F_VEH_EXP_SUB_TOT" class="fts_total"></span>
@@ -74,7 +74,7 @@ $fts_sections = (isset($worksheet['WorksheetParms']['ParmValues']['FTSSections']
         &nbsp;/&nbsp;Day
 	</td>
 	<td>
-        <input type="text" name="F_VEH_EXP_CAR_TRIPS" id="F_VEH_EXP_CAR_TRIPS" value="<?php echo $jm['f_veh_exp_car_trips']; ?>" title="Field Car Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['f_veh_exp_car_trips']; ?>" />
+        <input type="text" name="F_VEH_EXP_CAR_TRIPS" id="F_VEH_EXP_CAR_TRIPS" value="<?php echo $jm['f_veh_exp_car_trips']; ?>" title="Field Car Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['f_veh_exp_car_trips']; ?>" />
 	</td>
 </tr>
 
@@ -104,7 +104,7 @@ $fts_sections = (isset($worksheet['WorksheetParms']['ParmValues']['FTSSections']
         $<input type="text" name="F_WAG_RATE" id="F_WAG_RATE" value="<?php echo $jm['f_wag_rate']; ?>" title="Field Travel Wage Rate" class="input-xs calc-jobmob-worksheet monitor-change check_num2 width-75 print-my-value" data-recent-value="<?php echo $jm['f_wag_rate']; ?>" />
 	</td>
 	<td>
-        <input type="text" name="F_WAG_TRIPS" id="F_WAG_TRIPS" value="<?php echo $jm['f_wag_trips']; ?>" title="Field Travel Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['f_wag_trips']; ?>" />
+        <input type="text" name="F_WAG_TRIPS" id="F_WAG_TRIPS" value="<?php echo $jm['f_wag_trips']; ?>" title="Field Travel Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['f_wag_trips']; ?>" />
 	</td>
 </tr>
 <tr class="fts3">
@@ -114,7 +114,7 @@ $fts_sections = (isset($worksheet['WorksheetParms']['ParmValues']['FTSSections']
         $<input type="text" name="F_WAG_AIR_RATE"  id="F_WAG_AIR_RATE" value="<?php echo $jm['f_wag_air_rate']; ?>" title="Air Rate" class="input-xs calc-jobmob-worksheet monitor-change check_num2 width-75 print-my-value" data-recent-value="<?php echo $jm['f_wag_air_rate']; ?>" />
 	</td>
 	<td>
-        <input type="text" name="F_WAG_AIR_TRIPS" id="F_WAG_AIR_TRIPS" value="<?php echo $jm['f_wag_air_trips']; ?>" title="Air Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['f_wag_air_trips']; ?>" />
+        <input type="text" name="F_WAG_AIR_TRIPS" id="F_WAG_AIR_TRIPS" value="<?php echo $jm['f_wag_air_trips']; ?>" title="Air Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['f_wag_air_trips']; ?>" />
 	</td>
 </tr>
 
@@ -250,7 +250,7 @@ $fts_sections = (isset($worksheet['WorksheetParms']['ParmValues']['FTSSections']
         $<input type="text" name="INTERIM_RATE"  id="INTERIM_RATE" value="<?php echo $jm['interim_rate']; ?>" title="Interim Rate" class="input-xs calc-jobmob-worksheet monitor-change check_num2 width-75 print-my-value" data-recent-value="<?php echo $jm['interim_rate']; ?>" />
 	</td>
 	<td>
-        <input type="text" name="INTERIM_TRIPS" id="INTERIM_TRIPS" value="<?php echo $jm['interim_trips']; ?>" title="Interim Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['interim_trips']; ?>" />
+        <input type="text" name="INTERIM_TRIPS" id="INTERIM_TRIPS" value="<?php echo $jm['interim_trips']; ?>" title="Interim Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['interim_trips']; ?>" />
 	</td>
 	<td class="rowdisabled">&nbsp;</td>
 	<td>

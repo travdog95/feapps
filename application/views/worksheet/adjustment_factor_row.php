@@ -3,21 +3,19 @@ $id = $Row['RowType']."_".$Row['Rank'];
 ?>
 <tr id="<?php echo $Row['RowType']."Row_".$Row['Rank']; ?>">
     <td>
-    <?php if ($Row['Rank'] <> 1 && $Row['Rank'] <> 500 && $Row['Rank'] <> 501): ?>
-        <input id="Delete<?php echo $id; ?>" name="Delete[]" type="checkbox" class="delete" value="<?php echo $Row['RowType']."Row_".$Row['Rank']; ?>" />
-    <?php else: ?>
-        &nbsp;
-    <?php endif; ?>
-    <input type="hidden" id="AdjustmentFactorRank<?php echo $Row['Rank']; ?>" name="AdjustmentFactorRank[]" value="<?php echo $Row['Rank']; ?>" />
+        <?php if ($Row['Rank'] <> 1 && $Row['Rank'] <> 500 && $Row['Rank'] <> 501): ?>
+            <input id="Delete<?php echo $id; ?>" name="Delete[]" type="checkbox" class="delete" value="<?php echo $Row['RowType']."Row_".$Row['Rank']; ?>" />
+        <?php else: ?>
+            &nbsp;
+        <?php endif; ?>
+        <input type="hidden" id="AdjustmentFactorRank<?php echo $Row['Rank']; ?>" name="AdjustmentFactorRank[]" value="<?php echo $Row['Rank']; ?>" />
     </td>
     <td colspan="<?php echo $worksheet_master['NumberOfColumns'] - 6; ?>">
-        <!--<span style="display:inline-block; width: 40%;" class="pull-right">-->
-            <select id="AdjustmentFactor_<?php echo $Row['Rank']; ?>" name="AdjustmentFactor[]" class="adjustment-factor form-control input-xs print-my-value pull-right" style="width:40%" data-rank="<?php echo $Row['Rank']; ?>">
+        <select id="AdjustmentFactor_<?php echo $Row['Rank']; ?>" name="AdjustmentFactor[]" class="adjustment-factor form-control input-xs print-my-value pull-right" style="width:40%" data-rank="<?php echo $Row['Rank']; ?>">
             <?php foreach($Row['AdjustmentFactors'] as $AF): ?>
                 <option value="<?php echo $AF['AdjustmentFactor_Idn']; ?>"<?php if ($AF['AdjustmentFactor_Idn'] == $Row['AdjustmentFactor_Idn']) echo ' selected="selected"'; ?>><?php echo quotes_to_entities($AF['Name']); ?></option>
             <?php endforeach; ?>
-            </select>
-        <!-- </span>-->
+        </select>
         <?php if ($Row['Rank'] == 1): ?>
             <span class="pull-right">Height:&nbsp;</span>
         <?php endif; ?>

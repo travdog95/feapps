@@ -19,7 +19,7 @@ $mileage_rate = $job['job_parms'][16]['NumericValue'];
         $<span id="DEL_EXP_STK_TOT"></span> 
 	</td>
 	<td>
-        <input type="text" name="DEL_EXP_STK_TRIPS" id="DEL_EXP_STK_TRIPS" value="<?php echo $jm['del_exp_stk_trips']; ?>" title="Delivery Truck Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['del_exp_stk_trips']; ?>" />
+        <input type="text" name="DEL_EXP_STK_TRIPS" id="DEL_EXP_STK_TRIPS" value="<?php echo $jm['del_exp_stk_trips']; ?>" title="Delivery Truck Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['del_exp_stk_trips']; ?>" />
 	</td>
 	<td>
         $<span id="DEL_EXP_SUB_TOT"></span>
@@ -46,7 +46,7 @@ $mileage_rate = $job['job_parms'][16]['NumericValue'];
         $<input type="text" name="DEL_WAG_RATE" id="DEL_WAG_RATE" value="<?php echo $jm['del_wag_rate']; ?>" title="Delivery Driver Wage" class="input-xs calc-jobmob-worksheet monitor-change check_num2 width-75 print-my-value" data-recent-value="<?php echo $jm['del_wag_rate']; ?>" />
 	</td>
 	<td>
-        <input type="text" name="DEL_WAG_TRIPS" id="DEL_WAG_TRIPS" value="<?php echo $jm['del_wag_trips']; ?>" title="Delivery Driver Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['del_wag_trips']; ?>" />
+        <input type="text" name="DEL_WAG_TRIPS" id="DEL_WAG_TRIPS" value="<?php echo $jm['del_wag_trips']; ?>" title="Delivery Driver Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['del_wag_trips']; ?>" />
 	</td>
 </tr>
 		
@@ -60,7 +60,7 @@ $mileage_rate = $job['job_parms'][16]['NumericValue'];
         $<input type="text" name="DEL_SUB_RATE" id="DEL_SUB_RATE" value="<?php echo $jm['del_sub_rate']; ?>" title="Delivery Driver Rate" class="input-xs calc-jobmob-worksheet monitor-change check_num2 width-75 print-my-value" data-recent-value="<?php echo $jm['del_sub_rate']; ?>" />
 	</td>
 	<td>
-        <input type="text" name="DEL_SUB_TRIPS" id="DEL_SUB_TRIPS" value="<?php echo $jm['del_sub_trips']; ?>" title="Delivery Driver Subsistence Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['del_sub_trips']; ?>" />
+        <input type="text" name="DEL_SUB_TRIPS" id="DEL_SUB_TRIPS" value="<?php echo $jm['del_sub_trips']; ?>" title="Delivery Driver Subsistence Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['del_sub_trips']; ?>" />
 	</td>
 	<td>
         $<span id="DEL_SUB_SUB_TOT"></span>

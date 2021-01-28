@@ -713,7 +713,7 @@ class Job extends CI_Controller
         //Parse post data into separate arrays to save to JobPreparedBys, JobParmDetails and Jobs tables
         $job_data['IsParent'] = ($data['is_parent'] == 'Y') ? 1 : 0;
         $job_data['Name'] = $data['name'];
-        $job_data['Contractor'] = $data['contractor'];
+        $job_data['Contractor'] = (isset($data['contractor'])) ? $data['contractor'] : "";
         $job_data['JobStatus_Idn'] = $data['status'];
         $job_data['LastUpdatedBy_Idn'] = $this->session->userdata('user_idn');
         $job_data['Department_Idn'] = $data['department_idn'];
@@ -803,10 +803,40 @@ class Job extends CI_Controller
             //If new job, set job_number
             if ($data['job_number'] == "0") {
                 $data['job_number'] = $save_results['job_number'];
+
+                //Get job keys
+                $job_keys = get_job_keys($data['job_number']);
+
+            } else { //Existing job number
+
+                //Get job keys
+                $job_keys = get_job_keys($data['job_number']);
+
+                //If miles to job is updated to a new value, update all the miles fields on the job mob worksheet
+                if ($job_parm_data['31'] != str_replace(",", "", $data['recentValues']['miles_to_job'])) {
+                    //get Job Mob worksheet_idn
+                    $job_mob_where = array(
+                        "Job_Idn" => $job_keys[0],
+                        "ChangeOrder" => $job_keys[1],
+                        "WorksheetMaster_Idn" => 8
+                    );
+                    $worksheet_idn = $this->m_reference_table->get_field("Worksheets", "Worksheet_Idn", $job_mob_where);
+                    //update job mob trip fields
+                    $miles_fields = array("DES_EXP_VEH_MILES", "DES_WAG_MILES","F_TRK_EXP_OFF_MIL","F_WAG_MILES","DEL_EXP_STK_MIL","DEL_WAG_MILES");
+                    $miles = $job_parm_data['31'] * 2;
+                    $set = array();
+            
+                    foreach($miles_fields as $field) {
+                        $field = strtolower($field);
+                        $set[$field] = $miles; 
+                    }
+            
+                    $where = array("Worksheet_Idn" => $worksheet_idn);
+            
+                    $this->m_reference_table->update("JobMobWorksheets", $set, $where);
+                }
             }
     
-            //Get job keys
-            $job_keys = get_job_keys($data['job_number']);
             
             //Save JobParmDetails records
             foreach ($job_parm_data as $parm_id => $value) {
@@ -949,6 +979,7 @@ class Job extends CI_Controller
             5 => 'labor',
             6 => 'hours'
         );
+        $job_keys = array();
         
         //Load models
         $this->load->model('m_recap_row');
@@ -959,6 +990,7 @@ class Job extends CI_Controller
         if ($job_number != '0' && !empty($job_number)) {
             //Load menus
             $data['menus'] = $this->m_menu->get_menus($job_number);
+            $job_keys = get_job_keys($job_number);
 
             if ($this->m_job->is_parent($job_number)) {
                 //Instantiate ParentJob
@@ -966,7 +998,8 @@ class Job extends CI_Controller
                 $this->load->library('parentjob', array('job_number' => $job_number));
                 $Job = $this->parentjob;
 
-                $Job->get_children();
+                //This is now part of the construct of ParentJob object
+                //$Job->get_children($job_keys[0]);
 
                 $Job->load_recap_rows();
             } else {
@@ -1060,6 +1093,12 @@ class Job extends CI_Controller
             
                 $data['recap_rows'][$rr_index][0] = array('contents' => $first_cell_contents, 'class' => '', 'additional_first_cell_content' => $additional_first_cell_content);
             
+                //Get Job Mob labor hours
+                if ($recap_row_idn == 8 || $recap_row_idn == 32) {
+                    $data['job']['jm_shop_hours'] = ceil($Job->RRs[$recap_row_idn]->shop_hours);
+                    $data['job']['jm_field_hours'] = ceil($Job->RRs[$recap_row_idn]->field_hours);
+                }
+                
                 //Set recap cell content and class
                 foreach ($Job->RRs[$recap_row_idn]->recap_cells as $rc_index => $recap_cell) {
                     //Disable row and empty contents of cell is disabled
@@ -1083,11 +1122,6 @@ class Job extends CI_Controller
                 
                     $data['recap_rows'][$rr_index][$rc_index] = array('contents' => $contents, 'class' => $class);
                 
-                    //Get Job Mob labor hours
-                    if ($recap_row_idn == 8 || $recap_row_idn == 32) {
-                        $data['job']['jm_shop_hours'] = ceil($Job->RRs[$recap_row_idn]->shop_hours);
-                        $data['job']['jm_field_hours'] = ceil($Job->RRs[$recap_row_idn]->field_hours);
-                    }
                 }
             
                 //Increment index for recap row
@@ -1095,11 +1129,12 @@ class Job extends CI_Controller
             }
         }
 
-        $summary_data = array(
-			"total_sqft" => $Job->job['total_sqft'],
-			"total_heads" => $this->get_total_heads($job_number)
-        );
-        
+		$summary_data = array(
+			"total_sqft" => $Job->total_sqft,
+			"total_heads" => $Job->total_heads,
+			"is_parent" => $Job->job['is_parent']
+		);
+
 		$data['recap_summary'] = $this->load->view('job/recap_summary', $summary_data, true);
         $this->load->view('job/recap', $data);
     }
@@ -1166,7 +1201,6 @@ class Job extends CI_Controller
             'parts_smarts_field_labor_rate' => $job_defaults[80]['NumericValue'],
             'estimate_type_idn' => 0,
             'job_type_idn' => ($department_idn == 1) ? 1 : 0, //default to Fire Alarm for Electronic Division jobs
-            'total_sqft' => 0,
         );
         
         //Load labor rates
@@ -1255,7 +1289,6 @@ class Job extends CI_Controller
                 'estimate_type_idn' => $job['EstimateType_Idn'],
                 'has_overtime' => (empty($job_parms[82]['AlphaValue']) || $job_parms[82]['AlphaValue'] == "Y") ? "Y" : "N",
                 'job_type_idn' => $job['JobType_Idn'],
-				'total_sqft' => $job['TotalSqft'],
             );
             
             //Load labor rates
@@ -1742,7 +1775,7 @@ class Job extends CI_Controller
         $parent = $this->parentjob;
         
         //get child jobs
-        $parent->get_children($parent_job_keys[0]);
+        //$parent->get_children($parent_job_keys[0]);
         
         $data['child_jobs'] = $parent->children;
         
@@ -2119,8 +2152,12 @@ class Job extends CI_Controller
             }
             
             //total sqft
-            $total_sqft = str_replace(",","",$data['bs_total_sqft']);
+            $total_sqft = 0;
 
+            if (isset($data['bs_total_sqft'])) {
+                $total_sqft = ($this->m_job->is_parent($data['job_number'])) ? 0 : str_replace(",","",$data['bs_total_sqft']);
+            }
+            
             $job_recap_data = array(
                 'Notes' => $data['notes'],
                 'TotalSqft' => $total_sqft
@@ -2494,35 +2531,35 @@ class Job extends CI_Controller
         return $total;
     }
 
-    public function get_total_heads($job_number = 0)
-	{
-		$total_heads = 0;
-		$job_keys = array();
-		$where = array();
-		$query;
+	// public function get_total_heads($job_number = 0)
+	// {
+	// 	$total_heads = 0;
+	// 	$job_keys = array();
+	// 	$where = array();
+	// 	$query;
 
-		if (!empty($job_number))
-		{
-			$job_keys = get_job_keys($job_number);
-			$where = array(
-				"Job_Idn" => $job_keys[0],
-				"ChangeOrder" => $job_keys[1],
-				"WorksheetMaster_Idn" => 9
-			);
+	// 	if (!empty($job_number))
+	// 	{
+	// 		$job_keys = get_job_keys($job_number);
+	// 		$where = array(
+	// 			"Job_Idn" => $job_keys[0],
+	// 			"ChangeOrder" => $job_keys[1],
+	// 			"WorksheetMaster_Idn" => 9
+	// 		);
 
-			//sum Qty of Branchline worksheets
-			$query = $this->db
-				->select("sum(Quantity) AS TotalHeads")
-				->from("Worksheets")
-				->where($where)
-				->get()
-				->row();
+	// 		//sum Qty of Branchline worksheets
+	// 		$query = $this->db
+	// 			->select("sum(Quantity) AS TotalHeads")
+	// 			->from("Worksheets")
+	// 			->where($where)
+	// 			->get()
+	// 			->row();
 
-			$total_heads = ($query->TotalHeads == null) ? 0 : $query->TotalHeads;;
-		}
+	// 		$total_heads = ($query->TotalHeads == null) ? 0 : $query->TotalHeads;;
+	// 	}
 
-		return $total_heads;
-	}
+	// 	return $total_heads;
+	// }
 }
 /* End of file job.php */
 /* Location: ./application/controllers/job.php */

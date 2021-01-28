@@ -50,7 +50,7 @@ $this->load->view('inc/site_header', $site_header_data);
                         //$this->load->view('inc/panel_heading', $panel_heading_data); 
                         ?>
 
-                        <div class="panel-body">
+                        <div id="pdfContent" class="panel-body">
                             <div class="well well-sm recap-header">
 
                                 <div class="row">
@@ -261,7 +261,7 @@ $this->load->view('inc/site_header', $site_header_data);
                                                         <input type="text" class="change check_num1 print-my-value form-control input-xs contingency-percent width-45" name="contingency_percent[<?php echo $i; ?>]" id="contingency_<?php echo $i; ?>_percent" value="<?php echo $contingency_percents[$i]; ?>" title="Contingency %" data-c="<?php echo $i; ?>">
                                                         <span class="input-group-addon input-xs">%</span>
                                                     </div>
-                                                                <!--$<input type="text" class="contingency change check_num0 print-my-value" name="contingency[<?php echo $i; ?>]" id="contingency_<?php echo $i; ?>" value="<?php echo $contingencies[$i]; ?>" title="Contingency" data-c="<?php echo $i; ?>                                                                <!--$<input type="text" class="contingency change check_num0 print-my-value" name="contingency[<?php echo $i; ?>]" id="contingency_<?php echo $i; ?>" value="<?php echo $contingencies[$i]; ?>" title="Contingency" data-c="<?php echo $i; ?>">-->												<input type="hidden" name="override_contingency_<?php echo $i; ?>_percent" id="override_contingency_<?php echo $i; ?>_percent" value="<?php echo $override_contingency_percent; ?>" />
+                                                    <input type="hidden" name="override_contingency_<?php echo $i; ?>_percent" id="override_contingency_<?php echo $i; ?>_percent" value="<?php echo $override_contingency_percent; ?>" />
                                                 </td>
                                                 <?php endfor; ?>
                                                 <td class="text-center"><strong>&lt;<span id="total_fmh"><?php echo number_format(ceil($job['field_hours']), 0) ?></span>&gt;</strong></td>
@@ -334,7 +334,7 @@ $this->load->view('inc/site_header', $site_header_data);
                                                 <td colspan="3" class="bold left-aligned">TOTAL AFTER CAPACITY COSTS</td>
                                                 <td>$<span id="total_capacity_cost"></span></td>
                                                 <td rowspan="14" style="vertical-align: top;">
-                                                    <?php echo $recap_summary; ?>
+                                                    <?php if ($job['department_idn'] == 2) echo $recap_summary; ?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -345,9 +345,9 @@ $this->load->view('inc/site_header', $site_header_data);
                                             <td colspan="3">
                                                 <!-- TOTAL CALCULATION AREA NEXT TO NOTES -->
 
-                                                    <div class="bold to-left">Regular Commision</div>
+                                                    <div class="bold to-left">Regular Commission</div>
 													<div class="input-group tko-input-group-right">
-                                                        <input type="text" name="regular_commission_percent" id="regular_commission_percent" class="change checknum2 print-my-value form-control input-xs width-75" title="Regular Commission %" value="<?php echo number_format($job['job_parms'][59]['NumericValue'] * 100, 4) ?>" />
+                                                        <input type="text" name="regular_commission_percent" id="regular_commission_percent" class="change check_num2 print-my-value form-control input-xs width-75" title="Regular Commission %" value="<?php echo number_format($job['job_parms'][59]['NumericValue'] * 100, 4) ?>" />
 														<span class="input-group-addon input-xs">%</span>
 													</div>
 
@@ -374,7 +374,7 @@ $this->load->view('inc/site_header', $site_header_data);
                                                     
                                                     <div class="bold to-left">PROFIT MARKUP</div>
                                                     <div class="input-group tko-input-group-right">
-                                                        <input type="text" name="profit_mark_up_percent" id="profit_mark_up_percent" class="change checknum2 print-my-value form-control input-xs width-75 highlight" data-original_value="<?php echo $profit_mark_up_percent; ?>" title="Profit Mark-Up %" value="<?php echo $profit_mark_up_percent; ?>" />
+                                                        <input type="text" name="profit_mark_up_percent" id="profit_mark_up_percent" class="change check_num2 print-my-value form-control input-xs width-75 highlight" data-original_value="<?php echo $profit_mark_up_percent; ?>" title="Profit Mark-Up %" value="<?php echo $profit_mark_up_percent; ?>" />
                                                         <span class="input-group-addon input-xs">%</span>
                                                     </div>
                                                     <span class="display_none approx-profit-mark-up-percent highlight" style="float: right;">~<span id="ApproximateProfitMarkUpPercent" class="approx-profit-mark-up-percent">12.54</span>% &nbsp;</span>
@@ -383,7 +383,7 @@ $this->load->view('inc/site_header', $site_header_data);
                                                     <div class="input-group tko-input-group-right">
 														
                                                         <span class="input-group-addon input-xs">$</span>
-                                                        <input type="text" name="profit_mark_up" id="profit_mark_up" class="change checknum0 print-my-value form-control input-xs width-90 text-right highlight" data-original_value="<?php $profit_mark_up; ?>" title="Profit Mark-Up" value="<?php echo $profit_mark_up; ?>" />
+                                                        <input type="text" name="profit_mark_up" id="profit_mark_up" class="change check_num0 print-my-value form-control input-xs width-90 text-right highlight" data-original_value="<?php $profit_mark_up; ?>" title="Profit Mark-Up" value="<?php echo $profit_mark_up; ?>" />
                                                     </div>
 
                                                     <input type="hidden" name="override_profit_mark_up_percent" id="override_profit_mark_up_percent" value="<?php echo $override_profit_mark_up_percent; ?>" />
@@ -399,7 +399,7 @@ $this->load->view('inc/site_header', $site_header_data);
                                                 <td colspan="3">
                                                     <div class="bold to-left">Sales or Use Taxes</div>
                                                     <div class="input-group tko-input-group-right">
-                                                        <input type="text" name="sales_tax_percent" id="sales_tax_percent" class="change checknum2 print-my-value form-control input-xs width-75" title="Sales Tax %" value="<?php echo number_format($job['job_parms'][15]['NumericValue'] * 100, 2) ?>" />
+                                                        <input type="text" name="sales_tax_percent" id="sales_tax_percent" class="change check_num2 print-my-value form-control input-xs width-75" title="Sales Tax %" value="<?php echo number_format($job['job_parms'][15]['NumericValue'] * 100, 2) ?>" />
                                                         <span class="input-group-addon input-xs">%</span>
                                                     </div>
                                                 </td>
@@ -423,14 +423,14 @@ $this->load->view('inc/site_header', $site_header_data);
                                                         <label for="override_depository_fee_limit">Override Limit</label>
                                                     </div>
                                                     <div class="input-group tko-input-group-right">
-                                                        <input type="text" name="depository_fee_percent" id="depository_fee_percent" class="change checknum2 print-my-value form-control input-xs width-75" title="Depository Fee %" value="<?php echo $depository_fee_percent; ?>" />
+                                                        <input type="text" name="depository_fee_percent" id="depository_fee_percent" class="change check_num2 print-my-value form-control input-xs width-75" title="Depository Fee %" value="<?php echo $depository_fee_percent; ?>" />
                                                         <span class="input-group-addon input-xs">%</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="input-group tko-input-group-right">
                                                         <span class="input-group-addon input-xs">$</span>
-                                                        <input type="text" name="depository_fee" id="depository_fee" class="change checknum0 print-my-value form-control input-xs width-90 text-right" title="Depository Fee" value="<?php echo $depository_fee; ?>" />
+                                                        <input type="text" name="depository_fee" id="depository_fee" class="change check_num0 print-my-value form-control input-xs width-90 text-right" title="Depository Fee" value="<?php echo $depository_fee; ?>" />
                                                     </div>
                                                     <input type="hidden" name="override_depository_fee_percent" id="override_depository_fee_percent" value="<?php echo $override_depository_fee_percent; ?>" />
                                                 </td>
@@ -450,14 +450,14 @@ $this->load->view('inc/site_header', $site_header_data);
                                                 <td colspan="3">
                                                     <div class="bold to-left">Cost of Bond</div>
                                                     <div class="input-group tko-input-group-right">
-                                                        <input type="text" name="cost_of_bond_percent" id="cost_of_bond_percent" class="change checknum2 print-my-value form-control input-xs width-75" title="Cost of Bond %" value="<?php echo $cost_of_bond_percent; ?>" />
+                                                        <input type="text" name="cost_of_bond_percent" id="cost_of_bond_percent" class="change check_num2 print-my-value form-control input-xs width-75" title="Cost of Bond %" value="<?php echo $cost_of_bond_percent; ?>" />
                                                         <span class="input-group-addon input-xs">%</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="input-group tko-input-group-right">
                                                         <span class="input-group-addon input-xs">$</span>
-                                                        <input type="text" name="cost_of_bond" id="cost_of_bond" class="change checknum0 print-my-value form-control input-xs width-90 text-right" title="Cost of Bond" value="<?php echo $cost_of_bond; ?>" />
+                                                        <input type="text" name="cost_of_bond" id="cost_of_bond" class="change check_num0 print-my-value form-control input-xs width-90 text-right" title="Cost of Bond" value="<?php echo $cost_of_bond; ?>" />
                                                     </div>
                                                     <input type="hidden" name="override_cost_of_bond_percent" id="override_cost_of_bond_percent" value="<?php echo $override_cost_of_bond_percent; ?>" />
                                                 </td>
@@ -479,14 +479,14 @@ $this->load->view('inc/site_header', $site_header_data);
                                                 <td colspan="3">
                                                     <div class="bold to-left">G.L. Surcharge, Gross Receipts Tax, Etc.</div>
                                                     <div class="input-group tko-input-group-right">
-                                                        <input type="text" name="gross_receipt_percent" id="gross_receipt_percent" class="change checknum2 print-my-value form-control input-xs width-75" title="Gross Receipt %" value="<?php echo $gross_receipt_percent; ?>" />
+                                                        <input type="text" name="gross_receipt_percent" id="gross_receipt_percent" class="change check_num2 print-my-value form-control input-xs width-75" title="Gross Receipt %" value="<?php echo $gross_receipt_percent; ?>" />
                                                         <span class="input-group-addon input-xs">%</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="input-group tko-input-group-right">
                                                         <span class="input-group-addon input-xs">$</span>
-                                                        <input type="text" name="gross_receipt" id="gross_receipt" class="change checknum0 print-my-value form-control input-xs width-90 text-right" title="Gross Receipt" value="<?php echo $gross_receipt; ?>" />
+                                                        <input type="text" name="gross_receipt" id="gross_receipt" class="change check_num0 print-my-value form-control input-xs width-90 text-right" title="Gross Receipt" value="<?php echo $gross_receipt; ?>" />
                                                     </div>
                                                     <input type="hidden" name="override_gross_receipt_percent" id="override_gross_receipt_percent" value="<?php echo $override_gross_receipt_percent; ?>" />
                                                 </td>
@@ -517,6 +517,10 @@ $this->load->view('inc/site_header', $site_header_data);
 
                                 <div class="buttons-recap feci-buttons">
                                     <p>
+                                        <?php if ($this->session->userdata('user_idn') == 3 || $this->session->userdata('user_idn') == 32): ?>
+                                            <button class="primary" id="accounting">Accounting Data</button>
+                                        <?php endif; ?>
+                                        <!-- <button class="primary" id="generatePDF">Generate PDF</button> -->
                                         <input type="submit" class="primary" id="save_recap" value="save recap" /> 
                                     </p>
                                 </div>
@@ -547,12 +551,16 @@ $this->load->view('inc/site_header', $site_header_data);
 
 <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 <script src="<?php echo base_url();?>assets/js/index.js"></script>
-<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 
 <?php $this->load->view('js/user'); ?>
 <?php $this->load->view('js/job'); ?>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>js/pages/job/recap.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>js/pages/job/copy_job.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>js/pages/job/export.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>lib/jsPDF-1.3.2/jspdf.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>lib/html2canvas-1.0.0-rc.7/html2canvas.min.js"></script>
+<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 
 <script>
 jQuery(document).ready(function () {

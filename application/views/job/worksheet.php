@@ -158,12 +158,14 @@ echo form_open('', $form_attributes);
                             <p>
                                 <button type="button" id="DeleteProductsConfirmation" class="danger">Delete Selected Items</button>
                             </p>
-                            <p>
-                                <button type="button" id="DeleteZeroQuantityItemsConfirmation" class="secondary">Delete Zero Quantity Items</button>
-                                <button type="button" id="DeleteWorksheetConfirmation" class="secondary">Delete Worksheet</button>
-
-                            </p>
                             <?php endif; ?>
+                            
+                            <p>
+                                <?php if ($worksheet_master['DisplayDeleteItemsButtons'] == 1): ?>  
+                                    <button type="button" id="DeleteZeroQuantityItemsConfirmation" class="secondary">Delete Zero Quantity Items</button>
+                                <?php endif; ?>
+                                <button type="button" id="DeleteWorksheetConfirmation" class="secondary">Delete Worksheet</button>
+                            </p>
                         </div>
                         <!-- BUTTONS -->
                         <div class="buttons-recap feci-buttons">

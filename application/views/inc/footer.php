@@ -15,6 +15,7 @@
 <script src="<?php echo base_url(); ?>lib/PerfectScrollbar/src/perfect-scrollbar.js"></script>
 <script src="<?php echo base_url(); ?>lib/jQueryCookie-1.4.0/jquery.cookie.js"></script>
 <script src="<?php echo base_url(); ?>lib/JSUrl-2.0.2/url.min.js"></script>
+<script src="<?php echo base_url(); ?>js/tkoFormToJson.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 <script src="<?php echo base_url(); ?>js/feci_globals.js"></script>
 <script>

@@ -293,8 +293,21 @@ function check_job_info() {
 function save_job_info() {
   const $form = $("#job_information");
   //Delcare and initialize variables
-  var serialized_data = $form.serialize();
-  var inputs = $form.find("input, select, button");
+ // const serialized_data = $form.serialize();
+  const inputs = $form.find("input, select, button");
+  const form = document.getElementById("job_information");
+  const formJsonData = formToJSON(form.elements);
+
+
+  //Add recent-value to serialized_data
+  let recentValues = {};
+  $("#job_information input[data-recent-value]").each(function() {
+    const $input = $(this);
+
+    recentValues[$input.attr("id")] = $input.data('recent-value');
+  });
+
+  formJsonData.recentValues = recentValues;
 
   //Abort any pending Ajax Requests
   if (FECI.request) {
@@ -309,7 +322,7 @@ function save_job_info() {
     url: FECI.base_url + "job/save_information",
     type: "POST",
     dataType: "json",
-    data: serialized_data
+    data: formJsonData
   });
 
   //Success callback handler

@@ -32,6 +32,8 @@
 
     $(".fts_section").on("change", function(e) {
       format_fts_section(this);
+      //reset arrow navigation
+      arrow_navigation_controller();
     });
 
     $("#OVERRIDE_TOTAL_FIELD_HOURS").on("change", function(e) {

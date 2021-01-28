@@ -16,6 +16,7 @@ class Job_mob extends Worksheet
     //Public members
     public $jm;
     public $fts_sections = array();
+    public $rows = array();
 
     //Calculated values
     public $des_wag_hrs = 0;
@@ -39,6 +40,7 @@ class Job_mob extends Worksheet
         //Load models
         $this->CI->load->model('m_job_mob_worksheet');
         $this->CI->load->model('m_worksheet_parm');
+        $this->CI->load->model('m_reference_table');
         
         // If Worksheet_Idn being passed, set it
         if ($params['w_id'] > 0) {
@@ -90,7 +92,10 @@ class Job_mob extends Worksheet
             $this->CI->load('j', array('job_number' => $job_number));
             $this->_j = $this->CI->j;
         }
-            
+
+        //Load JobMobRows
+        $this->rows = $this->_load_rows();
+
         //Get fts_sections
         $fts_sections = $this->CI->m_worksheet_parm->get_worksheet_parms_by_reference($this->w_id, 'FTSSections', 'ParmValue');
 
@@ -117,19 +122,25 @@ class Job_mob extends Worksheet
         // DESIGN TRAVEL
         //******************************************
         //Calc Designer Vehicle/Airfare Expenses
-        $this->high_sub += round($jm['des_exp_veh_miles'] * $this->_j->job_parms[16]['NumericValue'] * $jm['des_exp_veh_trips'], 2) +
+        $this->rows[1]['Value'] = round($jm['des_exp_veh_miles'] * $this->_j->job_parms[16]['NumericValue'] * $jm['des_exp_veh_trips'], 2) +
             round($jm['des_exp_air_rate'] * $jm['des_exp_air_trips'], 2) +
             round($jm['des_exp_car_days'] * $jm['des_exp_car_rate'] * $jm['des_exp_car_trips'], 2);
 
+        $this->high_sub += $this->rows[1]['Value'];
+
         //Calc Designer Travel Wages
         $this->jm_eng_hours = ($this->des_wag_hrs * $jm['des_wag_trips']) + ($jm['des_wag_air_hrs'] * $jm['des_wag_air_trips']);
-        $this->field += $this->des_wag_hrs * $design_labor_rate * $jm['des_wag_trips'] +
+        $this->rows[2]['Value'] = $this->des_wag_hrs * $design_labor_rate * $jm['des_wag_trips'] +
             round($jm['des_wag_air_hrs'] * $design_labor_rate, 2) * $jm['des_wag_air_trips'];
         
+        $this->field += $this->rows[2]['Value'];
+
         //Calc Designer Subsistence
-        $this->high_sub += round($jm['des_sub_lod_days'] * $jm['des_sub_lod_rate'], 2) +
+        $this->rows[3]['Value'] = round($jm['des_sub_lod_days'] * $jm['des_sub_lod_rate'], 2) +
             round($jm['des_sub_mea_days'] * $jm['des_sub_mea_rate'], 2);
         
+        $this->high_sub += $this->rows[3]['Value'];
+    
         //******************************************
         // FIELD TRAVEL & SUBSISTENCE
         //******************************************
@@ -147,7 +158,9 @@ class Job_mob extends Worksheet
         if (in_array(1, $this->fts_sections)) {
             $f_trk_office = (round($jm['f_trk_exp_off_mil'] * $this->_j->job_parms[16]['NumericValue'], 2) * $jm['f_trk_exp_off_trips']);
             $f_trk_hotel = (round($jm['f_trk_exp_hot_mil'] * $this->_j->job_parms[16]['NumericValue'], 2) * $jm['f_trk_exp_hot_trips']);
-            $this->high_sub += $f_trk_office + $f_trk_hotel;
+            $this->rows[4]['Value'] = $f_trk_office + $f_trk_hotel;
+
+            $this->high_sub += $this->rows[4]['Value'];
         }
         
         /******** Row 2 *******/
@@ -155,7 +168,9 @@ class Job_mob extends Worksheet
         //if ($miles_to_job >= 450)
         if (in_array(2, $this->fts_sections)) {
             //Calc Field Airfare / Vehicle Expense
-            $this->high_sub += round($jm['f_veh_exp_air_rate'] * $jm['f_veh_exp_air_trips'], 2) + round($jm['f_veh_exp_car_days'] * $jm['f_veh_exp_car_rate'] * $jm['f_veh_exp_car_trips'], 2);
+            $this->rows[5]['Value'] = round($jm['f_veh_exp_air_rate'] * $jm['f_veh_exp_air_trips'], 2) + round($jm['f_veh_exp_car_days'] * $jm['f_veh_exp_car_rate'] * $jm['f_veh_exp_car_trips'], 2);
+
+            $this->high_sub += $this->rows[5]['Value'];
         }
         
         /******** Row 3 *******/
@@ -164,7 +179,9 @@ class Job_mob extends Worksheet
         if (in_array(3, $this->fts_sections)) {
             $field_travel_wages = round(round($jm['f_wag_miles'] / 60 * $jm['f_wag_workers'], 2) * $jm['f_wag_rate'] * $jm['f_wag_trips'], 2) +
                 round($jm['f_wag_air_hrs'] * $jm['f_wag_air_rate'] * $jm['f_wag_air_trips'], 2);
-            $this->field += $field_travel_wages;
+            $this->rows[6]['Value'] = $field_travel_wages;
+
+            $this->field += $this->rows[6]['Value'];
         }
         
         /******** Row 4 *******/
@@ -180,20 +197,28 @@ class Job_mob extends Worksheet
             $field_subsistence_meal = round($this->_j->job_parms[3]['NumericValue'] * $meal_days, 2);
             $sub_week = $field_subsistence_motel + $field_subsistence_meal + $jm['f_sub_pay'];
             $this->high_sub += round($sub_week * $work_weeks, 2);
+
+            $this->rows[7]['Value'] = round($sub_week * $work_weeks, 2);
         }
         
         /******** Row 5 *******/
         //Calc Sunday Travel Subsistence
         //if ($miles_to_job >= 100 and $miles_to_job < 450)
-        if (in_array(5, $this->fts_sections)) {
-            $this->high_sub += round($jm['f_sun_wrk_weeks'] * (round($this->_j->job_parms[32]['NumericValue'] / 2, 2) + $jm['f_sun_meal']), 2);
+        if (in_array(5,$this->fts_sections))
+        {
+            $this->rows[8]['Value'] = round($jm['f_sun_wrk_weeks'] * (round($this->_j->job_parms[32]['NumericValue'] / 2, 2) + $jm['f_sun_meal']), 2);
+
+            $this->high_sub += $this->rows[8]['Value'];
         }
         
         /******* Row 6 *******/
         //Interim Travel Time
         //if ($miles_to_job >= 100)
-        if (in_array(6, $this->fts_sections)) {
-            $this->field += round($jm['interim_hours'] * $jm['interim_rate'] * $jm['interim_trips'], 2);
+        if (in_array(6,$this->fts_sections))
+        {
+            $this->rows[9]['Value'] = round($jm['interim_hours'] * $jm['interim_rate'] * $jm['interim_trips'], 2);
+
+            $this->field += $this->rows[9]['Value'];
         }
         
         //******************************************
@@ -201,23 +226,33 @@ class Job_mob extends Worksheet
         //******************************************
         
         //Calc Delivery Truck Expense
-        $this->high_sub += round($jm['del_exp_stk_mil'] * $this->_j->job_parms[81]['NumericValue'], 2) * $jm['del_exp_stk_trips'];
+        $this->rows[10]['Value'] = round($jm['del_exp_stk_mil'] * $this->_j->job_parms[81]['NumericValue'], 2) * $jm['del_exp_stk_trips'];
+        $this->high_sub += $this->rows[10]['Value'];
         
         //Calc Delivery Driver's Travel Wag
         $del_travel_hours = round($jm['del_wag_miles'] / 60, 2);
         $this->jm_shop_hours = $del_travel_hours * $jm['del_wag_trips'];
-        $this->field += $del_travel_hours * $jm['del_wag_rate'] * $jm['del_wag_trips'];
-        
+        $this->rows[11]['Value'] = $del_travel_hours * $jm['del_wag_rate'] * $jm['del_wag_trips'];
+        $this->field += $this->rows[11]['Value'];
+
         //Calc Delivery Driver's Subsistence
         $del_days = round($del_travel_hours / 8, 1);
-        $this->high_sub += round($del_days * $jm['del_sub_rate'], 2) * $jm['del_sub_trips'];
-        
+        $this->rows[12]['Value'] = round($del_days * $jm['del_sub_rate'], 2) * $jm['del_sub_trips'];
+        $this->high_sub += $this->rows[12]['Value'];
+
         //Calc Freight / Common Carrier
         $freight = round($jm['frt_loads'] * $jm['frt_rate'], 2);
-        if ($jm['frt_quoted'] == 1) {
+        $this->rows[13]['Value'] = $freight;
+
+        if ($jm['frt_quoted'] == 1)
+        {
             $this->low_sub += $freight;
-        } else {
+            $this->rows[13]['WorksheetColumn_Idn'] = 2;
+        }
+        else
+        {
             $this->high_sub += $freight;
+            $this->rows[13]['WorksheetColumn_Idn'] = 3;
         }
     }
     
@@ -285,6 +320,38 @@ class Job_mob extends Worksheet
         } else {
             return $subs_factors;
         }
+    }
+    
+    private function _load_rows()
+    {
+        $rows = array();
+        $data = $this->CI->m_reference_table->get_where("JobMobRows", array("ActiveFlag" => 1), "JobMobCategory_Idn ASC, Rank ASC");
+
+        foreach ($data as $row)
+        {
+            $key = $row['JobMobRow_Idn'];
+            //unset($row['JobMobRow_Idn']);
+            $row['Value'] = 0;
+            $rows[$key] = $row;
+        }
+
+        return $rows;
+    }
+
+    public function update_miles($miles_to_job) {
+        $miles_fields = array("DES_EXP_VEH_MILES", "DES_WAG_MILES","F_TRK_EXP_OFF_MIL","F_WAG_MILES","DEL_EXP_STK_MIL","DEL_WAG_MILES");
+        $miles = $miles_to_job * 2;
+        $set = "";
+
+        foreach($miles_fields as $field) {
+            $field = strtolower($field);
+            $set += (empty($set)) ? "" : ",";
+            $set += "{$field} = {$miles}";
+        }
+
+        $where = array("Worksheet_Idn" => $this->w_id);
+
+        $this->CI->m_reference_table->update($set, $where);
     }
 }
 // END Job Mob Class

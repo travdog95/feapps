@@ -567,42 +567,17 @@
         var field = 0;
 
         //Iterate over selected products
-        $(".results-product:checked").each(function(index) {
+        $(`.results-product${worksheet_category_idn}:checked`).each(function(index) {
           //Get product_idn
           product_idn = $(this).val();
           //Get material and field prices
-          if (
-            $(
-              "#Quantity" + worksheet_category_idn + "-" + product_idn
-            ).val() === undefined
-          ) {
+          if ($("#Quantity" + worksheet_category_idn + "-" + product_idn).val() === undefined) {
             qty = 1;
           } else {
-            qty = parseFloat(
-              strip_comma(
-                $(
-                  "#Quantity" + worksheet_category_idn + "-" + product_idn
-                ).val()
-              )
-            );
+            qty = parseFloat(strip_comma($("#Quantity" + worksheet_category_idn + "-" + product_idn).val()));
           }
-          price = parseFloat(
-            strip_comma(
-              $(
-                "#MaterialUnitPrice" +
-                  worksheet_category_idn +
-                  "-" +
-                  product_idn
-              ).html()
-            )
-          );
-          field = parseFloat(
-            strip_comma(
-              $(
-                "#FieldUnitPrice" + worksheet_category_idn + "-" + product_idn
-              ).html()
-            )
-          );
+          price = parseFloat(strip_comma($("#MaterialUnitPrice" + worksheet_category_idn + "-" + product_idn).html()));
+          field = parseFloat(strip_comma($("#FieldUnitPrice" + worksheet_category_idn + "-" + product_idn).html()));
 
           //Add to totals
           assembly_price += qty * price;

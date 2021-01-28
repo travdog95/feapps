@@ -15,7 +15,7 @@ $mileage_rate = $job['job_parms'][16]['NumericValue'];
             <input type="text" name="DES_EXP_VEH_MILES" id="DES_EXP_VEH_MILES" value="<?php echo $jm['des_exp_veh_miles']; ?>" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['des_exp_veh_miles']; ?>"/> 
             Miles round-trip x $<?php echo number_format($mileage_rate,2); ?></td>
 		<td>
-            <input type="text" name="DES_EXP_VEH_TRIPS" id="DES_EXP_VEH_TRIPS" value="<?php echo $jm['des_exp_veh_trips']; ?>" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['des_exp_veh_trips']; ?>" />
+            <input type="text" name="DES_EXP_VEH_TRIPS" id="DES_EXP_VEH_TRIPS" value="<?php echo $jm['des_exp_veh_trips']; ?>" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['des_exp_veh_trips']; ?>" />
 		</td>
 		<td rowspan="3">
             $<span id="DES_EXP_SUB_TOT" class="subcontract"></span>
@@ -27,7 +27,7 @@ $mileage_rate = $job['job_parms'][16]['NumericValue'];
             $<span id="DES_EXP_AIR_RATE" class="check_num2"><?php echo $jm['des_exp_air_rate']; ?></span> Airfare
 		</td>
 		<td>
-		<input type="text" name="DES_EXP_AIR_TRIPS" id="DES_EXP_AIR_TRIPS" value="<?php echo $jm['des_exp_air_trips']; ?>" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['des_exp_veh_trips']; ?>"  />
+		<input type="text" name="DES_EXP_AIR_TRIPS" id="DES_EXP_AIR_TRIPS" value="<?php echo $jm['des_exp_air_trips']; ?>" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['des_exp_veh_trips']; ?>"  />
 		</td>
 	</tr>
 	<tr>
@@ -36,7 +36,7 @@ $mileage_rate = $job['job_parms'][16]['NumericValue'];
             $<input type="text" name="DES_EXP_CAR_RATE" id="DES_EXP_CAR_RATE" value="<?php echo $jm['des_exp_car_rate']; ?>" class="input-xs calc-jobmob-worksheet monitor-change check_num2 width-75 print-my-value" data-recent-value="<?php echo $jm['des_exp_car_rate']; ?>" />&nbsp;/&nbsp;Day
 		</td>
 		<td>
-            <input type="text" name="DES_EXP_CAR_TRIPS" id="DES_EXP_CAR_TRIPS" value="<?php echo $jm['des_exp_car_trips']; ?>" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['des_exp_car_trips']; ?>" />
+            <input type="text" name="DES_EXP_CAR_TRIPS" id="DES_EXP_CAR_TRIPS" value="<?php echo $jm['des_exp_car_trips']; ?>" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['des_exp_car_trips']; ?>" />
 		</td>
 	</tr>
 
@@ -56,7 +56,7 @@ $mileage_rate = $job['job_parms'][16]['NumericValue'];
             $<span id="DES_WAG_RATE" class="check_num2"><?php echo $jm['des_wag_rate']; ?></span>
 		</td>
 		<td>
-            <input type="text" name="DES_WAG_TRIPS" id="DES_WAG_TRIPS" value="<?php echo $jm['des_wag_trips']; ?>" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['des_wag_trips']; ?>" title="Designer Trips" />
+            <input type="text" name="DES_WAG_TRIPS" id="DES_WAG_TRIPS" value="<?php echo $jm['des_wag_trips']; ?>" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['des_wag_trips']; ?>" title="Designer Trips" />
 		</td>
 	</tr>
 	<tr>
@@ -65,7 +65,7 @@ $mileage_rate = $job['job_parms'][16]['NumericValue'];
             Air Travel Hours per Trip @ $<span id="DES_WAG_AIR_RATE" class="check_num2"><?php echo $jm['des_wag_air_rate']; ?></span> 
 		</td>
 		<td>
-            <input type="text" name="DES_WAG_AIR_TRIPS" id="DES_WAG_AIR_TRIPS" value="<?php echo $jm['des_wag_air_trips']; ?>" title="Designer Air Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value" data-recent-value="<?php echo $jm['des_wag_air_trips']; ?>" />
+            <input type="text" name="DES_WAG_AIR_TRIPS" id="DES_WAG_AIR_TRIPS" value="<?php echo $jm['des_wag_air_trips']; ?>" title="Designer Air Trips" class="input-xs calc-jobmob-worksheet monitor-change check_num0 width-75 print-my-value trip" data-recent-value="<?php echo $jm['des_wag_air_trips']; ?>" />
 		</td>
 	</tr>
 	<tr>

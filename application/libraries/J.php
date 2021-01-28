@@ -19,12 +19,15 @@ class J
     public $engineer_hours = 0;
     public $job_keys = array();
     public $RRs = array();
-    //public $totals = array();
+    public $subtotals = array();
+    public $totals = array();
     public $bonded_markup = 0;
     public $debug = false;
     public $price_update_datetime = "";
     public $price_update_idn = 0;
     public $prices_outdated = false;
+    public $total_sqft;
+    public $total_heads;
 
     //Private members
     private $CI;
@@ -124,8 +127,12 @@ class J
                     "price_update_datetime" => $job_price_update_datetime,
                     "formated_price_update_datetime" => date_format(date_create($job_price_update_datetime), "M j, Y g:i:s A"),
                     "prices_outdated" => ($job_price_update_datetime < get_latest_price_update("datetime")),
-                    "total_sqft" => $job['TotalSqft'],
+                    //"total_sqft" => $job['TotalSqft'],
 			    );
+
+                //Total sqft
+                $this->total_sqft = $job['TotalSqft'];
+                $this->total_heads = $this->get_total_heads($this->job_number);
 
 			    //Load labor rates
 			    if ($job['Department_Idn'] == 1)
@@ -174,14 +181,21 @@ class J
         {
             //Instantiate Recap row
             $rr_instance = "recap_row_".$recap_row['RecapRow_Idn']."_".$this->job_number;
-            $this->CI->load->library('recap_row', array('recap_row_idn' => $recap_row['RecapRow_Idn'], 'j' => $this), $rr_instance);
+            $this->CI->load->library(
+                'recap_row', 
+                array(
+                    'recap_row_idn' => $recap_row['RecapRow_Idn'], 
+                    'j' => $this), 
+                $rr_instance
+            );
+
             $this->RRs[$recap_row['RecapRow_Idn']] = $this->CI->$rr_instance;
         }
 
         //Calculate Field and Shop hours
-        $this->_calc_shop_hours();
-        $this->_calc_field_hours();
-        $this->_calc_eng_hours();
+        $this->shop_hours = $this->_calc_shop_hours($this->RRs);
+        $this->field_hours = $this->_calc_field_hours($this->RRs);
+        $this->engineer_hours = $this->_calc_eng_hours($this->RRs);
 
         //put labor hours in array for recap rows that need it
         $labor_hours = array(
@@ -197,9 +211,20 @@ class J
         {
             //Instantiate Recap row
             $rr_instance = "recap_row_".$recap_row['RecapRow_Idn']."_".$this->job_number;
-            $this->CI->load->library('recap_row', array('recap_row_idn' => $recap_row['RecapRow_Idn'], 'j' => $this, 'labor_hours' => $labor_hours), $rr_instance);
+            $this->CI->load->library(
+                'recap_row', 
+                array(
+                    'recap_row_idn' => $recap_row['RecapRow_Idn'], 
+                    'j' => $this, 
+                    'labor_hours' => $labor_hours), 
+                $rr_instance
+            );
+
             $this->RRs[$recap_row['RecapRow_Idn']] = $this->CI->$rr_instance;
         }
+
+        $this->_calc_subtotals();
+        $this->_calc_totals();
 
         return $this->RRs;
     }
@@ -212,19 +237,23 @@ class J
     * @access   private
     * @return   void
     */
-    private function _calc_field_hours()
+    private function _calc_field_hours($labor_recap_rows)
     {
+        $field_hours = 0;
+
         //Iterate through Recap Rows to total field hours
-        foreach($this->RRs as $recap_row)
+        foreach($labor_recap_rows as $recap_row)
         {
             if ($this->debug)
             {
-                echo "<p>".ceil($recap_row->field_hours)."</p>";
+                echo "<p>".$recap_row->recap_row_idn.": ".ceil($recap_row->field_hours)."</p>";
             }
 
             //Total shop hours
-            $this->field_hours += ceil($recap_row->field_hours);
+            $field_hours += ceil($recap_row->field_hours);
         }
+
+        return $field_hours;
     }
 
     /**
@@ -235,18 +264,21 @@ class J
      * @access  private
      * @return  void
      */
-    private function _calc_shop_hours()
+    private function _calc_shop_hours($labor_recap_rows)
     {
+        $shop_hours = 0;
         //foreach ($recap_rows as $recap_row)
-        foreach($this->RRs as $recap_row)
+        foreach($labor_recap_rows as $recap_row)
         {
             //Exclude
             if ($recap_row->recap_row['CalcShopFlag'] == 1)
             {
                 //Total shop hours
-                $this->shop_hours += ceil($recap_row->shop_hours);
+                $shop_hours += ceil($recap_row->shop_hours);
             }
         }
+
+        return $shop_hours;
     }
 
     /**
@@ -257,12 +289,12 @@ class J
      * @access  private
      * @return  void
      */
-    private function _calc_eng_hours()
+    private function _calc_eng_hours($labor_recap_rows)
     {
         $recap_row_idn = ($this->job['department_idn'] == 1) ? 31 : 7;
 
         //Total engineer hours
-        $this->engineer_hours = $this->RRs[$recap_row_idn]->engineer_hours;
+       return $labor_recap_rows[$recap_row_idn]->engineer_hours;
     }
 
     /**
@@ -425,6 +457,326 @@ class J
 		}
 
 		return true;
+    }
+    
+    public function get_total_heads($job_number = 0)
+	{
+		$total_heads = 0;
+		$job_keys = array();
+		$where = array();
+		$query;
+
+		if (!empty($job_number))
+		{
+			$job_keys = get_job_keys($job_number);
+			$where = array(
+				"Job_Idn" => $job_keys[0],
+				"ChangeOrder" => $job_keys[1],
+				"WorksheetMaster_Idn" => 9
+			);
+
+			//sum Qty of Branchline worksheets
+			$query = $this->CI->db
+				->select("sum(Quantity) AS TotalHeads")
+				->from("Worksheets")
+				->where($where)
+				->get()
+				->row();
+
+			$total_heads = ($query->TotalHeads == null) ? 0 : $query->TotalHeads;;
+		}
+
+		return $total_heads;
 	}
+
+    private function _calc_subtotals()
+    {
+        //Initialize variables
+        $subtotals = array();
+        $subtotal_categories = array();
+        $columns = array();
+
+        //Get Recap Subtotal Categories
+        $subtotal_categories = $this->CI->m_reference_table->get_all("RecapSubtotalCategories", array(), false, "Rank");
+        $columns = $this->CI->m_reference_table->get_all("WorksheetColumns", array(), true, "Rank");
+
+        //Build subtotal_categories array
+        foreach($subtotal_categories as $subtotal)
+        {
+            $subtotals[$subtotal['RecapSubtotalCategory_Idn']] = $subtotal;
+
+            foreach($columns as $column)
+            {
+                $subtotals[$subtotal['RecapSubtotalCategory_Idn']]['Columns'][$column['WorksheetColumn_Idn']] = $column;
+                $subtotals[$subtotal['RecapSubtotalCategory_Idn']]['Columns'][$column['WorksheetColumn_Idn']]['Value'] = 0;
+                $subtotals[$subtotal['RecapSubtotalCategory_Idn']]['Columns'][$column['WorksheetColumn_Idn']]['Percentage'] = 0;
+            }
+        }
+
+        $this->subtotals = $subtotals;
+
+        $this->_calc_item_totals();
+
+        $this->_calc_pac();
+    
+        $this->_calc_supervisory_fee();
+    
+        $this->_calc_contingencies();
+    
+        $this->_calc_total_direct_costs();
+
+        $this->_calc_mark_up_costs();
+
+        return true;
+    }
+
+    private function _calc_item_totals()
+    {
+        //RecapSubtotalCategory_Idn = 1
+        $subtotal_category_idn = 1;
+        foreach($this->RRs as $recap_row)
+        {
+            foreach($recap_row->recap_cells as $column_idn => $value)
+            {
+                $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Value'] += $value;
+            }
+        }
+    }
+
+    private function _calc_pac()
+    {
+        //RecapSubtotalCategory_Idn = 2
+        $this->subtotals[2]['Percentage'] = 0;
+
+        //Payroll added cost = Labor Item Total * Payroll added costs percentage
+        $this->subtotals[2]['Columns'][5]['Value'] = round($this->subtotals[1]['Columns'][5]['Value'] * $this->job['payroll_added_costs'], 0);
+        $this->subtotals[2]['Columns'][5]['Percentage'] = $this->job['payroll_added_costs'];
+        
+        //RecapSubtotalCategory_Idn = 3
+        //Total after Payroll added cost
+        $this->subtotals[3]['Columns'][5]['Value'] = $this->subtotals[1]['Columns'][5]['Value'] + $this->subtotals[2]['Columns'][5]['Value'];
+    }
+
+    private function _calc_supervisory_fee()
+    {  
+        //RecapSubtotalCategory_Idn = 8
+        $this->subtotals[8]['Percentage'] = 0;
+
+        //Get percentage
+        $percentage = ($this->job['department_idn'] == 1) ? $this->job_parms[83]['NumericValue'] : $this->job_parms[17]['NumericValue'];
+        $this->subtotals[8]['Columns'][5]['Percentage'] = $percentage;
+
+        //Calc Supervisory Fee amount
+        $this->subtotals[8]['Columns'][5]['Value'] = round($this->subtotals[3]['Columns'][5]['Value'] * $percentage, 0);
+    }
+
+    private function _calc_contingencies()
+    {
+        //RecapSubtotalCategory_Idn = 4
+        $subtotal_category_idn = 4;
+        $contingency_percents = array(
+            '2' => $this->job_parms[23]['NumericValue'],
+            '3' => $this->job_parms[24]['NumericValue'],
+            '4' => $this->job_parms[25]['NumericValue'],
+            '5' => $this->job_parms[26]['NumericValue']
+        );
+
+        $contingencies = array(
+            '2' => $this->job_parms[33]['NumericValue'],
+            '3' => $this->job_parms[34]['NumericValue'],
+            '4' => $this->job_parms[35]['NumericValue'],
+            '5' => $this->job_parms[36]['NumericValue']
+        );
+
+        //set percentage to 0
+        $this->subtotals[$subtotal_category_idn]['Percentage'] = 0;
+
+        foreach ($contingencies as $column_idn => $contingency)
+        {
+            if ($contingencies[$column_idn] > 0) //Override percentage
+            {
+                $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Percentage'] = 0;
+                $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Value'] = round($contingencies[$column_idn], 0);
+            }
+            else
+            {
+                $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Percentage'] = $contingency_percents[$column_idn];
+                $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Value'] = round($contingency_percents[$column_idn] * $this->subtotals[1]['Columns'][$column_idn]['Value'], 0);
+            }
+        }
+    }
+
+    private function _calc_total_direct_costs()
+    {
+        $subtotal_category_idn = 5;
+        $direct_costs = array(1,2,3,4,5);
+
+        foreach($direct_costs as $index => $column_idn)
+        {
+            //Set to Item Total
+            $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Value'] = $this->subtotals[1]['Columns'][$column_idn]['Value'];
+
+            if ($column_idn > 1)
+            {
+                //If Low Sub, High Sub, Material or Labor add contingencies
+                $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Value'] += $this->subtotals[4]['Columns'][$column_idn]['Value'];
+
+                //If Labor, add PAC and Supervisory fee
+                if ($column_idn == 5) 
+                {
+                    $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Value'] = $this->subtotals[3]['Columns'][$column_idn]['Value'] + $this->subtotals[8]['Columns'][$column_idn]['Value'];
+                }
+            }
+        }
+    }
+
+    private function _calc_mark_up_costs()
+    {
+        //RecapSubtotalCategory_Idn = 6
+        $subtotal_category_idn = 6;
+        $mark_ups = array(
+            '1' => 0,
+            '2' => $this->job_parms[61]['NumericValue'],
+            '3' => $this->job_parms[57]['NumericValue'],
+            '4' => $this->job_parms[62]['NumericValue'],
+            '5' => $this->job_parms[58]['NumericValue']
+        );
+
+        //set percentage to 0
+        $this->subtotals[$subtotal_category_idn]['Percentage'] = 0;
+
+        foreach ($mark_ups as $column_idn => $mark_up)
+        {
+            $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Percentage'] = $mark_ups[$column_idn];
+
+            if ($column_idn == 1)
+            {
+                //Bonded, add to Total of all Items value
+                $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Value'] = $this->bonded_markup;
+            }
+            else
+            {
+                //Mark up percentage * Total Direct Cost
+                $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Value'] = round($mark_ups[$column_idn] * $this->subtotals[5]['Columns'][$column_idn]['Value'], 0);
+            }
+
+            //Total after Capacity Costs = Total Direct + Mark Up Cost
+            $this->subtotals[7]['Columns'][$column_idn]['Value'] = $this->subtotals[5]['Columns'][$column_idn]['Value'] + $this->subtotals[$subtotal_category_idn]['Columns'][$column_idn]['Value'];
+        }
+    }
+
+    private function _calc_totals()
+    {
+        //Initialize variables
+        $totals = array();
+        $total_categories = array();
+
+        //Get Recap Subtotal Categories
+        $total_categories = $this->CI->m_reference_table->get_all("RecapTotalCategories", array(), true, "Rank");
+
+        //Build subtotal_categories array
+        foreach($total_categories as $total)
+        {
+            //Load table columns into an array
+            $totals[$total['RecapTotalCategory_Idn']] = $total;
+
+            //Add Value and Percentage to array
+            $totals[$total['RecapTotalCategory_Idn']]['Value'] = 0;
+            $totals[$total['RecapTotalCategory_Idn']]['Percentage'] = 0;
+        }
+
+        $this->totals = $totals;
+
+        //Total of subtotals
+        foreach ($this->subtotals[7]['Columns'] as $subtotal)
+        {
+            $this->totals[1]['Value'] += $subtotal['Value'];
+        }
+
+        //Commission
+        $this->totals[2]['Value'] = round($this->totals[1]['Value'] * $this->job_parms[59]['NumericValue'], 0);
+        $this->totals[2]['Percentage'] = $this->job_parms[59]['NumericValue'];
+
+        //Subtotal - total after commission
+        $this->totals[4]['Value'] = $this->totals[1]['Value'] + $this->totals[2]['Value'];
+
+        //Profit Markup
+        $profit_mark_up_percent = $this->job_parms[14]['NumericValue'];
+        $profit_mark_up = $this->job_parms[46]['NumericValue'];
+
+        if ($profit_mark_up == 0)
+        {
+            $this->totals[5]['Value'] = round($this->totals[4]['Value'] * $profit_mark_up_percent, 0);
+            $this->totals[5]['Percentage'] = $profit_mark_up_percent;
+        }
+        else
+        {
+            $this->totals[5]['Value'] = $profit_mark_up;
+        }
+
+        //Total after profit mark up
+        $this->totals[6]['Value'] = $this->totals[5]['Value'] + $this->totals[4]['Value'];
+    
+        //Sales or Use Taxes = Total Material Direct Cost * percentage
+        $this->totals[7]['Value'] = round($this->subtotals[5]['Columns'][4]['Value'] * $this->job_parms[15]['NumericValue'], 0);
+        $this->totals[7]['Percentage'] = $this->job_parms[15]['NumericValue'];
+    
+        //Total after taxes
+        $this->totals[8]['Value'] = $this->totals[6]['Value'] + $this->totals[7]['Value'];
+
+        //Depository Fee
+        $depository_fee_percent = $this->job_parms[18]['NumericValue'];
+        $depository_fee = $this->job_parms[48]['NumericValue'];
+
+        //determine if it's overridden
+        if ($this->job_parms[18]['AlphaValue'] == "N")
+        {
+            $this->totals[9]['Value'] = round($this->totals[8]['Value'] * $depository_fee_percent, 0);
+            $this->totals[9]['Percentage'] = $depository_fee_percent;
+        }
+        else
+        {
+            $this->totals[9]['Value'] = $depository_fee;
+        }
+
+        //Total after Depository Fee
+        $this->totals[10]['Value'] = $this->totals[8]['Value'] + $this->totals[9]['Value'];
+
+        //Cost of bond
+        $bond_percent = $this->job_parms[44]['NumericValue'];
+        $bond = $this->job_parms[49]['NumericValue'];
+
+        if ($bond == 0)
+        {
+            $this->totals[11]['Value'] = round($this->totals[10]['Value'] * $bond_percent, 0);
+            $this->totals[11]['Percentage'] = $bond_percent;
+        }
+        else
+        {
+            $this->totals[11]['Value'] = $bond;
+        }
+
+        //Total after bond
+        $this->totals[12]['Value'] = $this->totals[10]['Value'] + $this->totals[11]['Value'];
+
+        //Gross Receipt
+        $gross_receipt_percent = ($this->job['department_idn'] == 1) ? $this->job_parms[84]['NumericValue'] : $this->job_parms[45]['NumericValue'];
+        $gross_receipt = $this->job_parms[50]['NumericValue'];
+
+        if ($gross_receipt == 0)
+        {
+            $this->totals[14]['Value'] = round($this->totals[12]['Value'] * $gross_receipt_percent, 0);
+            $this->totals[14]['Percentage'] = $gross_receipt_percent;
+        }
+        else
+        {
+            $this->totals[14]['Value'] = $gross_receipt;
+        }
+
+        //Total
+        $this->totals[13]['Value'] = $this->totals[12]['Value'] + $this->totals[14]['Value'];
+        
+        return true;
+    }
 }
 // END J Class

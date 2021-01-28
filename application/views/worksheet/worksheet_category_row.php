@@ -22,7 +22,7 @@ $copy_link = "";
                         $link_text = "Add Worksheet";
                         $link_class = "";
                         $link = base_url()."job/worksheet/0/?j=".$job['job_number']."&wm=".$Row['ChildWorksheetMaster_Idn'];
-                        $copy_link = '<button id="OpenAddWorksheetModal" class="btn btn-primary btn-xs" title="Copy Worksheet" data-worksheet_master_idn="'.$Row['ChildWorksheetMaster_Idn'].'" data-worksheet_category_idn="'.$Row['WorksheetCategory_Idn'].'">Copy Worksheet</button>';
+                        $copy_link = '<button class="btn btn-primary btn-xs openAddWorksheetModal" title="Copy Worksheet" data-worksheet_master_idn="'.$Row['ChildWorksheetMaster_Idn'].'" data-worksheet_category_idn="'.$Row['WorksheetCategory_Idn'].'">Copy Worksheet</button>';
                     }
                     ?>
                     <a href="<?php echo $link; ?>" class="<?php echo $link_class; ?>" data-worksheetcategory_idn="<?php echo $Row['WorksheetCategory_Idn']; ?>"><?php echo $link_text." ".$Row['Name']; ?></a>&nbsp;

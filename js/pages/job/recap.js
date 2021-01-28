@@ -15,6 +15,34 @@ $(function () {
     $("#parent_modal").modal({
         show: false
     });
+
+    const specialElementHandlers = {
+        "#editor": function(element, renderer) {
+            return true;
+        }
+    };
+
+    $("#generatePDF").on("click", function(e) {
+        e.preventDefault();
+        let pdf = "";
+        $("#generatePDF").hide();
+        //$("#genmsg").show();
+        html2canvas($("#pdfContent").get(0), { allowTaint: true }).then(function(canvas) {
+    
+            const imgData = canvas.toDataURL("image/png", 1.0);
+            pdf = new jsPDF({
+                //orientation: "landscape",
+                unit: "in",
+                format: [11, 8.5],
+                //format: [8.5, 11] //landscape
+            });
+            //pdf.addImage(imgData, 'JPG', .25, .25, 10.5, 8); //landscape
+            pdf.addImage(imgData, 'JPG', .25, .25, 8, 10.5);
+            pdf.save(`recap-${FECI.job.job_number}.pdf`);
+
+            $("#generatePDF").show();
+        });
+    });
 });
 
 function recap_handlers() {
@@ -130,15 +158,18 @@ function recap_handlers() {
         });
     });
 
+    $("#accounting").on("click", function (e) {
+        e.preventDefault();
+
+        export_accounting_data();
+    });
+
     //Save Recap
     $("#save_recap").click(function (e) {
         e.preventDefault();
 
         if (validate_recap()) {
             $("#job_recap").submit();
-        }
-        else {
-
         }
     });
 
@@ -422,7 +453,9 @@ function calc_recap() {
     FECI.job.case2_totals.total = FECI.job.case2_totals.gross_receipt + FECI.job.case2_totals.total_after_cost_of_bond;
     $("#case2_total").text(number_format(FECI.job.case2_totals.total, 0, ','));
 
-    calc_budget_summary();
+    if (parseInt(FECI.job.department_idn) === 2) {
+        calc_budget_summary();
+    }
 }
 
 function initialize_totals() {
@@ -1039,56 +1072,60 @@ function recap_modal_handlers() {
 }
 
 function add_parent_modal_handlers() {
-    //Event handler for copy button on copy job modal dialog
-    $(".add_parent").click(function (e) {
+    //if ($._data($(".add_parent")[0], "events") == undefined) {
+        //Event handler for copy button on copy job modal dialog
+        $(".add_parent").click(function (e) {
 
-        e.preventDefault();
-        //Get token for post submission
-        //var feapps_token = $("input[name=" + FECI.token + "]").val();
-        var child_job_number = FECI.job.job_number;
-        var parent_job_number = $(this).data('job_number');
+            e.preventDefault();
+            //Get token for post submission
+            //var feapps_token = $("input[name=" + FECI.token + "]").val();
+            var child_job_number = FECI.job.job_number;
+            var parent_job_number = $(this).data('job_number');
 
-        //abort any pending request
-        if (FECI.request) {
-            FECI.request.abort();
-        }
-
-        FECI.request = $.ajax({
-            url: FECI.base_url + "job/add_parent/1/" + parent_job_number + '/' + child_job_number,
-            type: 'GET',
-            dataType: "json"
-        });
-        // callback handler that will be called on success
-        FECI.request.done(function (response) {
-            if (response !== null) {
-                if (response.return_code === 1) {
-                    //Hide dialog
-                    $("#parent_modal").modal("hide");
-                    
-                    //update parent link
-                    FECI.job.parent_idn = parent_job_number;
-                    build_parent_element();
-
-                    //Set message
-                    displayMessageBox("Parent job added.", "success");
-                } else {
-                    //Set message
-                    $(".message").text("Error adding parent job.").addClass("bg-info").show();
-                }
+            //abort any pending request
+            if (FECI.request) {
+                FECI.request.abort();
             }
-        });
 
-        // callback handler that will be called on failure
-        FECI.request.fail(function (jqXHR, textStatus, errorThrown) {
-            // log the error to the console
-            console.error("The following error occured: " + textStatus, errorThrown);
+            FECI.request = $.ajax({
+                url: FECI.base_url + "job/add_parent/1/" + parent_job_number + '/' + child_job_number,
+                type: 'POST',
+                dataType: "json"
+            });
+            // callback handler that will be called on success
+            FECI.request.done(function (response) {
+                if (response !== null) {
+                    if (response.return_code === 1) {
+                        //Hide dialog
+                        $("#parent_modal").modal("hide");
+                        
+                        //update parent link
+                        FECI.job.parent_idn = parent_job_number;
+                        build_parent_element();
+
+                        //Set message
+                        $(".message").text("Parent job added.").addClass("bg-info").show();
+                    }
+                    else {
+                        //Set message
+                        $(".message").text("Error adding parent job.").addClass("bg-info").show();
+                    }
+                }
+            });
+
+            // callback handler that will be called on failure
+            FECI.request.fail(function (jqXHR, textStatus, errorThrown) {
+                // log the error to the console
+                console.error("The following error occured: " + textStatus, errorThrown);
+            });
         });
-    });
+    //}
 }
 
 function calc_budget_summary() {
     //Load amounts for calculations
-    let total_sqft = parseInt(strip_comma($("#bs_total_sqft").val()));
+    let total_sqft = ($("#bs_total_sqft").is("input")) ? $("#bs_total_sqft").val() : $("#bs_total_sqft").text();
+    total_sqft = parseInt(strip_comma(total_sqft));
     let total_heads = parseFloat(strip_comma($("#bs_total_heads").text()));
     let material = parseFloat(strip_comma($("#total_direct_cost_4").text()));
     let field = Math.ceil(FECI.job.field_hours);
@@ -1102,7 +1139,7 @@ function calc_budget_summary() {
     let material_per_head = (total_heads > 0) ? material / total_heads: 0;
     let field_per_head = (total_heads > 0) ? field / total_heads : 0;
     let eng_per_head = (total_heads > 0) ? eng / total_heads : 0;
-    let shop_per_head = shop / total_heads;
+    let shop_per_head = (total_heads > 0) ? shop / total_heads : 0;
     let cost_per_sqft = (total_sqft > 0) ? cost / total_sqft : 0;
     let price_per_sqft = (total_sqft > 0) ? price / total_sqft : 0;
 

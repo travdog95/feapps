@@ -58,3 +58,7 @@ $route['sign_off'] = 'authentication/sign_off';
 $route['logout'] = 'authentication/sign_off';
 $route['job/create'] = 'job/display_information';
 $route['home'] = 'home_controller';
+$route['export/accounting'] = 'export_controller/accounting';
+//$routes['authentication'] = 'authentication_controller';
+
+/* Location: ./application/config/routes.php */

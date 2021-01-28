@@ -9,7 +9,13 @@
   </tr>
   <tr>
     <td class="bold">Total Sqft</td>
-    <td><div style="float:right;"><input type="text" id="bs_total_sqft" name="bs_total_sqft" class="form-control change input-xs width-90 text-right check_num0" title="Total Sqft" value="<?php echo number_format($total_sqft, 0); ?>" /></div></td>
+    <td>
+    <?php if ($is_parent == 1): ?>
+      <span id="bs_total_sqft"><?php echo number_format($total_sqft, 0); ?></span>
+    <?php else: ?>
+      <div style="float:right;"><input type="text" id="bs_total_sqft" name="bs_total_sqft" class="form-control change input-xs width-90 text-right check_num0" title="Total Sqft" value="<?php echo number_format($total_sqft, 0); ?>" /></div>
+    <?php endif; ?>
+    </td>
   </tr>
   <tr>
     <td class="bold">Sqft/Head</td>

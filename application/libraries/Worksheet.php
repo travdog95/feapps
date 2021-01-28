@@ -1514,30 +1514,33 @@ class Worksheet
         //Save Labor Class & Individual Adjustment Factors
         $where = array("Worksheet_Idn" => $data['Worksheet_Idn']);
 
-        foreach($data['LaborClass'] as $index => $labor_class)
+        if (isset($data['LaborClass'])) 
         {
-            //Set values
-            $branchline_worksheet_idn = substr($index, strpos($index,"_") + 1);
-            $individual_adjustment_factor = $data['IndividualAdjustmentFactor'][$index];
-
-            if ($individual_adjustment_factor == 148)
+            foreach($data['LaborClass'] as $index => $labor_class)
             {
-                $original_system_quantity = $data['OriginalSystemQuantity'][$index];
-            }
+                //Set values
+                $branchline_worksheet_idn = substr($index, strpos($index,"_") + 1);
+                $individual_adjustment_factor = $data['IndividualAdjustmentFactor'][$index];
 
-            //Build set and where clauses
-            $set = array(
-                "LaborClass_Idn" => $labor_class,
-                "AdjustmentFactor_Idn" => $individual_adjustment_factor,
-                "OriginalSystemQuantity" => $original_system_quantity
-                );
+                if ($individual_adjustment_factor == 148)
+                {
+                    $original_system_quantity = $data['OriginalSystemQuantity'][$index];
+                }
 
-            $where['BranchlineWorksheet_Idn'] = $branchline_worksheet_idn;
+                //Build set and where clauses
+                $set = array(
+                    "LaborClass_Idn" => $labor_class,
+                    "AdjustmentFactor_Idn" => $individual_adjustment_factor,
+                    "OriginalSystemQuantity" => $original_system_quantity
+                    );
 
-            //Save record
-            if ($this->CI->m_reference_table->update("WorksheetBasicAppropriationDetails", $set, $where) == false)
-            {
-                $errors++;
+                $where['BranchlineWorksheet_Idn'] = $branchline_worksheet_idn;
+
+                //Save record
+                if ($this->CI->m_reference_table->update("WorksheetBasicAppropriationDetails", $set, $where) == false)
+                {
+                    $errors++;
+                }
             }
         }
 

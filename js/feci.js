@@ -286,12 +286,13 @@ function arrow_navigation_controller() {
     "material_unit_price",
     "field_unit_price",
     "shop_unit_price",
-    "bonded_mark_up"
+    "bonded_mark_up",
+    "trip"
   ];
 
   $.each(default_class_names, function(index, class_name) {
     //Activate up/down arrows on fields with class name
-    TKO_arrow_navigation($("input." + class_name));
+    TKO_arrow_navigation($(`input.${class_name}:not([disabled])`));
   });
 }
 

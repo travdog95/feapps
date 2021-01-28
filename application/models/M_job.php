@@ -31,7 +31,8 @@ class M_job extends CI_Model
             $order_by = "Name ASC";
         }
         if ($limit == 0 && $offset == 0) {
-            $sql = "SELECT j.Job_Idn, j.ChangeOrder, Name, Contractor, j.Department_Idn, JobStatus_Idn, JobDate, IsShareable, IsParent, Parent_Idn, CreatedBy_Idn, CreateDateTime, UpdateDateTime, ub.FirstName AS UpdatedByFirstName, cb.FirstName AS CreatedByFirstName, ROW_NUMBER() OVER (ORDER BY j.Name ASC, j.JobDate ASC) AS RowNum
+            $sql = "SELECT j.Job_Idn, j.ChangeOrder, Name, Contractor, j.Department_Idn, JobStatus_Idn, JobDate, IsShareable, IsParent, Parent_Idn, CreatedBy_Idn, CreateDateTime, UpdateDateTime, ub.FirstName AS UpdatedByFirstName, cb.FirstName AS CreatedByFirstName,
+                    ROW_NUMBER() OVER (ORDER BY j.Name ASC, j.JobDate ASC) AS RowNum
 					FROM jobs AS j
 					LEFT JOIN Users AS ub ON (j.LastUpdatedBy_Idn = ub.User_Idn)
 					LEFT JOIN Users AS cb ON (j.CreatedBy_Idn = cb.User_Idn)

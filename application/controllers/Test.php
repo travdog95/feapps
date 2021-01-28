@@ -15,7 +15,8 @@ class Test extends CI_Controller {
 		$this->load->model('m_menu');
 
         //Load test library
-
+        $this->load->library('j');
+        $this->load->library('');
     }
 
     public function index($results = array())
@@ -44,51 +45,65 @@ class Test extends CI_Controller {
     {
         if (isset($job_number) && !empty($job_number))
         {
-            $this->load->library('j', array('job_number' => $job_number));
-            $j = $this->j;
+            if ($this->m_job->is_parent($job_number)) {
+                //Instantiate ParentJob
+                $this->load->library('j');
+                $this->load->library('parentjob', array('job_number' => $job_number));
+                $Job = $this->parentjob;
 
-            //echo json_encode($j);
+                //This is now part of the construct of ParentJob object
+                //$Job->get_children($job_keys[0]);
 
-            $this->load->library('recap_row', array('recap_row_idn' => $recap_row_idn, 'j' => $j));
+            } else {
+                //Instantiate Job
+                $this->load->library('j', array('job_number' => $job_number));
+                $Job = $this->j;
 
-            echo json_encode($this->recap_row);
-            // $j->load_recap_rows();
+            }
 
-            // if ($recap_row_idn > 0)
-            // {
-            //     echo json_encode($j->RRs[$recap_row_idn]);
-            // }
-            // else
-            // {
-            //     echo json_encode($j->RRs);
-            // }
+            //$j = new J(array('job_number' => $job_number));
+
+            $Job->load_recap_rows();
+
+            if ($recap_row_idn > 0)
+            {
+                echo json_encode($Job->RRs[$recap_row_idn]);
+            }
+            else
+            {
+                //echo json_encode($Job->RRs);
+                echo json_encode($Job->children);
+            }
         }
+    }
+
+    function budget_summary($job_number)
+    {
+        $job_keys = get_job_keys($job_number);
+
+		$this->load->model('m_menu');
+
+        //check to see if it's a parent job
+        if ($this->m_job->is_parent($job_number))
+        {
+            //Instantiate ParentJob
+            $j = new ParentJob(array('job_number' => $job_number));
+        }
+        else
+        {
+            //Instantiate Job
+            $j = new J(array('job_number' => $job_number));
+        }
+
+        $j->load_recap_rows();
+
+        echo "<p>Total Sqft: ".$j->total_sqft."</p>";
+        echo "<p>Total Heads: ".$j->total_heads."</p>";
     }
 
     function phpinfo()
     {
-        phpinfo();
-    }
-
-    function parent($parent_job_idn)
-    {
-        $this->load->library('j', array("job_number" => $parent_job_idn));
-
-        if ($this->j->job['is_parent'] == 1)
-        {
-            $this->load->library('parentjob', array("job_number" => $parent_job_idn));
-            $j = $this->parentjob;
-
-            $j->get_children();
-
-            $j->load_recap_rows();
-
-        }
-        else
-        {
-            $this->j->load_recap_rows();
-        }
-
-        //print_r($j->job);
+        echo phpinfo();
+        exit;
     }
 }

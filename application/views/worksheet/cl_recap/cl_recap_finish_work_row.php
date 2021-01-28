@@ -3,7 +3,7 @@ $id = $Row['RowType']."_".$Row['MiscellaneousDetail_Idn'];
 ?>
 <tr id="<?php echo $id; ?>" class="finish-work worksheet_line" data-finish_work_idn="<?php echo $Row['FinishWork_Idn']; ?>">
     <td>
-        <input id="Delete<?php echo $id; ?>" name="Delete[]" type="checkbox" class="delete" value="<?php echo $id; ?>" />
+        <!--<input id="Delete<?php echo $id; ?>" name="Delete[]" type="checkbox" class="delete" value="<?php echo $id; ?>" />-->
         <input type="hidden" name="Id[]" class="" value="<?php echo $Row['MiscellaneousDetail_Idn']; ?>" />
         <input type="hidden" name="RowType[]" value="<?php echo $Row['RowType']; ?>" />
     </td>

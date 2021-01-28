@@ -86,19 +86,24 @@ class Recap_row
 
             foreach ($j->children as $child)
             {
-                //Labor amounts
-                $this->field_hours += ceil($child->RRs[$this->recap_row_idn]->field_hours);
-                $this->shop_hours += ceil($child->RRs[$this->recap_row_idn]->shop_hours);
-                $this->engineer_hours += ceil($child->RRs[$this->recap_row_idn]->engineer_hours);
+                //Job Mob
+                // if ($this->recap_row_idn == 8) {
 
-                //Total recap cell amounts
-                for ($i = 1; $i <= 6; $i++)
-                {
-                    if ($this->recap_cells[$i] !== false)
+                // } else {
+                    //Labor amounts
+                    $this->field_hours += ceil($child->RRs[$this->recap_row_idn]->field_hours);
+                    $this->shop_hours += ceil($child->RRs[$this->recap_row_idn]->shop_hours);
+                    $this->engineer_hours += ceil($child->RRs[$this->recap_row_idn]->engineer_hours);
+
+                    //Total recap cell amounts
+                    for ($i = 1; $i <= 6; $i++)
                     {
-                        $this->recap_cells[$i] += ceil($child->RRs[$this->recap_row_idn]->recap_cells[$i]);
+                        if ($this->recap_cells[$i] !== false)
+                        {
+                            $this->recap_cells[$i] += ceil($child->RRs[$this->recap_row_idn]->recap_cells[$i]);
+                        }
                     }
-                }
+                // }
             }
         }
         else

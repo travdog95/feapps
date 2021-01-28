@@ -93,7 +93,7 @@ function worksheet_handlers() {
   //$("#AddWorksheetModal").on("shown.bs.modal", function (e) {
   //});
 
-  $("#OpenAddWorksheetModal").on("click", function(e) {
+  $(".openAddWorksheetModal").on("click", function(e) {
     e.preventDefault();
     const copy_flag = (parseInt($(this).data("worksheet_master_idn")) === 10 || parseInt($(this).data("worksheet_master_idn")) === 9) ? 0 : 1;
     const data = {
@@ -629,12 +629,17 @@ function validate_worksheet() {
 
   //Check Finish Work on Cross Mains and Lines recap
   if (FECI.worksheet_master.WorksheetMaster_Idn == 32) {
-    if (
-      $("#NoFinishWork").prop("checked") === false &&
-      $(".finish-work").length === 0
-    ) {
-      alert("Please add 'Finish Work' or check 'No Finish Work'!");
-      is_valid = false;
+    if ($("#NoFinishWork").prop("checked") === false) {
+      let sumQty = 0;
+      //Sum Finish work quantities
+      $(".finish-work .quantity").each(function () {
+        sumQty += parseFloat(strip_comma($(this).val()));
+      });
+
+      if (sumQty === 0) {
+        alert("Please add 'Finish Work' or check 'No Finish Work'!");
+        is_valid = false;
+      }
     }
   }
 
@@ -1820,16 +1825,19 @@ function copy_worksheet($form) {
             $("#WorksheetArea_" + worksheet_area_idn).after(html);
           }
         } else {
-          $(
-            "#" +
-              $(".WorksheetCategory" + worksheet_category_idn + ":last").attr(
-                "id"
-              )
-          ).after(html);
+          const last = $("#" + $(".WorksheetCategory" + worksheet_category_idn + ":last").attr("id"));
+
+          if (last.length === 0) {
+            const categoryRow = $(`#Category${worksheet_category_idn}`);
+            categoryRow.after(html);
+          } else {
+            last.after(html);
+          }
+         
         }
       } else {
         //After another worksheet
-        $("#Worksheet_" + response.after).after(html);
+        $(`#Worksheet_${response.after}`).after(html);
       }
 
       //Get section of rows to build position drop down

@@ -1,0 +1,3474 @@
+[
+	{
+		"job_number": 2061,
+		"job": {
+			"read_only": 0,
+			"new_change_order": 0,
+			"department_idn": 2,
+			"department_name": "Sprinkler Systems",
+			"is_parent": 0,
+			"is_shareable": 0,
+			"parent_idn": 3072,
+			"job_number": 2061,
+			"created_by_idn": 3,
+			"created_by_name": "Travis",
+			"created_date": "April 23, 2020",
+			"prepared_bys": [],
+			"prepared_by_names": "",
+			"name": "Travis - Sprinkler",
+			"contractor": "",
+			"status_idn": 1,
+			"is_joint_job": "N",
+			"is_underground": "N",
+			"underground_options": "Y",
+			"system_types": [6],
+			"system_sub_types": [],
+			"grooved_fitting": "1",
+			"is_domestic_required": "N",
+			"domestic_options": "Y",
+			"is_seamless_required": "N",
+			"is_fm_job": "N",
+			"is_davis_bacon_job": "N",
+			"davis_bacon_pac": "0.0",
+			"miles_to_job": "350.000000",
+			"bonded_mark_up": 0,
+			"job_date": "2020-04-23",
+			"notes": "",
+			"is_favorite": 1,
+			"payroll_added_costs": ".380000",
+			"is_parts_smarts": "N",
+			"estimate_type_idn": 0,
+			"price_update_idn": 1,
+			"price_update_datetime": "2020-02-01 00:00:00.000",
+			"formated_price_update_datetime": "Feb 1, 2020 12:00:00 AM",
+			"prices_outdated": true,
+			"field_labor_rate": "25.000000",
+			"shop_labor_rate": "22.500000",
+			"design_labor_rate": "38.000000"
+		},
+		"job_defaults": {
+			"78": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "1.0000",
+				"AlphaValue": null
+			},
+			"80": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"81": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": ".6000",
+				"AlphaValue": null
+			},
+			"82": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"79": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"64": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "22.5000",
+				"AlphaValue": null
+			},
+			"65": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "31.0000",
+				"AlphaValue": null
+			},
+			"66": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "38.0000",
+				"AlphaValue": null
+			},
+			"67": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"68": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"69": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"72": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "Y"
+			},
+			"74": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "7.2500",
+				"AlphaValue": null
+			},
+			"27": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"31": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": ".0000",
+				"AlphaValue": null
+			},
+			"32": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": ".0000",
+				"AlphaValue": null
+			},
+			"28": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"71": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"29": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"16": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": ".3200",
+				"AlphaValue": null
+			},
+			"3": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": "23.0000",
+				"AlphaValue": null
+			},
+			"30": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"4": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": "40.0000",
+				"AlphaValue": null
+			},
+			"19": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": null
+			},
+			"20": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": null
+			},
+			"5": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": "40.0000",
+				"AlphaValue": null
+			},
+			"6": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": "80.0000",
+				"AlphaValue": null
+			},
+			"1": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "32.0000",
+				"AlphaValue": null
+			},
+			"21": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "30.0000",
+				"AlphaValue": null
+			},
+			"2": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "20.0000",
+				"AlphaValue": null
+			},
+			"42": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "Y"
+			},
+			"43": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"75": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".2500",
+				"AlphaValue": null
+			}
+		},
+		"job_parms": {
+			"1": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "25.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"2": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "15.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"3": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "23.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"4": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "40.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"5": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "40.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"6": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "80.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"7": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".380000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"13": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".050000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"14": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"15": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".074500",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"16": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".320000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"17": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".035000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"18": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"19": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"20": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"21": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "24.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"22": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"23": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".020000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"24": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".020000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"25": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".040000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"26": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"27": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"28": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"29": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"30": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"31": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "350.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"32": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"33": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"34": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"35": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"36": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"37": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"38": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".180000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"39": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".370000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"40": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".130000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"41": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".370000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"42": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "Y",
+				"LoadFlag": 0
+			},
+			"43": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"44": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"45": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".015000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"46": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "984.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"48": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"49": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"50": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"52": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".260000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"53": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".260000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"54": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".020000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"55": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".776500",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"56": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".223500",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"57": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".370000",
+				"AlphaValue": null,
+				"LoadFlag": 1
+			},
+			"58": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".370000",
+				"AlphaValue": null,
+				"LoadFlag": 1
+			},
+			"59": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".035000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"60": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"61": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".180000",
+				"AlphaValue": null,
+				"LoadFlag": 1
+			},
+			"62": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".130000",
+				"AlphaValue": null,
+				"LoadFlag": 1
+			},
+			"63": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 1
+			},
+			"64": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "22.500000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"65": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "25.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"66": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "38.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"67": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"68": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"69": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"70": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".035000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"71": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"72": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "Y",
+				"LoadFlag": 0
+			},
+			"74": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "7.250000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"75": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".250000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"78": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "1.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"79": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"80": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": "34.000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"81": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".600000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"82": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"83": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".020000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"84": {
+				"Job_Idn": 2061,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			}
+		},
+		"field_hours": 109,
+		"shop_hours": 120,
+		"engineer_hours": 38.9,
+		"job_keys": [2061, 0],
+		"RRs": {
+			"1": {
+				"recap_row_idn": 1,
+				"job_number": 2061,
+				"recap_cells": { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0 },
+				"name": "Underground",
+				"additional_name": "Subcontract",
+				"field_hours": 0,
+				"shop_hours": 0,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 1,
+					"Name": "Underground",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 1,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 1,
+						"Name": "Underground",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 11
+					},
+					{
+						"RecapRow_Idn": 1,
+						"Name": "Underground",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 29
+					}
+				],
+				"worksheet_idn": 0,
+				"addtional_worksheet_idn": 0
+			},
+			"2": {
+				"recap_row_idn": 2,
+				"job_number": 2061,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": 4077,
+					"5": 500,
+					"6": 20
+				},
+				"name": "Risers",
+				"additional_name": "",
+				"field_hours": 19.34,
+				"shop_hours": 68,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 2,
+					"Name": "Risers",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 2,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 2,
+						"Name": "Risers",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 12
+					}
+				],
+				"worksheet_idn": 13261,
+				"addtional_worksheet_idn": 0
+			},
+			"3": {
+				"recap_row_idn": 3,
+				"job_number": 2061,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": 243,
+					"5": 150,
+					"6": 6
+				},
+				"name": "Bulk and Feed Mains",
+				"additional_name": "",
+				"field_hours": 5.69,
+				"shop_hours": 0,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 3,
+					"Name": "Bulk and Feed Mains",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 3,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 3,
+						"Name": "Bulk and Feed Mains",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 31
+					}
+				],
+				"worksheet_idn": 13264,
+				"addtional_worksheet_idn": 0
+			},
+			"4": {
+				"recap_row_idn": 4,
+				"job_number": 2061,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": 685,
+					"5": 625,
+					"6": 25
+				},
+				"name": "Cross Mains and Lines",
+				"additional_name": "",
+				"field_hours": 24.71,
+				"shop_hours": 1.1400000000000001,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 4,
+					"Name": "Cross Mains and Lines",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 4,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 4,
+						"Name": "Cross Mains and Lines",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 32
+					}
+				],
+				"worksheet_idn": 13268,
+				"addtional_worksheet_idn": 0
+			},
+			"23": {
+				"recap_row_idn": 23,
+				"job_number": 2061,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": 1321,
+					"5": 425,
+					"6": 17
+				},
+				"name": "Other Work",
+				"additional_name": "",
+				"field_hours": 16.6,
+				"shop_hours": 44,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 23,
+					"Name": "Other Work",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 5,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 23,
+						"Name": "Other Work",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 14
+					}
+				],
+				"worksheet_idn": 13277,
+				"addtional_worksheet_idn": 0
+			},
+			"5": {
+				"recap_row_idn": 5,
+				"job_number": 2061,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": 995,
+					"5": 1025,
+					"6": 41
+				},
+				"name": "Miscellaneous",
+				"additional_name": "",
+				"field_hours": 40.5,
+				"shop_hours": 5.9,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 5,
+					"Name": "Miscellaneous",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 6,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 5,
+						"Name": "Miscellaneous",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 15
+					}
+				],
+				"worksheet_idn": 13280,
+				"addtional_worksheet_idn": 0
+			},
+			"6": {
+				"recap_row_idn": 6,
+				"job_number": 2061,
+				"recap_cells": {
+					"1": 0,
+					"2": 0,
+					"3": 300,
+					"4": false,
+					"5": false,
+					"6": 0
+				},
+				"name": "Sub-Contracts",
+				"additional_name": "",
+				"field_hours": 0,
+				"shop_hours": 0,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 6,
+					"Name": "Sub-Contracts",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 8,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 6,
+						"Name": "Sub-Contracts",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 8,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 16
+					}
+				],
+				"worksheet_idn": 13281,
+				"addtional_worksheet_idn": 0
+			},
+			"7": {
+				"recap_row_idn": 7,
+				"job_number": 2061,
+				"recap_cells": {
+					"1": false,
+					"2": 0,
+					"3": 0,
+					"4": false,
+					"5": 1482,
+					"6": 39
+				},
+				"name": "Engineering",
+				"additional_name": "",
+				"field_hours": 0,
+				"shop_hours": 0,
+				"engineer_hours": 38.9,
+				"recap_row": {
+					"RecapRow_Idn": 7,
+					"Name": "Engineering",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 9,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 7,
+						"Name": "Engineering",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 9,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 22
+					}
+				],
+				"worksheet_idn": 13282,
+				"addtional_worksheet_idn": 0
+			},
+			"22": {
+				"recap_row_idn": 22,
+				"job_number": 2061,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": false,
+					"5": 2700,
+					"6": 120
+				},
+				"name": "Shop Labor",
+				"additional_name": "",
+				"field_hours": 0,
+				"shop_hours": 120,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 22,
+					"Name": "Shop Labor",
+					"Department_Idn": 2,
+					"CalcShopFlag": 0,
+					"IsWorksheetFlag": 0,
+					"DisplayFlag": 1,
+					"Rank": 7,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": null,
+						"Name": "Shop Labor",
+						"Department_Idn": 2,
+						"CalcShopFlag": 0,
+						"IsWorksheetFlag": 0,
+						"DisplayFlag": 1,
+						"Rank": 7,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": null
+					}
+				],
+				"worksheet_idn": 0,
+				"addtional_worksheet_idn": 0
+			},
+			"8": {
+				"recap_row_idn": 8,
+				"job_number": 2061,
+				"recap_cells": {
+					"1": false,
+					"2": 165,
+					"3": 1864,
+					"4": false,
+					"5": 1733,
+					"6": 24
+				},
+				"name": "Job Mobilization",
+				"additional_name": "",
+				"field_hours": 23.3,
+				"shop_hours": 11.67,
+				"engineer_hours": 23.34,
+				"recap_row": {
+					"RecapRow_Idn": 8,
+					"Name": "Job Mobilization",
+					"Department_Idn": 2,
+					"CalcShopFlag": 0,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 10,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 8,
+						"Name": "Job Mobilization",
+						"Department_Idn": 2,
+						"CalcShopFlag": 0,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 10,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 8
+					}
+				],
+				"worksheet_idn": 13283,
+				"addtional_worksheet_idn": 0
+			}
+		},
+		"subtotals": {
+			"1": {
+				"RecapSubtotalCategory_Idn": 1,
+				"Name": "TOTAL OF ALL ITEMS",
+				"Percentage": ".000",
+				"Rank": 1,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 165,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 2164,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 7321,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 8640,
+						"Percentage": 0
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 292,
+						"Percentage": 0
+					}
+				}
+			},
+			"2": {
+				"RecapSubtotalCategory_Idn": 2,
+				"Name": "Payroll Added Costs",
+				"Percentage": 0,
+				"Rank": 2,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 3283,
+						"Percentage": ".380000"
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"3": {
+				"RecapSubtotalCategory_Idn": 3,
+				"Name": "Totals After P.A.C.",
+				"Percentage": ".000",
+				"Rank": 3,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 11923,
+						"Percentage": 0
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"8": {
+				"RecapSubtotalCategory_Idn": 8,
+				"Name": "Supervisory Fee",
+				"Percentage": 0,
+				"Rank": 4,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 417,
+						"Percentage": ".035000"
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"4": {
+				"RecapSubtotalCategory_Idn": 4,
+				"Name": "Contingences",
+				"Percentage": 0,
+				"Rank": 5,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 3,
+						"Percentage": ".020000"
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 43,
+						"Percentage": ".020000"
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 293,
+						"Percentage": ".040000"
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": ".000000"
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"5": {
+				"RecapSubtotalCategory_Idn": 5,
+				"Name": "Total Direct Costs",
+				"Percentage": ".000",
+				"Rank": 6,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 168,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 2207,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 7614,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 12340,
+						"Percentage": 0
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"6": {
+				"RecapSubtotalCategory_Idn": 6,
+				"Name": "Mark-Up of Costs",
+				"Percentage": 0,
+				"Rank": 7,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 30,
+						"Percentage": ".180000"
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 817,
+						"Percentage": ".370000"
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 990,
+						"Percentage": ".130000"
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 4566,
+						"Percentage": ".370000"
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"7": {
+				"RecapSubtotalCategory_Idn": 7,
+				"Name": "Total After Capacity Costs",
+				"Percentage": ".000",
+				"Rank": 8,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 198,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 3024,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 8604,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 16906,
+						"Percentage": 0
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			}
+		},
+		"totals": {
+			"1": {
+				"RecapTotalCategory_Idn": 1,
+				"Name": "Total After Capacity Costs",
+				"Rank": 10,
+				"ActiveFlag": 1,
+				"Value": 28732,
+				"Percentage": 0
+			},
+			"2": {
+				"RecapTotalCategory_Idn": 2,
+				"Name": "Regular Commission",
+				"Rank": 20,
+				"ActiveFlag": 1,
+				"Value": 1006,
+				"Percentage": ".035000"
+			},
+			"4": {
+				"RecapTotalCategory_Idn": 4,
+				"Name": "SUBTOTAL",
+				"Rank": 40,
+				"ActiveFlag": 1,
+				"Value": 29738,
+				"Percentage": 0
+			},
+			"5": {
+				"RecapTotalCategory_Idn": 5,
+				"Name": "Profit Mark-Up",
+				"Rank": 50,
+				"ActiveFlag": 1,
+				"Value": "984.000000",
+				"Percentage": 0
+			},
+			"6": {
+				"RecapTotalCategory_Idn": 6,
+				"Name": "Total After Profit Mark-Up",
+				"Rank": 60,
+				"ActiveFlag": 1,
+				"Value": 30722,
+				"Percentage": 0
+			},
+			"7": {
+				"RecapTotalCategory_Idn": 7,
+				"Name": "Sales or Use Taxes",
+				"Rank": 70,
+				"ActiveFlag": 1,
+				"Value": 567,
+				"Percentage": ".074500"
+			},
+			"8": {
+				"RecapTotalCategory_Idn": 8,
+				"Name": "Total After Taxes",
+				"Rank": 80,
+				"ActiveFlag": 1,
+				"Value": 31289,
+				"Percentage": 0
+			},
+			"9": {
+				"RecapTotalCategory_Idn": 9,
+				"Name": "Depository Fee",
+				"Rank": 90,
+				"ActiveFlag": 1,
+				"Value": 0,
+				"Percentage": ".000000"
+			},
+			"10": {
+				"RecapTotalCategory_Idn": 10,
+				"Name": "Total After Depository Fee",
+				"Rank": 100,
+				"ActiveFlag": 1,
+				"Value": 31289,
+				"Percentage": 0
+			},
+			"11": {
+				"RecapTotalCategory_Idn": 11,
+				"Name": "Cost of Bond",
+				"Rank": 110,
+				"ActiveFlag": 1,
+				"Value": 0,
+				"Percentage": ".000000"
+			},
+			"12": {
+				"RecapTotalCategory_Idn": 12,
+				"Name": "Total After Bond",
+				"Rank": 120,
+				"ActiveFlag": 1,
+				"Value": 31289,
+				"Percentage": 0
+			},
+			"14": {
+				"RecapTotalCategory_Idn": 14,
+				"Name": "Gross Receipts Tax, Etc.",
+				"Rank": 130,
+				"ActiveFlag": 1,
+				"Value": 469,
+				"Percentage": ".015000"
+			},
+			"13": {
+				"RecapTotalCategory_Idn": 13,
+				"Name": "TOTAL",
+				"Rank": 140,
+				"ActiveFlag": 1,
+				"Value": 31758,
+				"Percentage": 0
+			},
+			"15": {
+				"RecapTotalCategory_Idn": 15,
+				"Name": "Case 2 Total",
+				"Rank": 150,
+				"ActiveFlag": 1,
+				"Value": 0,
+				"Percentage": 0
+			}
+		},
+		"bonded_markup": 0,
+		"debug": false,
+		"price_update_datetime": "",
+		"price_update_idn": 0,
+		"prices_outdated": false,
+		"total_sqft": ".00",
+		"total_heads": "3.0"
+	},
+	{
+		"job_number": 3067,
+		"job": {
+			"read_only": 0,
+			"new_change_order": 0,
+			"department_idn": 2,
+			"department_name": "Sprinkler Systems",
+			"is_parent": 0,
+			"is_shareable": 0,
+			"parent_idn": 3072,
+			"job_number": 3067,
+			"created_by_idn": 3,
+			"created_by_name": "Travis",
+			"created_date": "September 26, 2020",
+			"prepared_bys": [],
+			"prepared_by_names": "",
+			"name": "test",
+			"contractor": "",
+			"status_idn": 1,
+			"is_joint_job": "N",
+			"is_underground": "N",
+			"underground_options": "Y",
+			"system_types": [6],
+			"system_sub_types": [],
+			"grooved_fitting": "1",
+			"is_domestic_required": "N",
+			"domestic_options": "Y",
+			"is_seamless_required": "N",
+			"is_fm_job": "N",
+			"is_davis_bacon_job": "N",
+			"davis_bacon_pac": "0.0",
+			"miles_to_job": "150.000000",
+			"bonded_mark_up": 0,
+			"job_date": "2020-09-26",
+			"notes": null,
+			"is_favorite": 0,
+			"payroll_added_costs": ".380000",
+			"is_parts_smarts": "N",
+			"estimate_type_idn": 0,
+			"price_update_idn": 2,
+			"price_update_datetime": "2020-04-28 16:19:46.000",
+			"formated_price_update_datetime": "Apr 28, 2020 4:19:46 PM",
+			"prices_outdated": false,
+			"field_labor_rate": "31.000000",
+			"shop_labor_rate": "22.500000",
+			"design_labor_rate": "38.000000"
+		},
+		"job_defaults": {
+			"78": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "1.0000",
+				"AlphaValue": null
+			},
+			"80": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"81": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": ".6000",
+				"AlphaValue": null
+			},
+			"82": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"79": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"64": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "22.5000",
+				"AlphaValue": null
+			},
+			"65": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "31.0000",
+				"AlphaValue": null
+			},
+			"66": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "38.0000",
+				"AlphaValue": null
+			},
+			"67": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"68": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"69": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"72": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "Y"
+			},
+			"74": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "7.2500",
+				"AlphaValue": null
+			},
+			"27": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"31": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": ".0000",
+				"AlphaValue": null
+			},
+			"32": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": ".0000",
+				"AlphaValue": null
+			},
+			"28": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"71": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"29": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"16": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": ".3200",
+				"AlphaValue": null
+			},
+			"3": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": "23.0000",
+				"AlphaValue": null
+			},
+			"30": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"4": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": "40.0000",
+				"AlphaValue": null
+			},
+			"19": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": null
+			},
+			"20": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": null
+			},
+			"5": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": "40.0000",
+				"AlphaValue": null
+			},
+			"6": {
+				"JobDefaultType_Idn": 3,
+				"NumericValue": "80.0000",
+				"AlphaValue": null
+			},
+			"1": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "32.0000",
+				"AlphaValue": null
+			},
+			"21": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "30.0000",
+				"AlphaValue": null
+			},
+			"2": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": "20.0000",
+				"AlphaValue": null
+			},
+			"42": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "Y"
+			},
+			"43": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".0000",
+				"AlphaValue": "N"
+			},
+			"75": {
+				"JobDefaultType_Idn": 4,
+				"NumericValue": ".2500",
+				"AlphaValue": null
+			}
+		},
+		"job_parms": {
+			"1": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "32.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"2": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "20.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"3": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "23.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"4": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "40.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"5": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "40.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"6": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "80.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"7": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".380000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"13": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".050000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"14": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"15": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".074500",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"16": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".320000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"17": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".035000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"18": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"19": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"20": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"21": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "30.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"22": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"23": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".020000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"24": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".020000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"25": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".040000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"26": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"27": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"28": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"29": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"30": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"31": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "150.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"32": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"33": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"34": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"35": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"36": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"37": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"38": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".180000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"39": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".370000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"40": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".130000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"41": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".370000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"42": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "Y",
+				"LoadFlag": 0
+			},
+			"43": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"44": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"45": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".015000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"46": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"48": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"49": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"50": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"52": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".260000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"53": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".260000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"54": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".020000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"55": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".776500",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"56": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".223500",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"57": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".370000",
+				"AlphaValue": null,
+				"LoadFlag": 1
+			},
+			"58": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".370000",
+				"AlphaValue": null,
+				"LoadFlag": 1
+			},
+			"59": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".035000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"60": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"61": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".180000",
+				"AlphaValue": null,
+				"LoadFlag": 1
+			},
+			"62": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".130000",
+				"AlphaValue": null,
+				"LoadFlag": 1
+			},
+			"63": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 1
+			},
+			"64": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "22.500000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"65": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "31.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"66": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "38.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"67": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"68": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"69": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"70": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".035000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"71": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"72": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "Y",
+				"LoadFlag": 0
+			},
+			"74": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "7.250000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"75": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".250000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"78": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": "1.000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"79": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"80": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"81": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".600000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"82": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": "N",
+				"LoadFlag": 0
+			},
+			"83": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".035000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			},
+			"84": {
+				"Job_Idn": 3067,
+				"ChangeOrder": 0,
+				"NumericValue": ".000000",
+				"AlphaValue": null,
+				"LoadFlag": 0
+			}
+		},
+		"field_hours": 64,
+		"shop_hours": 44,
+		"engineer_hours": 8.23,
+		"job_keys": [3067, 0],
+		"RRs": {
+			"1": {
+				"recap_row_idn": 1,
+				"job_number": 3067,
+				"recap_cells": { "1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0 },
+				"name": "Underground",
+				"additional_name": "Subcontract",
+				"field_hours": 0,
+				"shop_hours": 0,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 1,
+					"Name": "Underground",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 1,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 1,
+						"Name": "Underground",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 11
+					},
+					{
+						"RecapRow_Idn": 1,
+						"Name": "Underground",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 29
+					}
+				],
+				"worksheet_idn": 0,
+				"addtional_worksheet_idn": 0
+			},
+			"2": {
+				"recap_row_idn": 2,
+				"job_number": 3067,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": 243,
+					"5": 186,
+					"6": 6
+				},
+				"name": "Risers",
+				"additional_name": "",
+				"field_hours": 5.69,
+				"shop_hours": 15,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 2,
+					"Name": "Risers",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 2,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 2,
+						"Name": "Risers",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 12
+					}
+				],
+				"worksheet_idn": 14266,
+				"addtional_worksheet_idn": 0
+			},
+			"3": {
+				"recap_row_idn": 3,
+				"job_number": 3067,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": 137,
+					"5": 124,
+					"6": 4
+				},
+				"name": "Bulk and Feed Mains",
+				"additional_name": "",
+				"field_hours": 3.45,
+				"shop_hours": 4,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 3,
+					"Name": "Bulk and Feed Mains",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 3,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 3,
+						"Name": "Bulk and Feed Mains",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 31
+					}
+				],
+				"worksheet_idn": 14269,
+				"addtional_worksheet_idn": 0
+			},
+			"4": {
+				"recap_row_idn": 4,
+				"job_number": 3067,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": 552,
+					"5": 496,
+					"6": 16
+				},
+				"name": "Cross Mains and Lines",
+				"additional_name": "",
+				"field_hours": 15.56,
+				"shop_hours": 10.38,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 4,
+					"Name": "Cross Mains and Lines",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 4,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 4,
+						"Name": "Cross Mains and Lines",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 32
+					}
+				],
+				"worksheet_idn": 14271,
+				"addtional_worksheet_idn": 0
+			},
+			"23": {
+				"recap_row_idn": 23,
+				"job_number": 3067,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": 108,
+					"5": 93,
+					"6": 3
+				},
+				"name": "Other Work",
+				"additional_name": "",
+				"field_hours": 2.52,
+				"shop_hours": 0,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 23,
+					"Name": "Other Work",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 5,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 23,
+						"Name": "Other Work",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 14
+					}
+				],
+				"worksheet_idn": 14274,
+				"addtional_worksheet_idn": 0
+			},
+			"5": {
+				"recap_row_idn": 5,
+				"job_number": 3067,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": 1281,
+					"5": 1085,
+					"6": 35
+				},
+				"name": "Miscellaneous",
+				"additional_name": "",
+				"field_hours": 34.4,
+				"shop_hours": 13.2,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 5,
+					"Name": "Miscellaneous",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 6,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 5,
+						"Name": "Miscellaneous",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 15
+					}
+				],
+				"worksheet_idn": 14276,
+				"addtional_worksheet_idn": 0
+			},
+			"6": {
+				"recap_row_idn": 6,
+				"job_number": 3067,
+				"recap_cells": {
+					"1": 0,
+					"2": 0,
+					"3": 400,
+					"4": false,
+					"5": false,
+					"6": 0
+				},
+				"name": "Sub-Contracts",
+				"additional_name": "",
+				"field_hours": 0,
+				"shop_hours": 0,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 6,
+					"Name": "Sub-Contracts",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 8,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 6,
+						"Name": "Sub-Contracts",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 8,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 16
+					}
+				],
+				"worksheet_idn": 14277,
+				"addtional_worksheet_idn": 0
+			},
+			"7": {
+				"recap_row_idn": 7,
+				"job_number": 3067,
+				"recap_cells": {
+					"1": false,
+					"2": 0,
+					"3": 0,
+					"4": false,
+					"5": 342,
+					"6": 9
+				},
+				"name": "Engineering",
+				"additional_name": "",
+				"field_hours": 0,
+				"shop_hours": 0,
+				"engineer_hours": 8.23,
+				"recap_row": {
+					"RecapRow_Idn": 7,
+					"Name": "Engineering",
+					"Department_Idn": 2,
+					"CalcShopFlag": 1,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 9,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 7,
+						"Name": "Engineering",
+						"Department_Idn": 2,
+						"CalcShopFlag": 1,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 9,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 22
+					}
+				],
+				"worksheet_idn": 14278,
+				"addtional_worksheet_idn": 0
+			},
+			"22": {
+				"recap_row_idn": 22,
+				"job_number": 3067,
+				"recap_cells": {
+					"1": false,
+					"2": false,
+					"3": false,
+					"4": false,
+					"5": 990,
+					"6": 44
+				},
+				"name": "Shop Labor",
+				"additional_name": "",
+				"field_hours": 0,
+				"shop_hours": 44,
+				"engineer_hours": 0,
+				"recap_row": {
+					"RecapRow_Idn": 22,
+					"Name": "Shop Labor",
+					"Department_Idn": 2,
+					"CalcShopFlag": 0,
+					"IsWorksheetFlag": 0,
+					"DisplayFlag": 1,
+					"Rank": 7,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": null,
+						"Name": "Shop Labor",
+						"Department_Idn": 2,
+						"CalcShopFlag": 0,
+						"IsWorksheetFlag": 0,
+						"DisplayFlag": 1,
+						"Rank": 7,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": null
+					}
+				],
+				"worksheet_idn": 0,
+				"addtional_worksheet_idn": 0
+			},
+			"8": {
+				"recap_row_idn": 8,
+				"job_number": 3067,
+				"recap_cells": {
+					"1": false,
+					"2": 165,
+					"3": 1864,
+					"4": false,
+					"5": 1733,
+					"6": 24
+				},
+				"name": "Job Mobilization",
+				"additional_name": "",
+				"field_hours": 23.3,
+				"shop_hours": 11.67,
+				"engineer_hours": 23.34,
+				"recap_row": {
+					"RecapRow_Idn": 8,
+					"Name": "Job Mobilization",
+					"Department_Idn": 2,
+					"CalcShopFlag": 0,
+					"IsWorksheetFlag": 1,
+					"DisplayFlag": 1,
+					"Rank": 10,
+					"ActiveFlag": 1
+				},
+				"recap_row_worksheet_masters": [
+					{
+						"RecapRow_Idn": 8,
+						"Name": "Job Mobilization",
+						"Department_Idn": 2,
+						"CalcShopFlag": 0,
+						"IsWorksheetFlag": 1,
+						"DisplayFlag": 1,
+						"Rank": 10,
+						"ActiveFlag": 1,
+						"WorksheetMaster_Idn": 8
+					}
+				],
+				"worksheet_idn": 14267,
+				"addtional_worksheet_idn": 0
+			}
+		},
+		"subtotals": {
+			"1": {
+				"RecapSubtotalCategory_Idn": 1,
+				"Name": "TOTAL OF ALL ITEMS",
+				"Percentage": ".000",
+				"Rank": 1,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 165,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 2264,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 2321,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 5049,
+						"Percentage": 0
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 141,
+						"Percentage": 0
+					}
+				}
+			},
+			"2": {
+				"RecapSubtotalCategory_Idn": 2,
+				"Name": "Payroll Added Costs",
+				"Percentage": 0,
+				"Rank": 2,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 1919,
+						"Percentage": ".380000"
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"3": {
+				"RecapSubtotalCategory_Idn": 3,
+				"Name": "Totals After P.A.C.",
+				"Percentage": ".000",
+				"Rank": 3,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 6968,
+						"Percentage": 0
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"8": {
+				"RecapSubtotalCategory_Idn": 8,
+				"Name": "Supervisory Fee",
+				"Percentage": 0,
+				"Rank": 4,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 244,
+						"Percentage": ".035000"
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"4": {
+				"RecapSubtotalCategory_Idn": 4,
+				"Name": "Contingences",
+				"Percentage": 0,
+				"Rank": 5,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 3,
+						"Percentage": ".020000"
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 45,
+						"Percentage": ".020000"
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 93,
+						"Percentage": ".040000"
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": ".000000"
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"5": {
+				"RecapSubtotalCategory_Idn": 5,
+				"Name": "Total Direct Costs",
+				"Percentage": ".000",
+				"Rank": 6,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 168,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 2309,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 2414,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 7212,
+						"Percentage": 0
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"6": {
+				"RecapSubtotalCategory_Idn": 6,
+				"Name": "Mark-Up of Costs",
+				"Percentage": 0,
+				"Rank": 7,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 30,
+						"Percentage": ".180000"
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 854,
+						"Percentage": ".370000"
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 314,
+						"Percentage": ".130000"
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 2668,
+						"Percentage": ".370000"
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			},
+			"7": {
+				"RecapSubtotalCategory_Idn": 7,
+				"Name": "Total After Capacity Costs",
+				"Percentage": ".000",
+				"Rank": 8,
+				"Columns": {
+					"1": {
+						"WorksheetColumn_Idn": 1,
+						"Name": "Bonded",
+						"Rank": 1,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					},
+					"2": {
+						"WorksheetColumn_Idn": 2,
+						"Name": "Sub 18%",
+						"Rank": 2,
+						"ActiveFlag": 1,
+						"Value": 198,
+						"Percentage": 0
+					},
+					"3": {
+						"WorksheetColumn_Idn": 3,
+						"Name": "Sub",
+						"Rank": 3,
+						"ActiveFlag": 1,
+						"Value": 3163,
+						"Percentage": 0
+					},
+					"4": {
+						"WorksheetColumn_Idn": 4,
+						"Name": "Material",
+						"Rank": 4,
+						"ActiveFlag": 1,
+						"Value": 2728,
+						"Percentage": 0
+					},
+					"5": {
+						"WorksheetColumn_Idn": 5,
+						"Name": "Labor",
+						"Rank": 5,
+						"ActiveFlag": 1,
+						"Value": 9880,
+						"Percentage": 0
+					},
+					"6": {
+						"WorksheetColumn_Idn": 6,
+						"Name": "Hours",
+						"Rank": 6,
+						"ActiveFlag": 1,
+						"Value": 0,
+						"Percentage": 0
+					}
+				}
+			}
+		},
+		"totals": {
+			"1": {
+				"RecapTotalCategory_Idn": 1,
+				"Name": "Total After Capacity Costs",
+				"Rank": 10,
+				"ActiveFlag": 1,
+				"Value": 15969,
+				"Percentage": 0
+			},
+			"2": {
+				"RecapTotalCategory_Idn": 2,
+				"Name": "Regular Commission",
+				"Rank": 20,
+				"ActiveFlag": 1,
+				"Value": 559,
+				"Percentage": ".035000"
+			},
+			"4": {
+				"RecapTotalCategory_Idn": 4,
+				"Name": "SUBTOTAL",
+				"Rank": 40,
+				"ActiveFlag": 1,
+				"Value": 16528,
+				"Percentage": 0
+			},
+			"5": {
+				"RecapTotalCategory_Idn": 5,
+				"Name": "Profit Mark-Up",
+				"Rank": 50,
+				"ActiveFlag": 1,
+				"Value": 0,
+				"Percentage": ".000000"
+			},
+			"6": {
+				"RecapTotalCategory_Idn": 6,
+				"Name": "Total After Profit Mark-Up",
+				"Rank": 60,
+				"ActiveFlag": 1,
+				"Value": 16528,
+				"Percentage": 0
+			},
+			"7": {
+				"RecapTotalCategory_Idn": 7,
+				"Name": "Sales or Use Taxes",
+				"Rank": 70,
+				"ActiveFlag": 1,
+				"Value": 180,
+				"Percentage": ".074500"
+			},
+			"8": {
+				"RecapTotalCategory_Idn": 8,
+				"Name": "Total After Taxes",
+				"Rank": 80,
+				"ActiveFlag": 1,
+				"Value": 16708,
+				"Percentage": 0
+			},
+			"9": {
+				"RecapTotalCategory_Idn": 9,
+				"Name": "Depository Fee",
+				"Rank": 90,
+				"ActiveFlag": 1,
+				"Value": 0,
+				"Percentage": ".000000"
+			},
+			"10": {
+				"RecapTotalCategory_Idn": 10,
+				"Name": "Total After Depository Fee",
+				"Rank": 100,
+				"ActiveFlag": 1,
+				"Value": 16708,
+				"Percentage": 0
+			},
+			"11": {
+				"RecapTotalCategory_Idn": 11,
+				"Name": "Cost of Bond",
+				"Rank": 110,
+				"ActiveFlag": 1,
+				"Value": 0,
+				"Percentage": ".000000"
+			},
+			"12": {
+				"RecapTotalCategory_Idn": 12,
+				"Name": "Total After Bond",
+				"Rank": 120,
+				"ActiveFlag": 1,
+				"Value": 16708,
+				"Percentage": 0
+			},
+			"14": {
+				"RecapTotalCategory_Idn": 14,
+				"Name": "Gross Receipts Tax, Etc.",
+				"Rank": 130,
+				"ActiveFlag": 1,
+				"Value": 251,
+				"Percentage": ".015000"
+			},
+			"13": {
+				"RecapTotalCategory_Idn": 13,
+				"Name": "TOTAL",
+				"Rank": 140,
+				"ActiveFlag": 1,
+				"Value": 16959,
+				"Percentage": 0
+			},
+			"15": {
+				"RecapTotalCategory_Idn": 15,
+				"Name": "Case 2 Total",
+				"Rank": 150,
+				"ActiveFlag": 1,
+				"Value": 0,
+				"Percentage": 0
+			}
+		},
+		"bonded_markup": 0,
+		"debug": false,
+		"price_update_datetime": "",
+		"price_update_idn": 0,
+		"prices_outdated": false,
+		"total_sqft": ".00",
+		"total_heads": "1.0"
+	}
+]

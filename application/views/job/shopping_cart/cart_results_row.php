@@ -39,7 +39,7 @@ $i = 0;
                 } 
                 ?>
                 <span class="span-center">
-                    <input type="checkbox" class="results-product" id="Product<?php echo $id; ?>" name="Products[<?php echo $product_idn; ?>]" value="<?php echo $product_idn; ?>" <?php echo $checked; ?> />
+                    <input type="checkbox" class="results-product<?php echo $worksheet_category_idn; ?>" id="Product<?php echo $id; ?>" name="Products[<?php echo $product_idn; ?>]" value="<?php echo $product_idn; ?>" <?php echo $checked; ?> />
                 </span>
 
                 <?php
