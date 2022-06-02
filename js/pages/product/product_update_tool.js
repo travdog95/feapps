@@ -3,6 +3,7 @@
     var columns = [
         { "data": "Product_Idn" },
         { "data": "Name" },
+        { "data": "FECI_Id" },
         { "data": "MaterialUnitPrice" },
         { "data": "FieldUnitPrice" },
         { "data": "ShopUnitPrice" },
@@ -33,20 +34,24 @@
                     $("td:eq(1)", row).addClass("em");
                 }
 
-                if (parseFloat(data.MaterialUnitPrice) !== parseFloat(data.CurrentMaterialUnitPrice)) {
+                if (data.FECI_Id !== data.CurrentFECI_Id) {
                     $("td:eq(2)", row).addClass("em");
                 }
 
-                if (parseFloat(data.FieldUnitPrice) !== parseFloat(data.CurrentFieldUnitPrice)) {
+                if (parseFloat(data.MaterialUnitPrice) !== parseFloat(data.CurrentMaterialUnitPrice)) {
                     $("td:eq(3)", row).addClass("em");
                 }
 
-                if (parseFloat(data.ShopUnitPrice) !== parseFloat(data.CurrentShopUnitPrice)) {
+                if (parseFloat(data.FieldUnitPrice) !== parseFloat(data.CurrentFieldUnitPrice)) {
                     $("td:eq(4)", row).addClass("em");
                 }
 
-                if (parseFloat(data.EngineerUnitPrice) !== parseFloat(data.CurrentEngineerUnitPrice)) {
+                if (parseFloat(data.ShopUnitPrice) !== parseFloat(data.CurrentShopUnitPrice)) {
                     $("td:eq(5)", row).addClass("em");
+                }
+
+                if (parseFloat(data.EngineerUnitPrice) !== parseFloat(data.CurrentEngineerUnitPrice)) {
+                    $("td:eq(6)", row).addClass("em");
                 }
             }
         });

@@ -76,7 +76,8 @@ class Product_Update_Tool extends CI_Controller {
 							"ShopUnitPrice" => $row->ShopUnitPrice == "" ? "0" : string_filter($row->ShopUnitPrice, ","),
 							"FieldUnitPrice" => $row->FieldUnitPrice == "" ? "0" : string_filter($row->FieldUnitPrice, ","),
 							"EngineerUnitPrice" => $row->EngineerUnitPrice == "" ? "0" : string_filter($row->EngineerUnitPrice, ","),
-							"Name" => $row->Name
+							"Name" => $row->Name,
+							"FECI_Id" => $row->FECI_Id
 							);
 
 						//insert row
@@ -119,7 +120,9 @@ class Product_Update_Tool extends CI_Controller {
 					s.EngineerUnitPrice,
 					p.EngineerUnitPrice AS CurrentEngineerUnitPrice,
 					pt.Name AS PipeType,
-					st.Name AS ScheduleType
+					st.Name AS ScheduleType,
+					p.FECI_Id AS CurrentFECI_Id,
+					s.FECI_Id 
 				FROM ProductsStaging2 AS s
 				LEFT JOIN Products AS p ON (p.Product_Idn = s.Product_Idn)
 				LEFT JOIN jpr_Department AS d ON (p.Department_Idn = d.DepartmentId)
@@ -170,14 +173,17 @@ class Product_Update_Tool extends CI_Controller {
 					s.EngineerUnitPrice,
 					p.EngineerUnitPrice AS original_design,
 					s.Name,
-					p.Name AS original_name
+					p.Name AS original_name,
+					p.FECI_Id AS original_FECI_Id,
+					s.FECI_Id
 				FROM ProductsStaging2 AS s
 				LEFT JOIN Products AS p ON (p.Product_Idn = s.Product_Idn)
 				WHERE p.MaterialUnitPrice <> s.MaterialUnitPrice
 					OR p.FieldUnitPrice <> s.FieldUnitPrice
 					OR p.ShopUnitPrice <> s.ShopUnitPrice
 					OR p.EngineerUnitPrice <> s.EngineerUnitPrice
-					OR p.Name <> s.Name";
+					OR p.Name <> s.Name
+					OR p.FECI_Id <> s.FECI_Id";
 		$query = $this->db->query($sql);
 
 		if ($query == false)
@@ -216,6 +222,10 @@ class Product_Update_Tool extends CI_Controller {
 					if ($row['Name'] != $row['original_name'])
 					{
 						$sql_set_array[] = "Name = '{$row['Name']}'";
+					}
+					if ($row['FECI_Id'] != $row['original_FECI_Id'])
+					{
+						$sql_set_array[] = "FECI_Id = {$row['FECI_Id']}";
 					}
 
 					$sql_set = implode(",", $sql_set_array);
