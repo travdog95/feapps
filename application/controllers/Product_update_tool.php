@@ -183,7 +183,8 @@ class Product_Update_Tool extends CI_Controller {
 					OR p.ShopUnitPrice <> s.ShopUnitPrice
 					OR p.EngineerUnitPrice <> s.EngineerUnitPrice
 					OR p.Name <> s.Name
-					OR p.FECI_Id <> s.FECI_Id";
+					OR p.FECI_Id <> s.FECI_Id
+					OR (p.FECI_Id IS NULL AND s.FECI_Id IS NOT NULL)";
 		$query = $this->db->query($sql);
 
 		if ($query == false)
