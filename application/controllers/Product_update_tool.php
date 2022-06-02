@@ -71,11 +71,12 @@ class Product_Update_Tool extends CI_Controller {
 					if (!empty($row->Product_Idn))
 					{
 						$product = array(
-							"Product_Idn" => $row->Product_Idn,
-							"MaterialUnitPrice" => $row->MaterialUnitPrice,
-							"ShopUnitPrice" => $row->ShopUnitPrice,
-							"FieldUnitPrice" => $row->FieldUnitPrice,
-							"EngineerUnitPrice" => $row->EngineerUnitPrice
+							"Product_Idn" => string_filter($row->Product_Idn, ","),
+							"MaterialUnitPrice" => $row->MaterialUnitPrice == "" ? "0" : string_filter($row->MaterialUnitPrice, ","),
+							"ShopUnitPrice" => $row->ShopUnitPrice == "" ? "0" : string_filter($row->ShopUnitPrice, ","),
+							"FieldUnitPrice" => $row->FieldUnitPrice == "" ? "0" : string_filter($row->FieldUnitPrice, ","),
+							"EngineerUnitPrice" => $row->EngineerUnitPrice == "" ? "0" : string_filter($row->EngineerUnitPrice, ","),
+							"Name" => $row->Name
 							);
 
 						//insert row
@@ -107,7 +108,8 @@ class Product_Update_Tool extends CI_Controller {
 					d.Description AS Department,
 					w.Name AS Worksheet,
 					c.Name AS Category,
-					p.Name,
+					s.Name,
+					p.Name as CurrentName,
 					s.MaterialUnitPrice,
 					p.MaterialUnitPrice AS CurrentMaterialUnitPrice,
 					s.FieldUnitPrice,
@@ -166,13 +168,16 @@ class Product_Update_Tool extends CI_Controller {
 					s.ShopUnitPrice,
 					p.ShopUnitPrice AS original_shop,
 					s.EngineerUnitPrice,
-					p.EngineerUnitPrice AS original_design
+					p.EngineerUnitPrice AS original_design,
+					s.Name,
+					p.Name AS original_name
 				FROM ProductsStaging2 AS s
 				LEFT JOIN Products AS p ON (p.Product_Idn = s.Product_Idn)
 				WHERE p.MaterialUnitPrice <> s.MaterialUnitPrice
 					OR p.FieldUnitPrice <> s.FieldUnitPrice
 					OR p.ShopUnitPrice <> s.ShopUnitPrice
-					OR p.EngineerUnitPrice <> s.EngineerUnitPrice";
+					OR p.EngineerUnitPrice <> s.EngineerUnitPrice
+					OR p.Name <> s.Name";
 		$query = $this->db->query($sql);
 
 		if ($query == false)
@@ -206,6 +211,11 @@ class Product_Update_Tool extends CI_Controller {
 					if ($row['EngineerUnitPrice'] != $row['original_design'])
 					{
 						$sql_set_array[] = "EngineerUnitPrice = '{$row['EngineerUnitPrice']}'";
+					}
+
+					if ($row['Name'] != $row['original_name'])
+					{
+						$sql_set_array[] = "Name = '{$row['Name']}'";
 					}
 
 					$sql_set = implode(",", $sql_set_array);

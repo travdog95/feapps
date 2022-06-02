@@ -103,7 +103,7 @@ if (isset($miscellaneous_products[139]))
         <td colspan="<?php echo $worksheet_master['NumberOfColumns']; ?>" class="left-aligned bold">
             Finish Work &nbsp;&nbsp;
             <?php if ($this->session->userdata('read_only') == 0): ?>
-                <!--<a href="#" id="AddFinishWork" class="add-miscellaneous" data-source="140">Add Finish Work</a>&nbsp;&nbsp;-->
+                <a href="#" id="AddFinishWork" class="add-miscellaneous" data-source="140">Add Finish Work</a>&nbsp;&nbsp;
                 <input type="checkbox" id="NoFinishWork" name="NoFinishWork" value="1" <?php if ($worksheet['NoFinishWorkFlag'] == 1) echo 'checked="checked"'; ?> /> <label for="NoFinishWork">No Finish Work</label>
             <?php endif; ?>
         </td>

@@ -83,7 +83,7 @@
 <script src="<?php echo base_url(); ?>lib/PapaParse/papaparse.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>lib/DataTables-1.10.15/js/jquery.dataTables.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>lib/DataTables-1.10.15/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>js/pages/product_update_tool.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>js/pages/product/product_update_tool.js" type="text/javascript"></script>
 
 <script>
     jQuery(document).ready(function() {

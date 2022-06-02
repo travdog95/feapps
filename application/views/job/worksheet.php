@@ -48,9 +48,6 @@ echo form_open('', $form_attributes);
 	<div class="row">
 		<div class="col-md-12">
 			<div class="panel panel-default">
-                <?php
-                //$this->load->view('inc/panel_heading');
-                ?>
 
 				<div class="panel-body">
                     <?php 

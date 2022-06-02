@@ -88,8 +88,8 @@ class Job_mob extends Worksheet
             //Format job_number
             $job_number = format_job_number($this->w['Job_Idn'], $this->w['ChangeOrder']);
             
-            //$this->_j = new J(array('job_number' => $job_number));
-            $this->CI->load('j', array('job_number' => $job_number));
+            $this->CI->load->library('j', array('job_number' => $job_number));
+
             $this->_j = $this->CI->j;
         }
 

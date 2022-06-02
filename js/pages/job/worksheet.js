@@ -1951,7 +1951,7 @@ function load_areas(is_position) {
 }
 
 function add_miscellaneous_item(el) {
-  var source = $(el).data("source");
+  var source = parseInt($(el).data("source"));
   var worksheet_area_idn = source == 138 ? $(el).val() : 0;
   var finish_work = [];
 

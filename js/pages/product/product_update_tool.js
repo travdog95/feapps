@@ -29,6 +29,10 @@
             "ajax": FECI.base_url + "product_update_tool/get_product_staging",
             "columns": columns,
             "rowCallback": function (row, data) {
+                if (data.Name !== data.CurrentName) {
+                    $("td:eq(1)", row).addClass("em");
+                }
+
                 if (parseFloat(data.MaterialUnitPrice) !== parseFloat(data.CurrentMaterialUnitPrice)) {
                     $("td:eq(2)", row).addClass("em");
                 }
@@ -129,6 +133,8 @@
         if (FECI.request) {
             FECI.request.abort();
         }
+
+        displayMessageBox("File is uploading...", "info");
 
         //AJAX request
         FECI.request = $.ajax({

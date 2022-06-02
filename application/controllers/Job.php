@@ -998,9 +998,6 @@ class Job extends CI_Controller
                 $this->load->library('parentjob', array('job_number' => $job_number));
                 $Job = $this->parentjob;
 
-                //This is now part of the construct of ParentJob object
-                //$Job->get_children($job_keys[0]);
-
                 $Job->load_recap_rows();
             } else {
                 //Instantiate Job

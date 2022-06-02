@@ -1,0 +1,12 @@
+.tab-content,
+.button-container {
+    width: 600px;
+}
+
+.button-container {
+    padding: 5px 0 5px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}

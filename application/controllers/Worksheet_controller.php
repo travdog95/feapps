@@ -557,7 +557,7 @@ class Worksheet_controller extends CI_Controller {
                 "FinishWork_Idn" => $finish_work_idn
                 );
 
-            $view = ($post['WorksheetCategory_Idn'] == 140) ? "cl_recap_finish_work_row": "cl_recap_misc_row";
+                $view = ($post['WorksheetCategory_Idn'] == 140) ? "cl_recap_finish_work_row": "cl_recap_misc_row";
 
             $html = $this->load->view("worksheet/cl_recap/".$view, array("Row" => $row), true);
         }

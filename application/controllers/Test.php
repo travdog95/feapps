@@ -71,8 +71,7 @@ class Test extends CI_Controller {
             }
             else
             {
-                //echo json_encode($Job->RRs);
-                echo json_encode($Job->children);
+                echo json_encode($Job->RRs);
             }
         }
     }
@@ -105,5 +104,31 @@ class Test extends CI_Controller {
     {
         echo phpinfo();
         exit;
+    }
+
+    function parent_recap_rows($job_number)
+    {
+        if (isset($job_number) && !empty($job_number))
+        {
+            if ($this->m_job->is_parent($job_number)) {
+                //Instantiate ParentJob
+                $this->load->library('j');
+                $this->load->library('parentjob', array('job_number' => $job_number));
+                $Parent = $this->parentjob;
+            } else {
+                echo "<p>Not a parent!</p>";
+            }
+
+
+            $Parent->load_recap_rows();
+
+            foreach($Parent->children as $child) {
+                foreach($child->RRs as $recap_row) {
+                    if ($recap_row->recap_row_idn == 8) {
+                        echo json_encode($recap_row);
+                    }
+                }
+            }
+        }
     }
 }

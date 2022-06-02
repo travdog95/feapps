@@ -83,6 +83,9 @@ if ($Row['Product_Idn'] == 2489)
             </button>&nbsp;';
         else:
             $product_name = quotes_to_entities($Row['Name']);
+            if ($Row['IsMiscellaneousDetail'] != 1) {
+                $product_name .= ' <span class="show-product-idn">('.$Row['Product_Idn'].')</span>';
+            }
 			$copy_worksheet = "";
         endif;
 		?>

@@ -84,26 +84,26 @@ class Recap_row
             $this->worksheet_idn = 0;
             $this->addtional_worksheet_idn = 0;
 
+            //Reset shop hours for Job Mob
+            if ($this->recap_row_idn == 8 || $this->recap_row_idn == 32) {
+                $this->shop_hours = 0;
+            } 
+
             foreach ($j->children as $child)
             {
-                //Job Mob
-                // if ($this->recap_row_idn == 8) {
+                //Labor amounts
+                $this->field_hours += ceil($child->RRs[$this->recap_row_idn]->field_hours);
+                $this->shop_hours += ceil($child->RRs[$this->recap_row_idn]->shop_hours);
+                $this->engineer_hours += ceil($child->RRs[$this->recap_row_idn]->engineer_hours);
 
-                // } else {
-                    //Labor amounts
-                    $this->field_hours += ceil($child->RRs[$this->recap_row_idn]->field_hours);
-                    $this->shop_hours += ceil($child->RRs[$this->recap_row_idn]->shop_hours);
-                    $this->engineer_hours += ceil($child->RRs[$this->recap_row_idn]->engineer_hours);
-
-                    //Total recap cell amounts
-                    for ($i = 1; $i <= 6; $i++)
+                //Total recap cell amounts
+                for ($i = 1; $i <= 6; $i++)
+                {
+                    if ($this->recap_cells[$i] !== false)
                     {
-                        if ($this->recap_cells[$i] !== false)
-                        {
-                            $this->recap_cells[$i] += ceil($child->RRs[$this->recap_row_idn]->recap_cells[$i]);
-                        }
+                        $this->recap_cells[$i] += ceil($child->RRs[$this->recap_row_idn]->recap_cells[$i]);
                     }
-                // }
+                }
             }
         }
         else
@@ -270,8 +270,9 @@ class Recap_row
             if ($this->recap_row_idn == 8 || $this->recap_row_idn == 32) //Job Mob
             {
                 //$w = new Job_mob(array('w_id' => $worksheet_idn, 'j' => $j));
-                $this->CI->load->library('job_mob', array('w_id' => $worksheet_idn, 'j' => $j));
-                $w = $this->CI->job_mob;
+                $job_mob_instance = "job_mob_w_id_".$worksheet_idn;
+                $this->CI->load->library('job_mob', array('w_id' => $worksheet_idn, 'j' => $j), $job_mob_instance);
+                $w = $this->CI->$job_mob_instance;
 
 				$this->shop_hours = $w->jm_shop_hours;
 				$this->engineer_hours = $w->jm_eng_hours;

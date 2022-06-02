@@ -9,10 +9,8 @@
                 <p></p>
             </div>
             <div class="modal-footer">
-                <?php echo form_open('', array('id' => 'ConfirmationForm')); ?>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary confirmed" id="Confirmed">Ok</button>
-                <?php echo form_close(); ?>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

@@ -82,7 +82,7 @@ class M_reference_table extends CI_Model {
 	 * @return	$rows(array(idn => name)
 	 */
 
-	public function get_idns_names($table_name, $idn, $where=array(), $active = true)
+	public function get_idns_names($table_name, $idn, $where=array(), $active = true, $order_by = "Rank")
 	{
 		//Delcare and initialize variables
 		$rows = array();
@@ -93,7 +93,7 @@ class M_reference_table extends CI_Model {
 			$this->db
 				->select('*')
 				->from($table_name)
-				->order_by('Rank');
+				->order_by($order_by);
 			
 			//Get records with ActiveFlag = 1
 			if ($active)
@@ -356,7 +356,8 @@ class M_reference_table extends CI_Model {
     {
         if ($this->db->insert($table, $data))
         {
-            write_feci_log(array("Message" => "Insert ".$this->db->last_query(), "Script" => get_caller_info()));
+            //I think this line is messing up subsequent $this->db->insert_id() calls
+            // write_feci_log(array("Message" => "Insert ".$this->db->last_query(), "Script" => get_caller_info()));
 
             return true;
         }
@@ -367,4 +368,32 @@ class M_reference_table extends CI_Model {
             return false;
         }
     }
+
+        /**
+     * insert record into table
+     *
+     * @access  public
+     * @param   string $table
+     * @param   array   $data
+     * @return  integer
+     */
+    
+    function insert_return_idn($table, $data)
+    {
+        if ($this->db->insert($table, $data))
+        {
+            $new_id = $this->db->insert_id();
+
+            write_feci_log(array("Message" => "Insert ".$this->db->last_query(), "Script" => get_caller_info()));
+
+            return $new_id;
+        }
+        else
+        {
+            write_feci_log(array("Message" => "SQL Error ".$this->db->last_query(), "Script" => get_caller_info()));
+
+            return 0;
+        }
+    }
+
 }
