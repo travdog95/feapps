@@ -45,10 +45,18 @@
 				<div role="tabpanel" class="tab-pane active" id="primary">
 					<?php $this->load->view('product/detail_primary_tab'); ?>
 				</div>
-				<div role="tabpanel" class="tab-pane" id="secondary"></div>
-				<div role="tabpanel" class="tab-pane" id="electronicsDivision"></div>
-				<div role="tabpanel" class="tab-pane" id="sprinkerDivision"></div>
-				<div role="tabpanel" class="tab-pane" id="firePump"></div>
+				<div role="tabpanel" class="tab-pane" id="secondary">
+					<?php $this->load->view('product/detail_secondary_tab'); ?>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="electronicsDivision">
+					<?php $this->load->view('product/detail_electronics_tab'); ?>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="sprinkerDivision">
+					<?php $this->load->view('product/detail_sprinkler_tab'); ?>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="firePump">
+					<?php $this->load->view('product/detail_fire_pump_tab'); ?>
+				</div>
 			</div>
 			<div class="button-container">
 				<button id="cancelProductButton" class="btn btn-default">Cancel</button>

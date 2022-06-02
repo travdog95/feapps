@@ -13,7 +13,7 @@
     <label for="ThreadedFittingType_Idn" class="col-sm-4 control-label">Threaded Fitting Type</label>
     <div class="col-sm-8">
         <select class="form-control" id="ThreadedFittingType_Idn">
-            <?php foreach($product['ThreadedFittingTypes'] as $id => $threaded_fitting_type): ?>
+            <?php foreach($product['ThreadedFittingTypes'] as $id => $grooved_fitting_type): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['ThreadedFittingType_Idn']) echo 'selected'; ?>><?php echo $threaded_fitting_type; ?></option>
             <?php endforeach; ?>
         </select>    
