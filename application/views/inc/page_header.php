@@ -27,6 +27,10 @@
         <?php else: ?>
             <h2><?php echo quotes_to_entities($active_page); ?></h2>
         <?php endif; ?>
+
+        <?php if (isset($sub_header) && $sub_header != ""): ?>
+            <p><?php echo $sub_header; ?></p>
+        <?php endif; ?>
 	</div>
 	<div class="col-md-3 page-header-section text-right">
         <?php if (isset($job['job_number'])): ?>

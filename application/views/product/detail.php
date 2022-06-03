@@ -10,26 +10,12 @@
 
 <!-- start: MAIN CONTAINER -->
 <div class="main-container">
-	<?php 
-	//Load Navbar
-	$menu_data = array(
-		'menus' => $menus,
-		'active_page' => $active_page
-	);
-	$this->load->view('inc/navbar', $menu_data);
-	?>
+	<?php $this->load->view('inc/navbar'); ?>
 
 	<!-- start: PAGE -->
 	<div class="main-content">
 		<div class="container">
-			<?php
-			//Load data for page_header 
-			$page_header_data = array(
-				'active_page' => $active_page,
-				'bread_crumbs' => $bread_crumbs
-			);
-			$this->load->view('inc/page_header', $page_header_data); 
-			?>
+			<?php $this->load->view('inc/page_header'); ?>
 
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs" role="tablist">

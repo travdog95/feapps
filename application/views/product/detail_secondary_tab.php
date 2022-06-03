@@ -1,5 +1,18 @@
 <form class="form-horizontal product-tab">
   <div class="form-group form-group-sm">
+    <label for="FECI_Id" class="col-sm-4 control-label">FECI ID</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="FECI_Id" placeholder="FECI ID" value="<?php echo $product['FECI_Id']; ?>">
+    </div>
+  </div>
+  <div class="form-group form-group-sm">
+    <label for="ManufacturerPart_Id" class="col-sm-4 control-label">Manufacturer Part ID</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="ManufacturerPart_Id" placeholder="Manufacturer Part ID" value="<?php echo $product['ManufacturerPart_Id']; ?>">
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
     <label for="GroovedFittingType_Idn" class="col-sm-4 control-label">Grooved Fitting Type</label>
     <div class="col-sm-8">
         <select class="form-control" id="GroovedFittingType_Idn">
@@ -56,8 +69,8 @@
         </div>
     </div>
 
-  <div class="form-group form-group-sm">
-    <label for="ApplyToAdjustmentFactorsFlag" class="col-sm-4 control-label">Apply To Adjustment Factors Flag</label>
+  <div class="form-group form-group-sm form-checkbox">
+    <label for="ApplyToAdjustmentFactorsFlag" class="col-sm-4 control-label">Apply To Adjustment Factors?</label>
     <div class="col-sm-8">
       <div class="checkbox">
         <label>
@@ -66,8 +79,8 @@
       </div>
     </div>
   </div>
-  <div class="form-group form-group-sm">
-    <label for="ApplyToContingencyFlag" class="col-sm-4 control-label">Apply To Contingency Flag</label>
+  <div class="form-group form-group-sm form-checkbox">
+    <label for="ApplyToContingencyFlag" class="col-sm-4 control-label">Apply To Contingency?</label>
     <div class="col-sm-8">
       <div class="checkbox">
         <label>
@@ -76,8 +89,8 @@
       </div>
     </div>
   </div>
-  <div class="form-group form-group-sm">
-    <label for="IsMainComponent" class="col-sm-4 control-label">Is Main Component</label>
+  <div class="form-group form-group-sm form-checkbox">
+    <label for="IsMainComponent" class="col-sm-4 control-label">Main Component?</label>
     <div class="col-sm-8">
       <div class="checkbox">
         <label>
@@ -86,8 +99,8 @@
       </div>
     </div>
   </div>
-  <div class="form-group form-group-sm">
-    <label for="DomesticFlag" class="col-sm-4 control-label">Domestic Flag</label>
+  <div class="form-group form-group-sm form-checkbox">
+    <label for="DomesticFlag" class="col-sm-4 control-label">Domestic?</label>
     <div class="col-sm-8">
       <div class="checkbox">
         <label>
@@ -96,8 +109,8 @@
       </div>
     </div>
   </div>
-  <div class="form-group form-group-sm">
-    <label for="LoadFlag" class="col-sm-4 control-label">Load Flag</label>
+  <div class="form-group form-group-sm form-checkbox">
+    <label for="LoadFlag" class="col-sm-4 control-label">Load?</label>
     <div class="col-sm-8">
       <div class="checkbox">
         <label>
@@ -106,8 +119,8 @@
       </div>
     </div>
   </div>
-  <div class="form-group form-group-sm">
-    <label for="AutoLoadFlag" class="col-sm-4 control-label">Auto Load Flag</label>
+  <div class="form-group form-group-sm form-checkbox">
+    <label for="AutoLoadFlag" class="col-sm-4 control-label">Auto Load?</label>
     <div class="col-sm-8">
       <div class="checkbox">
         <label>
@@ -116,7 +129,18 @@
       </div>
     </div>
   </div>
-  <div class="form-group form-group-sm">
+  <div class="form-group form-group-sm form-checkbox">
+    <label for="ShoppableFlag" class="col-sm-4 control-label">Shoppable?</label>
+    <div class="col-sm-8">
+      <div class="checkbox">
+        <label>
+          <input name="ShoppableFlag" id="ShoppableFlag" type="checkbox" <?php if ($product['ShoppableFlag'] == 1) echo "checked"; ?>> 
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm form-checkbox">
   <label for="ResponseType" class="col-sm-4 control-label">Response Type</label>
     <div class="col-sm-8">
         <label class="radio-inline">

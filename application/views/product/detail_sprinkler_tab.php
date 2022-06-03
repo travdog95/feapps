@@ -1,133 +1,167 @@
 <form class="form-horizontal product-tab">
   <div class="form-group form-group-sm">
-    <label for="GroovedFittingType_Idn" class="col-sm-4 control-label">Grooved Fitting Type</label>
+    <label for="CoverageType_Idn" class="col-sm-4 control-label">Coverage Type</label>
     <div class="col-sm-8">
-        <select class="form-control" id="GroovedFittingType_Idn">
-            <?php foreach($product['GroovedFittingTypes'] as $id => $grooved_fitting_type): ?>
-            <option value="<?php echo $id; ?>" <?php if ($id == $product['GroovedFittingType_Idn']) echo 'selected'; ?>><?php echo $grooved_fitting_type; ?></option>
+        <select class="form-control" id="CoverageType_Idn">
+            <?php foreach($product['CoverageTypes'] as $id => $coverage_type): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['CoverageType_Idn']) echo 'selected'; ?>><?php echo $coverage_type; ?></option>
             <?php endforeach; ?>
         </select>    
     </div>
   </div>
   <div class="form-group form-group-sm">
-    <label for="ThreadedFittingType_Idn" class="col-sm-4 control-label">Threaded Fitting Type</label>
+    <label for="HeadType_Idn" class="col-sm-4 control-label">Head Type</label>
     <div class="col-sm-8">
-        <select class="form-control" id="ThreadedFittingType_Idn">
-            <?php foreach($product['ThreadedFittingTypes'] as $id => $grooved_fitting_type): ?>
-            <option value="<?php echo $id; ?>" <?php if ($id == $product['ThreadedFittingType_Idn']) echo 'selected'; ?>><?php echo $threaded_fitting_type; ?></option>
+        <select class="form-control" id="HeadType_Idn">
+            <?php foreach($product['HeadTypes'] as $id => $head_type): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['HeadType_Idn']) echo 'selected'; ?>><?php echo $head_type; ?></option>
             <?php endforeach; ?>
         </select>    
     </div>
   </div>
   <div class="form-group form-group-sm">
-    <label for="HangerType_Idn" class="col-sm-4 control-label">Hanger Type</label>
+    <label for="FinishType_Idn" class="col-sm-4 control-label">Finish Type</label>
     <div class="col-sm-8">
-        <select class="form-control" id="HangerType_Idn">
-            <?php foreach($product['HangerTypes'] as $id => $hanger_type): ?>
-            <option value="<?php echo $id; ?>" <?php if ($id == $product['HangerType_Idn']) echo 'selected'; ?>><?php echo $hanger_type; ?></option>
+        <select class="form-control" id="FinishType_Idn">
+            <?php foreach($product['FinishTypes'] as $id => $finish_type): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['FinishType_Idn']) echo 'selected'; ?>><?php echo $finish_type; ?></option>
             <?php endforeach; ?>
         </select>    
     </div>
   </div>
   <div class="form-group form-group-sm">
-    <label for="HangerSubType_Idn" class="col-sm-4 control-label">Hanger Sub Type</label>
+    <label for="Outlet_Idn" class="col-sm-4 control-label">Outlet</label>
     <div class="col-sm-8">
-        <select class="form-control" id="HangerSubType_Idn">
-            <?php foreach($product['HangerSubTypes'] as $id => $hanger_sub_type): ?>
-            <option value="<?php echo $id; ?>" <?php if ($id == $product['HangerSubType_Idn']) echo 'selected'; ?>><?php echo $hanger_sub_type; ?></option>
+        <select class="form-control" id="Outlet_Idn">
+            <?php foreach($product['Outlets'] as $id => $outlet): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['Outlet_Idn']) echo 'selected'; ?>><?php echo $outlet; ?></option>
             <?php endforeach; ?>
         </select>    
     </div>
   </div>
   <div class="form-group form-group-sm">
-    <label for="SubcontractCategory_Idn" class="col-sm-4 control-label">Subcontract Category</label>
+    <label for="RiserType_Idn" class="col-sm-4 control-label">Riser Type</label>
     <div class="col-sm-8">
-        <select class="form-control" id="SubcontractCategory_Idn">
-            <?php foreach($product['SubcontractCategories'] as $id => $subcontract_category): ?>
-            <option value="<?php echo $id; ?>" <?php if ($id == $product['SubcontractCategory_Idn']) echo 'selected'; ?>><?php echo $subcontract_category; ?></option>
+        <select class="form-control" id="RiserType_Idn">
+            <?php foreach($product['RiserTypes'] as $id => $riser_type): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['RiserType_Idn']) echo 'selected'; ?>><?php echo $riser_type; ?></option>
             <?php endforeach; ?>
         </select>    
     </div>
   </div>
   <div class="form-group form-group-sm">
-        <label for="ResponseType" class="col-sm-4 control-label">Description</label>
-        <div class="col-sm-8">
-        <textarea class="form-control" rows="3" placeholder="Description"></textarea>
-        </div>
-    </div>
-
-  <div class="form-group form-group-sm">
-    <label for="ApplyToAdjustmentFactorsFlag" class="col-sm-4 control-label">Apply To Adjustment Factors Flag</label>
+    <label for="BackFlowType_Idn" class="col-sm-4 control-label">Back Flow Type</label>
     <div class="col-sm-8">
-      <div class="checkbox">
-        <label>
-          <input name="ApplyToAdjustmentFactorsFlag" id="ApplyToAdjustmentFactorsFlag" type="checkbox" <?php if ($product['ApplyToAdjustmentFactorsFlag'] == 1) echo "checked"; ?>> 
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group form-group-sm">
-    <label for="ApplyToContingencyFlag" class="col-sm-4 control-label">Apply To Contingency Flag</label>
-    <div class="col-sm-8">
-      <div class="checkbox">
-        <label>
-          <input name="ApplyToContingencyFlag" id="ApplyToContingencyFlag" type="checkbox" <?php if ($product['ApplyToContingencyFlag'] == 1) echo "checked"; ?>> 
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group form-group-sm">
-    <label for="IsMainComponent" class="col-sm-4 control-label">Is Main Component</label>
-    <div class="col-sm-8">
-      <div class="checkbox">
-        <label>
-          <input name="IsMainComponent" id="IsMainComponent" type="checkbox" <?php if ($product['IsMainComponent'] == 1) echo "checked"; ?>> 
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group form-group-sm">
-    <label for="DomesticFlag" class="col-sm-4 control-label">Domestic Flag</label>
-    <div class="col-sm-8">
-      <div class="checkbox">
-        <label>
-          <input name="DomesticFlag" id="DomesticFlag" type="checkbox" <?php if ($product['DomesticFlag'] == 1) echo "checked"; ?>> 
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group form-group-sm">
-    <label for="LoadFlag" class="col-sm-4 control-label">Load Flag</label>
-    <div class="col-sm-8">
-      <div class="checkbox">
-        <label>
-          <input name="LoadFlag" id="LoadFlag" type="checkbox" <?php if ($product['LoadFlag'] == 1) echo "checked"; ?>> 
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group form-group-sm">
-    <label for="AutoLoadFlag" class="col-sm-4 control-label">Auto Load Flag</label>
-    <div class="col-sm-8">
-      <div class="checkbox">
-        <label>
-          <input name="AutoLoadFlag" id="AutoLoadFlag" type="checkbox" <?php if ($product['AutoLoadFlag'] == 1) echo "checked"; ?>> 
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group form-group-sm">
-  <label for="ResponseType" class="col-sm-4 control-label">Response Type</label>
-    <div class="col-sm-8">
-        <label class="radio-inline">
-            <input type="radio" name="ResponseType" id="ResponseTypeQR" value="QR" <?php if($product['ResponseType'] == "Q") echo "checked";?>> QR
-        </label>
-        <label class="radio-inline">
-            <input type="radio" name="ResponseType" id="ResponseTypeSR" value="SR" <?php if($product['ResponseType'] == "S") echo "checked";?>> SR
-        </label>    
+        <select class="form-control" id="BackFlowType_Idn">
+            <?php foreach($product['BackFlowTypes'] as $id => $backflow_type): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['BackFlowType_Idn']) echo 'selected'; ?>><?php echo $backflow_type; ?></option>
+            <?php endforeach; ?>
+        </select>    
     </div>
   </div>
 
+  <div class="form-group form-group-sm">
+    <label for="ControlValve_Idn" class="col-sm-4 control-label">Control Valve</label>
+    <div class="col-sm-8">
+        <select class="form-control" id="ControlValve_Idn">
+            <?php foreach($product['ControlValves'] as $id => $control_valve): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['ControlValve_Idn']) echo 'selected'; ?>><?php echo $control_valve; ?></option>
+            <?php endforeach; ?>
+        </select>    
+    </div>
+  </div>
 
+  <div class="form-group form-group-sm">
+    <label for="CheckValve_Idn" class="col-sm-4 control-label">Check Valve</label>
+    <div class="col-sm-8">
+        <select class="form-control" id="CheckValve_Idn">
+            <?php foreach($product['CheckValves'] as $id => $check_valve): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['CheckValve_Idn']) echo 'selected'; ?>><?php echo $check_valve; ?></option>
+            <?php endforeach; ?>
+        </select>    
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <label for="FDCType_Idn" class="col-sm-4 control-label">FDC Type</label>
+    <div class="col-sm-8">
+        <select class="form-control" id="FDCType_Idn">
+            <?php foreach($product['FDCTypes'] as $id => $fdc_type): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['FDCType_Idn']) echo 'selected'; ?>><?php echo $fdc_type; ?></option>
+            <?php endforeach; ?>
+        </select>    
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <label for="BellType_Idn" class="col-sm-4 control-label">Bell Type</label>
+    <div class="col-sm-8">
+        <select class="form-control" id="BellType_Idn">
+            <?php foreach($product['BellTypes'] as $id => $bell_type): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['BellType_Idn']) echo 'selected'; ?>><?php echo $bell_type; ?></option>
+            <?php endforeach; ?>
+        </select>    
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <label for="TappingTee_Idn" class="col-sm-4 control-label">Tapping Tee</label>
+    <div class="col-sm-8">
+        <select class="form-control" id="TappingTee_Idn">
+            <?php foreach($product['TappingTees'] as $id => $tapping_tee): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['TappingTee_Idn']) echo 'selected'; ?>><?php echo $tapping_tee; ?></option>
+            <?php endforeach; ?>
+        </select>    
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <label for="UndergroundValve_Idn" class="col-sm-4 control-label">Underground Valve</label>
+    <div class="col-sm-8">
+        <select class="form-control" id="UndergroundValve_Idn">
+            <?php foreach($product['UndergroundValves'] as $id => $underground_valve): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['UndergroundValve_Idn']) echo 'selected'; ?>><?php echo $underground_valve; ?></option>
+            <?php endforeach; ?>
+        </select>    
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <label for="LiftDuration_Idn" class="col-sm-4 control-label">Lift Duration</label>
+    <div class="col-sm-8">
+        <select class="form-control" id="LiftDuration_Idn">
+            <?php foreach($product['LiftDurations'] as $id => $lift_duration): ?>
+            <option value="<?php echo $id; ?>" <?php if ($id == $product['LiftDuration_Idn']) echo 'selected'; ?>><?php echo $lift_duration; ?></option>
+            <?php endforeach; ?>
+        </select>    
+    </div>
+  </div>
+
+<div class="form-group form-group-sm form-checkbox">
+    <label for="TrimPackageFlag" class="col-sm-4 control-label">Trim Package?</label>
+    <div class="col-sm-8">
+      <div class="checkbox">
+        <label>
+          <input name="TrimPackageFlag" id="TrimPackageFlag" type="checkbox" <?php if ($product['TrimPackageFlag'] == 1) echo "checked"; ?>> 
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group form-group-sm form-checkbox">
+    <label for="ListedFlag" class="col-sm-4 control-label">Listed?</label>
+    <div class="col-sm-8">
+      <div class="checkbox">
+        <label>
+          <input name="ListedFlag" id="ListedFlag" type="checkbox" <?php if ($product['ListedFlag'] == 1) echo "checked"; ?>> 
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group form-group-sm">
+    <label for="BoxWireLength" class="col-sm-4 control-label">Box Wire Length</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="BoxWireLength" placeholder="Box Wire Length" value="<?php echo $product['BoxWireLength']; ?>">
+    </div>
+  </div>
 
 </form>
