@@ -77,7 +77,9 @@ class Product_Update_Tool extends CI_Controller {
 							"FieldUnitPrice" => $row->FieldUnitPrice == "" ? "0" : string_filter($row->FieldUnitPrice, ","),
 							"EngineerUnitPrice" => $row->EngineerUnitPrice == "" ? "0" : string_filter($row->EngineerUnitPrice, ","),
 							"Name" => $row->Name,
-							"FECI_Id" => $row->FECI_Id
+							"FECI_Id" => $row->FECI_Id,
+							"ManufacturerPart_Id" => $row->ManufacturerPart_Id,
+							"ShoppableFlag" => $row->ShoppableFlag
 							);
 
 						//insert row
@@ -122,7 +124,11 @@ class Product_Update_Tool extends CI_Controller {
 					pt.Name AS PipeType,
 					st.Name AS ScheduleType,
 					p.FECI_Id AS CurrentFECI_Id,
-					s.FECI_Id 
+					s.FECI_Id,
+					p.ManufacturerPart_Id AS CurrentManufacturerPart_Id,
+					s.ManufacturerPart_Id,
+					p.ShoppableFlag AS CurrentShoppableFlag,
+					s.ShoppableFlag
 				FROM ProductsStaging2 AS s
 				LEFT JOIN Products AS p ON (p.Product_Idn = s.Product_Idn)
 				LEFT JOIN jpr_Department AS d ON (p.Department_Idn = d.DepartmentId)
@@ -175,7 +181,11 @@ class Product_Update_Tool extends CI_Controller {
 					s.Name,
 					p.Name AS original_name,
 					p.FECI_Id AS original_FECI_Id,
-					s.FECI_Id
+					s.FECI_Id,
+					p.ManufacturerPart_Id AS original_ManufacturerPart_Id,
+					s.ManufacturerPart_Id,
+					p.ShoppableFlag AS original_ShoppableFlag,
+					s.ShoppableFlag
 				FROM ProductsStaging2 AS s
 				LEFT JOIN Products AS p ON (p.Product_Idn = s.Product_Idn)
 				WHERE p.MaterialUnitPrice <> s.MaterialUnitPrice
@@ -184,7 +194,11 @@ class Product_Update_Tool extends CI_Controller {
 					OR p.EngineerUnitPrice <> s.EngineerUnitPrice
 					OR p.Name <> s.Name
 					OR p.FECI_Id <> s.FECI_Id
-					OR (p.FECI_Id IS NULL AND s.FECI_Id IS NOT NULL)";
+					OR (p.FECI_Id IS NULL AND s.FECI_Id IS NOT NULL)
+					OR p.ManufacturerPart_Id <> s.ManufacturerPart_Id
+					OR (p.ManufacturerPart_Id IS NULL AND s.ManufacturerPart_Id IS NOT NULL)
+					OR p.ShoppableFlag <> s.ShoppableFlag
+					OR (p.ShoppableFlag IS NULL AND s.ShoppableFlag IS NOT NULL)";
 		$query = $this->db->query($sql);
 
 		if ($query == false)
@@ -227,6 +241,13 @@ class Product_Update_Tool extends CI_Controller {
 					if ($row['FECI_Id'] != $row['original_FECI_Id'])
 					{
 						$sql_set_array[] = "FECI_Id = {$row['FECI_Id']}";
+					}
+					if ($row['ManufacturerPart_Id'] != $row['original_ManufacturerPart_Id'])
+					{
+						$sql_set_array[] = "ManufacturerPart_Id = {$row['ManufacturerPart_Id']}";
+					}
+					{
+						$sql_set_array[] = "ShoppableFlag = {$row['ShoppableFlag']}";
 					}
 
 					$sql_set = implode(",", $sql_set_array);

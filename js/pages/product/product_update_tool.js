@@ -4,6 +4,7 @@
         { "data": "Product_Idn" },
         { "data": "Name" },
         { "data": "FECI_Id" },
+        { "data": "ManufacturerPart_Id" },
         { "data": "MaterialUnitPrice" },
         { "data": "FieldUnitPrice" },
         { "data": "ShopUnitPrice" },
@@ -12,7 +13,8 @@
         { "data": "Worksheet" },
         { "data": "Category" },
         { "data": "PipeType" },
-        { "data": "ScheduleType" }
+        { "data": "ScheduleType" },
+        { "data": "ShoppableFlag" }
     ];
 
     init();
@@ -37,21 +39,27 @@
                 if (data.FECI_Id !== data.CurrentFECI_Id) {
                     $("td:eq(2)", row).addClass("em");
                 }
-
-                if (parseFloat(data.MaterialUnitPrice) !== parseFloat(data.CurrentMaterialUnitPrice)) {
+                if (data.ManufacturerPart_Id !== data.CurrentManufacturerPart_Id) {
                     $("td:eq(3)", row).addClass("em");
                 }
 
-                if (parseFloat(data.FieldUnitPrice) !== parseFloat(data.CurrentFieldUnitPrice)) {
+                if (parseFloat(data.MaterialUnitPrice) !== parseFloat(data.CurrentMaterialUnitPrice)) {
                     $("td:eq(4)", row).addClass("em");
                 }
 
-                if (parseFloat(data.ShopUnitPrice) !== parseFloat(data.CurrentShopUnitPrice)) {
+                if (parseFloat(data.FieldUnitPrice) !== parseFloat(data.CurrentFieldUnitPrice)) {
                     $("td:eq(5)", row).addClass("em");
                 }
 
-                if (parseFloat(data.EngineerUnitPrice) !== parseFloat(data.CurrentEngineerUnitPrice)) {
+                if (parseFloat(data.ShopUnitPrice) !== parseFloat(data.CurrentShopUnitPrice)) {
                     $("td:eq(6)", row).addClass("em");
+                }
+
+                if (parseFloat(data.EngineerUnitPrice) !== parseFloat(data.CurrentEngineerUnitPrice)) {
+                    $("td:eq(7)", row).addClass("em");
+                }
+                if (parseFloat(data.ShoppableFlag) !== parseFloat(data.CurrentShoppableFlag)) {
+                    $("td:eq(8)", row).addClass("em");
                 }
             }
         });
