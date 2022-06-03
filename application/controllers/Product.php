@@ -115,6 +115,9 @@ class Product extends CI_Controller {
 
 		//Load Product
 		$data['product'] = $this->m_product->get_product($product_idn);
+
+		//Load sub header
+		$data['sub_header'] = "ID: ".$product_idn." - ".$data['product']['Name'];
 		
         //Load job search view
 		$this->load->view('product/detail', $data);

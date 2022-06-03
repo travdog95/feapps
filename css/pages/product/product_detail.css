@@ -10,3 +10,11 @@
     align-items: center;
     gap: 5px;
 }
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-checkbox {
+    margin-bottom: 3px;
+}

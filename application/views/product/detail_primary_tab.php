@@ -123,7 +123,7 @@
     </div>
   </div>
 
-  <div class="form-group form-group-sm">
+  <div class="form-group form-group-sm form-checkbox">
     <label for="ActiveFlag" class="col-sm-4 control-label">Active?</label>
     <div class="col-sm-8">
       <div class="checkbox">
