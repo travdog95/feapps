@@ -8,3 +8,5 @@ ADD ManufacturerPart_Id VARCHAR(150)
 
 ALTER TABLE ProductsStaging2
 ADD ShoppableFlag BIT
+
+Changed FECI_Id and ManufacturerPart_Id from INT to VARCHAR(50) on ProductsStaging2 and Products.
