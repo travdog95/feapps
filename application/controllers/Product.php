@@ -113,16 +113,6 @@ class Product extends CI_Controller {
 		//Load menus
 		$data['menus'] = $this->m_menu->get_menus();
 
-		$data['ranLoadMetadata'] = false;
-
-		if (Globals::$initialized == false) 
-		{
-			Globals::loadMetadata();
-			$data['ranLoadMetadata'] = true;
-		}
-
-		$data['metadata'] = Globals::$metadata;
-
 		//Load Product
 		$data['product'] = $this->m_product->get_product($product_idn);
 

@@ -38,8 +38,6 @@ $this->load->view('inc/page_header', $page_header_data);
 
 <!-- start: PAGE CONTENT -->
 <div class="row">
-<p>initialized: <?php echo $initialized; ?></p>
-
     <div class="col-md-12">
 	    <table id="productsTable" class="table table-striped table-hover table-bordered table-condensed display" summary="Products" data-page-length='25' style="width: 100%">
 	    <thead>
