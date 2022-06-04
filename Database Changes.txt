@@ -8,3 +8,12 @@ ADD ManufacturerPart_Id VARCHAR(150)
 
 ALTER TABLE ProductsStaging2
 ADD ShoppableFlag BIT
+
+ALTER TABLE ProductsStaging2
+ALTER COLUMN FECI_Id VARCHAR(50)
+ALTER TABLE ProductsStaging2
+ALTER COLUMN ManufacturerPart_Id VARCHAR(50)
+ALTER TABLE Products
+ALTER COLUMN FECI_Id VARCHAR(50)
+ALTER TABLE Products
+ALTER COLUMN ManufacturerPart_Id VARCHAR(50)
