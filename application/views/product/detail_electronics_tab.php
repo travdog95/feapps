@@ -2,7 +2,7 @@
   <div class="form-group form-group-sm">
     <label for="GradeType_Idn" class="col-sm-4 control-label">Grade Type</label>
     <div class="col-sm-8">
-        <select class="form-control" id="GradeType_Idn">
+        <select class="form-control" id="GradeType_Idn" name="GradeType_Idn">
             <?php foreach($product['GradeTypes'] as $id => $grade_type): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['GradeType_Idn']) echo 'selected'; ?>><?php echo $grade_type; ?></option>
             <?php endforeach; ?>
@@ -12,7 +12,7 @@
   <div class="form-group form-group-sm">
     <label for="PressureType_Idn" class="col-sm-4 control-label">Pressure Type</label>
     <div class="col-sm-8">
-        <select class="form-control" id="PressureType_Idn">
+        <select class="form-control" id="PressureType_Idn" name="PressureType_Idn">
             <?php foreach($product['PressureTypes'] as $id => $pressure_type): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['PressureType_Idn']) echo 'selected'; ?>><?php echo $pressure_type; ?></option>
             <?php endforeach; ?>
@@ -43,16 +43,13 @@
   <div class="form-group form-group-sm">
     <label for="RecommendedBoxes" class="col-sm-4 control-label">Recommended Boxes</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="RecommendedBoxes" placeholder="Recommended Boxes" value="<?php echo $product['RecommendedBoxes']; ?>">
+      <input type="text" class="form-control" id="RecommendedBoxes" name="RecommendedBoxes" placeholder="Recommended Boxes" value="<?php echo $product['RecommendedBoxes']; ?>">
     </div>
   </div>
   <div class="form-group form-group-sm">
     <label for="RecommendedWireFootage" class="col-sm-4 control-label">Recommended Wire Footage</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="RecommendedWireFootage" placeholder="Recommended Wire Footage" value="<?php echo $product['RecommendedWireFootage']; ?>">
+      <input type="text" class="form-control" id="RecommendedWireFootage" name="RecommendedWireFootage" placeholder="Recommended Wire Footage" value="<?php echo $product['RecommendedWireFootage']; ?>">
     </div>
   </div>
-
-
-
 </form>

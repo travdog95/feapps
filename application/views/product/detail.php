@@ -14,7 +14,7 @@
 
 	<!-- start: PAGE -->
 	<div class="main-content">
-		<div class="container">
+		<div class="container" id="productDetailUI">
 			<?php $this->load->view('inc/page_header'); ?>
 
 			<!-- Nav tabs -->

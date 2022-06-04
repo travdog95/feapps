@@ -231,15 +231,17 @@ table.dataTable tfoot th input {
 
 .page-header-section h1 {
   font-family: "Raleway", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   margin: 0 auto;
   padding: 2px;
+  font-weight: bold;
 }
 
 .page-header-section h2 {
-  font-size: 13px;
+  font-size: 14px;
   margin: 0 auto;
   padding: 2px;
+  font-weight: bold;
 }
 
 .vertical-align {

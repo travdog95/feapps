@@ -37,7 +37,7 @@ class Product extends CI_Controller {
 		
 		//Load menus
 		$data['menus'] = $this->m_menu->get_menus();
-		
+
         //Load job search view
 		$this->load->view('product/index', $data);
 	}
@@ -113,6 +113,16 @@ class Product extends CI_Controller {
 		//Load menus
 		$data['menus'] = $this->m_menu->get_menus();
 
+		$data['ranLoadMetadata'] = false;
+
+		if (Globals::$initialized == false) 
+		{
+			Globals::loadMetadata();
+			$data['ranLoadMetadata'] = true;
+		}
+
+		$data['metadata'] = Globals::$metadata;
+
 		//Load Product
 		$data['product'] = $this->m_product->get_product($product_idn);
 
@@ -122,6 +132,22 @@ class Product extends CI_Controller {
         //Load job search view
 		$this->load->view('product/detail', $data);
 	}
+
+	public function save_product() {
+		$save_results = array(
+			"return_code" => 0
+		);
+
+		$post = $this->input->post();
+
+		if ($post)
+		{
+			$save_results['return_code'] = 1;
+
+		}
+
+		echo json_encode($save_results);
+}
 }
 /* End of file */
 /* Location: ./application/controllers/Product.php */
