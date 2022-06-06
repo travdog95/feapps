@@ -60,7 +60,7 @@ class M_product extends CI_Model {
             $product['HangerSubTypes'] = $this->m_reference_table->get_idns_names("HangerSubTypes", "HangerSubType_Idn", array(), true, 'Name');
 
             //Subcontract Category
-            /*$product['SubcontractCategory'] = $this->m_reference_table->get_idns_names("SubcontractCategory", "SubcontractCategorye_Idn", array(), true, 'Name');*/
+            //$product['SubcontractCategories'] = $this->m_reference_table->get_idns_names("SubcontractCategories", "SubcontractCategory_Idn", array(), true, 'Name');
 
             //Grade Types
             $product['GradeTypes'] = $this->m_reference_table->get_idns_names("GradeTypes", "GradeType_Idn", array(), true, 'Name');
