@@ -47,6 +47,75 @@ class M_product extends CI_Model {
             //Pipe Types
             $product['PipeTypes'] = $this->m_reference_table->get_idns_names("PipeTypes", "PipeType_Idn", array(), true, 'Name');
 
+            //Grooved Fitting Types
+            $product['GroovedFittingTypes'] = $this->m_reference_table->get_idns_names("GroovedFittingTypes", "GroovedFittingType_Idn", array(), true, 'Name');
+
+            //Threaded Fitting Types
+            $product['ThreadedFittingTypes'] = $this->m_reference_table->get_idns_names("ThreadedFittingTypes", "ThreadedFittingType_Idn", array(), true, 'Name');
+
+            //Hanger Types
+            $product['HangerTypes'] = $this->m_reference_table->get_idns_names("HangerTypes", "HangerType_Idn", array(), true, 'Name');
+
+            //Hanger Sub Types
+            $product['HangerSubTypes'] = $this->m_reference_table->get_idns_names("HangerSubTypes", "HangerSubType_Idn", array(), true, 'Name');
+
+            //Subcontract Category
+            /*$product['SubcontractCategory'] = $this->m_reference_table->get_idns_names("SubcontractCategory", "SubcontractCategorye_Idn", array(), true, 'Name');*/
+
+            //Grade Types
+            $product['GradeTypes'] = $this->m_reference_table->get_idns_names("GradeTypes", "GradeType_Idn", array(), true, 'Name');
+
+            //Pressure Types
+            $product['PressureTypes'] = $this->m_reference_table->get_idns_names("PressureTypes", "PressureType_Idn", array(), true, 'Name');
+
+            //Coverage Types
+            $product['CoverageTypes'] = $this->m_reference_table->get_idns_names("CoverageTypes", "CoverageType_Idn", array(), true, 'Name');
+
+            //Head Types
+            $product['HeadTypes'] = $this->m_reference_table->get_idns_names("HeadTypes", "HeadType_Idn", array(), true, 'Name');
+
+            //Finish Types
+            $product['FinishTypes'] = $this->m_reference_table->get_idns_names("FinishTypes", "FinishType_Idn", array(), true, 'Name');
+
+            //Outlets
+            $product['Outlets'] = $this->m_reference_table->get_idns_names("Outlets", "Outlet_Idn", array(), true, 'Name');
+
+            //Riser Types
+            $product['RiserTypes'] = $this->m_reference_table->get_idns_names("RiserTypes", "RiserType_Idn", array(), true, 'Name');
+
+            //Backflow Types
+            $product['BackflowTypes'] = $this->m_reference_table->get_idns_names("BackflowTypes", "BackflowType_Idn", array(), true, 'Name');
+
+            //Control Valves
+            $product['ControlValves'] = $this->m_reference_table->get_idns_names("ControlValves", "ControlValve_Idn", array(), true, 'Name');
+
+            //Check Valve
+            $product['CheckValves'] = $this->m_reference_table->get_idns_names("CheckValves", "CheckValve_Idn", array(), true, 'Name');
+
+            //FDC Types
+            $product['FDCTypes'] = $this->m_reference_table->get_idns_names("FDCTypes", "FdcType_Idn", array(), true, 'Name');
+
+            //Bell Types
+            $product['BellTypes'] = $this->m_reference_table->get_idns_names("BellTypes", "BellType_Idn", array(), true, 'Name');
+
+            //Tapping Tees
+            $product['TappingTees'] = $this->m_reference_table->get_idns_names("TappingTees", "TappingTee_Idn", array(), true, 'Name');
+
+            //Underground Valves
+            $product['UndergroundValves'] = $this->m_reference_table->get_idns_names("UndergroundValves", "UndergroundValve_Idn", array(), true, 'Name');
+
+            //Lift Durations
+            $product['LiftDurations'] = $this->m_reference_table->get_idns_names("LiftDurations", "LiftDuration_Idn", array(), true, 'Name');
+
+            //Fire Pump Types
+            $product['FirePumpTypes'] = $this->m_reference_table->get_idns_names("FirePumpTypes", "FirePumpType_Idn", array(), true, 'Name');
+
+            //Fire Pump Attributes
+            $product['FirePumpAttributes'] = $this->m_reference_table->get_idns_names("FirePumpAttributes", "FirePumpAttribute_Idn", array(), true, 'Name');
+
+            //Positions
+            $product['Positions'] = $this->m_reference_table->get_idns_names("Positions", "Position_Idn", array(), true, 'Name');
+
             //Fittings
             $fittings_where = array(
                 "Department_Idn" => $product['Department_Idn'],
