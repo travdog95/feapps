@@ -3,6 +3,7 @@
     <label for="GradeType_Idn" class="col-sm-4 control-label">Grade Type</label>
     <div class="col-sm-8">
         <select class="form-control" id="GradeType_Idn" name="GradeType_Idn">
+            <option value="0">PLEASE SELECT</option>
             <?php foreach($product['GradeTypes'] as $id => $grade_type): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['GradeType_Idn']) echo 'selected'; ?>><?php echo $grade_type; ?></option>
             <?php endforeach; ?>
@@ -13,6 +14,7 @@
     <label for="PressureType_Idn" class="col-sm-4 control-label">Pressure Type</label>
     <div class="col-sm-8">
         <select class="form-control" id="PressureType_Idn" name="PressureType_Idn">
+            <option value="0">PLEASE SELECT</option>
             <?php foreach($product['PressureTypes'] as $id => $pressure_type): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['PressureType_Idn']) echo 'selected'; ?>><?php echo $pressure_type; ?></option>
             <?php endforeach; ?>

@@ -16,6 +16,7 @@
     <label for="GroovedFittingType_Idn" class="col-sm-4 control-label">Grooved Fitting Type</label>
     <div class="col-sm-8">
         <select class="form-control" id="GroovedFittingType_Idn" name="GroovedFittingType_Idn">
+            <option value="0">PLEASE SELECT</option>
             <?php foreach($product['GroovedFittingTypes'] as $id => $grooved_fitting_type): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['GroovedFittingType_Idn']) echo 'selected'; ?>><?php echo $grooved_fitting_type; ?></option>
             <?php endforeach; ?>
@@ -26,6 +27,7 @@
     <label for="ThreadedFittingType_Idn" class="col-sm-4 control-label">Threaded Fitting Type</label>
     <div class="col-sm-8">
         <select class="form-control" id="ThreadedFittingType_Idn" name="ThreadedFittingType_Idn">
+            <option value="0">PLEASE SELECT</option>
             <?php foreach($product['ThreadedFittingTypes'] as $id => $threaded_fitting_type): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['ThreadedFittingType_Idn']) echo 'selected'; ?>><?php echo $threaded_fitting_type; ?></option>
             <?php endforeach; ?>
@@ -36,6 +38,7 @@
     <label for="HangerType_Idn" class="col-sm-4 control-label">Hanger Type</label>
     <div class="col-sm-8">
         <select class="form-control" id="HangerType_Idn" name="HangerType_Idn">
+            <option value="0">PLEASE SELECT</option>
             <?php foreach($product['HangerTypes'] as $id => $hanger_type): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['HangerType_Idn']) echo 'selected'; ?>><?php echo $hanger_type; ?></option>
             <?php endforeach; ?>
@@ -46,6 +49,7 @@
     <label for="HangerSubType_Idn" class="col-sm-4 control-label">Hanger Sub Type</label>
     <div class="col-sm-8">
         <select class="form-control" id="HangerSubType_Idn" name="HangerSubType_Idn">
+            <option value="0">PLEASE SELECT</option>
             <?php foreach($product['HangerSubTypes'] as $id => $hanger_sub_type): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['HangerSubType_Idn']) echo 'selected'; ?>><?php echo $hanger_sub_type; ?></option>
             <?php endforeach; ?>
@@ -56,6 +60,7 @@
     <label for="SubcontractCategory_Idn" class="col-sm-4 control-label">Subcontract Category</label>
     <div class="col-sm-8">
         <select class="form-control" id="SubcontractCategory_Idn" name="SubcontractCategory_Idn">
+            <option value="0">PLEASE SELECT</option>
             <?php foreach($product['SubcontractCategories'] as $id => $subcontract_category): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['SubcontractCategory_Idn']) echo 'selected'; ?>><?php echo $subcontract_category; ?></option>
             <?php endforeach; ?>
@@ -63,11 +68,18 @@
     </div>
   </div>
   <div class="form-group form-group-sm">
-        <label for="ResponseType" class="col-sm-4 control-label">Description</label>
-        <div class="col-sm-8">
-        <textarea id="Description" name="Description" class="form-control" rows="3" placeholder="Description"></textarea>
-        </div>
+    <label for="DefaultQuantity" class="col-sm-4 control-label">Default Quantity</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="DefaultQuantity" name="DefaultQuantity" placeholder="Default Quantity" value="<?php echo $product['DefaultQuantity']; ?>">
     </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <label for="ResponseType" class="col-sm-4 control-label">Description</label>
+    <div class="col-sm-8">
+      <textarea id="Description" name="Description" class="form-control" rows="2" placeholder="Description"></textarea>
+     </div>
+  </div>
 
   <div class="form-group form-group-sm form-checkbox">
     <label for="ApplyToAdjustmentFactorsFlag" class="col-sm-4 control-label">Apply To Adjustment Factors?</label>

@@ -27,7 +27,7 @@ class M_product extends CI_Model {
             $product = $this->m_reference_table->get_where('Products', array('Product_Idn' => $product_idn))[0];
 
             //Departments
-            $product['Departments'] = $this->m_reference_table->get_fields('jpr_Department', "*", array());
+            $product['Departments'] = $this->m_reference_table->get_fields('jpr_Department', "*", "DepartmentId <> 3");
 
             //WorksheetMasters
             $product['WorksheetMasters'] = $this->m_reference_table->get_idns_names("WorksheetMasters", "WorksheetMaster_Idn", array("Department_Idn" => $product['Department_Idn']), true, 'Name');
@@ -39,7 +39,7 @@ class M_product extends CI_Model {
             $product['Manufacturers'] = $this->m_reference_table->get_idns_names("Manufacturers", "Manufacturer_Idn", array(), true, 'Name');
 
             //Product Sizes
-            $product['ProductSizes'] = $this->m_reference_table->get_idns_names("ProductSizes", "ProductSize_Idn", array(), true, 'Name');
+            $product['ProductSizes'] = $this->m_reference_table->get_idns_names("ProductSizes", "ProductSize_Idn", array(), true, 'Rank');
 
             //Schedule Types
             $product['ScheduleTypes'] = $this->m_reference_table->get_idns_names("ScheduleTypes", "ScheduleType_Idn", array(), true, 'Name');
@@ -56,11 +56,9 @@ class M_product extends CI_Model {
             //Hanger Types
             $product['HangerTypes'] = $this->m_reference_table->get_idns_names("HangerTypes", "HangerType_Idn", array(), true, 'Name');
 
+            //Filter by Hanger Type
             //Hanger Sub Types
             $product['HangerSubTypes'] = $this->m_reference_table->get_idns_names("HangerSubTypes", "HangerSubType_Idn", array(), true, 'Name');
-
-            //Subcontract Category
-            //$product['SubcontractCategories'] = $this->m_reference_table->get_idns_names("SubcontractCategories", "SubcontractCategory_Idn", array(), true, 'Name');
 
             //Grade Types
             $product['GradeTypes'] = $this->m_reference_table->get_idns_names("GradeTypes", "GradeType_Idn", array(), true, 'Name');
@@ -116,14 +114,13 @@ class M_product extends CI_Model {
             //Positions
             $product['Positions'] = $this->m_reference_table->get_idns_names("Positions", "Position_Idn", array(), true, 'Name');
 
+            //Subcontract categories (uses WorksheetColumns table)
+            $product['SubcontractCategories'] = $this->m_reference_table->get_idns_names("WorksheetColumns", "WorksheetColumn_Idn", array(), true, 'Name');
+            
+            //Filter by Worksheet Category
             //Fittings
-            $fittings_where = array(
-                "Department_Idn" => $product['Department_Idn'],
-                "WorksheetMaster_Idn" => $product['WorksheetMaster_Idn'],
-                "WorksheetCategory_Idn" => $product['WorksheetCategory_Idn'],
-            );
+            $fittings_where = array("WorksheetCategory_Idn" => $product['WorksheetCategory_Idn']);
             $product['Fittings'] = $this->m_reference_table->get_idns_names("Fittings", "Fitting_Idn", $fittings_where, true, 'Name');
-
         }
 
         return $product;
