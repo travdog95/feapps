@@ -1,8 +1,9 @@
 <form class="form-horizontal product-tab">
   <div class="form-group form-group-sm">
-    <label for="Product_Idn" class="col-sm-4 control-label">ID</label>
+    <label class="col-sm-4 control-label">ID</label>
     <div class="col-sm-8">
         <p class="form-control-static"><?php echo $product['Product_Idn']; ?></p>
+        <input type="hidden" name="Product_Idn" id="Product_Idn" value="<?php echo $product['Product_Idn']; ?>" />
     </div>
   </div>
   <div class="form-group form-group-sm">
@@ -52,7 +53,7 @@
   <div class="form-group form-group-sm">
     <label for="Rank" class="col-sm-4 control-label">Rank</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="Rank" name="Rank" placeholder="Rank" value="<?php echo $product['Rank']; ?>">
+      <input type="text" class="form-control check_num0" id="Rank" name="Rank" placeholder="Rank" value="<?php echo number_format($product['Rank']); ?>">
     </div>
   </div>
   <div class="form-group form-group-sm">
@@ -64,25 +65,25 @@
   <div class="form-group form-group-sm">
     <label for="MaterialUnitPrice" class="col-sm-4 control-label">Material Unit Price</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="MaterialUnitPrice" name="MaterialUnitPrice" placeholder="Material Unit Price" value="<?php echo $product['MaterialUnitPrice']; ?>">
+      <input type="text" class="form-control check_num2" id="MaterialUnitPrice" name="MaterialUnitPrice" placeholder="Material Unit Price" value="<?php echo number_format($product['MaterialUnitPrice'], 2); ?>">
     </div>
   </div>
   <div class="form-group form-group-sm">
     <label for="FieldUnitPrice" class="col-sm-4 control-label">Field Unit Price</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="FieldUnitPrice" name="FieldUnitPrice" placeholder="Field Unit Price" value="<?php echo $product['FieldUnitPrice']; ?>">
+      <input type="text" class="form-control check_num2" id="FieldUnitPrice" name="FieldUnitPrice" placeholder="Field Unit Price" value="<?php echo number_format($product['FieldUnitPrice'], 2); ?>">
     </div>
   </div>
   <div class="form-group form-group-sm">
     <label for="ShopUnitPrice" class="col-sm-4 control-label">Shop Unit Price</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="ShopUnitPrice" name="ShopUnitPrice" placeholder="Shop Unit Price" value="<?php echo $product['ShopUnitPrice']; ?>">
+      <input type="text" class="form-control check_num2" id="ShopUnitPrice" name="ShopUnitPrice" placeholder="Shop Unit Price" value="<?php echo number_format($product['ShopUnitPrice'], 2); ?>">
     </div>
   </div>
   <div class="form-group form-group-sm">
     <label for="EngineerUnitPrice" class="col-sm-4 control-label">Engineer Unit Price</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="EngineerUnitPrice" name="EngineerUnitPrice" placeholder="Engineer Unit Price" value="<?php echo $product['EngineerUnitPrice']; ?>">
+      <input type="text" class="form-control check_num2" id="EngineerUnitPrice" name="EngineerUnitPrice" placeholder="Engineer Unit Price" value="<?php echo number_format($product['EngineerUnitPrice'], 2); ?>">
     </div>
   </div>
   <div class="form-group form-group-sm">

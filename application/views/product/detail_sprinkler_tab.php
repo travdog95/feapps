@@ -55,9 +55,9 @@
     </div>
   </div>
   <div class="form-group form-group-sm">
-    <label for="BackflowType_Idn" class="col-sm-4 control-label">Back Flow Type</label>
+    <label for="BackFlowType_Idn" class="col-sm-4 control-label">Back Flow Type</label>
     <div class="col-sm-8">
-        <select class="form-control" id="BackflowType_Idn" name="BackflowType_Idn">
+        <select class="form-control" id="BackFlowType_Idn" name="BackFlowType_Idn">
             <option value="0">PLEASE SELECT</option>
             <?php foreach($product['BackflowTypes'] as $id => $backflow_type): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['BackFlowType_Idn']) echo 'selected'; ?>><?php echo $backflow_type; ?></option>
@@ -173,7 +173,7 @@
   <div class="form-group form-group-sm">
     <label for="BoxWireLength" class="col-sm-4 control-label">Box Wire Length</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="BoxWireLength" name="BoxWireLength" placeholder="Box Wire Length" value="<?php echo $product['BoxWireLength']; ?>">
+      <input type="text" class="form-control check_num0" id="BoxWireLength" name="BoxWireLength" placeholder="Box Wire Length" value="<?php echo number_format($product['BoxWireLength']); ?>">
     </div>
   </div>
 

@@ -45,7 +45,7 @@ $this->load->view('inc/page_header', $page_header_data);
 				<th>Actions</th>
 				<th>ID</th>
 				<th>Department</th>
-				<th>Component</th>
+				<th>Is Component</th>
 				<th>Worksheet Master</th>
                 <th>Category</th>
 				<th>Name</th>
@@ -59,13 +59,13 @@ $this->load->view('inc/page_header', $page_header_data);
 		<tfoot>
             <tr>
 				<th></th>
-				<th>ID</th>
-				<th>Department</th>
-				<th>Component</th>
-				<th>Worksheet Master</th>
-                <th>Category</th>
-				<th>Name</th>
-				<th>Manufacturer</th>
+				<th class="searchable">ID</th>
+				<th class="searchable">Department</th>
+				<th class="searchable">Is Component</th>
+				<th class="searchable">Worksheet Master</th>
+                <th class="searchable">Category</th>
+				<th class="searchable">Name</th>
+				<th class="searchable">Manufacturer</th>
 				<th>Material</th>
 				<th>Field</th>
 				<th>Shop</th>

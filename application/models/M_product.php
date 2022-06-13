@@ -10,6 +10,193 @@ class M_product extends CI_Model {
         $this->load->model("m_reference_table");
     }
 
+    public function get_schema()
+    {
+        $schema = array(
+            "Department_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "WorksheetMaster_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "WorksheetCategory_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "Manufacturer_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "Rank" => array(
+                "dataType" => "integer" 
+            ),
+            "Name" => array(
+                "dataType" => "string" 
+            ),
+            "ProductSize_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "PipeType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "ScheduleType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "Fitting_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "ActiveFlag" => array(
+                "dataType" => "boolean" 
+            ),
+            "MaterialUnitPrice" => array(
+                "dataType" => "float" 
+            ),
+            "FieldUnitPrice" => array(
+                "dataType" => "float" 
+            ),
+            "ShopUnitPrice" => array(
+                "dataType" => "float" 
+            ),
+            "EngineerUnitPrice" => array(
+                "dataType" => "float" 
+            ),
+            "Description" => array(
+                "dataType" => "string" 
+            ),
+            "FECI_Id" => array(
+                "dataType" => "string" 
+            ),
+            "ManufacturerPart_Id" => array(
+                "dataType" => "string" 
+            ),
+            "DefaultQuantity" => array(
+                "dataType" => "float" 
+            ),
+            "GroovedFittingType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "ThreadedFittingType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "HangerType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "HangerSubType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "SubcontractCategory_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "ApplyToAdjustmentFactorsFlag" => array(
+                "dataType" => "boolean" 
+            ),
+            "ApplyToContingencyFlag" => array(
+                "dataType" => "boolean" 
+            ),
+            "DomesticFlag" => array(
+                "dataType" => "boolean" 
+            ),
+            "LoadFlag" => array(
+                "dataType" => "boolean" 
+            ),
+            "AutoLoadFlag" => array(
+                "dataType" => "boolean" 
+            ),
+            "ShoppableFlag" => array(
+                "dataType" => "boolean" 
+            ),
+            "ResponseType" => array(
+                "dataType" => "string" 
+            ),
+            "GradeType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "PressureType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "SeamlessFlag" => array(
+                "dataType" => "boolean" 
+            ),
+            "FMJobFlag" => array(
+                "dataType" => "boolean" 
+            ),
+            "RecommendedBoxes" => array(
+                "dataType" => "integer" 
+            ),
+            "RecommendedWireFootage" => array(
+                "dataType" => "integer" 
+            ),
+            "CoverageType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "HeadType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "FinishType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "Outlet_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "RiserType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "BackFlowType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "ControlValve_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "CheckValve_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "FDCType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "BellType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "TappingTee_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "UndergroundValve_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "LiftDuration_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "TrimPackageFlag" => array(
+                "dataType" => "boolean" 
+            ),
+            "ListedFlag" => array(
+                "dataType" => "boolean" 
+            ),
+            "BoxWireLength" => array(
+                "dataType" => "integer" 
+            ),
+
+            "IsFirePump" => array(
+                "dataType" => "boolean" 
+            ),
+            "FirePumpType_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "FirePumpAttribute_Idn" => array(
+                "dataType" => "integer" 
+            ),
+            "IsDieselFuel" => array(
+                "dataType" => "boolean" 
+            ),
+            "IsSolution" => array(
+                "dataType" => "boolean" 
+            ),
+            "Position_Idn" => array(
+                "dataType" => "integer" 
+            ),
+
+        );
+
+        return $schema;
+    }
+
     /*
 	 * Summary of get_product
      * 

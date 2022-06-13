@@ -125,15 +125,47 @@ class Product extends CI_Controller {
 
 	public function save_product() {
 		$save_results = array(
-			"return_code" => 0
+			"return_code" => 0,
+			"echo" => array(),
 		);
+		$set = array();
+		$where = array();
 
 		$post = $this->input->post();
 
-		if ($post)
+		if ($post && isset($post['Product_Idn']))
 		{
-			$save_results['return_code'] = 1;
+			$where = array("Product_Idn" => $post['Product_Idn']);
 
+			$schema = $this->m_product->get_schema();
+
+			foreach ($schema as $field_name => $metadata)
+			{
+				//If post field matches schema field
+				switch($metadata['dataType']) 
+				{
+					case "boolean":
+						$set[$field_name] = isset($post[$field_name]) ? 1 : 0;
+						break;
+					case "integer":
+						$set[$field_name] = isset($post[$field_name]) ? string_filter($post[$field_name], ",") : 0;
+						break;
+
+					case "float":
+						$set[$field_name] = isset($post[$field_name]) ? string_filter($post[$field_name], ",") : 0;
+						break;
+
+					case "string":
+						$set[$field_name] = isset($post[$field_name]) ? $post[$field_name] : "";
+						break;
+
+				}
+			}
+
+			$this->m_reference_table->update("Products", $set, $where);
+
+			$save_results['echo'] = $set;
+			$save_results['return_code'] = 1;
 		}
 
 		echo json_encode($save_results);

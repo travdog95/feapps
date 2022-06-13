@@ -1,4 +1,14 @@
 <form class="form-horizontal product-tab">
+  <div class="form-group form-group-sm form-checkbox">
+    <label for="IsMainComponent" class="col-sm-4 control-label">Main Component?</label>
+    <div class="col-sm-8">
+      <div class="checkbox">
+        <label>
+          <input name="IsMainComponent" id="IsMainComponent" type="checkbox" disabled="disabled" <?php if ($product['IsMainComponent'] == 1) echo "checked"; ?>> 
+        </label>
+      </div>
+    </div>
+  </div>
   <div class="form-group form-group-sm">
     <label for="FECI_Id" class="col-sm-4 control-label">FECI ID</label>
     <div class="col-sm-8">
@@ -37,7 +47,7 @@
   <div class="form-group form-group-sm">
     <label for="HangerType_Idn" class="col-sm-4 control-label">Hanger Type</label>
     <div class="col-sm-8">
-        <select class="form-control" id="HangerType_Idn" name="HangerType_Idn">
+        <select class="form-control filter" id="HangerType_Idn" name="HangerType_Idn">
             <option value="0">PLEASE SELECT</option>
             <?php foreach($product['HangerTypes'] as $id => $hanger_type): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['HangerType_Idn']) echo 'selected'; ?>><?php echo $hanger_type; ?></option>
@@ -70,14 +80,14 @@
   <div class="form-group form-group-sm">
     <label for="DefaultQuantity" class="col-sm-4 control-label">Default Quantity</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="DefaultQuantity" name="DefaultQuantity" placeholder="Default Quantity" value="<?php echo $product['DefaultQuantity']; ?>">
+      <input type="text" class="form-control check_num1" id="DefaultQuantity" name="DefaultQuantity" placeholder="Default Quantity" value="<?php echo number_format($product['DefaultQuantity'], 1); ?>">
     </div>
   </div>
 
   <div class="form-group form-group-sm">
     <label for="ResponseType" class="col-sm-4 control-label">Description</label>
     <div class="col-sm-8">
-      <textarea id="Description" name="Description" class="form-control" rows="2" placeholder="Description"></textarea>
+      <textarea id="Description" name="Description" class="form-control" rows="2" placeholder="Description"><?php echo $product['Description']; ?></textarea>
      </div>
   </div>
 
@@ -97,16 +107,6 @@
       <div class="checkbox">
         <label>
           <input name="ApplyToContingencyFlag" id="ApplyToContingencyFlag" type="checkbox" <?php if ($product['ApplyToContingencyFlag'] == 1) echo "checked"; ?>> 
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group form-group-sm form-checkbox">
-    <label for="IsMainComponent" class="col-sm-4 control-label">Main Component?</label>
-    <div class="col-sm-8">
-      <div class="checkbox">
-        <label>
-          <input name="IsMainComponent" id="IsMainComponent" type="checkbox" <?php if ($product['IsMainComponent'] == 1) echo "checked"; ?>> 
         </label>
       </div>
     </div>
@@ -156,10 +156,10 @@
   <label for="ResponseType" class="col-sm-4 control-label">Response Type</label>
     <div class="col-sm-8">
         <label class="radio-inline">
-            <input type="radio" name="ResponseType" id="ResponseTypeQR" value="QR" <?php if($product['ResponseType'] == "Q") echo "checked";?>> QR
+            <input type="radio" name="ResponseType" id="ResponseTypeQR" value="Q" <?php if($product['ResponseType'] == "Q") echo "checked";?>> QR
         </label>
         <label class="radio-inline">
-            <input type="radio" name="ResponseType" id="ResponseTypeSR" value="SR" <?php if($product['ResponseType'] == "S") echo "checked";?>> SR
+            <input type="radio" name="ResponseType" id="ResponseTypeSR" value="S" <?php if($product['ResponseType'] == "S") echo "checked";?>> SR
         </label>    
     </div>
   </div>

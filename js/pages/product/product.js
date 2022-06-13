@@ -7,9 +7,10 @@ $(function() {
     // Setup - add a text input to each footer cell
     $("#productsTable tfoot th").each(function() {
       const title = $(this).text();
-      //Exclude copy column
-      if (title != "") {
-        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+
+      //Add search input to searchable columns
+      if ($(this).hasClass("searchable")) {
+        $(this).html(`<input type="text" placeholder="Search ${title}" />`);
       }
     });
   
@@ -21,26 +22,29 @@ $(function() {
           department_idn: FECI.user.department_idn
         }
       },
+      fixedColumns: true,
       columns: [
         {
           data: null,
           className: "text-center",
           defaultContent:
             `
-              <button type="button" class="btn btn-default btn-xs edit-product" title="Edit Product"><span class="glyphicon glyphicon-edit glyphicon-xs" aria-hidden="true"></span></button>
+              <button type="button" class="btn btn-default btn-xs edit-product" title="Edit Product"><span class="glyphicon glyphicon-pencil glyphicon-xs" aria-hidden="true"></span></button>
               <button type="button" class="btn btn-default btn-xs copy-product" title="Copy Product"><span class="glyphicon glyphicon-copy glyphicon-xs" aria-hidden="true"></span></button>
+              <button type="button" class="btn btn-default btn-xs build-component" title="Build Component"><span class="glyphicon glyphicon-tasks glyphicon-xs" aria-hidden="true"></span></button>
             `,
           orderable: false,
-          searchable: false
+          searchable: false,
+          width: "80px",
         },
-        { data: "Product_Idn" },
+        { data: "Product_Idn", width: "50px" },
         { data: "Department" },
         { data: "IsParent" },
         { data: "WorksheetMaster" },
-        { data: "WorksheetCategory" },
+        { data: "WorksheetCategory", width: "110px" },
         { data: "Name" },
         { data: "Manufacturer" },
-        { data: "MaterialUnitPrice" },
+        { data: "MaterialUnitPrice"},
         { data: "FieldUnitPrice" },
         { data: "ShopUnitPrice" },
         { data: "EngineerUnitPrice" },
@@ -134,5 +138,13 @@ $(function() {
       e.preventDefault();
     });
 
+    table.on("click", "button.build-component", function(e) {
+      const $row = $(this).parents("tr");
+      const productIdn = $row.data("product-idn");
+      
+      window.location = `${FECI.base_url}product/component/${productIdn}`;
+
+      e.preventDefault();
+    });
   });
   

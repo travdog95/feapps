@@ -30,9 +30,11 @@ $saveProductButton.on("click", e => {
     e.preventDefault();
 
     //Validation
-
+    if (validateForm()) {
     //Save product
-    saveProduct();
+        saveProduct();
+    }
+
 });
 
 $cancelButton.on("click", e => {
@@ -49,6 +51,10 @@ $parentSelectElements.each(function () {
 
 
 //Functions
+const validateForm = () => {
+    return true;
+}
+
 const filterSelect = (elementId, elementValue) => {
     console.log(elementId, elementValue);
     elementValue = parseInt(elementValue);
@@ -71,9 +77,10 @@ const loadSelectOptions = async ($selectElement, filterBy, filterByValue) => {
     if (!response.ok) {
         throw new Error(`Could not fetch ${tableName}`);
     }
+
     const options = await response.json();
 
-    console.log(options)
+    // console.log(options)
     $selectElement.append($("<option></option>").attr("value", 0).text("PLEASE SELECT"));
 
     options.forEach(option => {
@@ -81,7 +88,7 @@ const loadSelectOptions = async ($selectElement, filterBy, filterByValue) => {
     });
 }
 
-const saveProduct = () => {
+const saveProduct = async () => {
     const forms = document.querySelectorAll(".product-tab");
     const $productDetailUI = $("#productDetailUI");
     const formElements = $productDetailUI.find("input, select, button");
@@ -105,6 +112,7 @@ const saveProduct = () => {
 
     //Success callback handler
     FECI.request.done(function(response, textStatus, jqXHR) {
+        console.log(response);
         if (response.return_code == 1) {
             //Send update message
             displayMessageBox("Product saved!", "success");
