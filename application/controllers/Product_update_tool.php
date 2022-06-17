@@ -79,7 +79,7 @@ class Product_Update_Tool extends CI_Controller {
 							"Name" => $row->Name,
 							"FECI_Id" => $row->FECI_Id,
 							"ManufacturerPart_Id" => $row->ManufacturerPart_Id,
-							"ShoppableFlag" => $row->ShoppableFlag
+							"ShoppableFlag" => $row->ShoppableFlag == "Yes" || $row->ShoppableFlag == 1 ? 1 : 0,
 							);
 
 						//insert row
