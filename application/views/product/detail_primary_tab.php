@@ -9,7 +9,7 @@
   <div class="form-group form-group-sm">
     <label for="Department_Idn" class="col-sm-4 control-label">Department</label>
     <div class="col-sm-8">
-        <select class="form-control filter" id="Department_Idn" name="Department_Idn">
+        <select class="form-control filter" id="Department_Idn" name="Department_Idn" required>
             <option value="0">PLEASE SELECT</option>
             <?php foreach($product['Departments'] as $department): ?>
             <option value="<?php echo $department['DepartmentId']; ?>" <?php if ($department['DepartmentId'] == $product['Department_Idn']) echo 'selected'; ?>><?php echo $department['Description']; ?></option>
@@ -17,10 +17,10 @@
         </select>    
     </div>
   </div>
-  <div class="form-group form-group-sm">
+  <div class="form-group form-group-sm required">
     <label for="WorksheetMaster_Idn" class="col-sm-4 control-label">Worksheet Master</label>
     <div class="col-sm-8">
-        <select class="form-control filter" id="WorksheetMaster_Idn" name="WorksheetMaster_Idn">
+        <select class="form-control filter" id="WorksheetMaster_Idn" name="WorksheetMaster_Idn" required>
             <option value="0">PLEASE SELECT</option>
             <?php foreach($product['WorksheetMasters'] as $id => $worksheet_master): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['WorksheetMaster_Idn']) echo 'selected'; ?>><?php echo $worksheet_master; ?></option>
@@ -28,10 +28,10 @@
         </select>    
     </div>
   </div>
-  <div class="form-group form-group-sm">
+  <div class="form-group form-group-sm required">
     <label for="WorksheetCategory_Idn" class="col-sm-4 control-label">Worksheet Category</label>
     <div class="col-sm-8">
-        <select class="form-control filter" id="WorksheetCategory_Idn" name="WorksheetCategory_Idn">
+        <select class="form-control filter" id="WorksheetCategory_Idn" name="WorksheetCategory_Idn" required>
             <option value="0">PLEASE SELECT</option>
             <?php foreach($product['WorksheetCategories'] as $id => $worksheet_category): ?>
             <option value="<?php echo $id; ?>" <?php if ($id == $product['WorksheetCategory_Idn']) echo 'selected'; ?>><?php echo $worksheet_category; ?></option>

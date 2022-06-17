@@ -17,3 +17,38 @@ ALTER TABLE Products
 ALTER COLUMN FECI_Id VARCHAR(255)
 ALTER TABLE Products
 ALTER COLUMN ManufacturerPart_Id VARCHAR(255)
+
+Changes for Product Update tool
+6/17/22
+ALTER TABLE Products
+ADD FECI_Id VARCHAR(255),
+ManufacturerPart_Id VARCHAR(255),
+ShoppableFlag BIT
+
+ALTER TABLE productsstaging2
+ADD FECI_Id VARCHAR(255),
+ManufacturerPart_Id VARCHAR(255),
+ShoppableFlag BIT
+
+Files
+application/controller/Product_update_tool.php
+js/pages/product/product_update_tool.js
+js/pages/product_update_tool.js - delete
+application/views/product_update_tool/index.php
+
+application/controller/Job.php
+application/controller/Worksheet_controller.php
+application/libraries/Job_mob.php
+application/libraries/Recap_row.php
+application/models/M_reference_table.php
+application/views/job/worksheet.php
+application/views/modals/confirmation.php
+application/views/worksheet/cl_recap/cl_recap_tbody.php
+application/views/worksheet/worksheet_products.php
+js/pages/job/worksheet.js
+
+Changes for Product Component
+CREATE TABLE ProductRelationships (
+    Parent_Idn INT,
+    Child_Idn INT
+)

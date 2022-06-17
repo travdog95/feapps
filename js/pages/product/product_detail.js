@@ -24,6 +24,7 @@ const filters = {
 const $saveProductButton = $("#saveProductButton");
 const $cancelButton = $("#cancelProductButton");
 const $parentSelectElements = $(".filter");
+const $requredElements = $("select, input, textarea").filter('[required]');
 
 //Event handlers
 $saveProductButton.on("click", e => {
@@ -33,8 +34,7 @@ $saveProductButton.on("click", e => {
     if (validateForm()) {
     //Save product
         saveProduct();
-    }
-
+    } 
 });
 
 $cancelButton.on("click", e => {
@@ -49,14 +49,63 @@ $parentSelectElements.each(function () {
     });  
 });
 
+$requredElements.each(function() {
+    const elem = this;
+    $(elem).on("change", e => {
+        validateElement(elem);
+    });  
+});
 
 //Functions
 const validateForm = () => {
-    return true;
+    let isValid = true;
+    let errorMessage = "<p>The following validation error(s) exist:</p>";
+
+    $requredElements.each(function() {
+        const elemValidation = validateElement(this);
+
+        if (!elemValidation.isValid) {
+            isValid = false;
+            errorMessage += elemValidation.errorMessage;
+        }
+    });
+
+    if (!isValid) {
+        displayMessageBox(errorMessage, "danger");
+    }
+
+    return isValid;
+}
+
+const validateElement = (element) => {
+    let isValid = true;
+    let errorMessage = "";
+
+    const fieldType = element.type;
+    const value = $(element).val();
+    const $formGroupElement = $(element).parents(".form-group");
+    const labelName = $(`label[for="${element.id}"]`).text();
+
+    switch (fieldType) {
+        case "text":
+            break;
+        case "select-one":
+            if (value == 0 || value == "" || value == null) {
+                isValid = false;
+                $formGroupElement.addClass("has-error");
+                errorMessage += `<p>${labelName}</p>`
+            } else {
+                $formGroupElement.removeClass("has-error");
+            }
+            break;
+        case "textarea":
+            break;
+    }
+
+    return { isValid, errorMessage };
 }
 
 const filterSelect = (elementId, elementValue) => {
-    console.log(elementId, elementValue);
     elementValue = parseInt(elementValue);
     const $targetSelect = $(`#${filters[elementId].key}`);
     //Empty target select

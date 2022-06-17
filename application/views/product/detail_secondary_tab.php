@@ -87,7 +87,7 @@
   <div class="form-group form-group-sm">
     <label for="ResponseType" class="col-sm-4 control-label">Description</label>
     <div class="col-sm-8">
-      <textarea id="Description" name="Description" class="form-control" rows="2" placeholder="Description"><?php echo $product['Description']; ?></textarea>
+      <textarea id="Description" name="Description" class="form-control" rows="2" placeholder="Description" required><?php echo $product['Description']; ?></textarea>
      </div>
   </div>
 
