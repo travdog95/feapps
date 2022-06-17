@@ -123,6 +123,34 @@ class Product extends CI_Controller {
 		$this->load->view('product/detail', $data);
 	}
 
+	public function component($product_idn)
+	{
+		//Decare and initialize variables
+		$data = array(
+			'menus' => array(),
+			'active_page' => 'Product Detail',
+			'bread_crumbs' => array(
+				array(
+					'name' => 'Product Detail',
+					'link' => ''
+				)
+			),
+			'product_idn' => $product_idn
+		);
+			
+		//Load menus
+		$data['menus'] = $this->m_menu->get_menus();
+
+		//Load Product
+		$data['product'] = $this->m_product->get_product($product_idn);
+
+		//Load sub header
+		$data['sub_header'] = "ID: ".$product_idn." - ".$data['product']['Name'];
+		
+        //Load job search view
+		$this->load->view('product/component', $data);
+	}
+
 	public function save_product() {
 		$save_results = array(
 			"return_code" => 0,

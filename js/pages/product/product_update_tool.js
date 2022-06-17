@@ -59,7 +59,7 @@
                     $("td:eq(7)", row).addClass("em");
                 }
                 if (parseFloat(data.ShoppableFlag) !== parseFloat(data.CurrentShoppableFlag)) {
-                    $("td:eq(8)", row).addClass("em");
+                    $("td:eq(13)", row).addClass("em");
                 }
             }
         });

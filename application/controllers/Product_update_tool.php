@@ -240,11 +240,11 @@ class Product_Update_Tool extends CI_Controller {
 					}
 					if ($row['FECI_Id'] != $row['original_FECI_Id'])
 					{
-						$sql_set_array[] = "FECI_Id = {$row['FECI_Id']}";
+						$sql_set_array[] = "FECI_Id = '{$row['FECI_Id']}'";
 					}
 					if ($row['ManufacturerPart_Id'] != $row['original_ManufacturerPart_Id'])
 					{
-						$sql_set_array[] = "ManufacturerPart_Id = {$row['ManufacturerPart_Id']}";
+						$sql_set_array[] = "ManufacturerPart_Id = '{$row['ManufacturerPart_Id']}'";
 					}
 					{
 						$sql_set_array[] = "ShoppableFlag = {$row['ShoppableFlag']}";
