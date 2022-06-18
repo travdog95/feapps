@@ -4,9 +4,10 @@
     <div class="col-sm-8">
         <p class="form-control-static"><?php echo $product['Product_Idn']; ?></p>
         <input type="hidden" name="Product_Idn" id="Product_Idn" value="<?php echo $product['Product_Idn']; ?>" />
+        <input type="hidden" name="Mode" id="Mode" value="<?php echo $mode; ?>" />
     </div>
   </div>
-  <div class="form-group form-group-sm">
+  <div class="form-group form-group-sm required">
     <label for="Department_Idn" class="col-sm-4 control-label">Department</label>
     <div class="col-sm-8">
         <select class="form-control filter" id="Department_Idn" name="Department_Idn" required>
@@ -56,10 +57,10 @@
       <input type="text" class="form-control check_num0" id="Rank" name="Rank" placeholder="Rank" value="<?php echo number_format($product['Rank']); ?>">
     </div>
   </div>
-  <div class="form-group form-group-sm">
+  <div class="form-group form-group-sm required">
     <label for="Name" class="col-sm-4 control-label">Name</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="Name" name="Name" placeholder="Name" value="<?php echo $product['Name']; ?>">
+      <input type="text" class="form-control" id="Name" name="Name" placeholder="Name" value="<?php echo $product['Name']; ?>" required>
     </div>
   </div>
   <div class="form-group form-group-sm">

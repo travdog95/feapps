@@ -2,6 +2,7 @@
 
 <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>lib/DataTables-1.10.15/css/dataTables.bootstrap.min.css" />
 <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/pages/job/search.css" />
+<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/pages/product/product.css" />
 
 <script src="<?php echo base_url(); ?>lib/DataTables-1.10.15/js/jquery.dataTables.min.js" defer></script>
 <script src="<?php echo base_url(); ?>lib/DataTables-1.10.15/js/dataTables.bootstrap.min.js" defer></script>

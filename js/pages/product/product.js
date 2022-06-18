@@ -55,7 +55,22 @@ $(function() {
         $(row).attr("data-product-idn", data.Product_Idn);
         $(row).attr("data-product-name", data.Name);
       },
-      deferRender: true
+      deferRender: true,
+      initComplete: function() {
+        const buttonContainer = document.createElement("span");
+        buttonContainer.className = "header-button-container";
+        const button = document.createElement("button");
+        button.className = "btn btn-primary";
+        button.textContent = 'Add Product';
+        button.setAttribute("title", "Add Product");
+
+        $(button).on("click", function() {
+          window.location = `${FECI.base_url}product/detail/add`;
+        });
+        buttonContainer.appendChild(button);
+
+        $("div.dataTables_length").append(buttonContainer);
+      }
       // responsive: true
     });
   
@@ -91,10 +106,11 @@ $(function() {
     //Copy product handler
     const handleCopyProduct = (e) => {
       const confirmedButton = document.querySelector("#ConfirmationModal #Confirmed");
+      const productIdn = FECI.confirmation_modal.data.productIdn
 
-      console.log(FECI.confirmation_modal.data.productIdn)
       confirmedButton.removeEventListener("click", handleCopyProduct);
 
+      window.location = `${FECI.base_url}product/detail/copy/${productIdn}`;
     }
 
     const show_copy_product_modal = (row) => {
@@ -133,7 +149,7 @@ $(function() {
       const $row = $(this).parents("tr");
       const productIdn = $row.data("product-idn");
       
-      window.location = `${FECI.base_url}product/detail/${productIdn}`;
+      window.location = `${FECI.base_url}product/detail/edit/${productIdn}`;
 
       e.preventDefault();
     });

@@ -22,3 +22,9 @@
 .control-label {
     font-weight: bold;
 }
+
+div.required label::after {
+    content: "*";
+    color: red;
+    padding-left: 2px;
+}

@@ -46,7 +46,7 @@
 			</div>
 			<div class="button-container">
 				<button id="cancelProductButton" class="btn btn-default">Cancel</button>
-				<button id="saveProductButton" class="btn btn-primary">Save</button>
+				<button id="saveProductButton" class="btn btn-primary"><?php echo $button_text; ?></button>
 			</div>
 		</div>
 	</div>

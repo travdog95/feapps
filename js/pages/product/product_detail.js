@@ -19,7 +19,6 @@ const filters = {
     }
 };
 
-
 //Elements
 const $saveProductButton = $("#saveProductButton");
 const $cancelButton = $("#cancelProductButton");
@@ -39,7 +38,8 @@ $saveProductButton.on("click", e => {
 
 $cancelButton.on("click", e => {
     e.preventDefault();
-    console.log("Cancel product");
+    //go back to product maintenance
+    window.location = `${FECI.base_url}product/`;
 });
 
 //Select element filters
@@ -88,6 +88,11 @@ const validateElement = (element) => {
 
     switch (fieldType) {
         case "text":
+            if (value == "") {
+                isValid = false;
+                $formGroupElement.addClass("has-error");
+                errorMessage += `<p>${labelName}</p>`
+            }
             break;
         case "select-one":
             if (value == 0 || value == "" || value == null) {
@@ -98,11 +103,15 @@ const validateElement = (element) => {
                 $formGroupElement.removeClass("has-error");
             }
             break;
-        case "textarea":
-            break;
     }
 
     return { isValid, errorMessage };
+}
+
+const removeErrors = () => {
+    $requredElements.each(function() {
+        $(this).parents(".form-group").removeClass("has-error");
+    });
 }
 
 const filterSelect = (elementId, elementValue) => {
@@ -149,7 +158,7 @@ const saveProduct = async () => {
         formData = {...formData, ...formToJSON(form.elements)}
     });
 
-    console.log(formData);
+    // console.log(formData);
 
       //AJAX request
     FECI.request = $.ajax({
@@ -161,10 +170,14 @@ const saveProduct = async () => {
 
     //Success callback handler
     FECI.request.done(function(response, textStatus, jqXHR) {
-        console.log(response);
+        // console.log(response);
         if (response.return_code == 1) {
             //Send update message
             displayMessageBox("Product saved!", "success");
+
+            if (response.mode == "add" || response.mode == "copy") {
+                window.location = `${FECI.base_url}product?message=Product%20(${response.NewProduct_Idn})%20added.&message_type=1`;
+            }
         } else {
         //Error
         displayMessageBox("Error saving product.", "danger");
@@ -181,6 +194,6 @@ const saveProduct = async () => {
     FECI.request.always(function() {
         //Enable inputs
         formElements.prop("disabled", false);
-
+        removeErrors();
     });
 }

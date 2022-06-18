@@ -95,7 +95,7 @@ class Product extends CI_Controller {
         }
 	}
 
-	public function detail($product_idn)
+	public function detail($mode, $product_idn = 0)
 	{
 		//Decare and initialize variables
 		$data = array(
@@ -107,7 +107,9 @@ class Product extends CI_Controller {
 					'link' => ''
 				)
 			),
-			'product_idn' => $product_idn
+			'product_idn' => $product_idn,
+			'mode' => $mode,
+			'button_text' => $mode == "edit" ? "Save" : "Add",
 		);
 			
 		//Load menus
@@ -116,9 +118,17 @@ class Product extends CI_Controller {
 		//Load Product
 		$data['product'] = $this->m_product->get_product($product_idn);
 
-		//Load sub header
-		$data['sub_header'] = "ID: ".$product_idn." - ".$data['product']['Name'];
-		
+		if ($mode == "edit") 
+		{
+			//Load sub header
+			$data['sub_header'] = "ID: ".$product_idn." - ".$data['product']['Name'];
+		}
+
+		if ($mode == "copy")
+		{
+			$data['product']['Product_Idn'] = "";
+		}
+
         //Load job search view
 		$this->load->view('product/detail', $data);
 	}
@@ -155,16 +165,17 @@ class Product extends CI_Controller {
 		$save_results = array(
 			"return_code" => 0,
 			"echo" => array(),
+			"mode" => ""
 		);
 		$set = array();
 		$where = array();
 
 		$post = $this->input->post();
 
-		if ($post && isset($post['Product_Idn']))
+		if ($post)
 		{
-			$where = array("Product_Idn" => $post['Product_Idn']);
-
+			$save_results['mode'] = $post['Mode'];
+			
 			$schema = $this->m_product->get_schema();
 
 			foreach ($schema as $field_name => $metadata)
@@ -190,9 +201,18 @@ class Product extends CI_Controller {
 				}
 			}
 
-			$this->m_reference_table->update("Products", $set, $where);
+			if ($post['Mode'] == "edit")
+			{
+				$where = array("Product_Idn" => $post['Product_Idn']);
+				$save = $this->m_reference_table->update("Products", $set, $where);
+			}
+			else
+			{
+				$save = $this->m_reference_table->insert("Products", $set);
+				$save_results['NewProduct_Idn'] = $this->db->insert_id();
+			}
 
-			$save_results['echo'] = $set;
+			$save_results['echo'] = $save;
 			$save_results['return_code'] = 1;
 		}
 
