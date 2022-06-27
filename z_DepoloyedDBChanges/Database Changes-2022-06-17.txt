@@ -47,3 +47,10 @@ CREATE TABLE ProductRelationships (
     Parent_Idn INT,
     Child_Idn INT
 )
+
+6/27/2022
+INSERT INTO Menus (Name, ShortName, Link, Icon, MenuType_Idn, ChildMenuType_Idn, IsParent, AdminOnly, Rank, ActiveFlag)
+	VALUES ('Product Maintenance', 'Products', 'product', 'clip-settings', 1, NULL, 0, 1, 4, 1)
+	
+ALTER TABLE Products
+ADD IsParent BIT
