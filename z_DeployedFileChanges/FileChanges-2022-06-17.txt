@@ -2,3 +2,35 @@ application/controller/Product_update_tool.php
 js/pages/product/product_update_tool.js
 js/pages/product_update_tool.js - delete
 application/views/product_update_tool/index.php
+
+6/27/2022 
+
+application/controller/Job.php
+application/controller/Worksheet_controller.php
+application/libraries/Job_mob.php
+application/libraries/Recap_row.php
+application/views/job/worksheet.php
+application/views/modals/confirmation.php
+application/views/worksheet/cl_recap/cl_recap_tbody.php
+application/views/worksheet/worksheet_products.php
+js/pages/job/worksheet.js
+
+************************
+Product Maintenance
+************************
+application/controllers/Product.php
+application/controllers/Utils.php
+application/models/M_reference_table.php
+application/models/M_product.php
+application/views/product/index.php
+application/views/product/detail.php
+application/views/product/detail_primary_tab.php
+application/views/product/detail_secondary_tab.php
+application/views/product/detail_sprinkler_tab.php
+application/views/product/detail_fire_pump_tab.php
+application/views/inc/page_header.php
+css/pages/product/product.css
+css/pages/product/product_detail.css
+css/feci.css
+js/pages/product/product_detail.js
+js/pages/product/product.js
