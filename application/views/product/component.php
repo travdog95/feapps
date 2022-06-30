@@ -24,6 +24,9 @@
 				data-search-input
 				/>
 			</div>
+			<div class="search-results">
+				
+			</div>
 			<div class="children">
 				<?php if (!empty($product['Children'])): ?>
 					<?php foreach($product['Children'] as $child): ?>
