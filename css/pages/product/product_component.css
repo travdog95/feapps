@@ -1,0 +1,27 @@
+.button-container {
+    padding: 5px 0 5px 0;
+    width: 700px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Product Components */
+
+.children {
+    width: 90%;
+}
+
+.child-row {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.child-row:hover {
+    cursor: pointer;
+    background-color: bisque;
+}

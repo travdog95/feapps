@@ -379,6 +379,9 @@ class M_product extends CI_Model {
             $fittings_where = array("WorksheetCategory_Idn" => $product['WorksheetCategory_Idn']);
             $product['Fittings'] = $this->m_reference_table->get_idns_names("Fittings", "Fitting_Idn", $fittings_where, true, 'Name');
         }
+
+        $product['Children'] = $this->get_children($product_idn);
+
         return $product;
 
     }
@@ -399,5 +402,20 @@ class M_product extends CI_Model {
         $product['IsMainComponent'] = 0;
 
         return $product;
+    }
+
+    public function get_children($product_idn)
+    {
+        $children = array();
+        $product_relations = array();
+
+        $product_relations = $this->m_reference_table->get_where('ProductRelationships', array('Parent_Idn' => $product_idn));
+
+        foreach($product_relations as $product_relationship)
+        {
+            $children[] = $this->m_reference_table->get_where('Products', array('Product_Idn' => $product_relationship['Child_Idn']))[0];
+        }
+
+        return $children;
     }
 }

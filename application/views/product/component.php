@@ -1,7 +1,7 @@
 <?php $this->load->view('inc/header'); ?>
 
-<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/pages/product/product_detail.css" />
-<script src="<?php echo base_url(); ?>js/pages/product/product_detail.js" defer></script>
+<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/pages/product/product_component.css" />
+<script src="<?php echo base_url(); ?>js/pages/product/product_component.js" defer></script>
 
 </head>
 <body>
@@ -16,19 +16,28 @@
 	<div class="main-content">
 		<div class="container" id="productComponentUI">
 			<?php $this->load->view('inc/page_header'); ?>
-
-    			<!-- Nav tabs -->
-			<ul class="nav nav-tabs" role="tablist">
-				<li role="presentation" class="active"><a href="#primary" aria-controls="primary" role="tab" data-toggle="tab">Primary</a></li>
-				<li role="presentation"><a href="#secondary" aria-controls="secondary" role="tab" data-toggle="tab">Secondary</a></li>
-				<li role="presentation"><a href="#electronicsDivision" aria-controls="electronicsDivision" role="tab" data-toggle="tab">Electronics Division</a></li>
-				<li role="presentation"><a href="#sprinkerDivision" aria-controls="sprinkerDivision" role="tab" data-toggle="tab">Sprinkler</a></li>
-				<li role="presentation"><a href="#firePump" aria-controls="firePump" role="tab" data-toggle="tab">Fire Pump</a></li>
-			</ul>
+			<div class="search-container">
+			<input
+				id="Search"
+				class="search-input"
+				placeholder="Search for Product"
+				data-search-input
+				/>
+			</div>
+			<div class="children">
+				<?php if (!empty($product['Children'])): ?>
+					<?php foreach($product['Children'] as $child): ?>
+						<div class="child-row">
+							<div class="child-checkbox"><input type="checkbox" /></div>
+							<div><?php echo $child['Product_Idn']; ?></div>
+							<div><?php echo $child['Name']; ?></div>
+						</div>
+					<?php endforeach; ?>
+				<?php endif; ?>
+			</div>
 
 			<div class="button-container">
-				<button id="cancelProductButton" class="btn btn-default">Cancel</button>
-				<button id="saveProductButton" class="btn btn-primary">Save</button>
+				<button id="deleteChildrenButton" class="btn btn-primary">Delete Children</button>
 			</div>
 		</div>
 	</div>
