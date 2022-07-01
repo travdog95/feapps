@@ -1,84 +1,52 @@
 //Elements
-const $saveProductButton = $("#saveProductButton");
-const $cancelButton = $("#cancelProductButton");
+const $deleteChildrenButton = $("#deleteChildrenButton");
+const $addChildrenButton = $("#addChildrenButton");
+const $searchButton = $("#searchButton");
+const $childRows = $(".child-row");
+const $searchResultsRows = $(".search-results-row");
 
 //Event handlers
-$saveProductButton.on("click", e => {
+$deleteChildrenButton.on("click", e => {
     e.preventDefault();
 
-    //Validation
-    if (validateForm()) {
-    //Save product
-        saveProduct();
-    } 
+    deleteChildren();
 });
 
-$cancelButton.on("click", e => {
+$addChildrenButton.on("click", e => {
     e.preventDefault();
-    //go back to product maintenance
-    window.location = `${FECI.base_url}product/`;
+
+    addChildren();
+});
+
+$searchButton.on("click", e => {
+    e.preventDefault();
+
+    search();
+});
+
+$childRows.each(function() {
+    const $row = $(this);
+    $row.on("click", e => {
+        console.log("child row clicked", $row.data("product-idn"))
+    });
+});
+
+$searchResultsRows.each(function() {
+    const $row = $(this);
+    $row.on("click", e => {
+        console.log("search results row clicked", $row.data("product-idn"))
+    });
 });
 
 //Functions
-const validateForm = () => {
-    let isValid = false;
-    let errorMessage = "";
+const addChildren = async () => {
+    console.log("Add Children button clicked");
+};
 
-    if (!isValid) {
-        displayMessageBox(errorMessage, "danger");
-    }
+const deleteChildren = async () => {
+    console.log("Delete Children button clicked");
+};
 
-    return isValid;
-}
-
-const saveProduct = async () => {
-    const forms = document.querySelectorAll(".product-tab");
-    const $productDetailUI = $("#productDetailUI");
-    const formElements = $productDetailUI.find("input, select, button");
-
-    let formData = {};
-
-    formElements.prop("disabled", true);
-    forms.forEach(form => {
-        formData = {...formData, ...formToJSON(form.elements)}
-    });
-
-    // console.log(formData);
-
-      //AJAX request
-    FECI.request = $.ajax({
-        url: FECI.base_url + "product/save_product",
-        type: "POST",
-        dataType: "json",
-        data: formData
-    });
-
-    //Success callback handler
-    FECI.request.done(function(response, textStatus, jqXHR) {
-        // console.log(response);
-        if (response.return_code == 1) {
-            //Send update message
-            displayMessageBox("Product saved!", "success");
-
-            if (response.mode == "add" || response.mode == "copy") {
-                window.location = `${FECI.base_url}product?message=Product%20(${response.NewProduct_Idn})%20added.&message_type=1`;
-            }
-        } else {
-        //Error
-        displayMessageBox("Error saving product.", "danger");
-        }
-    });
-
-    //Failure callback handler
-    FECI.request.fail(function(jqXHR, textStatus, errorThrown) {
-        //Log the error message
-        displayMessageBox("Error saving product.", "danger");
-    });
-
-    //Always callback handler
-    FECI.request.always(function() {
-        //Enable inputs
-        formElements.prop("disabled", false);
-        removeErrors();
-    });
+const search = async () => {
+    console.log("Search button clicked");
 }

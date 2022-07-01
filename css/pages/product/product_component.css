@@ -5,23 +5,20 @@
     justify-content: flex-start;
     align-items: center;
     gap: 5px;
+    margin-bottom: 10px;
+    margin-top: -15px;
 }
 
 /* Product Components */
-
-.children {
-    width: 90%;
+.parent-component tr td {
+    font-weight: bold;
 }
 
-.child-row {
-    display: flex;
-    flex-direction: row;
-    gap: .5rem;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.child-row:hover {
+.child-row:hover, .search-results-row:hover {
     cursor: pointer;
-    background-color: bisque;
+    background-color: #f5f5f5 !important;
+}
+
+.search-container {
+    margin-bottom: 10px;
 }

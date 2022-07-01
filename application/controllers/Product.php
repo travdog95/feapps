@@ -33,8 +33,6 @@ class Product extends CI_Controller {
 			)
 		);
 		
-		//Load additional models
-		
 		//Load menus
 		$data['menus'] = $this->m_menu->get_menus();
 
@@ -88,9 +86,12 @@ class Product extends CI_Controller {
 			}
 		}
 
-        if ($json) {
+        if ($json) 
+		{
             echo json_encode($results);
-        } else {
+        } 
+		else 
+		{
             return $results;
         }
 	}
@@ -138,10 +139,10 @@ class Product extends CI_Controller {
 		//Decare and initialize variables
 		$data = array(
 			'menus' => array(),
-			'active_page' => 'Product Detail',
+			'active_page' => 'Product Component',
 			'bread_crumbs' => array(
 				array(
-					'name' => 'Product Detail',
+					'name' => 'Product Component',
 					'link' => ''
 				)
 			),
@@ -154,14 +155,30 @@ class Product extends CI_Controller {
 		//Load Product
 		$data['product'] = $this->m_product->get_product($product_idn);
 
-		//Load sub header
-		$data['sub_header'] = "ID: ".$product_idn." - ".$data['product']['Name'];
-		
-        //Load job search view
-		$this->load->view('product/component', $data);
+		$search_criteria = array(
+			"IDorName" => "",
+			"WorksheetMaster_Idn" => $data['product']['WorksheetMaster_Idn'],
+			"WorksheetCategory_Idn" => $data['product']['WorksheetCategory_Idn'],
+		);
+
+		$data['search_results'] = $this->m_product->get_search_results($search_criteria);
+
+		if (empty($data['product']))
+		{
+			$this->index();
+		}
+		else
+		{
+			//Load sub header
+			// $data['sub_header'] = "ID: ".$product_idn." - ".$data['product']['Name'];
+			
+			//Load job search view
+			$this->load->view('product/component', $data);
+		}
 	}
 
-	public function save_product() {
+	public function save_product() 
+	{
 		$save_results = array(
 			"return_code" => 0,
 			"echo" => array(),
@@ -217,7 +234,30 @@ class Product extends CI_Controller {
 		}
 
 		echo json_encode($save_results);
-}
+	}
+
+	public function add_child() 
+	{
+		$save_results = array(
+			"return_code" => 0,
+			"echo" => array(),
+		);
+		$set = array();
+		$where = array();
+
+		$post = $this->input->post();
+
+		if ($post)
+		{
+			// $save = $this->m_reference_table->insert("Products", $set);
+			// $save_results['NewProduct_Idn'] = $this->db->insert_id();
+
+			// $save_results['echo'] = $save;
+			// $save_results['return_code'] = 1;
+		}
+
+		echo json_encode($save_results);
+	}
 }
 /* End of file */
 /* Location: ./application/controllers/Product.php */
