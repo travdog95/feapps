@@ -151,7 +151,7 @@ class M_reference_table extends CI_Model {
 				->select('*')
 				->from($table_name)
                 ->where($where);
-            
+
             if (!empty($order_by))
             {
                 $this->db->order_by($order_by);

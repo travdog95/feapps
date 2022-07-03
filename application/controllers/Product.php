@@ -161,7 +161,11 @@ class Product extends CI_Controller {
 			"WorksheetCategory_Idn" => $data['product']['WorksheetCategory_Idn'],
 		);
 
-		$data['search_results'] = $this->m_product->get_search_results($search_criteria);
+		$data['search_results'] = $this->m_product->get_search_results(
+			$data['product']['Product_Idn'], 
+			$data['product']['Children'],	
+			$search_criteria
+		);
 
 		if (empty($data['product']))
 		{
@@ -236,7 +240,7 @@ class Product extends CI_Controller {
 		echo json_encode($save_results);
 	}
 
-	public function add_child() 
+	public function delete_children() 
 	{
 		$save_results = array(
 			"return_code" => 0,
@@ -244,20 +248,58 @@ class Product extends CI_Controller {
 		);
 		$set = array();
 		$where = array();
+		$hasErrors = false;
 
 		$post = $this->input->post();
 
 		if ($post)
 		{
-			// $save = $this->m_reference_table->insert("Products", $set);
-			// $save_results['NewProduct_Idn'] = $this->db->insert_id();
+			$where['Parent_Idn'] = $post['Parent_Idn'];
+			foreach($post['Child_Idn'] as $child_idn)
+			{
+				$where['Child_Idn'] = $child_idn;
+				if (!$this->m_reference_table->delete("ProductRelationships", $where))
+				{
+					$hasErrors = true;
+				}
+			}
 
-			// $save_results['echo'] = $save;
-			// $save_results['return_code'] = 1;
+			$save_results['return_code'] = ($hasErrors) ? -1 : 1;
 		}
 
 		echo json_encode($save_results);
 	}
+
+	public function add_children() 
+	{
+		$save_results = array(
+			"return_code" => 0,
+			"echo" => array(),
+		);
+		$set = array();
+		$insert = array();
+		$hasErrors = false;
+
+		$post = $this->input->post();
+
+		if ($post)
+		{
+			$insert['Parent_Idn'] = $post['Parent_Idn'];
+			foreach($post['Child_Idn'] as $child_idn)
+			{
+				$insert['Child_Idn'] = $child_idn;
+				if (!$this->m_reference_table->insert("ProductRelationships", $insert))
+				{
+					$hasErrors = true;
+				}
+			}
+
+			$save_results['return_code'] = ($hasErrors) ? -1 : 1;
+		}
+
+		echo json_encode($save_results);
+	}
+
 }
 /* End of file */
 /* Location: ./application/controllers/Product.php */

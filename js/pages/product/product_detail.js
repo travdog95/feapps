@@ -146,7 +146,7 @@ const loadSelectOptions = async ($selectElement, filterBy, filterByValue) => {
     });
 }
 
-const saveProduct = async () => {
+const saveProduct = () => {
     const forms = document.querySelectorAll(".product-tab");
     const $productDetailUI = $("#productDetailUI");
     const formElements = $productDetailUI.find("input, select, button");

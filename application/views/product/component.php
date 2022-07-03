@@ -44,6 +44,8 @@
 				</tbody>
 			</table>
 			<div><h4>Child Components</h4></div>
+			<form id="childComponentsForm">
+			<input type="hidden" name="Parent_Idn" value="<?php echo $product['Product_Idn']; ?>" />
 			<table class="table table-striped table-condensed table-bordered custom-table table-centered">
 				<?php if (!empty($product['Children'])): ?>
 					<thead>
@@ -61,17 +63,7 @@
 					</thead>
 					<tbody>
 					<?php foreach($product['Children'] as $child): ?>
-						<tr class="child-row" data-product-idn="<?php echo $child['Product_Idn']; ?>">
-							<td class="text-center"><input type="checkbox" /></td>
-							<td><?php echo $child['Product_Idn']; ?></td>
-							<td><?php echo $child['Name']; ?></td>
-							<td><?php echo $child['Department']; ?></td>
-							<td><?php echo $child['WorksheetMaster']; ?></td>
-							<td><?php echo $child['WorksheetCategory']; ?></td>
-							<td><?php echo $child['Manufacturer']; ?></td>
-							<td data-material-unit-price="<?php echo $child['MaterialUnitPrice']; ?>"><?php echo number_format($child['MaterialUnitPrice'], 2); ?></td>
-							<td data-field-unit-price="<?php echo $child['FieldUnitPrice']; ?>"><?php echo number_format($child['FieldUnitPrice'], 2); ?></td>
-						</tr>
+						<?php $this->load->view("product/product_child_row", array("child" => $child)); ?>
 					<?php endforeach; ?>
 					</tbody>
 				<?php else: ?>
@@ -80,8 +72,9 @@
 					</tbody>
 				<?php endif; ?>
 			</table>
+			</form>
 			<div class="button-container">
-				<button id="deleteChildrenButton" class="btn btn-primary">Delete Children</button>
+				<button id="deleteChildrenButton" class="btn btn-primary" disabled>Delete Child</button>
 			</div>
 			<form class="form-inline search-container">
 				<div class="form-group">
@@ -109,6 +102,8 @@
 				</div>
 				<button id="searchButton" class="btn btn-default">Search</button>
 			</form>
+			<form id="searchResultsForm">
+			<input type="hidden" name="Parent_Idn" value="<?php echo $product['Product_Idn']; ?>" />
 			<table data-search-results class="table table-striped table-condensed table-bordered custom-table table-centered">
 				<thead>
 					<tr>
@@ -124,23 +119,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach($search_results as $product): ?>
-						<tr class="search-results-row" data-product-idn="<?php echo $product['Product_Idn']; ?>">
-							<td class="text-center"><input type="checkbox" /></td>
-							<td><?php echo $product['Product_Idn']; ?></td>
-							<td><?php echo $product['Name']; ?></td>
-							<td><?php echo $product['Department']; ?></td>
-							<td><?php echo $product['WorksheetMaster']; ?></td>
-							<td><?php echo $product['WorksheetCategory']; ?></td>
-							<td><?php echo $product['Manufacturer']; ?></td>
-							<td data-material-unit-price="<?php echo $product['MaterialUnitPrice']; ?>"><?php echo number_format($product['MaterialUnitPrice'], 2); ?></td>
-							<td data-field-unit-price="<?php echo $product['FieldUnitPrice']; ?>"><?php echo number_format($product['FieldUnitPrice'], 2); ?></td>
-						</tr>
+					<?php foreach($search_results as $search_result): ?>
+						<?php $this->load->view('product/product_search_results_row', array("search_result" => $search_result)); ?>
 					<?php endforeach; ?>
 				</tbody>
 			</table>
+			</form>
 			<div class="button-container">
-				<button id="addChildrenButton" class="btn btn-primary">Add Children</button>
+				<button id="addChildrenButton" class="btn btn-primary" disabled>Add Child</button>
 			</div>
 
 		</div>

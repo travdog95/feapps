@@ -440,13 +440,21 @@ class M_product extends CI_Model {
         return $children;
     }
 
-    public function get_search_results($search_criteria, $add_metadata = true)
+    public function get_search_results($parent_idn, $children, $search_criteria, $add_metadata = true)
     {
         $results = array();
         $products = array();
-        $where = array("ActiveFlag" => 1);
+        $where = array("ActiveFlag" => 1, "Product_Idn <>" => $parent_idn);
         $metadata = array();
+        $children_idns = array();
 
+        //Put children_idns into array, so we can exlcude children from the search results
+        foreach($children as $child)
+        {
+            $children_idns[] = $child['Product_Idn'];
+        }
+
+        //Build where statement
         if (isset($search_criteria['WorksheetMaster_Idn']) && (int) $search_criteria['WorksheetMaster_Idn'] != 0)
         {
             $where['WorksheetMaster_Idn'] = $search_criteria['WorksheetMaster_Idn'];
@@ -457,8 +465,34 @@ class M_product extends CI_Model {
             $where['WorksheetCategory_Idn'] = $search_criteria['WorksheetCategory_Idn'];
         }
  
-        $products = $this->m_reference_table->get_where('Products', $where);
+        $this->db
+            ->select('*')
+            ->from("Products")
+            ->where($where);
+            
+        if (!empty($children_idns))
+        {
+            $this->db->where_not_in("Product_Idn", $children_idns);;
+        }
 
+        $query = $this->db->get();
+            
+        if ($query == false)
+        {
+            write_feci_log(array("Message" => "SQL Error ".$this->db->last_query(), "Script" => get_caller_info()));
+        }
+        else
+        {
+            if ($query->num_rows() > 0)
+            {
+                foreach ($query->result_array() as $row)
+                {
+                    $products[] = $row;
+                }
+            }
+        }
+
+        //Add metadata
         if ($add_metadata)
         {
             foreach($products as $product)
