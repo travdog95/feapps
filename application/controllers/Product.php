@@ -246,11 +246,11 @@ class Product extends CI_Controller {
 			"return_code" => 0,
 			"echo" => array(),
 			"deleted" => array(),
-			"html" => "",
 		);
 		$set = array();
 		$where = array();
 		$hasErrors = false;
+		$html = "";
 
 		$post = $this->input->post();
 
@@ -259,6 +259,7 @@ class Product extends CI_Controller {
 			$where['Parent_Idn'] = $post['Parent_Idn'];
 			foreach($post['Child_Idn'] as $child_idn)
 			{
+				$html = "";
 				$where['Child_Idn'] = $child_idn;
 				if (!$this->m_reference_table->delete("ProductRelationships", $where))
 				{
@@ -266,9 +267,9 @@ class Product extends CI_Controller {
 				}
 				else
 				{
-					$save_results['deleted'][] = $child_idn;
 					$product = $this->m_product->get_product($child_idn, false, false);
-					$save_results['html'] = $this->load->view("product/product_search_results_row", array("product" => $product), true);
+					$html = $this->load->view("product/product_search_results_row", array("search_result" => $product), true);
+					$save_results['deleted'][] = array("Product_Idn" => $child_idn, "Html" => $html);
 				}
 			}
 
@@ -284,11 +285,11 @@ class Product extends CI_Controller {
 			"return_code" => 0,
 			"echo" => array(),
 			"added" => array(),
-			"html" => "",
 		);
 		$set = array();
 		$insert = array();
 		$hasErrors = false;
+		$html = "";
 
 		$post = $this->input->post();
 
@@ -297,6 +298,7 @@ class Product extends CI_Controller {
 			$insert['Parent_Idn'] = $post['Parent_Idn'];
 			foreach($post['Child_Idn'] as $child_idn)
 			{
+				$html = "";
 				$insert['Child_Idn'] = $child_idn;
 				if (!$this->m_reference_table->insert("ProductRelationships", $insert))
 				{
@@ -304,9 +306,9 @@ class Product extends CI_Controller {
 				}
 				else
 				{
-					$save_results['added'][] = $child_idn;
 					$child = $this->m_product->get_product($child_idn, false, false);
-					$save_results['html'] = $this->load->view("product/product_child_row", array("child" => $child), true);
+					$html = $this->load->view("product/product_child_row", array("child" => $child), true);
+					$save_results['added'][] = array("Product_Idn" => $child_idn, "Html" => $html);
 				}
 			}
 

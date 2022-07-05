@@ -28,42 +28,58 @@ $searchButton.on("click", e => {
     search();
 });
 
-$childRows.each(function() {
-    const $row = $(this);
-    const $checkbox = $row.find("input:checkbox");
-    $row.on("click", e => {
+const registerChildRowClick = (row) => {
+    const $row = $(row);
+    $row.on("click", function () {
+        const $checkbox = $(this).find("input:checkbox");
         //toggle checkbox
         $checkbox.prop("checked", !$checkbox.prop("checked"));
         handleButtonState("data-child-checkbox", "#deleteChildrenButton");
     });
-});
+};
 
-$childCheckboxes.each(function() {
-    const $checkbox = $(this);
+const registerChildCheckboxClick = (checkbox) => {
+    const $checkbox = $(checkbox);
     $checkbox.on("click", e => {
         //toggle checkbox
         $checkbox.prop("checked", !$checkbox.prop("checked"));
         handleButtonState("data-child-checkbox", "#deleteChildrenButton");
     });
-});
+};
 
-$searchResultsRows.each(function() {
-    const $row = $(this);
-    const $checkbox = $row.find("input:checkbox");
-    $row.on("click", e => {
-        //Toggle checkbox
+const registerSearchResultsRowClick = (row) => {
+    const $row = $(row);
+    $row.on("click", function () {
+        const $checkbox = $(this).find("input:checkbox");
+        //toggle checkbox
         $checkbox.prop("checked", !$checkbox.prop("checked"));
         handleButtonState("data-search-results-checkbox", "#addChildrenButton");
     });
-});
+};
 
-$searchResultsCheckboxes.each(function() {
-    const $checkbox = $(this);
+const registerSearchResultsCheckboxClick = (checkbox) => {
+    const $checkbox = $(checkbox);
     $checkbox.on("click", e => {
         //toggle checkbox
         $checkbox.prop("checked", !$checkbox.prop("checked"));
         handleButtonState("data-search-results-checkbox", "#addChildrenButton");
     });
+};
+
+$childRows.each((index, childRow) => {
+    registerChildRowClick(childRow);
+});
+
+$childCheckboxes.each((index, childCheckbox) => {
+    registerChildCheckboxClick(childCheckbox);
+});
+
+$searchResultsRows.each((index, searchResultsRow) => {
+    registerSearchResultsRowClick(searchResultsRow);
+});
+
+$searchResultsCheckboxes.each((index, searchResultsCheckbox) => {
+    registerSearchResultsCheckboxClick(searchResultsCheckbox);
 });
 
 //Functions
@@ -84,7 +100,6 @@ const handleButtonState = (checkboxSelector, buttonSelector) => {
 }
 
 const addChildren = async () => {
-    console.log("Add Children button clicked");
     $addChildrenButton.prop("disabled", true);
     const form = document.getElementById("searchResultsForm")
     const formData = formToJSON(form.elements);
@@ -104,12 +119,15 @@ const addChildren = async () => {
             //Send update message
             displayMessageBox("Child component added!", "success");
 
-            response.added.forEach(product_idn => {
+            response.added.forEach(product => {
                 //remove from search results table
-                $(`[data-search-results-row="${product_idn}"]`).remove();
+                $(`[data-search-results-row="${product.Product_Idn}"]`).remove();
 
                 //add to child components table
-                $childComponentsTable.append(response.html);
+                $childComponentsTable.append(product.Html);
+
+                //Add row click handler
+                registerChildRowClick($(`[data-child-row="${product.Product_Idn}"]`));
             });
 
         } else {
@@ -127,7 +145,7 @@ const addChildren = async () => {
     //Always callback handler
     FECI.request.always(function() {
         //Enable inputs
-        $addChildrenButton.prop("disabled", false);
+        handleButtonState("data-search-results-row", "#addChildrenButton");
     });
 };
 
@@ -151,12 +169,15 @@ const deleteChildren = () => {
             //Send update message
             displayMessageBox("Child component deleted!", "success");
 
-            response.deleted.forEach(product_idn => {
+            response.deleted.forEach(product => {
                 //remove from child component table
-                $(`[data-search-results-row="${product_idn}"]`).remove();
+                $(`[data-child-row="${product.Product_Idn}"]`).remove();
 
-                //add to child components table
-                $childComponentsTable.append(response.html);
+                //add to search results table
+                $searchResultsTable.append(product.Html);
+
+                //Add row click handler
+                registerSearchResultsRowClick($(`[data-search-results-row="${product.Product_Idn}"]`));
             });
 
         } else {
@@ -174,7 +195,7 @@ const deleteChildren = () => {
     //Always callback handler
     FECI.request.always(function() {
         //Enable inputs
-        $deleteChildrenButton.prop("disabled", false);
+        handleButtonState("data-child-row", "#deleteChildrenButton");
     });
 };
 

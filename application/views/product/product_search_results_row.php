@@ -1,5 +1,7 @@
 <tr class="search-results-row" data-search-results-row="<?php echo $search_result['Product_Idn']; ?>">
-    <td class="text-center"><input type="checkbox" name="Child_Idn" value="<?php echo $search_result['Product_Idn']; ?>" data-search-results-checkbox /></td>
+    <td class="text-center">
+        <input type="checkbox" name="Child_Idn" value="<?php echo $search_result['Product_Idn']; ?>" data-search-results-checkbox />
+    </td>
     <td><?php echo $search_result['Product_Idn']; ?></td>
     <td><?php echo $search_result['Name']; ?></td>
     <td><?php echo $search_result['Department']; ?></td>

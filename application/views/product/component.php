@@ -47,30 +47,28 @@
 			<form id="childComponentsForm">
 			<input type="hidden" name="Parent_Idn" value="<?php echo $product['Product_Idn']; ?>" />
 			<table id="childComponentsTable" class="table table-striped table-condensed table-bordered custom-table table-centered">
+				<thead>
+					<tr>
+						<th></th>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Department</th>
+						<th>Worksheet Master</th>
+						<th>Category</th>
+						<th>Manufacturer</th>
+						<th>Material Price</th>
+						<th>Field Labor</th>
+					</tr>
+				</thead>
+				<tbody>
 				<?php if (!empty($product['Children'])): ?>
-					<thead>
-						<tr>
-							<th></th>
-							<th>ID</th>
-							<th>Name</th>
-							<th>Department</th>
-							<th>Worksheet Master</th>
-							<th>Category</th>
-							<th>Manufacturer</th>
-							<th>Material Price</th>
-							<th>Field Labor</th>
-						</tr>
-					</thead>
-					<tbody>
 					<?php foreach($product['Children'] as $child): ?>
 						<?php $this->load->view("product/product_child_row", array("child" => $child)); ?>
 					<?php endforeach; ?>
-					</tbody>
 				<?php else: ?>
-					<tbody>
-						<tr><td colspan="9">No child components.</td></tr>
-					</tbody>
+					<!-- <?php $this->load->view("product/no_children_row", array("colspan" => 9)); ?> -->
 				<?php endif; ?>
+				</tbody>
 			</table>
 			</form>
 			<div class="button-container">

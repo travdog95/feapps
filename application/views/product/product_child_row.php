@@ -1,5 +1,7 @@
 <tr class="child-row" data-child-row="<?php echo $child['Product_Idn']; ?>">
-    <td class="text-center"><input type="checkbox" name="Child_Idn" data-child-checkbox value="<?php echo $child['Product_Idn']; ?>" /></td>
+    <td class="text-center">
+        <input type="checkbox" name="Child_Idn" data-child-checkbox value="<?php echo $child['Product_Idn']; ?>" />
+    </td>
     <td><?php echo $child['Product_Idn']; ?></td>
     <td><?php echo $child['Name']; ?></td>
     <td><?php echo $child['Department']; ?></td>
