@@ -245,6 +245,8 @@ class Product extends CI_Controller {
 		$save_results = array(
 			"return_code" => 0,
 			"echo" => array(),
+			"deleted" => array(),
+			"html" => "",
 		);
 		$set = array();
 		$where = array();
@@ -262,6 +264,12 @@ class Product extends CI_Controller {
 				{
 					$hasErrors = true;
 				}
+				else
+				{
+					$save_results['deleted'][] = $child_idn;
+					$product = $this->m_product->get_product($child_idn, false, false);
+					$save_results['html'] = $this->load->view("product/product_search_results_row", array("product" => $product), true);
+				}
 			}
 
 			$save_results['return_code'] = ($hasErrors) ? -1 : 1;
@@ -275,6 +283,8 @@ class Product extends CI_Controller {
 		$save_results = array(
 			"return_code" => 0,
 			"echo" => array(),
+			"added" => array(),
+			"html" => "",
 		);
 		$set = array();
 		$insert = array();
@@ -291,6 +301,12 @@ class Product extends CI_Controller {
 				if (!$this->m_reference_table->insert("ProductRelationships", $insert))
 				{
 					$hasErrors = true;
+				}
+				else
+				{
+					$save_results['added'][] = $child_idn;
+					$child = $this->m_product->get_product($child_idn, false, false);
+					$save_results['html'] = $this->load->view("product/product_child_row", array("child" => $child), true);
 				}
 			}
 

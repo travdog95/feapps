@@ -46,7 +46,7 @@
 			<div><h4>Child Components</h4></div>
 			<form id="childComponentsForm">
 			<input type="hidden" name="Parent_Idn" value="<?php echo $product['Product_Idn']; ?>" />
-			<table class="table table-striped table-condensed table-bordered custom-table table-centered">
+			<table id="childComponentsTable" class="table table-striped table-condensed table-bordered custom-table table-centered">
 				<?php if (!empty($product['Children'])): ?>
 					<thead>
 						<tr>
@@ -104,7 +104,7 @@
 			</form>
 			<form id="searchResultsForm">
 			<input type="hidden" name="Parent_Idn" value="<?php echo $product['Product_Idn']; ?>" />
-			<table data-search-results class="table table-striped table-condensed table-bordered custom-table table-centered">
+			<table id="searchResultsTable" data-search-results class="table table-striped table-condensed table-bordered custom-table table-centered">
 				<thead>
 					<tr>
 						<th></th>

@@ -1,4 +1,6 @@
 //Elements
+const $childComponentsTable = $("#childComponentsTable");
+const $searchResultsTable = $("#searchResultsTable");
 const $deleteChildrenButton = $("#deleteChildrenButton");
 const $addChildrenButton = $("#addChildrenButton");
 const $searchButton = $("#searchButton");
@@ -101,6 +103,15 @@ const addChildren = async () => {
         if (response.return_code == 1) {
             //Send update message
             displayMessageBox("Child component added!", "success");
+
+            response.added.forEach(product_idn => {
+                //remove from search results table
+                $(`[data-search-results-row="${product_idn}"]`).remove();
+
+                //add to child components table
+                $childComponentsTable.append(response.html);
+            });
+
         } else {
             //Error
             displayMessageBox("Error adding child component.", "danger");
@@ -139,6 +150,15 @@ const deleteChildren = () => {
         if (response.return_code == 1) {
             //Send update message
             displayMessageBox("Child component deleted!", "success");
+
+            response.deleted.forEach(product_idn => {
+                //remove from child component table
+                $(`[data-search-results-row="${product_idn}"]`).remove();
+
+                //add to child components table
+                $childComponentsTable.append(response.html);
+            });
+
         } else {
             //Error
             displayMessageBox("Error deleting child component.", "danger");
