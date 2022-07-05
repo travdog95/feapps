@@ -24,6 +24,7 @@ const $saveProductButton = $("#saveProductButton");
 const $cancelButton = $("#cancelProductButton");
 const $parentSelectElements = $(".filter");
 const $requredElements = $("select, input, textarea").filter('[required]');
+const $buildComponentButton = $("button.build-component");
 
 //Event handlers
 $saveProductButton.on("click", e => {
@@ -55,6 +56,13 @@ $requredElements.each(function() {
         validateElement(elem);
     });  
 });
+
+$buildComponentButton.on("click", function() {
+    const productIdn = $(this).data("product-idn");
+    
+    window.location = `${FECI.base_url}product/component/${productIdn}`;
+});
+
 
 //Functions
 const validateForm = () => {

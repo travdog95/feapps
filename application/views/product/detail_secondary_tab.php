@@ -4,7 +4,8 @@
     <div class="col-sm-8">
       <div class="checkbox">
         <label>
-          <input name="IsMainComponent" id="IsMainComponent" type="checkbox" disabled="disabled" <?php if ($product['IsMainComponent'] == 1) echo "checked"; ?>> 
+          <input name="IsMainComponent" id="IsMainComponent" type="checkbox" disabled="disabled" <?php if (sizeof($product['Children']) > 0) echo "checked"; ?>> 
+            <button type="button" class="btn btn-default btn-xs build-component" data-product-idn="<?php echo $product['Product_Idn']; ?>" title="Build Component"><span class="glyphicon glyphicon-tasks glyphicon-xs" aria-hidden="true"></span></button>
         </label>
       </div>
     </div>
