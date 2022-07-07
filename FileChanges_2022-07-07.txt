@@ -1,0 +1,15 @@
+/************************************/
+Product Component feature
+/************************************/
+
+controllers/Product.php
+models/M_product.php
+models/M_reference_table.php
+views/product/component.php
+views/product/product_child_row.php
+views/product/product_search_results_row.php
+views/product/detail_secondary_tab.php
+views/product/no_children_row.php
+css/pages/product/product_component.css
+js/pages/product/product_component.js
+js/pages/product/product_detail.js
