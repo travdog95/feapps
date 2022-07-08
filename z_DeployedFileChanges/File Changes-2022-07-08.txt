@@ -1,5 +1,8 @@
-application\views\product\assembly.php
 application\controllers\product.php
+application\controllers\product_update_tool.php
+application\views\product\assembly.php
+application\views\product_update_tool\index.php
+css\pages\product\product_assembly.css
 js\pages\product\product.js
 js\pages\product\product_assembly.js
-css\pages\product\product_assembly.css
+js\pages\product\product_update_tool.js
