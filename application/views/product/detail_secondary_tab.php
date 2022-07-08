@@ -143,11 +143,11 @@
     </div>
   </div>
   <div class="form-group form-group-sm form-checkbox">
-    <label for="ShoppableFlag" class="col-sm-4 control-label">Shoppable?</label>
+    <label for="RFP" class="col-sm-4 control-label">RFP?</label>
     <div class="col-sm-8">
       <div class="checkbox">
         <label>
-          <input name="ShoppableFlag" id="ShoppableFlag" type="checkbox" <?php if ($product['ShoppableFlag'] == 1) echo "checked"; ?>> 
+          <input name="RFP" id="RFP" type="checkbox" <?php if ($product['RFP'] == 1) echo "checked"; ?>> 
         </label>
       </div>
     </div>
