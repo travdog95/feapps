@@ -14,7 +14,7 @@
         { "data": "Category" },
         { "data": "PipeType" },
         { "data": "ScheduleType" },
-        { "data": "ShoppableFlag" }
+        { "data": "RFP" }
     ];
 
     init();
@@ -58,7 +58,7 @@
                 if (parseFloat(data.EngineerUnitPrice) !== parseFloat(data.CurrentEngineerUnitPrice)) {
                     $("td:eq(7)", row).addClass("em");
                 }
-                if (parseFloat(data.ShoppableFlag) !== parseFloat(data.CurrentShoppableFlag)) {
+                if (parseFloat(data.RFP) !== parseFloat(data.RFP)) {
                     $("td:eq(13)", row).addClass("em");
                 }
             }

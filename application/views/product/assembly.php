@@ -1,7 +1,7 @@
 <?php $this->load->view('inc/header'); ?>
 
-<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/pages/product/product_component.css" />
-<script src="<?php echo base_url(); ?>js/pages/product/product_component.js" defer></script>
+<link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/pages/product/product_assembly.css" />
+<script src="<?php echo base_url(); ?>js/pages/product/product_assembly.js" defer></script>
 
 </head>
 <body>

@@ -79,7 +79,7 @@ class Product_Update_Tool extends CI_Controller {
 							"Name" => $row->Name,
 							"FECI_Id" => $row->FECI_Id,
 							"ManufacturerPart_Id" => $row->ManufacturerPart_Id,
-							"ShoppableFlag" => $row->ShoppableFlag == "Yes" || $row->ShoppableFlag == 1 ? 1 : 0,
+							"RFP" => $row->RFP == "Yes" || $row->RFP == 1 ? 1 : 0,
 							);
 
 						//insert row
@@ -127,8 +127,8 @@ class Product_Update_Tool extends CI_Controller {
 					s.FECI_Id,
 					p.ManufacturerPart_Id AS CurrentManufacturerPart_Id,
 					s.ManufacturerPart_Id,
-					p.ShoppableFlag AS CurrentShoppableFlag,
-					s.ShoppableFlag
+					p.RFP AS CurrentRFP,
+					s.RFP
 				FROM ProductsStaging2 AS s
 				LEFT JOIN Products AS p ON (p.Product_Idn = s.Product_Idn)
 				LEFT JOIN jpr_Department AS d ON (p.Department_Idn = d.DepartmentId)
@@ -184,8 +184,8 @@ class Product_Update_Tool extends CI_Controller {
 					s.FECI_Id,
 					p.ManufacturerPart_Id AS original_ManufacturerPart_Id,
 					s.ManufacturerPart_Id,
-					p.ShoppableFlag AS original_ShoppableFlag,
-					s.ShoppableFlag
+					p.RFP AS original_RFP,
+					s.RFP
 				FROM ProductsStaging2 AS s
 				LEFT JOIN Products AS p ON (p.Product_Idn = s.Product_Idn)
 				WHERE p.MaterialUnitPrice <> s.MaterialUnitPrice
@@ -197,8 +197,8 @@ class Product_Update_Tool extends CI_Controller {
 					OR (p.FECI_Id IS NULL AND s.FECI_Id IS NOT NULL)
 					OR p.ManufacturerPart_Id <> s.ManufacturerPart_Id
 					OR (p.ManufacturerPart_Id IS NULL AND s.ManufacturerPart_Id IS NOT NULL)
-					OR p.ShoppableFlag <> s.ShoppableFlag
-					OR (p.ShoppableFlag IS NULL AND s.ShoppableFlag IS NOT NULL)";
+					OR p.RFP <> s.RFP
+					OR (p.RFP IS NULL AND s.RFP IS NOT NULL)";
 		$query = $this->db->query($sql);
 
 		if ($query == false)
@@ -247,7 +247,7 @@ class Product_Update_Tool extends CI_Controller {
 						$sql_set_array[] = "ManufacturerPart_Id = '{$row['ManufacturerPart_Id']}'";
 					}
 					{
-						$sql_set_array[] = "ShoppableFlag = {$row['ShoppableFlag']}";
+						$sql_set_array[] = "RFP = {$row['RFP']}";
 					}
 
 					$sql_set = implode(",", $sql_set_array);

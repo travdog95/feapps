@@ -1,0 +1,2 @@
+sp_rename 'ProductsStaging2.ShoppableFlag', 'RFP', 'COLUMN';
+sp_rename 'Products.ShoppableFlag', 'RFP', 'COLUMN';
