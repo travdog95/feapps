@@ -52,37 +52,31 @@ class Product extends CI_Controller {
         $get = $this->input->get();
 
 		$this->db
-			->select("p.*, d.Description AS DepartmentName, wm.Name as WorksheetMaster, wc.Name as WorksheetCategory, m.Name as Manufacturer")
+			->select("p.*, d.Description AS Department, wm.Name as WorksheetMaster, wc.Name as WorksheetCategory, m.Name as Manufacturer")
 			->from('Products AS p')
 			->join('jpr_Department AS d', 'd.DepartmentID = p.Department_Idn', 'left')
 			->join('WorksheetMasters AS wm', 'wm.WorksheetMaster_Idn = p.WorksheetMaster_Idn', 'left')
 			->join('WorksheetCategories AS wc', 'wc.WorksheetCategory_Idn = p.WorksheetCategory_Idn', 'left')
 			->join('Manufacturers AS m', 'm.Manufacturer_Idn = p.Manufacturer_Idn', 'left')
-			->where("p.ActiveFlag", 1)
 			->order_by('WorksheetMaster_Idn ASC, WorksheetCategory_Idn ASC');
+
+		if (!isset($get['active_only']) || $get['active_only'] == 1)
+		{
+			$this->db->where("p.ActiveFlag", 1);
+		}
 
 		$query = $this->db->get();
 
-		if ($query) {
-			foreach ($query->result_array() as $row) {
-				$data = array(
-					'id' => $i++,
-					'Product_Idn' => $row['Product_Idn'],
-					'Department' => $row['DepartmentName'],
-					'WorksheetMaster' => $row['WorksheetMaster'],
-					'WorksheetCategory' => $row['WorksheetCategory'],
-					'Name' => $row['Name'],
-					'Manufacturer' => $row['Manufacturer'],
-					'MaterialUnitPrice' => $row['MaterialUnitPrice'],
-					'FieldUnitPrice' => $row['MaterialUnitPrice'],
-					'ShopUnitPrice' => $row['ShopUnitPrice'],
-					'EngineerUnitPrice' => $row['EngineerUnitPrice'],
-					"FECI_Id" => $row['FECI_Id'],
-					"ManufacturerPart_Id" => $row['ManufacturerPart_Id'],
-					"IsParent" => $row['IsParent'] === 1 ? "Yes" : "No"
-					);
+		if ($query) 
+		{
+			foreach ($query->result_array() as $row) 
+			{
 
-				$results['data'][] = $data;
+				$row['id'] = $i++;
+				$row['IsParent'] = $row['IsParent'] == 1 ? "Yes" : "No";
+				$row['ActiveFlag'] = $row['ActiveFlag'] == 1 ? "Yes" : "No";
+
+				$results['data'][] = $row;
 			}
 		}
 

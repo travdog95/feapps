@@ -1,0 +1,6 @@
+EXEC sp_rename 'dbo.Products.ShoppableFlag', 'RFP', 'COLUMN';
+
+EXEC sp_rename 'dbo.ProductsStaging2.ShoppableFlag', 'RFP', 'COLUMN';
+
+ALTER TABLE ProductsStaging2
+DROP COLUMN SomeFlag;

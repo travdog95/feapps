@@ -129,7 +129,7 @@ class M_product extends CI_Model {
                 "dataType" => "boolean", 
                 "default" => 0
             ),
-            "ShoppableFlag" => array(
+            "RFP" => array(
                 "dataType" => "boolean", 
                 "default" => 1
             ),

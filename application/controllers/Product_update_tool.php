@@ -68,18 +68,18 @@ class Product_Update_Tool extends CI_Controller {
 				//Insert rows into table
 				foreach (json_decode($data['json']) as $row)
 				{
-					if (!empty($row->Product_Idn))
+					if (!empty($row->ID))
 					{
 						$product = array(
-							"Product_Idn" => string_filter($row->Product_Idn, ","),
-							"MaterialUnitPrice" => $row->MaterialUnitPrice == "" ? "0" : string_filter($row->MaterialUnitPrice, ","),
-							"ShopUnitPrice" => $row->ShopUnitPrice == "" ? "0" : string_filter($row->ShopUnitPrice, ","),
-							"FieldUnitPrice" => $row->FieldUnitPrice == "" ? "0" : string_filter($row->FieldUnitPrice, ","),
-							"EngineerUnitPrice" => $row->EngineerUnitPrice == "" ? "0" : string_filter($row->EngineerUnitPrice, ","),
+							"Product_Idn" => string_filter($row->ID, ","),
+							"MaterialUnitPrice" => $row->Material == "" ? "0" : string_filter($row->Material, ","),
+							"ShopUnitPrice" => $row->Shop == "" ? "0" : string_filter($row->Shop, ","),
+							"FieldUnitPrice" => $row->Field == "" ? "0" : string_filter($row->Field, ","),
+							"EngineerUnitPrice" => $row->Engineer == "" ? "0" : string_filter($row->Engineer, ","),
 							"Name" => $row->Name,
 							"FECI_Id" => $row->FECI_Id,
 							"ManufacturerPart_Id" => $row->ManufacturerPart_Id,
-							"ShoppableFlag" => $row->ShoppableFlag == "Yes" || $row->ShoppableFlag == 1 ? 1 : 0,
+							"RFP" => $row->RFP == "Yes" || $row->RFP == 1 ? 1 : 0,
 							);
 
 						//insert row
@@ -104,39 +104,36 @@ class Product_Update_Tool extends CI_Controller {
 	{
 		$results = array(
 			"data" => array()
-			);
-		$sql = "";
+		);
 
-		$sql = "SELECT s.Product_Idn,
-					d.Description AS Department,
-					w.Name AS Worksheet,
-					c.Name AS Category,
-					s.Name,
-					p.Name as CurrentName,
-					s.MaterialUnitPrice,
-					p.MaterialUnitPrice AS CurrentMaterialUnitPrice,
-					s.FieldUnitPrice,
-					p.FieldUnitPrice AS CurrentFieldUnitPrice,
-					s.ShopUnitPrice,
-					p.ShopUnitPrice AS CurrentShopUnitPrice,
-					s.EngineerUnitPrice,
-					p.EngineerUnitPrice AS CurrentEngineerUnitPrice,
-					pt.Name AS PipeType,
-					st.Name AS ScheduleType,
-					p.FECI_Id AS CurrentFECI_Id,
-					s.FECI_Id,
-					p.ManufacturerPart_Id AS CurrentManufacturerPart_Id,
-					s.ManufacturerPart_Id,
-					p.ShoppableFlag AS CurrentShoppableFlag,
-					s.ShoppableFlag
-				FROM ProductsStaging2 AS s
-				LEFT JOIN Products AS p ON (p.Product_Idn = s.Product_Idn)
-				LEFT JOIN jpr_Department AS d ON (p.Department_Idn = d.DepartmentId)
-				LEFT JOIN WorksheetMasters AS w ON (p.WorksheetMaster_Idn = w.WorksheetMaster_Idn)
-				LEFT JOIN WorksheetCategories AS c ON (p.WorksheetCategory_Idn = c.WorksheetCategory_Idn)
-				LEFT JOIN PipeTypes AS pt ON (p.PipeType_Idn = pt.PipeType_Idn)
-				LEFT JOIN ScheduleTypes AS st ON (p.ScheduleType_Idn = st.ScheduleType_Idn)";
-		$query = $this->db->query($sql);
+		$this->db
+			->select("s.Product_Idn,
+				d.Description AS Department,
+				w.Name AS Worksheet,
+				c.Name AS Category,
+				s.Name,
+				p.Name as CurrentName,
+				s.MaterialUnitPrice,
+				p.MaterialUnitPrice AS CurrentMaterialUnitPrice,
+				s.FieldUnitPrice,
+				p.FieldUnitPrice AS CurrentFieldUnitPrice,
+				s.ShopUnitPrice,
+				p.ShopUnitPrice AS CurrentShopUnitPrice,
+				s.EngineerUnitPrice,
+				p.EngineerUnitPrice AS CurrentEngineerUnitPrice,
+				p.FECI_Id AS CurrentFECI_Id,
+				s.FECI_Id,
+				p.ManufacturerPart_Id AS CurrentManufacturerPart_Id,
+				s.ManufacturerPart_Id,
+				p.RFP AS CurrentRFP,
+				s.RFP")
+			->from("ProductsStaging2 AS s")
+			->join("Products AS p", "p.Product_Idn = s.Product_Idn", "left")
+			->join("jpr_Department AS d", "p.Department_Idn = d.DepartmentId", "left")
+			->join("WorksheetMasters AS w", "p.WorksheetMaster_Idn = w.WorksheetMaster_Idn", "left")
+			->join("WorksheetCategories AS c", "p.WorksheetCategory_Idn = c.WorksheetCategory_Idn", "left");
+
+		$query = $this->db->get();
 
 		if ($query == false)
         {
@@ -184,8 +181,8 @@ class Product_Update_Tool extends CI_Controller {
 					s.FECI_Id,
 					p.ManufacturerPart_Id AS original_ManufacturerPart_Id,
 					s.ManufacturerPart_Id,
-					p.ShoppableFlag AS original_ShoppableFlag,
-					s.ShoppableFlag
+					p.RFP AS original_RFP,
+					s.RFP
 				FROM ProductsStaging2 AS s
 				LEFT JOIN Products AS p ON (p.Product_Idn = s.Product_Idn)
 				WHERE p.MaterialUnitPrice <> s.MaterialUnitPrice
@@ -194,11 +191,8 @@ class Product_Update_Tool extends CI_Controller {
 					OR p.EngineerUnitPrice <> s.EngineerUnitPrice
 					OR p.Name <> s.Name
 					OR p.FECI_Id <> s.FECI_Id
-					OR (p.FECI_Id IS NULL AND s.FECI_Id IS NOT NULL)
 					OR p.ManufacturerPart_Id <> s.ManufacturerPart_Id
-					OR (p.ManufacturerPart_Id IS NULL AND s.ManufacturerPart_Id IS NOT NULL)
-					OR p.ShoppableFlag <> s.ShoppableFlag
-					OR (p.ShoppableFlag IS NULL AND s.ShoppableFlag IS NOT NULL)";
+					OR p.RFP <> s.RFP";
 		$query = $this->db->query($sql);
 
 		if ($query == false)
@@ -238,16 +232,20 @@ class Product_Update_Tool extends CI_Controller {
 					{
 						$sql_set_array[] = "Name = '{$row['Name']}'";
 					}
+
 					if ($row['FECI_Id'] != $row['original_FECI_Id'])
 					{
 						$sql_set_array[] = "FECI_Id = '{$row['FECI_Id']}'";
 					}
+
 					if ($row['ManufacturerPart_Id'] != $row['original_ManufacturerPart_Id'])
 					{
 						$sql_set_array[] = "ManufacturerPart_Id = '{$row['ManufacturerPart_Id']}'";
 					}
+
+					if ($row['RFP'] != $row['original_RFP'])
 					{
-						$sql_set_array[] = "ShoppableFlag = {$row['ShoppableFlag']}";
+						$sql_set_array[] = "RFP = {$row['RFP']}";
 					}
 
 					$sql_set = implode(",", $sql_set_array);

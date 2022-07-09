@@ -12,9 +12,7 @@
         { "data": "Department" },
         { "data": "Worksheet" },
         { "data": "Category" },
-        { "data": "PipeType" },
-        { "data": "ScheduleType" },
-        { "data": "ShoppableFlag" }
+        { "data": "RFP" }
     ];
 
     init();
@@ -27,10 +25,13 @@
     function initDataTable() {
         //Initialize dataTable for product staging data
         $("#data").DataTable({
-            "sPaginationType": "full_numbers",
-            "pageLength": 25,
-            "ajax": FECI.base_url + "product_update_tool/get_product_staging",
-            "columns": columns,
+            ajax: FECI.base_url + "product_update_tool/get_product_staging",
+            // dom: "Bfrtip",
+            columns: columns,
+            sPaginationType: "full_numbers",
+            pageLength: 25,
+            deferRender: true,
+            stateSAve: true,
             "rowCallback": function (row, data) {
                 if (data.Name !== data.CurrentName) {
                     $("td:eq(1)", row).addClass("em");
@@ -58,7 +59,7 @@
                 if (parseFloat(data.EngineerUnitPrice) !== parseFloat(data.CurrentEngineerUnitPrice)) {
                     $("td:eq(7)", row).addClass("em");
                 }
-                if (parseFloat(data.ShoppableFlag) !== parseFloat(data.CurrentShoppableFlag)) {
+                if (parseFloat(data.RFP) !== parseFloat(data.CurrentRFP)) {
                     $("td:eq(13)", row).addClass("em");
                 }
             }
@@ -181,24 +182,24 @@
     function validate_data(results) {
         var errorFields = [];
 
-        if ($.inArray("Product_Idn", results.meta.fields) === -1) {
-            errorFields.push("Product_Idn");
+        if ($.inArray("ID", results.meta.fields) === -1) {
+            errorFields.push("ID");
         }
 
-        if ($.inArray("MaterialUnitPrice", results.meta.fields) === -1) {
-            errorFields.push("MaterialUnitPrice");
+        if ($.inArray("Material", results.meta.fields) === -1) {
+            errorFields.push("Material");
         }
 
-        if ($.inArray("FieldUnitPrice", results.meta.fields) === -1) {
-            errorFields.push("FieldUnitPrice");
+        if ($.inArray("Field", results.meta.fields) === -1) {
+            errorFields.push("Field");
         }
 
-        if ($.inArray("ShopUnitPrice", results.meta.fields) === -1) {
-            errorFields.push("ShopUnitPrice");
+        if ($.inArray("Shop", results.meta.fields) === -1) {
+            errorFields.push("Shop");
         }
 
-        if ($.inArray("EngineerUnitPrice", results.meta.fields) === -1) {
-            errorFields.push("EngineerUnitPrice");
+        if ($.inArray("Engineer", results.meta.fields) === -1) {
+            errorFields.push("Engineer");
         }
 
         if (errorFields.length > 0) {

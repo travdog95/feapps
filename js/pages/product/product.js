@@ -19,9 +19,12 @@ $(function() {
       ajax: {
         url: FECI.base_url + "product/get_products",
         data: {
-          department_idn: FECI.user.department_idn
+          department_idn: FECI.user.department_idn,
+          active_only: 0,
         }
       },
+      dom: "Bfrtip",
+      buttons: ['csv'],
       fixedColumns: true,
       columns: [
         {
@@ -47,7 +50,11 @@ $(function() {
         { data: "MaterialUnitPrice"},
         { data: "FieldUnitPrice" },
         { data: "ShopUnitPrice" },
-        { data: "EngineerUnitPrice" },
+        { data: "ActiveFlag"},
+        { data: "FECI_Id", visible: false },
+        { data: "ManufacturerPart_Id", visible: false },
+        { data: "EngineerUnitPrice", visible: false },
+        { data: "RFP", visible: false },
       ],
       order: [[2, "asc"]], //default to order by Worksheet Master
       stateSave: true,
@@ -69,7 +76,10 @@ $(function() {
         });
         buttonContainer.appendChild(button);
 
-        $("div.dataTables_length").append(buttonContainer);
+        // $("div.dataTables_length").append(buttonContainer);
+        $('.dt-buttons button').removeClass();
+        $('.dt-buttons button').addClass("btn btn-primary");
+        $('.dt-buttons').append(buttonContainer);
       }
       // responsive: true
     });

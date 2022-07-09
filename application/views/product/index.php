@@ -1,12 +1,21 @@
 <?php $this->load->view('inc/header'); ?>
 
 <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>lib/DataTables-1.10.15/css/dataTables.bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" />
 <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/pages/job/search.css" />
 <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/pages/product/product.css" />
 
 <script src="<?php echo base_url(); ?>lib/DataTables-1.10.15/js/jquery.dataTables.min.js" defer></script>
+<!-- <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" defer></script> -->
+
 <script src="<?php echo base_url(); ?>lib/DataTables-1.10.15/js/dataTables.bootstrap.min.js" defer></script>
+
 <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js" defer></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" defer></script>
+
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js" defer></script>
+
 <script src="<?php echo base_url(); ?>js/pages/product/product.js" defer></script>
 
 </head>
@@ -46,7 +55,7 @@ $this->load->view('inc/page_header', $page_header_data);
 				<th>Actions</th>
 				<th>ID</th>
 				<th>Department</th>
-				<th>Is Component</th>
+				<th>Assembly</th>
 				<th>Worksheet Master</th>
                 <th>Category</th>
 				<th>Name</th>
@@ -54,7 +63,11 @@ $this->load->view('inc/page_header', $page_header_data);
 				<th>Material</th>
 				<th>Field</th>
 				<th>Shop</th>
+				<th>Active</th>
+				<th>FECI_Id</th>
+				<th>ManufacturerPart_Id</th>
 				<th>Engineer</th>
+				<th>RFP</th>
 			</tr>
 	    </thead>
 		<tfoot>
@@ -62,7 +75,7 @@ $this->load->view('inc/page_header', $page_header_data);
 				<th></th>
 				<th class="searchable">ID</th>
 				<th class="searchable">Department</th>
-				<th class="searchable">Is Component</th>
+				<th class="searchable">Assembly</th>
 				<th class="searchable">Worksheet Master</th>
                 <th class="searchable">Category</th>
 				<th class="searchable">Name</th>
@@ -70,7 +83,11 @@ $this->load->view('inc/page_header', $page_header_data);
 				<th>Material</th>
 				<th>Field</th>
 				<th>Shop</th>
+				<th class="searchable">Active</th>
+				<th>FECI_Id</th>
+				<th>ManufacturerPart_Id</th>
 				<th>Engineer</th>
+				<th>RFP</th>
             </tr>
 		</tfoot>
 	    </table>
