@@ -143,7 +143,7 @@
     </div>
   </div>
   <div class="form-group form-group-sm form-checkbox">
-    <label for="RFP" class="col-sm-4 control-label">Shoppable?</label>
+    <label for="RFP" class="col-sm-4 control-label">RFP?</label>
     <div class="col-sm-8">
       <div class="checkbox">
         <label>

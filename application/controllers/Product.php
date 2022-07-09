@@ -128,15 +128,15 @@ class Product extends CI_Controller {
 		$this->load->view('product/detail', $data);
 	}
 
-	public function component($product_idn)
+	public function assembly($product_idn)
 	{
 		//Decare and initialize variables
 		$data = array(
 			'menus' => array(),
-			'active_page' => 'Product Component',
+			'active_page' => 'Product Assembly',
 			'bread_crumbs' => array(
 				array(
-					'name' => 'Product Component',
+					'name' => 'Product Assembly',
 					'link' => ''
 				)
 			),
@@ -171,7 +171,7 @@ class Product extends CI_Controller {
 			// $data['sub_header'] = "ID: ".$product_idn." - ".$data['product']['Name'];
 			
 			//Load job search view
-			$this->load->view('product/component', $data);
+			$this->load->view('product/assembly', $data);
 		}
 	}
 

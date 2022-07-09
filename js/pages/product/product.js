@@ -34,7 +34,7 @@ $(function() {
             `
               <button type="button" class="btn btn-default btn-xs edit-product" title="Edit Product"><span class="glyphicon glyphicon-pencil glyphicon-xs" aria-hidden="true"></span></button>
               <button type="button" class="btn btn-default btn-xs copy-product" title="Copy Product"><span class="glyphicon glyphicon-copy glyphicon-xs" aria-hidden="true"></span></button>
-              <button type="button" class="btn btn-default btn-xs build-component" title="Build Component"><span class="glyphicon glyphicon-tasks glyphicon-xs" aria-hidden="true"></span></button>
+              <button type="button" class="btn btn-default btn-xs build-assembly" title="Build Assembly"><span class="glyphicon glyphicon-tasks glyphicon-xs" aria-hidden="true"></span></button>
             `,
           orderable: false,
           searchable: false,
@@ -164,11 +164,11 @@ $(function() {
       e.preventDefault();
     });
 
-    table.on("click", "button.build-component", function(e) {
+    table.on("click", "button.build-assembly", function(e) {
       const $row = $(this).parents("tr");
       const productIdn = $row.data("product-idn");
       
-      window.location = `${FECI.base_url}product/component/${productIdn}`;
+      window.location = `${FECI.base_url}product/assembly/${productIdn}`;
 
       e.preventDefault();
     });
