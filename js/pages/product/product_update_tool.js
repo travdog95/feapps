@@ -1,20 +1,5 @@
 ﻿var product_update_tool = (function () {
 
-    var columns = [
-        { "data": "Product_Idn" },
-        { "data": "Name" },
-        { "data": "FECI_Id" },
-        { "data": "ManufacturerPart_Id" },
-        { "data": "MaterialUnitPrice" },
-        { "data": "FieldUnitPrice" },
-        { "data": "ShopUnitPrice" },
-        { "data": "EngineerUnitPrice" },
-        { "data": "Department" },
-        { "data": "Worksheet" },
-        { "data": "Category" },
-        { "data": "RFP" }
-    ];
-
     init();
 
     function init() {
@@ -23,48 +8,54 @@
     }
 
     function initDataTable() {
-        //Initialize dataTable for product staging data
-        $("#data").DataTable({
-            ajax: FECI.base_url + "product_update_tool/get_product_staging",
-            // dom: "Bfrtip",
-            columns: columns,
-            sPaginationType: "full_numbers",
+        $('#data').DataTable({
+            processing: true,
+            serverSide: true,
+            // ajax:  {
+            //     url: FECI.base_url + "DataTable_SSP",
+            //     type: "POST",
+            // },
+            ajax:  {
+                url: `${FECI.base_url}product_update_tool/get_product_staging`,
+                type: "POST"
+            },
+            stateSave: true,
             pageLength: 25,
-            deferRender: true,
-            stateSAve: true,
-            "rowCallback": function (row, data) {
-                if (data.Name !== data.CurrentName) {
+            rowCallback: function (row, data) {
+                //Product Name
+                if (data[1] !== data[12]) {
                     $("td:eq(1)", row).addClass("em");
                 }
-
-                if (data.FECI_Id !== data.CurrentFECI_Id) {
+                //Material Unit Price
+                if (parseFloat(data[2]) !== parseFloat(data[13])) {
                     $("td:eq(2)", row).addClass("em");
                 }
-                if (data.ManufacturerPart_Id !== data.CurrentManufacturerPart_Id) {
+                //Field Unit Price
+                if (parseFloat(data[3]) !== parseFloat(data[14])) {
                     $("td:eq(3)", row).addClass("em");
                 }
-
-                if (parseFloat(data.MaterialUnitPrice) !== parseFloat(data.CurrentMaterialUnitPrice)) {
+                //Shop Unit Price
+                if (parseFloat(data[4]) !== parseFloat(data[15])) {
                     $("td:eq(4)", row).addClass("em");
                 }
-
-                if (parseFloat(data.FieldUnitPrice) !== parseFloat(data.CurrentFieldUnitPrice)) {
+                //Design/Engineer Unit Price
+                if (parseFloat(data[5]) !== parseFloat(data[16])) {
                     $("td:eq(5)", row).addClass("em");
                 }
-
-                if (parseFloat(data.ShopUnitPrice) !== parseFloat(data.CurrentShopUnitPrice)) {
+                //FECI ID
+                if (data[6] !== data[17]) {
                     $("td:eq(6)", row).addClass("em");
                 }
-
-                if (parseFloat(data.EngineerUnitPrice) !== parseFloat(data.CurrentEngineerUnitPrice)) {
+                //Manufacturer Part ID
+                if (data[7] !== data[18]) {
                     $("td:eq(7)", row).addClass("em");
                 }
-                if (parseFloat(data.RFP) !== parseFloat(data.CurrentRFP)) {
-                    $("td:eq(13)", row).addClass("em");
+                //RFP
+                if (parseFloat(data[8]) !== parseFloat(data[19])) {
+                    $("td:eq(8)", row).addClass("em");
                 }
             }
-        });
-
+        });       
     }
 
     function handlers() {

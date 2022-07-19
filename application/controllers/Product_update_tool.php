@@ -13,6 +13,9 @@ class Product_Update_Tool extends CI_Controller {
 		//Load reference table model
 		$this->load->model('m_reference_table');
 		$this->load->model('m_menu');
+
+		require_once APPPATH . 'third_party/ssp.class.php';
+
 	}
 
     /**
@@ -80,7 +83,7 @@ class Product_Update_Tool extends CI_Controller {
 							"FECI_Id" => $row->FECI_Id,
 							"ManufacturerPart_Id" => $row->ManufacturerPart_Id,
 							"RFP" => $row->RFP == "Yes" || $row->RFP == 1 ? 1 : 0,
-							);
+						);
 
 						//insert row
 						if ($this->m_reference_table->insert("ProductsStaging2", $product))
@@ -103,35 +106,175 @@ class Product_Update_Tool extends CI_Controller {
 	function get_product_staging()
 	{
 		$results = array(
-			"data" => array()
+			"data" 				=> array(),
+			"recordsTotal" 		=> 0,
+			"recordsFiltered" 	=> 0,
+			"draw" 				=> 0,
+			"request"			=> $this->input->post(),
 		);
+		$row_values = array();
 
+		$post = $this->input->post();
+
+		$columns = array(
+            array(
+                "db" => "s.Product_Idn",
+                "dt" => 0,
+				"searchable" => true
+            ),
+            array(
+                "db" => "s.Name",
+                "dt" => 1,
+				"searchable" => true
+            ),
+            array(
+                "db" => "s.MaterialUnitPrice",
+                "dt" => 2,
+            ),
+            array(
+                "db" => "s.FieldUnitPrice",
+                "dt" => 3,
+            ),
+            array(
+                "db" => "s.ShopUnitPrice",
+                "dt" => 4,
+            ),
+            array(
+                "db" => "s.EngineerUnitPrice",
+                "dt" => 5,
+            ),
+            array(
+                "db" => "s.FECI_Id",
+                "dt" => 6,
+				"searchable" => true
+            ),
+            array(
+                "db" => "s.ManufacturerPart_Id",
+                "dt" => 7,
+				"searchable" => true
+            ),
+            array(
+                "db" => "s.RFP",
+                "dt" => 8,
+				"searchable" => true
+            ),
+            array(
+                "db" => "w.Name",
+                "dt" => 9,
+				"searchable" => true
+            ),
+            array(
+                "db" => "c.Name",
+                "dt" => 10,
+				"searchable" => true
+            ),
+            array(
+                "db" => "d.Description",
+                "dt" => 11,
+				"searchable" => true
+            ),
+        );
+
+		$select = "
+			s.Product_Idn,
+			s.Name,
+			s.MaterialUnitPrice,
+			s.FieldUnitPrice,
+			s.ShopUnitPrice,
+			s.EngineerUnitPrice,
+			s.FECI_Id,
+			s.ManufacturerPart_Id,
+			s.RFP,
+			w.Name AS Worksheet,
+			c.Name AS Category,
+			d.Description AS Department,
+			p.Name as CurrentName,
+			p.MaterialUnitPrice AS CurrentMaterialUnitPrice,
+			p.FieldUnitPrice AS CurrentFieldUnitPrice,
+			p.ShopUnitPrice AS CurrentShopUnitPrice,
+			p.EngineerUnitPrice AS CurrentEngineerUnitPrice,
+			p.FECI_Id AS CurrentFECI_Id,
+			p.ManufacturerPart_Id AS CurrentManufacturerPart_Id,
+			p.RFP AS CurrentRFP";
+		$from = "ProductsStaging2 AS s";
+		$joins = array( 
+			array("Products AS p", "p.Product_Idn = s.Product_Idn", "left"),
+			array("jpr_Department AS d", "p.Department_Idn = d.DepartmentId", "left"),
+			array("WorksheetMasters AS w", "p.WorksheetMaster_Idn = w.WorksheetMaster_Idn", "left"),
+			array("WorksheetCategories AS c", "p.WorksheetCategory_Idn = c.WorksheetCategory_Idn", "left"),
+		);
+		$order_by = SSP::order($post, $columns);
+
+		$dtColumns = SSP::pluck( $columns, 'dt' );
+
+		//Get all records
 		$this->db
-			->select("s.Product_Idn,
-				d.Description AS Department,
-				w.Name AS Worksheet,
-				c.Name AS Category,
-				s.Name,
-				p.Name as CurrentName,
-				s.MaterialUnitPrice,
-				p.MaterialUnitPrice AS CurrentMaterialUnitPrice,
-				s.FieldUnitPrice,
-				p.FieldUnitPrice AS CurrentFieldUnitPrice,
-				s.ShopUnitPrice,
-				p.ShopUnitPrice AS CurrentShopUnitPrice,
-				s.EngineerUnitPrice,
-				p.EngineerUnitPrice AS CurrentEngineerUnitPrice,
-				p.FECI_Id AS CurrentFECI_Id,
-				s.FECI_Id,
-				p.ManufacturerPart_Id AS CurrentManufacturerPart_Id,
-				s.ManufacturerPart_Id,
-				p.RFP AS CurrentRFP,
-				s.RFP")
-			->from("ProductsStaging2 AS s")
-			->join("Products AS p", "p.Product_Idn = s.Product_Idn", "left")
-			->join("jpr_Department AS d", "p.Department_Idn = d.DepartmentId", "left")
-			->join("WorksheetMasters AS w", "p.WorksheetMaster_Idn = w.WorksheetMaster_Idn", "left")
-			->join("WorksheetCategories AS c", "p.WorksheetCategory_Idn = c.WorksheetCategory_Idn", "left");
+			->select($select)
+			->from($from)
+			->order_by($order_by);
+
+		foreach ($joins as $join) 
+		{
+			$this->db->join($join[0], $join[1], $join[2]);
+		}
+
+		if (isset($post['search']) && $post['search']['value'] != '') 
+		{
+			$str = $post['search']['value'];
+
+			for ( $i=0, $ien=count($post['columns']) ; $i<$ien ; $i++ ) {
+				$requestColumn = $post['columns'][$i];
+				$columnIdx = array_search( $requestColumn['data'], $dtColumns );
+				$column = $columns[ $columnIdx ];
+
+				if ( isset($column['searchable']) && $column['searchable'] == 'true' ) {
+					$this->db->or_like($column['db'], $str);
+				}
+			}
+		}
+
+		$queryAllRows = $this->db->get();
+
+		if ($queryAllRows == false)
+        {
+            write_feci_log(array("Message" => "SQL Error ".$this->db->last_query(), "Script" => __METHOD__));
+        }
+        else
+        {
+			$results['recordsTotal'] = $queryAllRows->num_rows();
+			$results['recordsFiltered'] = $queryAllRows->num_rows();
+		}
+
+		//Get records to display
+		$this->db
+			->select($select)
+			->from($from)
+			->order_by($order_by);
+
+		foreach ($joins as $join) 
+		{
+			$this->db->join($join[0], $join[1], $join[2]);
+		}
+
+		if (isset($post['search']) && $post['search']['value'] != '') 
+		{
+			$str = $post['search']['value'];
+
+			for ( $i=0, $ien=count($post['columns']) ; $i<$ien ; $i++ ) {
+				$requestColumn = $post['columns'][$i];
+				$columnIdx = array_search( $requestColumn['data'], $dtColumns );
+				$column = $columns[ $columnIdx ];
+
+				if ( isset($column['searchable']) && $column['searchable'] == 'true' ) {
+					$this->db->or_like($column['db'], $str);
+				}
+			}
+		}
+
+		if (isset($post['start']) && $post['length'] != -1) 
+		{
+			$this->db->limit(intval($post['length']), intval($post['start']));
+		}
 
 		$query = $this->db->get();
 
@@ -143,9 +286,17 @@ class Product_Update_Tool extends CI_Controller {
         {
             if ($query->num_rows() > 0)
             {
-                foreach ($query->result_array() as $row)
+				$results['draw'] = isset ( $post['draw'] ) ?
+					intval( $post['draw'] + 1 ) :
+					0;
+				foreach ($query->result_array() as $row)
                 {
-                    $results['data'][] = $row;
+					$rowValues = array();
+					foreach($row as $field => $value)
+					{
+						$rowValues[] = $value;
+					}
+                    $results['data'][] = $rowValues;
                 }
             }
 		}
