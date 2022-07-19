@@ -74,7 +74,11 @@
 
         //Update products handlers
         $("#ConfirmUpdateProducts").on("click", function (e) {
-            $("#UpdateProductsConfirmation").modal("show");
+            if ($("#data tbody tr").length > 1) {
+                $("#UpdateProductsConfirmation").modal("show");
+            } else {
+                displayMessageBox("First, you need to upload a file!", "warning");
+            }
         });
 
         $("#UpdateProducts").on("click", (e) => update_products());
@@ -219,7 +223,8 @@
     }
 
     function update_product_table() {
-        console.log("updating...");
+        // console.log("updating...");
+
         //Message
         $(".modal-message").html("Updating products...");
 
@@ -231,7 +236,7 @@
     }
 
     function finish_up(response, textStatus, jqXHR) {
-        console.log(response);
+        // console.log(response);
 
         //Enable buttons
         $("#UpdateProductsConfirmation button").prop("disabled", false);
@@ -239,7 +244,10 @@
         var s = (response.updates == 1) ? "" : "s";
 
         //Update message
-        $(".modal-message").html(response.updates + " product" + s + " updated!");
+        // $(".modal-message").html(response.updates + " product" + s + " updated!");
+        $("#UpdateProductsConfirmation").modal("hide");
+        displayMessageBox(response.updates + " product" + s + " updated!", "success");
+
     }
 
     function delete_staging_records() {
@@ -265,7 +273,11 @@
                 $("#data").DataTable().destroy();
                 initDataTable();
 
-                $(".modal-message").html("Staging products deleted.");
+                // $(".modal-message").html("Staging products deleted.");
+                $("#DeleteStagingRecordsDialog").modal("hide");
+                displayMessageBox("Staging products deleted.", "success");
+
+
             } else {
                 $(".modal-message").html("Error deleting products.");
             }
