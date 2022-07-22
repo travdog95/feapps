@@ -14,3 +14,13 @@ td.jobs-details-control {
 tr.shown td.jobs-details-control {
     background: url('/assets/images/details_close.png') no-repeat center center;
 }
+
+.home-page-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.home-page-row div {
+    width: 50%;
+}
