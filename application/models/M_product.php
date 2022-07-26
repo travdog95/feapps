@@ -272,7 +272,7 @@ class M_product extends CI_Model {
         if (isset($product_idn) && $product_idn > 0)
         {
 
-            $products = $this->m_reference_table->get_where('Products', array('Product_Idn' => $product_idn));
+        $products = $this->m_reference_table->get_where('Products', array('Product_Idn' => $product_idn));
             
             if (!empty($products)) 
             {
@@ -437,13 +437,15 @@ class M_product extends CI_Model {
         $product_relations = array();
         $child = array();
 
-        $product_relations = $this->m_reference_table->get_where('ProductRelationships', array('Parent_Idn' => $product_idn));
+    $product_relations = $this->m_reference_table->get_where('ProductRelationships', array('Parent_Idn' => $product_idn));
 
         foreach($product_relations as $product_relationship)
         {
             //Get child product
             $child = $this->m_reference_table->get_where('Products', array('Product_Idn' => $product_relationship['Child_Idn']))[0];
 
+            $child['Quantity']=$product_relationship['Quantity'];
+            
             //Add metadata
             $metadata = $this->get_metadata($child);
 

@@ -2,18 +2,26 @@
 const $childComponentsTable = $("#childComponentsTable");
 const $searchResultsTable = $("#searchResultsTable");
 const $deleteChildrenButton = $("#deleteChildrenButton");
+const $saveChildrenButton = $("#saveChildrenButton");
 const $addChildrenButton = $("#addChildrenButton");
 const $searchButton = $("#searchButton");
 const $childRows = $(".child-row");
 const $childCheckboxes = $("[data-child-checkbox]");
 const $searchResultsRows = $(".search-results-row");
 const $searchResultsCheckboxes = $("[data-search-results-checkbox]");
+const $childQuantityInputs = $(".childQuantity");
 
 //Event handlers
 $deleteChildrenButton.on("click", e => {
     e.preventDefault();
 
     deleteChildren();
+});
+
+$saveChildrenButton.on("click", e => {
+    e.preventDefault();
+
+    saveChildren();
 });
 
 $addChildrenButton.on("click", e => {
@@ -28,9 +36,16 @@ $searchButton.on("click", e => {
     search();
 });
 
+$childQuantityInputs.each(function(index){
+    $(this).on("change", e => {
+        calculateParentPricing();
+    })
+});
+
 const registerChildRowClick = (row) => {
     const $row = $(row);
     $row.on("click", function () {
+        console.log(this)
         const $checkbox = $(this).find("input:checkbox");
         //toggle checkbox
         $checkbox.prop("checked", !$checkbox.prop("checked"));
@@ -40,7 +55,7 @@ const registerChildRowClick = (row) => {
 
 const registerChildCheckboxClick = (checkbox) => {
     const $checkbox = $(checkbox);
-    $checkbox.on("click", e => {
+    $checkbox.on("click", function () {
         //toggle checkbox
         $checkbox.prop("checked", !$checkbox.prop("checked"));
         handleButtonState("data-child-checkbox", "#deleteChildrenButton");
@@ -127,8 +142,10 @@ const addChildren = async () => {
                 $childComponentsTable.append(product.Html);
 
                 //Add row click handler
-                registerChildRowClick($(`[data-child-row="${product.Product_Idn}"]`));
+                //registerChildRowClick($(`[data-child-row="${product.Product_Idn}"]`));
             });
+
+            calculateParentPricing();
 
         } else {
             //Error
@@ -147,6 +164,7 @@ const addChildren = async () => {
         //Enable inputs
         handleButtonState("data-search-results-row", "#addChildrenButton");
     });
+
 };
 
 const deleteChildren = () => {
@@ -179,6 +197,8 @@ const deleteChildren = () => {
                 //Add row click handler
                 registerSearchResultsRowClick($(`[data-search-results-row="${product.Product_Idn}"]`));
             });
+            
+            calculateParentPricing();
 
         } else {
             //Error
@@ -199,6 +219,49 @@ const deleteChildren = () => {
     });
 };
 
+const saveChildren = async () => {
+    $saveChildrenButton.prop("disabled", true);
+    const form = document.getElementById("childComponentsForm")
+    const formData = $(form).serialize();
+
+    //AJAX request
+    FECI.request = $.ajax({
+        url: FECI.base_url + "product/save_children",
+        type: "POST",
+        dataType: "json",
+        data: formData
+    });
+
+    //Success callback handler
+    FECI.request.done(function(response, textStatus, jqXHR) {
+        // console.log(response);
+        if (response.return_code == 1) {
+            //Send update message
+            displayMessageBox("Child component quantity updated!", "success");
+
+        } else {
+            //Error
+            displayMessageBox("Error saving child component.", "danger");
+        }
+    });
+
+    //Failure callback handler
+    FECI.request.fail(function(jqXHR, textStatus, errorThrown) {
+        //Log the error message
+        displayMessageBox("Error saving child component.", "danger");
+    });
+
+    //Always callback handler
+    FECI.request.always(function() {
+        //Enable inputs
+    $saveChildrenButton.prop("disabled", false);
+    });
+};
+
 const search = async () => {
     console.log("Search button clicked");
+}
+
+const calculateParentPricing = () => {
+    console.log("Calculate");
 }

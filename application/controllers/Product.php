@@ -301,8 +301,42 @@ class Product extends CI_Controller {
 				else
 				{
 					$child = $this->m_product->get_product($child_idn, false, false);
+					$child['Quantity'] = 1;
 					$html = $this->load->view("product/product_child_row", array("child" => $child), true);
 					$save_results['added'][] = array("Product_Idn" => $child_idn, "Html" => $html);
+				}
+			}
+
+			$save_results['return_code'] = ($hasErrors) ? -1 : 1;
+		}
+
+		echo json_encode($save_results);
+	}
+
+	public function save_children() 
+	{
+		$save_results = array(
+			"return_code" => 0,
+			"echo" => array(),
+			"updated" => array(),
+		);
+		$set = array();
+		$update = array();
+		$hasErrors = false;
+		$html = "";
+
+		$post = $this->input->post();
+		
+		if ($post)
+		{
+			//$update['Quantity'] = $post['Quantity'];
+			for($i = 0; $i < sizeof($post['Child_Idn']); $i++)
+			{
+				$update['Child_Idn'] = $post['Child_Idn'][$i];
+				$set['Quantity'] = $post['Quantity'][$i] == "" ? 0 : $post['Quantity'][$i];
+				if (!$this->m_reference_table->update("ProductRelationships", $set, $update))
+				{
+					$hasErrors = true;
 				}
 			}
 

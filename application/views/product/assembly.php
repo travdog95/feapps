@@ -44,7 +44,7 @@
 				</tbody>
 			</table>
 			<div><h4>Child Components</h4></div>
-			<form id="childComponentsForm">
+			<form id="childComponentsForm" name="childComponentsForm" action="/controllers/product.php" method="post">
 			<input type="hidden" name="Parent_Idn" value="<?php echo $product['Product_Idn']; ?>" />
 			<table id="childComponentsTable" class="table table-striped table-condensed table-bordered custom-table table-centered">
 				<thead>
@@ -52,6 +52,7 @@
 						<th></th>
 						<th>ID</th>
 						<th>Name</th>
+						<th>Quantity</th>
 						<th>Department</th>
 						<th>Worksheet Master</th>
 						<th>Category</th>
@@ -73,6 +74,7 @@
 			</form>
 			<div class="button-container">
 				<button id="deleteChildrenButton" class="btn btn-primary" disabled>Delete Child</button>
+				<button id="saveChildrenButton" class="btn btn-primary">Save</button>
 			</div>
 			<form class="form-inline search-container">
 				<div class="form-group">
