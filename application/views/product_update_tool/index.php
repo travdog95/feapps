@@ -2,7 +2,7 @@
 <?php $this->load->view('inc/header'); ?>
 
 <link rel="stylesheet" href="<?php echo base_url(); ?>lib/DataTables-1.10.15/css/dataTables.bootstrap.min.css">
-
+<link rel="stylesheet" href="<?php echo base_url(); ?>css/pages/product/product_update_tool.css">
 
 </head>
 <body>
@@ -34,13 +34,14 @@
             
             <!-- start: PAGE CONTENT -->
             <div class="row">
-			    <div class="col-md-12">
+			    <div class="col-md-12 file-upload-container">
 					<input type="file" name="fileUpload" id="fileUpload" class="btn btn-default btn-primary" size="50" />
 					<input name="upload" id="upload" type="button" value="Upload" class="btn btn-default btn-primary" />
 				</div>
 				<?php
-				$column_headers = array('ID', 'Product Name', 'FECI ID', 'Manufacturer Part ID', 'Material','Field','Shop','Design','Department','Worksheet','Category','RFP');
-				$num_rows_staging = 0;
+				$column_headers = array('ID', 'Product Name','Material','Field','Shop','Design','FECI ID', 'Manufacturer Part ID',"RFP","Worksheet","Category","Department");
+                // $column_headers = array('ID', 'Product Name', 'FECI ID', 'Manufacturer Part ID', 'RFP', 'Department');
+                $num_rows_staging = 0;
 				?>
                 <div class="col-md-12">
                     <table id="data" class="table table-hover table-condensed table-striped">
@@ -59,11 +60,11 @@
                     </table>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-12 button-container">
                     <input type="button" class="btn btn-default btn-primary" id="ConfirmUpdateProducts" name="ConfirmUpdateProducts" value="Update Products" title="Update Products" />
                     <input type="button" class="btn btn-default btn-primary" id="ConfirmDeleteStagingRecords" name="ConfirmDeleteStagingRecords" value="Delete Staging Products" title="Delete Staging Records" />
                     <input type="button" class="btn btn-default btn-primary" id="UpdatePriceDateTime" name="UpdatePriceDateTime" value="Update System Price Date & Time" title="Update System Price Date & Time" />
-                    <span id="SystemPriceUpdateDateTime"><?php echo $price_updatedatetime; ?></span>
+                    <span id="SystemPriceUpdateDateTime" class="date-label"><?php echo $price_updatedatetime; ?></span>
                 </div>
 			</div>
             <!-- end: PAGE CONTENT-->

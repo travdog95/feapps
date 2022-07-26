@@ -51,7 +51,6 @@
 					<?php $folders_data = array("title" => "Shared Folders", "table_id" => "SharedFoldersTable"); ?>
 					<?php $this->load->view('widgets/folders', $folders_data); ?>
                 </div>
-
 			</div>
             <!-- end: PAGE CONTENT-->
         </div>
