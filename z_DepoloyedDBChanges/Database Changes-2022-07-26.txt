@@ -1,0 +1,2 @@
+ALTER TABLE ProductRelationships
+ADD Quantity NUMERIC(13,1)
