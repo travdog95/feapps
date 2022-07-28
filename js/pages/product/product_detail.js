@@ -60,7 +60,7 @@ $requredElements.each(function() {
 $buildComponentButton.on("click", function() {
     const productIdn = $(this).data("product-idn");
     
-    window.location = `${FECI.base_url}product/component/${productIdn}`;
+    window.location = `${FECI.base_url}product/assembly/${productIdn}`;
 });
 
 

@@ -194,7 +194,7 @@ class M_reference_table extends CI_Model {
     {
         //Delcare and initialize variables
         $query = false;
-        $data = array();
+        $data = "";
         
         if (!empty($where) && !empty($table_name) && !empty($field))
         {

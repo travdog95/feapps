@@ -1,11 +1,11 @@
 <tr class="child-row" data-child-row="<?php echo $child['Product_Idn']; ?>">
     <td class="text-center">
-        <input type="checkbox" name="deleteChild_Idn" data-child-checkbox value="<?php echo $child['Product_Idn']; ?>" />
+        <input type="checkbox" name="deleteChild_Idn[]" data-child-checkbox="<?php echo $child['Product_Idn']; ?>" value="<?php echo $child['Product_Idn']; ?>" />
         <input type="hidden" name="Child_Idn[]" value="<?php echo $child['Product_Idn']; ?>" />
     </td>
     <td><?php echo $child['Product_Idn']; ?></td>
     <td><?php echo $child['Name']; ?></td>
-    <td><input type='text' class='check_num1 input-xs form-control childQuantity' name='Quantity[]' value='<?php echo $child['Quantity']; ?>'/></td>
+    <td><input type='text' class='check_num1 input-xs form-control childQuantity' name='Quantity[]' value='<?php echo number_format($child['Quantity'],1); ?>'/></td>
     <td><?php echo $child['Department']; ?></td>
     <td><?php echo $child['WorksheetMaster']; ?></td>
     <td><?php echo $child['WorksheetCategory']; ?></td>

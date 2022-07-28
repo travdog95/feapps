@@ -5,6 +5,8 @@ const $deleteChildrenButton = $("#deleteChildrenButton");
 const $saveChildrenButton = $("#saveChildrenButton");
 const $addChildrenButton = $("#addChildrenButton");
 const $searchButton = $("#searchButton");
+const $searchInput = $("#searchInput");
+const $searchResultsMessage = $("#searchResultsMessage");
 const $childRows = $(".child-row");
 const $childCheckboxes = $("[data-child-checkbox]");
 const $searchResultsRows = $(".search-results-row");
@@ -32,8 +34,9 @@ $addChildrenButton.on("click", e => {
 
 $searchButton.on("click", e => {
     e.preventDefault();
-
-    search();
+    if ($searchInput.val() !== "") {
+        search();
+    }
 });
 
 $childQuantityInputs.each(function(index){
@@ -44,12 +47,14 @@ $childQuantityInputs.each(function(index){
 
 const registerChildRowClick = (row) => {
     const $row = $(row);
-    $row.on("click", function () {
-        console.log(this)
-        const $checkbox = $(this).find("input:checkbox");
-        //toggle checkbox
-        $checkbox.prop("checked", !$checkbox.prop("checked"));
-        handleButtonState("data-child-checkbox", "#deleteChildrenButton");
+    $row.on("click", function (e) {
+        //Ignore if use clicks in quantity field
+        if ($(e.target).closest('.childQuantity').length === 0) {
+            const $checkbox = $(this).find("input:checkbox");
+            //toggle checkbox
+            $checkbox.prop("checked", !$checkbox.prop("checked"));
+            handleButtonState("data-child-checkbox", "#deleteChildrenButton");
+        }
     });
 };
 
@@ -112,11 +117,11 @@ const handleButtonState = (checkboxSelector, buttonSelector) => {
     } else {
         buttonSelector === "#addChildrenButton" ? $(buttonSelector).text("Add Children") : $(buttonSelector).text("Delete Children");
     }
-}
+};
 
-const addChildren = async () => {
+const addChildren = () => {
     $addChildrenButton.prop("disabled", true);
-    const form = document.getElementById("searchResultsForm")
+    const form = document.getElementById("searchResultsForm");
     const formData = formToJSON(form.elements);
 
     //AJAX request
@@ -132,7 +137,7 @@ const addChildren = async () => {
         // console.log(response);
         if (response.return_code == 1) {
             //Send update message
-            displayMessageBox("Child component added!", "success");
+            displayMessageBox(`${response.added.length} child component(s) added!`, "success");
 
             response.added.forEach(product => {
                 //remove from search results table
@@ -142,7 +147,8 @@ const addChildren = async () => {
                 $childComponentsTable.append(product.Html);
 
                 //Add row click handler
-                //registerChildRowClick($(`[data-child-row="${product.Product_Idn}"]`));
+                registerChildRowClick($(`[data-child-row="${product.Product_Idn}"]`));
+                registerChildCheckboxClick($(`[data-child-checkbox="${product.Product_Idn}"]`));
             });
 
             calculateParentPricing();
@@ -164,13 +170,13 @@ const addChildren = async () => {
         //Enable inputs
         handleButtonState("data-search-results-row", "#addChildrenButton");
     });
-
 };
 
 const deleteChildren = () => {
     $deleteChildrenButton.prop("disabled", true);
     const form = document.getElementById("childComponentsForm")
-    const formData = formToJSON(form.elements);
+    // const formData = formToJSON(form.elements);
+    const formData = $(form).serialize();
 
     //AJAX request
     FECI.request = $.ajax({
@@ -185,17 +191,11 @@ const deleteChildren = () => {
         // console.log(response);
         if (response.return_code == 1) {
             //Send update message
-            displayMessageBox("Child component deleted!", "success");
+            displayMessageBox(`${response.deleted.length} child component(s) deleted!`, "success");
 
             response.deleted.forEach(product => {
                 //remove from child component table
                 $(`[data-child-row="${product.Product_Idn}"]`).remove();
-
-                //add to search results table
-                $searchResultsTable.append(product.Html);
-
-                //Add row click handler
-                registerSearchResultsRowClick($(`[data-search-results-row="${product.Product_Idn}"]`));
             });
             
             calculateParentPricing();
@@ -219,7 +219,7 @@ const deleteChildren = () => {
     });
 };
 
-const saveChildren = async () => {
+const saveChildren = () => {
     $saveChildrenButton.prop("disabled", true);
     const form = document.getElementById("childComponentsForm")
     const formData = $(form).serialize();
@@ -258,10 +258,63 @@ const saveChildren = async () => {
     });
 };
 
-const search = async () => {
-    console.log("Search button clicked");
-}
+const search = () => {
+    $searchButton.prop("disabled", true);
+    $searchInput.prop("disabled", true);
+    form = document.getElementById("searchForm");
+    const formData = formToJSON(form.elements);
+
+    //AJAX request
+    FECI.request = $.ajax({
+        url: FECI.base_url + "product/search",
+        type: "POST",
+        dataType: "json",
+        data: formData
+    });
+
+    //Success callback handler
+    FECI.request.done(function(response, textStatus, jqXHR) {
+        // console.log(response);
+        if (response.return_code == 1) {
+            //Clear existing search results
+            $("#searchResultsTable tbody").empty();
+
+            //Display results summary
+            $searchResultsMessage.text(`${response.data.length} products found.`);
+
+            //Display new search results
+            displaySearchResults(response.data);
+        } else {
+            //Error
+            displayMessageBox("Error searching products.", "danger");
+        }
+    });
+
+    //Failure callback handler
+    FECI.request.fail(function(jqXHR, textStatus, errorThrown) {
+        //Log the error message
+        displayMessageBox("Error searching products.", "danger");
+    });
+
+    //Always callback handler
+    FECI.request.always(function() {
+        //Enable inputs
+        $searchButton.prop("disabled", false);
+        $searchInput.prop("disabled", false);
+    });
+};
+
+const displaySearchResults = (data) => {
+    data.forEach(product => {
+        //add to search results table
+        $searchResultsTable.append(product.Html);
+
+        //Add row click handler
+        registerSearchResultsRowClick($(`[data-search-results-row="${product.Product_Idn}"]`));
+        registerSearchResultsCheckboxClick($(`[data-search-results-checkbox="${product.Product_Idn}"]`))
+    });
+};
 
 const calculateParentPricing = () => {
     console.log("Calculate");
-}
+};

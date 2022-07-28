@@ -470,27 +470,14 @@ class M_product extends CI_Model {
             $children_idns[] = $child['Product_Idn'];
         }
 
-        //Build where statement
-        if (isset($search_criteria['WorksheetMaster_Idn']) && (int) $search_criteria['WorksheetMaster_Idn'] != 0)
-        {
-            $where['WorksheetMaster_Idn'] = $search_criteria['WorksheetMaster_Idn'];
-        }
-
-        if (isset($search_criteria['WorksheetCategory_Idn']) && (int) $search_criteria['WorksheetCategory_Idn'] != 0)
-        {
-            $where['WorksheetCategory_Idn'] = $search_criteria['WorksheetCategory_Idn'];
-        }
- 
         $this->db
-            ->select('*')
-            ->from("Products")
-            ->where($where);
-            
-        if (!empty($children_idns))
-        {
-            $this->db->where_not_in("Product_Idn", $children_idns);;
-        }
-
+            ->select('p.*')
+            ->from("Products AS p")
+            ->join("Manufacturers AS m", "p.Manufacturer_Idn = m.Manufacturer_Idn", "left")
+            ->or_like("p.Name", $search_criteria)
+            ->or_like("Product_Idn", $search_criteria)
+            ->or_like("m.Name ", $search_criteria);
+    
         $query = $this->db->get();
             
         if ($query == false)
@@ -503,7 +490,10 @@ class M_product extends CI_Model {
             {
                 foreach ($query->result_array() as $row)
                 {
-                    $products[] = $row;
+                    if (!in_array($row['Product_Idn'], $children_idns))
+                    {
+                        $products[] = $row;
+                    }
                 }
             }
         }

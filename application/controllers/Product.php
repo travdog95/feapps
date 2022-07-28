@@ -149,18 +149,6 @@ class Product extends CI_Controller {
 		//Load Product
 		$data['product'] = $this->m_product->get_product($product_idn);
 
-		$search_criteria = array(
-			"IDorName" => "",
-			"WorksheetMaster_Idn" => $data['product']['WorksheetMaster_Idn'],
-			"WorksheetCategory_Idn" => $data['product']['WorksheetCategory_Idn'],
-		);
-
-		$data['search_results'] = $this->m_product->get_search_results(
-			$data['product']['Product_Idn'], 
-			$data['product']['Children'],	
-			$search_criteria
-		);
-
 		if (empty($data['product']))
 		{
 			$this->index();
@@ -251,7 +239,7 @@ class Product extends CI_Controller {
 		if ($post)
 		{
 			$where['Parent_Idn'] = $post['Parent_Idn'];
-			foreach($post['Child_Idn'] as $child_idn)
+			foreach($post['deleteChild_Idn'] as $child_idn)
 			{
 				$html = "";
 				$where['Child_Idn'] = $child_idn;
@@ -294,6 +282,7 @@ class Product extends CI_Controller {
 			{
 				$html = "";
 				$insert['Child_Idn'] = $child_idn;
+				$insert['Quantity'] = 1;
 				if (!$this->m_reference_table->insert("ProductRelationships", $insert))
 				{
 					$hasErrors = true;
@@ -323,7 +312,6 @@ class Product extends CI_Controller {
 		$set = array();
 		$update = array();
 		$hasErrors = false;
-		$html = "";
 
 		$post = $this->input->post();
 		
@@ -346,6 +334,34 @@ class Product extends CI_Controller {
 		echo json_encode($save_results);
 	}
 
+	public function search()
+	{
+		$results = array(
+			"return_code" => 0,
+			"data" => array(),
+		);
+
+		$post = $this->input->post();
+		
+		if ($post)
+		{
+			$search_criteria = $post['searchInput'];
+			$parent_idn = $post['Parent_Idn'];
+			$parent = $this->m_product->get_product($parent_idn, true, false);
+
+			$search_results = $this->m_product->get_search_results($parent_idn, $parent['Children'], $search_criteria);
+
+			foreach($search_results as $product)
+			{
+				$html = $this->load->view("product/product_search_results_row", array("search_result" => $product), true);
+				$results['data'][] = array("Product_Idn" => $product['Product_Idn'], "Html" => $html);
+			}
+			
+			$results['return_code'] = 1;
+		}
+
+		echo json_encode($results);
+	}
 }
 /* End of file */
 /* Location: ./application/controllers/Product.php */

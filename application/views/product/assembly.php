@@ -44,7 +44,7 @@
 				</tbody>
 			</table>
 			<div><h4>Child Components</h4></div>
-			<form id="childComponentsForm" name="childComponentsForm" action="/controllers/product.php" method="post">
+			<form id="childComponentsForm">
 			<input type="hidden" name="Parent_Idn" value="<?php echo $product['Product_Idn']; ?>" />
 			<table id="childComponentsTable" class="table table-striped table-condensed table-bordered custom-table table-centered">
 				<thead>
@@ -76,31 +76,14 @@
 				<button id="deleteChildrenButton" class="btn btn-primary" disabled>Delete Child</button>
 				<button id="saveChildrenButton" class="btn btn-primary">Save</button>
 			</div>
-			<form class="form-inline search-container">
+			<form id="searchForm" class="form-inline search-container">
+				<input type="hidden" name="Parent_Idn" value="<?php echo $product['Product_Idn']; ?>" />
 				<div class="form-group">
-					<label class="sr-only" for="searchById">Search by ID or Name</label>
-					<input type="text" id="searchById" class="form-control"	placeholder="Search by ID or Name" />
-
-				</div>
-				<div class="form-group">
-					<label class="sr-only" for="searchByWorksheetMaster">Worksheet Master</label>
-					<select id="searchByWorksheetMaster" class="form-control">
-						<option>Search by Worksheet Master</option>
-						<?php foreach($product['WorksheetMasters'] as $id => $worksheet_master): ?>
-							<option value="<?php echo $id; ?>" <?php if ($id == $product['WorksheetMaster_Idn']) echo 'selected'; ?>><?php echo $worksheet_master; ?></option>
-						<?php endforeach; ?>
-					</select>
-				</div>
-				<div class="form-group">
-					<label class="sr-only" for="searchByWorksheetCategory">Worksheet Category</label>
-					<select id="searchByWorksheetCategory" class="form-control">
-						<option>Search by Category</option>
-						<?php foreach($product['WorksheetCategories'] as $id => $worksheet_category): ?>
-							<option value="<?php echo $id; ?>" <?php if ($id == $product['WorksheetCategory_Idn']) echo 'selected'; ?>><?php echo $worksheet_category; ?></option>
-						<?php endforeach; ?>
-					</select>
+					<label class="sr-only" for="searchInput">Search by ID or Name or Manufacturer</label>
+					<input type="text" id="searchInput" name="searchInput" class="form-control" placeholder="Search by ID or Name or Manufacturer" />
 				</div>
 				<button id="searchButton" class="btn btn-default">Search</button>
+				<span id="searchResultsMessage"></span>
 			</form>
 			<form id="searchResultsForm">
 			<input type="hidden" name="Parent_Idn" value="<?php echo $product['Product_Idn']; ?>" />
@@ -119,9 +102,6 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach($search_results as $search_result): ?>
-						<?php $this->load->view('product/product_search_results_row', array("search_result" => $search_result)); ?>
-					<?php endforeach; ?>
 				</tbody>
 			</table>
 			</form>
