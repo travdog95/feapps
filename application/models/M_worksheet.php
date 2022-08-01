@@ -253,7 +253,8 @@ class M_worksheet extends CI_Model {
             "p.ScheduleType_Idn",
             "p.Fitting_Idn",
             "p.HangerType_Idn",
-            "wm.DisplayShopHours"
+            "wm.DisplayShopHours",
+            "p.RFP",
         );
 
         //Load model
