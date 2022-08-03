@@ -91,7 +91,7 @@ if ($Row['Product_Idn'] == 2489)
 		?>
 
         <?php 
-        if ($Row['RFP'] == 1): 
+        if (isset($Row['RFP']) && $Row['RFP'] == 1): 
             $product_name .= ' <span class="em">RFP!</span>';
         endif; 
         ?>

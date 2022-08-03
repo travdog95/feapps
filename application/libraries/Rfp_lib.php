@@ -38,11 +38,12 @@ class Rfp_lib
       
         //Get worksheetDetails
         $this->CI->db
-            ->select("w.Job_Idn, w.ChangeOrder, j.Name AS JobName, j.JobDate, w.Name AS WorksheetName, wd.Product_Idn, p.Name as ProductName")
+            ->select("w.Job_Idn, w.ChangeOrder, j.Name AS JobName, u.FirstName, u.LastName, j.JobDate, w.Name AS WorksheetName, wd.Product_Idn, p.Name as ProductName")
             ->from("WorksheetDetails AS wd")
             ->join("Worksheets AS w", "w.Worksheet_Idn = wd.Worksheet_Idn", "left")
             ->join("Products AS p", "wd.Product_Idn = p.Product_Idn", "left")
             ->join("Jobs AS j", "w.Job_Idn = j.Job_Idn AND w.ChangeOrder = j.ChangeOrder", "left")
+            ->join("Users AS u", "j.CreatedBy_Idn = u.User_Idn", "left")
             ->where("p.RFP", "1");
 
         $query = $this->CI->db->get();
@@ -58,4 +59,29 @@ class Rfp_lib
         return $data;
     }
 
+    public function is_product_exception($product_idn)
+    {
+        $is_exception = false;
+        
+        if ($product_idn > 0)
+        {
+            $this->CI->db
+                ->select("Product_Idn")
+                ->from("Products")
+                ->where("Product_Idn", $product_idn)
+                ->where("RFP", 1);
+
+            $query = $this->CI->db->get();
+
+            if ($query)
+            {
+                if ($query->num_rows() > 0)
+                {
+                    $is_exception = true;
+                }
+            }
+        }
+
+        return $is_exception;
+    }
 }

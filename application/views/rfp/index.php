@@ -48,6 +48,7 @@
                                 <tr>
                                     <td><?php echo $ex['Job_Idn']."-".$ex['ChangeOrder']; ?></td>
                                     <td><?php echo $ex['JobName']; ?></td>
+                                    <td><?php echo $ex['FirstName']." ".$ex['LastName']; ?></td>
                                     <td><?php echo $ex['JobDate']; ?></td>
                                     <td><?php echo $ex['WorksheetName']; ?></td>
                                     <td><?php echo $ex['Product_Idn']; ?></td>

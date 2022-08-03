@@ -37,8 +37,9 @@ class Rfp extends CI_Controller {
 		$data['column_headers'] = array(
 			'Job Number', 
 			'Name',
+			"Estimator",
 			'Job Date',
-			'Worksheet',
+			'Worksheet Name',
 			'Product ID',
 			'Product Name',
 		);

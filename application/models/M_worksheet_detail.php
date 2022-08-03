@@ -6,6 +6,9 @@ class M_worksheet_detail extends CI_Model {
     function __construct()
     {
         parent::__construct();
+        $this->load->model('m_reference_table');
+        $this->load->model('m_rfp_exception');
+        $this->load->library("rfp_lib");
     }
 
    /**
@@ -58,7 +61,19 @@ class M_worksheet_detail extends CI_Model {
     {
         if ($this->db->insert($this->_table_name, $data))
         {
-            return true;   
+            //check to see if an rfp exception needs to be created
+            if ($this->rfp_lib->is_product_exception($data['Product_Idn']))
+            {
+                $insert_data = array(
+                    "Product_Idn" => $data['Product_Idn'],
+                    "Worksheet_Idn" => $data['Worksheet_Idn'],
+                    "RFPExceptionStatus_Idn" => 1 //new
+                );
+
+                $this->m_rfp_exception->insert($insert_data);
+            }
+
+            return true;
         }
         else
         {
@@ -81,6 +96,16 @@ class M_worksheet_detail extends CI_Model {
         {
             if ($this->db->delete($this->_table_name, $where))
             {
+                //check to see if an rfp exception needs to be created
+                if ($this->rfp_lib->is_product_exception($where['Product_Idn']))
+                {
+                    $delete_where = array(
+                        "Product_Idn" => $where['Product_Idn'],
+                        "Worksheet_Idn" => $where['Worksheet_Idn'],
+                    );
+                    $this->m_rfp_exception->delete($delete_where);
+                }
+
                 $delete = true;   
             }
             else
@@ -92,5 +117,10 @@ class M_worksheet_detail extends CI_Model {
         }
 
         return $delete;
+    }
+
+    function update($set, $where)
+    {
+        return $this->m_reference_table($this->_table_name, $set, $where);
     }
 }
