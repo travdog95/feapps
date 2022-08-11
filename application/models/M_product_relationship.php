@@ -1,14 +1,12 @@
 <?php
-class M_worksheet_detail extends CI_Model {
+class M_product_relationship extends CI_Model {
 	
-	private $_table_name = 'WorksheetDetails';
+	private $_table_name = 'ProductRelationships';
 
     function __construct()
     {
         parent::__construct();
         $this->load->model('m_reference_table');
-        $this->load->model('m_rfp_exception');
-        $this->load->library("rfp_lib");
     }
 
    /**
@@ -19,34 +17,28 @@ class M_worksheet_detail extends CI_Model {
     * @return   array
     */
     
-    function get_product_idns($worksheet_idn)
+    function get_children($parent_idn)
     {
         //Delcare and initialize variables
         $query = false;
-        $product_ins = array();
+        $children = array();
+        $child_product_idns = array();
+        $where = array();
 
-        if ($worksheet_idn > 0)
+        if ($parent_idn > 0)
         {
-            $this->db->select('Product_Idn')
-                ->from($this->_table_name)
-                ->where('Worksheet_Idn', $worksheet_idn);
+            $where = array(
+                "Parent_Idn" => $parent_idn,
+            );
+            $children = $this->m_reference_table->get_where($this->_table_name, $where);
             
-            $query = $this->db->get();
-            
-            if ($query == false)
+            foreach ($children as $child)
             {
-                write_feci_log(array("Message" => "SQL Error ".$this->db->last_query(), "Script" => __METHOD__));
-            }
-            else
-            {
-                foreach ($query->result_array() as $row)
-                {
-                    $product_ins[] = $row['Product_Idn'];
-                }
+                $child_product_idns[] = $child['Child_Idn'];
             }
         }
             
-        return $product_ins;
+        return $child_product_idns;
     }
 
    /**

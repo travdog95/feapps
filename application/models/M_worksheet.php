@@ -6,6 +6,9 @@ class M_worksheet extends CI_Model {
     function __construct()
     {
         parent::__construct();
+
+        $this->load->model("m_worksheet_detail");
+        $this->load->library("rfp_lib");
     }
 
     /*
@@ -354,6 +357,8 @@ class M_worksheet extends CI_Model {
                         //Add Type
                         $row['RowType'] = "Product";
 
+                        $row['IsRFPException'] = $this->rfp_lib->is_worksheet_detail_exception($worksheet_idn, $row['Product_Idn']);
+
                         //Add Category Product Rank
                         $category_product_rank = "";
                         if (!empty($category_order_by))
@@ -540,16 +545,7 @@ class M_worksheet extends CI_Model {
 	public function insert_worksheet_details($worksheet_details_data)
 	{
 		//Insert row
-		if ($this->db->insert('WorksheetDetails', $worksheet_details_data))
-        {
-            return true;        
-        }
-        else
-        {
-            write_feci_log(array("Message" => "SQL Error ".$this->db->last_query(), "Script" => __METHOD__));
-            
-            return false;
-        }
+        return $this->m_worksheet_detail->insert($worksheet_details_data);
 	}
 
 	/**

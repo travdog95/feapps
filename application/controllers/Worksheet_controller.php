@@ -1223,7 +1223,8 @@ class Worksheet_controller extends CI_Controller {
             $delete['WorksheetEngineeringAdditionalCosts'] = $this->m_reference_table->delete("WorksheetEngineeringAdditionalCosts", $where);
 
             //Delete worksheet details
-            $delete['WorksheetDetails'] = $this->m_reference_table->delete("WorksheetDetails", $where);
+            // $delete['WorksheetDetails'] = $this->m_reference_table->delete("WorksheetDetails", $where);
+            $delete['WorksheetDetails'] = $this->m_worksheet_detail->delete_by_worksheet($worksheet_idn);
 
 
             //Delete WorksheetAreas

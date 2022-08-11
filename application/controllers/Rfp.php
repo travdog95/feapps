@@ -35,6 +35,7 @@ class Rfp extends CI_Controller {
         $this->load->library("rfp_lib");
 
 		$data['column_headers'] = array(
+			"Status",
 			'Job Number', 
 			'Name',
 			"Estimator",

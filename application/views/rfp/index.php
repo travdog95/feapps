@@ -46,6 +46,7 @@
                         <tbody>
                             <?php foreach ($exceptions as $ex): ?>
                                 <tr>
+                                    <td><?php echo $ex['RFPStatus']; ?></td>
                                     <td><?php echo $ex['Job_Idn']."-".$ex['ChangeOrder']; ?></td>
                                     <td><?php echo $ex['JobName']; ?></td>
                                     <td><?php echo $ex['FirstName']." ".$ex['LastName']; ?></td>

@@ -472,7 +472,7 @@ class Cart_controller extends CI_Controller {
                     //Delete product from database
                     if (in_array($product_idn, $existing_product_idns))
                     {
-                        if ($this->m_reference_table->delete('WorksheetDetails', array('Product_Idn' => $product_idn, 'Worksheet_Idn' => $worksheet_idn)))
+                        if ($this->m_worksheet_detail->delete(array('Product_Idn' => $product_idn, 'Worksheet_Idn' => $worksheet_idn)))
                         {
                             //If Panels and devices product, delete corresponding SH engineering records 
                             if ($worksheet_master_idn == 1 && in_array($worksheet_category_idn, array(3,4,5,41,7,10)))

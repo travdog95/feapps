@@ -7,6 +7,8 @@ class M_miscellaneous_detail extends CI_Model {
 	{
 		parent::__construct();
 		$this->load->model('m_reference_table');
+		$this->load->model('m_rfp_exception');
+		$this->load->library('rfp_lib');
 	}
 
 	/**
@@ -157,20 +159,18 @@ class M_miscellaneous_detail extends CI_Model {
 	 */
 	public function delete($where)
 	{
-		if (isset($where) && !empty($where))
+		if ($this->m_reference_table->delete($this->_table_name, $where))
 		{
-			if ($this->m_reference_table->delete($this->_table_name, $where))
+			//check to see if an rfp exception needs to be created
+			if ($this->rfp_lib->is_misc_product_exception($where['MiscellaneousDetail_Idn']))
 			{
-				return true;
+				$delete_where = array(
+					"MiscellaneousDetail_Idn" => $where['MiscellaneousDetail_Idn'],
+				);
+				$this->m_rfp_exception->delete($delete_where);
 			}
-			else
-			{
-				write_feci_log(array("Message" => "Error deleting MiscellaneousDetails record", "Script" => get_caller_info()));
-			}
-		}
-		else
-		{
-			write_feci_log(array("Message" => "Missing where data to delete record", "Script" => get_caller_info()));
+
+			return true;
 		}
 
 		return false;
