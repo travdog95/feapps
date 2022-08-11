@@ -52,6 +52,12 @@
 					<?php $this->load->view('widgets/folders', $folders_data); ?>
                 </div>
 			</div>
+            <div class="row">
+				<div class="col-md-6">
+                    <?php $rfp_data = array("title" => "RFP Exceptions", "table_id" => "RFPExceptionsTable"); ?>
+					<?php $this->load->view('widgets/rfp', $rfp_data); ?>
+				</div>
+            </div>
             <!-- end: PAGE CONTENT-->
         </div>
     </div>

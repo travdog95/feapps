@@ -150,11 +150,11 @@ class Rfp_lib
         {
             $where = array(
                 "CreatedBy_Idn" => $user_idn,
-                "RFPExceptionStatus_Idn" => 2,
+                "RFPExceptionStatus_Idn" => 1,
             );
 
             $this->CI->db
-                ->select("j.Job_Idn, j.ChangeOrder, j.Name AS JobName, j.JobDate, w.Name AS WorksheetName, p.Product_Idn, p.Name as ProductName, s.Name AS RFPStatus")
+                ->select("j.Job_Idn, j.ChangeOrder, j.Name AS JobName, j.JobDate, w.Name AS WorksheetName, p.Product_Idn, p.Name as ProductName")
                 ->from("RFPExceptions AS rfp")
                 ->join("Worksheets AS w", "rfp.Worksheet_Idn = w.Worksheet_Idn", "left")
                 ->join("Products AS p", "rfp.Product_Idn = p.Product_Idn", "left")
@@ -167,6 +167,8 @@ class Rfp_lib
             {
                 foreach ($query->result_array() as $row)
                 {
+                    $row['JobNumber'] = format_job_number($row['Job_Idn'], $row['ChangeOrder']);
+                    $row['JobDate'] = date("M d, Y", get_timestamp($row['JobDate']));
                     $data[] = $row;
                 }
             }

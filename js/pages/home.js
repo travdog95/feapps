@@ -22,6 +22,8 @@
     init_add_jobs_to_folder();
 
     new_folder_button_handlers();
+
+    init_rfp_exceptions();
   }
 
   //Initialize functions
@@ -586,6 +588,48 @@
         "</table>"
       );
     }
+  }
+
+  function init_rfp_exceptions() {
+    const rfp_table = $("#RFPExceptionsTable").DataTable({
+      ajax: FECI.base_url + "home_controller/get_rfp_exceptions_by_user",
+      lengthMenu: [10, 25],
+      columns: [
+        { data: "JobNumber" },
+        {
+          data: "JobName",
+          render: function(data, type, row, meta) {
+            const maxLength = 50;
+            const name =
+              data.length > maxLength
+                ? data.substring(0, maxLength) + "..."
+                : data;
+
+            data = `<a class="job-recap" href="" title="${data}">${name}</a>`;
+            return data;
+          }
+        },
+        { data: "JobDate" },
+        { data: "WorksheetName" },
+        { data: "Product_Idn" },
+        { data: "ProductName" },
+      ],
+      order: [[1, "asc"]], //default to Job Name
+      createdRow: function(row, data, dataIndex) {
+        $(row).attr("data-job_number", data.JobNumber);
+        $(row).attr("data-job_name", data.JobName);
+      }
+    });
+
+    //Click handler for job name
+    rfp_table.on("click", "a.job-recap", function(e) {
+      e.preventDefault();
+      let job_number = $(this)
+        .parents("tr")
+        .data("job_number");
+
+      window.location = FECI.base_url + "job/price_differences/" + job_number;
+    });
   }
 
   //Handler function

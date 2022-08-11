@@ -17,6 +17,7 @@ class Home_controller extends CI_Controller {
 
         //Load Libraries
         $this->load->library("user");
+        $this->load->library("rfp_lib");
 	}
 
 	public function index()
@@ -468,6 +469,16 @@ class Home_controller extends CI_Controller {
 		echo json_encode($departments);
 	}
 
+	public function get_rfp_exceptions_by_user($user_idn = "")
+	{
+		$user_idn = (empty($user_idn)) ? $this->session->userdata("user_idn") : $user_idn;
+		$data = $this->rfp_lib->by_user($user_idn);
+		$rfp_data = array(
+			"data" => $data
+		);
+
+		echo json_encode($rfp_data);
+	}
 }
 
 /* End of file home.php */
