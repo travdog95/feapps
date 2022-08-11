@@ -13,13 +13,13 @@
   <div class="form-group form-group-sm">
     <label for="FECI_Id" class="col-sm-4 control-label">FECI ID</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="FECI_Id" name="FECI_Id" placeholder="FECI ID" value="<?php echo $product['FECI_Id']; ?>">
+      <input type="text" class="form-control" id="FECI_Id" name="FECI_Id" placeholder="FECI ID" value="<?php echo quotes_to_entities($product['FECI_Id']); ?>">
     </div>
   </div>
   <div class="form-group form-group-sm">
     <label for="ManufacturerPart_Id" class="col-sm-4 control-label">Manufacturer Part ID</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="ManufacturerPart_Id" name="ManufacturerPart_Id" placeholder="Manufacturer Part ID" value="<?php echo $product['ManufacturerPart_Id']; ?>">
+      <input type="text" class="form-control" id="ManufacturerPart_Id" name="ManufacturerPart_Id" placeholder="Manufacturer Part ID" value="<?php echo quotes_to_entities($product['ManufacturerPart_Id']); ?>">
     </div>
   </div>
 
@@ -88,7 +88,7 @@
   <div class="form-group form-group-sm">
     <label for="ResponseType" class="col-sm-4 control-label">Description</label>
     <div class="col-sm-8">
-      <textarea id="Description" name="Description" class="form-control" rows="2" placeholder="Description" required><?php echo $product['Description']; ?></textarea>
+      <textarea id="Description" name="Description" class="form-control" rows="2" placeholder="Description" required><?php echo quotes_to_entities($product['Description']); ?></textarea>
      </div>
   </div>
 

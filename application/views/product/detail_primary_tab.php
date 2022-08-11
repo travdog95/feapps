@@ -60,7 +60,7 @@
   <div class="form-group form-group-sm required">
     <label for="Name" class="col-sm-4 control-label">Name</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="Name" name="Name" placeholder="Name" value="<?php echo $product['Name']; ?>" required>
+      <input type="text" class="form-control" id="Name" name="Name" placeholder="Name" value="<?php echo quotes_to_entities($product['Name']); ?>" required>
     </div>
   </div>
   <div class="form-group form-group-sm">
