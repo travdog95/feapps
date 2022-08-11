@@ -356,56 +356,50 @@ class Product_Update_Tool extends CI_Controller {
             {
                 foreach ($query->result_array() as $row)
                 {
-                    $sql_set_array = array();
+                    $set_data = array();
 
 					//Only update values that changes
 					if ($row['MaterialUnitPrice'] != $row['original_price'])
 					{
-						$sql_set_array[] = "MaterialUnitPrice = '{$row['MaterialUnitPrice']}'";
+						$set_data['MaterialUnitPrice'] = $row['MaterialUnitPrice'];
 					}
 
 					if ($row['FieldUnitPrice'] != $row['original_field'])
 					{
-						$sql_set_array[] = "FieldUnitPrice = '{$row['FieldUnitPrice']}'";
+						$set_data['FieldUnitPrice'] = $row['FieldUnitPrice'];
 					}
 
 					if ($row['ShopUnitPrice'] != $row['original_shop'])
 					{
-						$sql_set_array[] = "ShopUnitPrice = '{$row['ShopUnitPrice']}'";
+						$set_data['ShopUnitPrice'] = $row['ShopUnitPrice'];
 					}
 
 					if ($row['EngineerUnitPrice'] != $row['original_design'])
 					{
-						$sql_set_array[] = "EngineerUnitPrice = '{$row['EngineerUnitPrice']}'";
+						$set_data['EngineerUnitPrice'] = $row['EngineerUnitPrice'];
 					}
 
 					if ($row['Name'] != $row['original_name'])
 					{
-						$sql_set_array[] = "Name = '{$row['Name']}'";
+						$set_data['Name'] = $row['Name'];
 					}
 
 					if ($row['FECI_Id'] != $row['original_FECI_Id'])
 					{
-						$sql_set_array[] = "FECI_Id = '{$row['FECI_Id']}'";
+						$set_data['FECI_Id'] = $row['FECI_Id'];
 					}
 
 					if ($row['ManufacturerPart_Id'] != $row['original_ManufacturerPart_Id'])
 					{
-						$sql_set_array[] = "ManufacturerPart_Id = '{$row['ManufacturerPart_Id']}'";
+						$set_data['ManufacturerPart_Id'] = $row['ManufacturerPart_Id'];
 					}
 
 					if ($row['RFP'] != $row['original_RFP'])
 					{
-						$sql_set_array[] = "RFP = {$row['RFP']}";
+						$set_data['RFP'] = $row['RFP'];
 					}
 
-					$sql_set = implode(",", $sql_set_array);
-
-					$sql = "UPDATE Products
-							SET {$sql_set}
-							WHERE Product_Idn = {$row['Product_Idn']}";
-
-					if ($this->db->query($sql))
+					if ($this->db->update("Products", $set_data, array("Product_Idn" => $row['Product_Idn'])))
 					{
 						$results['updates']++;
 					}

@@ -9,7 +9,7 @@
 		<?php echo number_format($p['Quantity'], 1); ?>
 	</td>
 	<td class="product-name">
-		<?php echo $p['ProductName']; ?>
+		<?php echo $p['ProductName']." (".$p['Product_Idn'].")"; ?>
 	</td>
 	<td class="new-material-price price">
 		<?php echo ($p['new_mup'] == 0) ? "-" : number_format($p['new_mup'], 2); ?>
