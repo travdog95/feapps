@@ -14,6 +14,8 @@ class Product extends CI_Controller {
 		$this->load->model('m_reference_table');
 		$this->load->model('m_menu');
 		$this->load->model('m_product');
+
+		$this->load->library("rfp_lib");
 	}
 
     /**
@@ -202,6 +204,11 @@ class Product extends CI_Controller {
 						break;
 
 				}
+			}
+
+			if (isset($post['RFP']) == false)
+			{
+				$this->rfp_lib->process_flow(array("Product_Idn" => $post['Product_Idn']), 1, 2);
 			}
 
 			if ($post['Mode'] == "edit")

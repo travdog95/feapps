@@ -2,7 +2,7 @@
 <?php $this->load->view('inc/header'); ?>
 
 <link rel="stylesheet" href="<?php echo base_url(); ?>lib/DataTables-1.10.15/css/dataTables.bootstrap.min.css">
-<!-- <link rel="stylesheet" href="<?php echo base_url(); ?>css/pages/product/product_update_tool.css"> -->
+<link rel="stylesheet" href="<?php echo base_url(); ?>css/pages/rfp.css">
 
 </head>
 <body>
@@ -35,7 +35,7 @@
             <!-- start: PAGE CONTENT -->
             <div class="row">
                 <div class="col-md-12">
-                    <table id="data" class="table table-hover table-condensed table-striped">
+                    <table id="rfpTable" class="table table-hover table-condensed table-striped">
                         <thead>
                             <tr>
 								<?php foreach ($column_headers as $index => $column_header): ?>
@@ -45,7 +45,7 @@
                         </thead>
                         <tbody>
                             <?php foreach ($exceptions as $ex): ?>
-                                <tr>
+                                <tr class="rfpRow" data-product-idn="<?php echo $ex['Product_Idn']; ?>" title="Edit Product">
                                     <td><?php echo $ex['RFPStatus']; ?></td>
                                     <td><?php echo $ex['Job_Idn']."-".$ex['ChangeOrder']; ?></td>
                                     <td><?php echo $ex['JobName']; ?></td>

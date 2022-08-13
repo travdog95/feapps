@@ -16,6 +16,8 @@ class Job extends CI_Controller
         $this->load->model('m_job');
         $this->load->model('m_reference_table');
         $this->load->model('m_menu');
+
+        $this->load->library("rfp_lib");
     }
     
     /*
@@ -2306,6 +2308,19 @@ class Job extends CI_Controller
 
         $data['prices'] = $this->_get_prices_differences($job_number);
 
+        $data['table_headers'] = array(
+            "Quantity",
+            "Product Name",
+            "New Material",
+            "Old Material",
+            "New Field",
+            "Old Field",
+            "New Shop",
+            "Old Shop",
+            "New Engineer",
+            "Old Engineer",
+        );
+
         //Load view
         $this->load->view('job/price_differences', $data);
     }
@@ -2431,6 +2446,9 @@ class Job extends CI_Controller
 
             if ($results['errors'] == 0) {
                 $results['return_code'] = 1;
+
+                //Update rfp exceptions
+                $this->rfp_lib->process_flow_by_job($post['job_number'], 2, 3);
             }
         }
 

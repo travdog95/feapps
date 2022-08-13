@@ -617,7 +617,7 @@ class M_job extends CI_Model
 						wd.ShopUnitPrice AS old_sup,
 						p.EngineerUnitPrice AS new_eup,
 						wd.EngineerUnitPrice AS old_eup,
-						w.Worksheet_Idn,
+						w.Worksheet_Idn AS Worksheet_Idn,
 						w.Name AS WorksheetName,
 						w.WorksheetMaster_Idn,
 						'0' AS ProductAssembly_Idn,
@@ -644,7 +644,7 @@ class M_job extends CI_Model
 						ad.ShopUnitPrice AS old_sup,
 						'0' AS new_eup,
 						'0' AS old_eup,
-						w.Worksheet_Idn,
+						w.Worksheet_Idn AS Worksheet_Idn,
 						w.Name AS WorksheetName,
 						w.WorksheetMaster_Idn,
 						ad.ProductAssembly_Idn,
@@ -707,6 +707,8 @@ class M_job extends CI_Model
 
                     $p['new_eup'] = $new_eup;
                     $p['old_eup'] = $old_eup;
+
+                    $p['IsRFPException'] = $this->rfp_lib->is_worksheet_detail_exception($p['Worksheet_Idn'], $p['Product_Idn']);
 
                     $price_differences[] = $p;
                 }

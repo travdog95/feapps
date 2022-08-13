@@ -10,6 +10,7 @@
 	</td>
 	<td class="product-name">
 		<?php echo $p['ProductName']." (".$p['Product_Idn'].")"; ?>
+		<?php if ($p['IsRFPException']) echo ' <span class="em">RFP!</span>'; ?>
 	</td>
 	<td class="new-material-price price">
 		<?php echo ($p['new_mup'] == 0) ? "-" : number_format($p['new_mup'], 2); ?>

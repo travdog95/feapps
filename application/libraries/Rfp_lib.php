@@ -150,7 +150,7 @@ class Rfp_lib
         {
             $where = array(
                 "CreatedBy_Idn" => $user_idn,
-                "RFPExceptionStatus_Idn" => 1,
+                "RFPExceptionStatus_Idn" => 2,
             );
 
             $this->CI->db
@@ -175,5 +175,90 @@ class Rfp_lib
         }
 
         return $data;
+    }
+
+    public function process_flow($where, $current_status_idn, $new_status_idn)
+    {
+        $where = array();
+        $set = array();
+
+        if (sizeof($where) > 0 && $current_status_idn > 0 && $new_status_idn)
+        {
+            $where["RFPExceptionStatus_Idn"] = $current_status_idn;
+
+            $set = array(
+                "RFPExceptionStatus_Idn" => $new_status_idn,
+            );
+    
+            $this->CI->db
+                ->select("*")
+                ->from("RFPExceptions")
+                ->where($where);
+
+            $query = $this->CI->db->get();
+
+            if ($query && $query->num_rows() > 0)
+            {
+                foreach ($query->result_array() as $row)
+                {
+                    $this->CI->m_rfp_exception->update($set, $where);
+                }
+            }
+        }
+    }
+
+    public function process_flow_by_job($job_number, $current_status_idn, $new_status_idn)
+    {
+        $where = array();
+        $set = array();
+        $rfp_where = array();
+        $results = array(
+            "updates" => 0,
+            "errors" => 0,
+        );
+
+        if ($job_number > 0 && $current_status_idn > 0 && $new_status_idn)
+        {
+            $job_keys = get_job_keys($job_number);
+
+            $where = array(
+                "RFPExceptionStatus_Idn" => $current_status_idn,
+                "Job_Idn" => $job_keys[0],
+                "ChangeOrder" => $job_keys[1],
+            );
+
+            //Get job worksheets with rfp exceptions
+            $this->CI->db
+                ->select("w.Worksheet_Idn")
+                ->from("Worksheets AS w")
+                ->join("RFPExceptions as rfp", "w.Worksheet_Idn = rfp.Worksheet_Idn")
+                ->where($where);
+
+            $query = $this->CI->db->get();
+
+            if ($query && $query->num_rows() > 0)
+            {
+                $set = array(
+                    "RFPExceptionStatus_Idn" => $new_status_idn,
+                );
+
+                foreach ($query->result_array() as $row)
+                {
+                    $rfp_where = array(
+                        "Worksheet_Idn" => $row['Worksheet_Idn'],
+                        "RFPExceptionStatus_Idn" => $current_status_idn,
+                    );
+
+                    if ($this->CI->m_rfp_exception->update($set, $rfp_where))
+                    {
+                        $results['updates']++;
+                    }
+                    else
+                    {
+                        $results['errors']++;
+                    }
+                }
+            }
+        }
     }
 }
