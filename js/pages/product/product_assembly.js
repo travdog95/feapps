@@ -316,5 +316,15 @@ const displaySearchResults = (data) => {
 };
 
 const calculateParentPricing = () => {
+    const form = document.getElementById("childComponentsForm")
+    const formData = $(form).serialize();
+
+    //AJAX request
+    FECI.request = $.ajax({
+        url: FECI.base_url + "product/calculate_parentPricing   ",
+        type: "POST",
+        dataType: "json",
+        data: formData
+    });
     console.log("Calculate");
 };

@@ -317,7 +317,6 @@ class Product extends CI_Controller {
 		
 		if ($post)
 		{
-			//$update['Quantity'] = $post['Quantity'];
 			for($i = 0; $i < sizeof($post['Child_Idn']); $i++)
 			{
 				$update['Child_Idn'] = $post['Child_Idn'][$i];
@@ -361,6 +360,50 @@ class Product extends CI_Controller {
 		}
 
 		echo json_encode($results);
+	}
+
+	public function calculate_parentPricing()
+	{
+		$save_results = array(
+			"return_code" => 0,
+			"echo" => array(),
+			"updated" => array(),
+		);
+		$set = array();
+		$update = array();
+		$hasErrors = false;
+
+		// $query = $this->db
+		// 	->select("p.Product_Idn, p.Name, p.MaterialUnitPrice * pr.Quantity AS MaterialPriceTotal, p.FieldUnitPrice * pr.Quantity AS FieldPriceTotal, p.ShopUnitPrice * pr.Quantity AS ShopPriceTotal")
+		// 	->from("Products AS p")
+		// 	->join("ProductRelationships AS pr", "pr.Child_Idn = p.Product_Idn")
+		// 	->where("Product_Idn = Child_Idn");
+
+		$query = $this->db->query("SELECT 
+		p.Product_Idn,
+		p.Name,
+		p.MaterialUnitPrice * pr.Quantity AS MaterialPriceTotal,
+		p.FieldUnitPrice * pr.Quantity AS FieldPriceTotal,
+		p.ShopUnitPrice * pr.Quantity AS ShopPriceTotal
+		FROM Products AS p
+		JOIN ProductRelationships AS pr ON pr.Child_Idn = p.Product_Idn");
+
+
+		foreach($query->result_array() as $row)
+		{
+			echo $row["MaterialPriceTotal"];
+			echo $row["FieldPriceTotal"];
+			echo $row["ShopPriceTotal"];
+		}
+
+		// $row = $query->row();
+
+		// if (isset($row))
+		// {
+		// 		echo $row->MaterialPriceTotal;
+		// 		echo $row->FieldPriceTotal;
+		// 		echo $row->ShopPriceTotal;
+		// }
 	}
 }
 /* End of file */
