@@ -14,8 +14,10 @@ class Product extends CI_Controller {
 		$this->load->model('m_reference_table');
 		$this->load->model('m_menu');
 		$this->load->model('m_product');
+		$this->load->model('m_product_relationship');
 
 		$this->load->library("rfp_lib");
+		$this->load->library("product_lib");
 	}
 
     /**
@@ -233,12 +235,12 @@ class Product extends CI_Controller {
 	{
 		$save_results = array(
 			"return_code" => 0,
-			"echo" => array(),
 			"deleted" => array(),
+			"num_errors" => 0,
 		);
+
 		$set = array();
 		$where = array();
-		$hasErrors = false;
 		$html = "";
 
 		$post = $this->input->post();
@@ -250,9 +252,9 @@ class Product extends CI_Controller {
 			{
 				$html = "";
 				$where['Child_Idn'] = $child_idn;
-				if (!$this->m_reference_table->delete("ProductRelationships", $where))
+				if (!$this->m_product_relationship->delete($where))
 				{
-					$hasErrors = true;
+					$save_results['num_errors']++;
 				}
 				else
 				{
@@ -262,7 +264,16 @@ class Product extends CI_Controller {
 				}
 			}
 
-			$save_results['return_code'] = ($hasErrors) ? -1 : 1;
+			if ($save_results['num_errors'] > 0)
+			{
+				$save_results['return_code'] = -1;
+			}
+			else
+			{
+				$save_results['return_code'] = 1;
+				//Update is_parent flag on Product
+				$this->product_lib->update_is_parent($where['Parent_Idn']);
+			}
 		}
 
 		echo json_encode($save_results);
@@ -274,10 +285,11 @@ class Product extends CI_Controller {
 			"return_code" => 0,
 			"echo" => array(),
 			"added" => array(),
+			"num_errors" => 0,
 		);
+
 		$set = array();
 		$insert = array();
-		$hasErrors = false;
 		$html = "";
 
 		$post = $this->input->post();
@@ -290,9 +302,9 @@ class Product extends CI_Controller {
 				$html = "";
 				$insert['Child_Idn'] = $child_idn;
 				$insert['Quantity'] = 1;
-				if (!$this->m_reference_table->insert("ProductRelationships", $insert))
+				if (!$this->m_product_relationship->insert($insert))
 				{
-					$hasErrors = true;
+					$save_results["num_errors"]++;
 				}
 				else
 				{
@@ -303,7 +315,16 @@ class Product extends CI_Controller {
 				}
 			}
 
-			$save_results['return_code'] = ($hasErrors) ? -1 : 1;
+			if ($save_results['num_errors'] > 0)
+			{
+				$save_results['return_code'] = -1;
+			}
+			else
+			{
+				$save_results['return_code'] = 1;
+				//Update is_parent flag on Product
+				$this->product_lib->update_is_parent($post['Parent_Idn']);
+			}
 		}
 
 		echo json_encode($save_results);
@@ -328,7 +349,7 @@ class Product extends CI_Controller {
 			{
 				$update['Child_Idn'] = $post['Child_Idn'][$i];
 				$set['Quantity'] = $post['Quantity'][$i] == "" ? 0 : $post['Quantity'][$i];
-				if (!$this->m_reference_table->update("ProductRelationships", $set, $update))
+				if (!$this->m_product_relationship->update($set, $update))
 				{
 					$hasErrors = true;
 				}
