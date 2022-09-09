@@ -6,6 +6,8 @@ class M_job extends CI_Model
     public function __construct()
     {
         parent::__construct();
+
+        $this->load->library("rfp_lib");
     }
     
     /**
@@ -241,6 +243,7 @@ class M_job extends CI_Model
         $job_keys = array();
         $update = array();
         $where = array();
+        $delete_rfps_results = array();
         
         //Get job keys
         $job_keys = get_job_keys($job_number);
@@ -258,6 +261,9 @@ class M_job extends CI_Model
         
         //Set ActiveFlag = 0
         if ($this->db->update($this->_table_name, $update)) {
+            //Delete any RFP Exceptions
+            $delete_rfps_results = $this->rfp_lib->delete_by_job($job_number);
+            
             return true;
         } else {
             write_feci_log(array("Message" => "SQL Error ".$this->db->last_query(), "Script" => __METHOD__));

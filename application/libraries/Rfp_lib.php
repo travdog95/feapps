@@ -261,4 +261,50 @@ class Rfp_lib
             }
         }
     }
+
+    public function delete_by_job($job_number)
+    {
+        $results = array(
+            "deletes" => 0,
+            "errors" => 0,
+        );
+        $where = array();
+        $job_keys = array();
+
+        if ($job_number != "")
+        {            
+            $job_keys = get_job_keys($job_number);
+
+            $where = array(
+                "Job_Idn" => $job_keys[0],
+                "ChangeOrder" => $job_keys[1],
+            );
+
+            $this->CI->db
+                ->select("w.Worksheet_Idn")
+                ->from("Worksheets AS w")
+                ->join("RFPExceptions as rfp", "w.Worksheet_Idn = rfp.Worksheet_Idn")
+                ->where($where);
+
+            $query = $this->CI->db->get();
+
+            foreach ($query->result_array() as $row)
+            {
+                $rfp_where = array(
+                    "Worksheet_Idn" => $row['Worksheet_Idn'],
+                );
+
+                if ($this->CI->m_rfp_exception->delete($rfp_where))
+                {
+                    $results['deletes']++;
+                }
+                else
+                {
+                    $results['errors']++;
+                }
+            }
+        }
+
+        return $results;
+    }
 }
