@@ -49,6 +49,11 @@ echo form_open('job/update_prices', $form_attributes);
 	<div class="col-md-12">
 	<?php if (!empty($job)): ?>
 		<table id="PriceDifferenceTable" class="table table-striped table-hover table-condensed table-bordered">
+			<tr class="price-differences-header">
+				<?php foreach($table_headers as $th): ?>
+					<th class="text-center"><?php echo $th; ?></th>
+				<?php endforeach; ?>
+			</tr>
 		<?php foreach($prices as $row): ?>
 
 			<tr class="recap-row">

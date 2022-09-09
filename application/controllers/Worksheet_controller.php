@@ -15,6 +15,7 @@ class Worksheet_controller extends CI_Controller {
 		$this->load->model('m_worksheet_detail');
 		$this->load->model('m_reference_table');
 		$this->load->model('m_miscellaneous_detail');
+		$this->load->model('m_product_assembly_detail');
 
         //Load libraries
         $this->load->library("worksheet");
@@ -636,7 +637,7 @@ class Worksheet_controller extends CI_Controller {
                             'Product_Idn' => $id
                         );
 
-                        if ($this->m_reference_table->delete($table_name, $where))
+                        if ($this->m_worksheet_detail->delete($where))
                         {
                             $results['num_deleted']++;
                             $results['deleted'][] = $delete_id;
@@ -1222,7 +1223,8 @@ class Worksheet_controller extends CI_Controller {
             $delete['WorksheetEngineeringAdditionalCosts'] = $this->m_reference_table->delete("WorksheetEngineeringAdditionalCosts", $where);
 
             //Delete worksheet details
-            $delete['WorksheetDetails'] = $this->m_reference_table->delete("WorksheetDetails", $where);
+            // $delete['WorksheetDetails'] = $this->m_reference_table->delete("WorksheetDetails", $where);
+            $delete['WorksheetDetails'] = $this->m_worksheet_detail->delete_by_worksheet($worksheet_idn);
 
 
             //Delete WorksheetAreas
@@ -1316,21 +1318,13 @@ class Worksheet_controller extends CI_Controller {
             $where = array("ProductAssembly_Idn" => $assembly_idn);
             $table_name = "ProductAssemblyDetails";
 
-            if ($this->m_reference_table->delete($table_name, $where)) //Delete details
+            if ($this->m_product_assembly_detail->delete($where)) //Delete details
             {
                 $table_name = "ProductAssemblies";
                 if ($this->m_reference_table->delete($table_name, $where)) //Delete assembly
                 {
                     $delete = true;
                 }
-                else
-                {
-                    write_feci_log("Error deleting from ProductAssembly table ({$assembly_idn}");
-                }
-            }
-            else
-            {
-                write_feci_log("Error deleting from ProductAssemblyDetails table ({$assembly_idn}");
             }
         }
 

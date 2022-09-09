@@ -15,7 +15,7 @@ class Product extends CI_Controller {
 		$this->load->model('m_menu');
 		$this->load->model('m_product');
 
-		//$this->load->library("rfp_lib");
+		$this->load->library("rfp_lib");
 	}
 
     /**

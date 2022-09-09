@@ -441,7 +441,7 @@ function unsaved_changes_handler() {
 
 function sticky_page_header() {
   if ($(".sticky").length > 0) {
-    var stickyOffset = $(".sticky").offset().top;
+    let stickyOffset = $(".sticky").offset().top;
 
     $(window).scroll(function() {
       var sticky = $(".sticky"),

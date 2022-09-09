@@ -89,6 +89,12 @@ if ($Row['Product_Idn'] == 2489)
 			$copy_worksheet = "";
         endif;
 		?>
+
+        <?php 
+        if (isset($Row['IsRFPException']) && $Row['IsRFPException'] == 1): 
+            $product_name .= ' <span class="em">RFP!</span>';
+        endif; 
+        ?>
         <span id="Name<?php echo $id; ?>" class="name <?php echo implode(" ", $product_name_classes); ?>" <?php echo $title_attr; ?>="<?php echo $name_title; ?>"><?php echo $product_name; ?></span>
         <?php echo $eq_brace_link; ?>
         <span class="category-watermark hidden-print"><?php echo $category_name; ?></span>

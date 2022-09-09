@@ -55,4 +55,16 @@ class M_product_assembly extends CI_Model {
 		
 		return $totals;
 	}
+
+	public function get_worksheet_idn($product_assembly_idn)
+	{
+		$where = array("ProductAssembly_Idn" => $product_assembly_idn);
+		return $this->m_reference_table->get_field($this->_table_name, "Worksheet_Idn", $where);
+	}
+
+	public function get_miscellaneous_detail_idn($product_assembly_idn)
+	{
+		$where = array("ProductAssembly_Idn" => $product_assembly_idn);
+		return $this->m_reference_table->get_field($this->_table_name, "MiscellaneousDetail_Idn", $where);
+	}
 }

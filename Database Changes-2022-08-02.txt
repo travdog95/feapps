@@ -1,0 +1,21 @@
+CREATE TABLE RFPExceptions (
+	RFPException_Idn int IDENTITY(1,1) PRIMARY KEY,
+	Product_Idn int NOT NULL DEFAULT 0,
+	Worksheet_Idn int NOT NULL DEFAULT 0,
+	MiscellaneousDetail_Idn int NOT NULL DEFAULT 0,
+	RFPExceptionStatus_Idn int NOT NULL DEFAULT 0
+);
+
+CREATE TABLE RFPExceptionStatuses (
+	RFPExceptionStatus_Idn int IDENTITY(1,1) PRIMARY KEY,
+	Name varchar(100),
+	ActiveFlag bit DEFAULT 1,
+	Rank int NOT NULL DEFAULT 0,
+);
+
+INSERT INTO RFPExceptionStatuses (Name, Rank)
+VALUES ('New', 1);
+INSERT INTO RFPExceptionStatuses (Name, Rank)
+VALUES ('Product Updated', 2);
+INSERT INTO RFPExceptionStatuses (Name, Rank)
+VALUES ('Job Estimate Updated', 3);

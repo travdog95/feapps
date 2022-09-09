@@ -46,7 +46,7 @@ textarea.disabled,
   color: #999999;
 }
 
-em,
+.em,
 td.em,
 th.em {
   color: red;
