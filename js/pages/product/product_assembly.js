@@ -316,6 +316,7 @@ const displaySearchResults = (data) => {
 };
 
 const calculateParentPricing = () => {
+    $saveChildrenButton.prop("disabled", true);
     const form = document.getElementById("childComponentsForm")
     const formData = $(form).serialize();
 
@@ -326,5 +327,6 @@ const calculateParentPricing = () => {
         dataType: "json",
         data: formData
     });
-    console.log("Calculate");
+    
+    console.log('')
 };

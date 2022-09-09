@@ -14,6 +14,8 @@ class Product extends CI_Controller {
 		$this->load->model('m_reference_table');
 		$this->load->model('m_menu');
 		$this->load->model('m_product');
+
+		//$this->load->library("rfp_lib");
 	}
 
     /**
@@ -204,6 +206,11 @@ class Product extends CI_Controller {
 				}
 			}
 
+			if (isset($post['RFP']) == false)
+			{
+				$this->rfp_lib->process_flow(array("Product_Idn" => $post['Product_Idn']), 1, 2);
+			}
+
 			if ($post['Mode'] == "edit")
 			{
 				$where = array("Product_Idn" => $post['Product_Idn']);
@@ -364,47 +371,19 @@ class Product extends CI_Controller {
 
 	public function calculate_parentPricing()
 	{
-		$save_results = array(
-			"return_code" => 0,
-			"echo" => array(),
-			"updated" => array(),
-		);
-		$set = array();
-		$update = array();
-		$hasErrors = false;
-
-		// $query = $this->db
-		// 	->select("p.Product_Idn, p.Name, p.MaterialUnitPrice * pr.Quantity AS MaterialPriceTotal, p.FieldUnitPrice * pr.Quantity AS FieldPriceTotal, p.ShopUnitPrice * pr.Quantity AS ShopPriceTotal")
-		// 	->from("Products AS p")
-		// 	->join("ProductRelationships AS pr", "pr.Child_Idn = p.Product_Idn")
-		// 	->where("Product_Idn = Child_Idn");
-
-		$query = $this->db->query("SELECT 
-		p.Product_Idn,
-		p.Name,
-		p.MaterialUnitPrice * pr.Quantity AS MaterialPriceTotal,
-		p.FieldUnitPrice * pr.Quantity AS FieldPriceTotal,
-		p.ShopUnitPrice * pr.Quantity AS ShopPriceTotal
+		$ChildPricing = $this->db->query('SELECT pr.Child_Idn, p.MaterialUnitPrice, p.FieldUnitPrice, p.ShopUnitPrice, p.EngineerUnitPrice 
 		FROM Products AS p
-		JOIN ProductRelationships AS pr ON pr.Child_Idn = p.Product_Idn");
+		JOIN ProductRelationships AS pr
+			ON p.Product_Idn = pr.Child_Idn
+		WHERE p.Product_Idn = pr.Child_Idn');
 
+		$ChildQuantity = $this->db->query('SELECT Child_Idn, Quantity FROM ProductRelationships');
 
-		foreach($query->result_array() as $row)
-		{
-			echo $row["MaterialPriceTotal"];
-			echo $row["FieldPriceTotal"];
-			echo $row["ShopPriceTotal"];
-		}
+		$TotalChildPricing = $ChildPricing * $ChildQuantity;
 
-		// $row = $query->row();
-
-		// if (isset($row))
-		// {
-		// 		echo $row->MaterialPriceTotal;
-		// 		echo $row->FieldPriceTotal;
-		// 		echo $row->ShopPriceTotal;
-		// }
+		print_r($TotalChildPricing);
 	}
+
 }
 /* End of file */
 /* Location: ./application/controllers/Product.php */
