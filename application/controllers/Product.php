@@ -340,11 +340,16 @@ class Product extends CI_Controller {
 		$set = array();
 		$update = array();
 		$hasErrors = false;
+		$parentMatieralPrice = 0;
+		$parentFieldPrice = 0;
+		$parentSet = array();
+		$where = array();
 
 		$post = $this->input->post();
 		
 		if ($post)
 		{
+			//Iterate over child products to calculate quantity and price
 			for($i = 0; $i < sizeof($post['Child_Idn']); $i++)
 			{
 				$update['Child_Idn'] = $post['Child_Idn'][$i];
@@ -353,7 +358,13 @@ class Product extends CI_Controller {
 				{
 					$hasErrors = true;
 				}
+				$parentMatieralPrice += $set['Quantity'] * $post['MaterialUnitPrice'][$i];
+				$parentFieldPrice += $set['Quantity'] * $post['FieldUnitPrice'][$i];
 			}
+			
+			$parentSet = array('MaterialUnitPrice' => $parentMatieralPrice, 'FieldUnitPrice' => $parentFieldPrice);
+			$where = array('Product_Idn' => $post['Parent_Idn']);
+			$update = $this->m_product->update($parentSet, $where);
 
 			$save_results['return_code'] = ($hasErrors) ? -1 : 1;
 		}

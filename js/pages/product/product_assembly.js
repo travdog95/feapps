@@ -12,6 +12,9 @@ const $childCheckboxes = $("[data-child-checkbox]");
 const $searchResultsRows = $(".search-results-row");
 const $searchResultsCheckboxes = $("[data-search-results-checkbox]");
 const $childQuantityInputs = $(".childQuantity");
+const $childMaterialUnitPrices = $(".childMaterialUnitPrice");
+const $childFieldUnitPrices = $(".childFieldUnitPrice");
+
 
 //Event handlers
 $deleteChildrenButton.on("click", e => {
@@ -316,17 +319,19 @@ const displaySearchResults = (data) => {
 };
 
 const calculateParentPricing = () => {
-    $saveChildrenButton.prop("disabled", true);
-    const form = document.getElementById("childComponentsForm")
-    const formData = $(form).serialize();
+    let parentMaterialUnitPrice = 0;
+    let parentFieldUnitPrice = 0;
+    let fieldUnitPrice = 0;
+    let materialUnitPrice = 0;
+    let quantity = 0;
 
-    //AJAX request
-    FECI.request = $.ajax({
-        url: FECI.base_url + "product/calculate_parentPricing   ",
-        type: "POST",
-        dataType: "json",
-        data: formData
-    });
-    
-    console.log('')
+    for(let i = 0; i < $childMaterialUnitPrices.length; i++)
+    {
+        console.log()
+        materialUnitPrice = $($childMaterialUnitPrices[i]).val()
+        fieldUnitPrice = $($childFieldUnitPrices[i]).val()
+        quantity = $($childQuantityInputs[i]).val()
+
+    }
+
 };

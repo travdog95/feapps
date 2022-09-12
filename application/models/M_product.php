@@ -491,6 +491,25 @@ class M_product extends CI_Model {
         return $children;
     }
 
+    public function get_assembly_children($parent_idn)
+    {
+
+        $children = array();
+
+        $this->db->select('pr.Parent_Idn, pr.Child_Idn, pr. Quantity, p.MaterialUnitPrice, p.FieldUnitPrice, p.ShopUnitPrice, p.EngineerUnitPrice')
+                    ->from('Products AS p')
+                    ->join('ProductRelationships AS pr', 'p.Product_Idn = pr.Child_Idn')
+                    ->where(array('pr.Parent_Idn'=>$parent_idn));
+        $query = $this->db->get();
+
+        if($query->num_rows() > 0)
+        {
+            $children = $query->result_array();
+        }
+
+        return $children;
+    }
+
     public function get_search_results($parent_idn, $children, $search_criteria, $add_metadata = true)
     {
         $results = array();

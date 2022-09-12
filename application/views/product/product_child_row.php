@@ -2,6 +2,10 @@
     <td class="text-center">
         <input type="checkbox" name="deleteChild_Idn[]" data-child-checkbox="<?php echo $child['Product_Idn']; ?>" value="<?php echo $child['Product_Idn']; ?>" />
         <input type="hidden" name="Child_Idn[]" value="<?php echo $child['Product_Idn']; ?>" />
+        <input type="hidden" class="childMaterialUnitPrice" name="MaterialUnitPrice[]" value="<?php echo $child['MaterialUnitPrice']; ?>" />
+        <input type="hidden" class="childFieldUnitPrice" name="FieldUnitPrice[]" value="<?php echo $child['FieldUnitPrice']; ?>" />
+
+
     </td>
     <td><?php echo $child['Product_Idn']; ?></td>
     <td><?php echo $child['Name']; ?></td>
