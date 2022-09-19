@@ -17,7 +17,7 @@
 		<div class="container">
 			<?php $this->load->view('inc/page_header'); ?>
 			<div><h4>Parent</h4></div>
-			<table class="parent-component table table-striped table-condensed table-bordered custom-table table-centered">
+			<table class="parent-component table table-striped table-condensed table-bordered custom-table table-centered" id="parentProductTable">
 				<thead>
 					<tr>
 						<th>ID</th>

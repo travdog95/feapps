@@ -246,6 +246,9 @@ const saveChildren = () => {
             //Error
             displayMessageBox("Error saving child component.", "danger");
         }
+
+        calculateParentPricing();
+
     });
 
     //Failure callback handler
@@ -259,6 +262,7 @@ const saveChildren = () => {
         //Enable inputs
     $saveChildrenButton.prop("disabled", false);
     });
+
 };
 
 const search = () => {
@@ -324,14 +328,17 @@ const calculateParentPricing = () => {
     let fieldUnitPrice = 0;
     let materialUnitPrice = 0;
     let quantity = 0;
+    const form = document.getElementById('parentProductTable');
+    const formData = $(form).serialize();
 
-    for(let i = 0; i < $childMaterialUnitPrices.length; i++)
-    {
-        console.log()
-        materialUnitPrice = $($childMaterialUnitPrices[i]).val()
-        fieldUnitPrice = $($childFieldUnitPrices[i]).val()
-        quantity = $($childQuantityInputs[i]).val()
-
-    }
+    FECI.request = $.ajax({
+        url: FECI.base_url + "product/save_children",
+        type: "POST",
+        dataType: "json",
+        data: formData,
+        success:function(response){    
+            $("#parentProductTable").load(window.location + " #parentProductTable");
+        }
+    });
 
 };
