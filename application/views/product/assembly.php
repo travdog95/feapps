@@ -38,8 +38,8 @@
 						<td><?php echo $product['WorksheetMaster']; ?></td>
 						<td><?php echo $product['WorksheetCategory']; ?></td>
 						<td><?php echo $product['Manufacturer']; ?></td>
-						<td><?php echo number_format($product['MaterialUnitPrice'], 2); ?></td>
-						<td><?php echo number_format($product['FieldUnitPrice'], 2); ?></td>
+						<td><span id="parentMaterialUnitPrice"><?php echo number_format($product['MaterialUnitPrice'], 2); ?></span></td>
+						<td><span id="parentFieldUnitPrice"><?php echo number_format($product['FieldUnitPrice'], 2); ?></span></td>
 					</tr>
 				</tbody>
 			</table>

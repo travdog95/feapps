@@ -14,7 +14,8 @@ const $searchResultsCheckboxes = $("[data-search-results-checkbox]");
 const $childQuantityInputs = $(".childQuantity");
 const $childMaterialUnitPrices = $(".childMaterialUnitPrice");
 const $childFieldUnitPrices = $(".childFieldUnitPrice");
-
+const $parentMaterialUnitPrice = $("#parentMaterialUnitPrice");
+const $parentFieldUnitPrice = $("#parentFieldUnitPrice");
 
 //Event handlers
 $deleteChildrenButton.on("click", e => {
@@ -328,17 +329,31 @@ const calculateParentPricing = () => {
     let fieldUnitPrice = 0;
     let materialUnitPrice = 0;
     let quantity = 0;
-    const form = document.getElementById('parentProductTable');
-    const formData = $(form).serialize();
+    // const form = document.getElementById('parentProductTable');
+    // const formData = $(form).serialize();
 
-    FECI.request = $.ajax({
-        url: FECI.base_url + "product/save_children",
-        type: "POST",
-        dataType: "json",
-        data: formData,
-        success:function(response){    
-            $("#parentProductTable").load(window.location + " #parentProductTable");
-        }
+    // FECI.request = $.ajax({
+    //     url: FECI.base_url + "product/save_children",
+    //     type: "POST",
+    //     dataType: "json",
+    //     data: formData,
+    //     success:function(response){    
+    //         $("#parentProductTable").load(window.location + " #parentProductTable");
+    //     }
+    // });
+
+    //Calculate parent material and field unit price
+    $childQuantityInputs.each(function(index) {
+        quantity = parseFloat(strip_comma($(this).val()));
+        materialUnitPrice = parseFloat(strip_comma($($childMaterialUnitPrices[index]).val()));
+        fieldUnitPrice = parseFloat(strip_comma($($childFieldUnitPrices[index]).val()));
+
+        parentMaterialUnitPrice += quantity * materialUnitPrice;
+        parentFieldUnitPrice += quantity * fieldUnitPrice;
     });
 
+    //Update page with new values
+    $parentMaterialUnitPrice.html(number_format(parentMaterialUnitPrice, 2, ","));
+    $parentFieldUnitPrice.html(number_format(parentFieldUnitPrice, 2, ","));
+    
 };
