@@ -162,7 +162,7 @@ class M_miscellaneous_detail extends CI_Model {
 		if ($this->m_reference_table->delete($this->_table_name, $where))
 		{
 			//check to see if an rfp exception needs to be created
-			if ($this->rfp_lib->is_misc_product_exception($where['MiscellaneousDetail_Idn']))
+			if (isset($where['MiscellaneousDetail_Idn']) && $this->rfp_lib->is_misc_product_exception($where['MiscellaneousDetail_Idn']))
 			{
 				$delete_where = array(
 					"MiscellaneousDetail_Idn" => $where['MiscellaneousDetail_Idn'],
