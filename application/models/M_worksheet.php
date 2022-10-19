@@ -357,7 +357,8 @@ class M_worksheet extends CI_Model {
                         //Add Type
                         $row['RowType'] = "Product";
 
-                        $row['IsRFPException'] = $this->rfp_lib->is_worksheet_detail_exception($worksheet_idn, $row['Product_Idn']);
+                        //Is new (1) or product updated (2) rfp exception
+                        $row['IsRFPException'] = $this->rfp_lib->is_worksheet_detail_exception($worksheet_idn, $row['Product_Idn'], array(1,2));
 
                         //Add Category Product Rank
                         $category_product_rank = "";

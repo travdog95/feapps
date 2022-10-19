@@ -21,7 +21,7 @@ class M_rfp_exception extends CI_Model {
         $data = array();    
 
         $this->db
-            ->select("w.Job_Idn, w.ChangeOrder, j.Name AS JobName, u.FirstName, u.LastName, j.JobDate, w.Name AS WorksheetName, p.Product_Idn, p.Name as ProductName, s.Name AS RFPStatus")
+            ->select("w.Job_Idn, w.ChangeOrder, j.Name AS JobName, u.FirstName, u.LastName, j.JobDate, w.Name AS WorksheetName, p.Product_Idn, p.Name as ProductName, s.Name AS RFPStatus, rfp.CreateDate, rfp.UpdateDate, p.IsParent")
             ->from("RFPExceptions AS rfp")
             ->join("RFPExceptionStatuses AS s", "rfp.RFPExceptionStatus_Idn = s.RFPExceptionStatus_Idn", "left")
             ->join("Worksheets AS w", "w.Worksheet_Idn = rfp.Worksheet_Idn", "left")
@@ -52,6 +52,8 @@ class M_rfp_exception extends CI_Model {
     
     function insert($data)
     {
+        $data['CreateDate'] = get_current_date(1);
+        $data['UpdateDate'] = get_current_date(1);
         $new_idn = $this->m_reference_table->insert_return_idn($this->_table_name, $data);
         
         if ($new_idn)
@@ -82,6 +84,7 @@ class M_rfp_exception extends CI_Model {
      */
     function update($set, $where)
     {
+        $set['UpdateDate'] = get_current_date(1);
         return $this->m_reference_table->update($this->_table_name, $set, $where);
     }
 }

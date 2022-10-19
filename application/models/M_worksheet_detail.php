@@ -92,13 +92,16 @@ class M_worksheet_detail extends CI_Model {
         {
             if ($this->db->delete($this->_table_name, $where))
             {
-                //check to see if an rfp exception needs to be created
-                if ($this->rfp_lib->is_product_exception($where['Product_Idn']))
+                //check to see if an rfp exception needs to be deleted
+                if (isset($where['Worksheet_Idn'])
+                && isset($where['Product_Idn'])
+                && $this->rfp_lib->is_worksheet_detail_exception($where['Worksheet_Idn'], $where['Product_Idn']))
                 {
                     $delete_where = array(
                         "Product_Idn" => $where['Product_Idn'],
                         "Worksheet_Idn" => $where['Worksheet_Idn'],
                     );
+
                     $this->m_rfp_exception->delete($delete_where);
                 }
 

@@ -25,6 +25,8 @@ const $cancelButton = $("#cancelProductButton");
 const $parentSelectElements = $(".filter");
 const $requredElements = $("select, input, textarea").filter('[required]');
 const $buildComponentButton = $("button.build-component");
+const $rfpSaved = $("#RFPSaved");
+const $rfp = $("#RFP");
 
 //Event handlers
 $saveProductButton.on("click", e => {
@@ -180,6 +182,14 @@ const saveProduct = () => {
     FECI.request.done(function(response, textStatus, jqXHR) {
         // console.log(response);
         if (response.return_code == 1) {
+
+            //Update RFPSaved field
+            if ($rfp.prop("checked")) {
+                $rfpSaved.val("1");
+            } else {
+                $rfpSaved.val("0");
+            }
+
             //Send update message
             displayMessageBox("Product saved!", "success");
 
@@ -187,8 +197,8 @@ const saveProduct = () => {
                 window.location = `${FECI.base_url}product?message=Product%20(${response.NewProduct_Idn})%20added.&message_type=1`;
             }
         } else {
-        //Error
-        displayMessageBox("Error saving product.", "danger");
+            //Error
+            displayMessageBox("Error saving product.", "danger");
         }
     });
 

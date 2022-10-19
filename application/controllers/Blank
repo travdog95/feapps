@@ -1,8 +1,0 @@
-	SELECT 
-		pr.Quantity * p.MaterialUnitPrice AS "MaterialPriceTotal",
-		pr.Quantity * p.FieldUnitPrice AS "FieldPriceTotal",
-		pr.Quantity * p.ShopUnitPrice AS "ShopPriceTotal",
-		pr.Quantity * p.EngineerUnitPrice AS "EngineerPriceTotal"
-	FROM ProductRelationships AS pr
-	JOIN Products AS p
-		ON pr.Child_Idn = p.Product_Idn

@@ -43,6 +43,9 @@ class Rfp extends CI_Controller {
 			'Worksheet Name',
 			'Product ID',
 			'Product Name',
+			"Assembly",
+			"Create Date",
+			"Update Date"
 		);
 
 		//Get Exceptions

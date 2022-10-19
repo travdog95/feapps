@@ -472,14 +472,14 @@ class M_product extends CI_Model {
         $product_relations = array();
         $child = array();
 
-    $product_relations = $this->m_reference_table->get_where('ProductRelationships', array('Parent_Idn' => $product_idn));
+        $product_relations = $this->m_reference_table->get_where('ProductRelationships', array('Parent_Idn' => $product_idn));
 
         foreach($product_relations as $product_relationship)
         {
             //Get child product
             $child = $this->m_reference_table->get_where('Products', array('Product_Idn' => $product_relationship['Child_Idn']))[0];
 
-            $child['Quantity']=$product_relationship['Quantity'];
+            $child['Quantity'] = $product_relationship['Quantity'];
             
             //Add metadata
             $metadata = $this->get_metadata($child);
@@ -496,7 +496,7 @@ class M_product extends CI_Model {
 
         $children = array();
 
-        $this->db->select('pr.Parent_Idn, pr.Child_Idn, pr. Quantity, p.MaterialUnitPrice, p.FieldUnitPrice, p.ShopUnitPrice, p.EngineerUnitPrice')
+        $this->db->select('pr.Parent_Idn, pr.Child_Idn, pr.Quantity, p.MaterialUnitPrice, p.FieldUnitPrice, p.ShopUnitPrice, p.EngineerUnitPrice')
                     ->from('Products AS p')
                     ->join('ProductRelationships AS pr', 'p.Product_Idn = pr.Child_Idn')
                     ->where(array('pr.Parent_Idn'=>$parent_idn));

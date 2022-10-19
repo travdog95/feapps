@@ -16,7 +16,7 @@
 	<div class="main-content">
 		<div class="container">
 			<?php $this->load->view('inc/page_header'); ?>
-			<div><h4>Parent</h4></div>
+			<div><h4>Assembly</h4></div>
 			<table class="parent-component table table-striped table-condensed table-bordered custom-table table-centered" id="parentProductTable">
 				<thead>
 					<tr>
@@ -57,6 +57,7 @@
 						<th>Worksheet Master</th>
 						<th>Category</th>
 						<th>Manufacturer</th>
+						<th>RFP</th>
 						<th>Material Price</th>
 						<th>Field Labor</th>
 					</tr>

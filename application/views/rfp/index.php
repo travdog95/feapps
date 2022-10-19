@@ -50,10 +50,13 @@
                                     <td><?php echo $ex['Job_Idn']."-".$ex['ChangeOrder']; ?></td>
                                     <td><?php echo $ex['JobName']; ?></td>
                                     <td><?php echo $ex['FirstName']." ".$ex['LastName']; ?></td>
-                                    <td><?php echo $ex['JobDate']; ?></td>
+                                    <td><?php echo date("j-M-Y", strtotime($ex['JobDate'])); ?></td>
                                     <td><?php echo $ex['WorksheetName']; ?></td>
                                     <td><?php echo $ex['Product_Idn']; ?></td>
                                     <td><?php echo $ex['ProductName']; ?></td>
+                                    <td><?php echo $ex['IsParent'] == 1 ? "Yes" : "No"; ?></td>
+                                    <td><?php echo date("j-M-Y g:i A", strtotime($ex['CreateDate'])); ?></td>
+                                    <td><?php echo date("j-M-Y g:i A", strtotime($ex['UpdateDate'])); ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

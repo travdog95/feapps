@@ -12,8 +12,8 @@ const $childCheckboxes = $("[data-child-checkbox]");
 const $searchResultsRows = $(".search-results-row");
 const $searchResultsCheckboxes = $("[data-search-results-checkbox]");
 const $childQuantityInputs = $(".childQuantity");
-const $childMaterialUnitPrices = $(".childMaterialUnitPrice");
-const $childFieldUnitPrices = $(".childFieldUnitPrice");
+// const $childMaterialUnitPrices = $(".childMaterialUnitPrice");
+// const $childFieldUnitPrices = $(".childFieldUnitPrice");
 const $parentMaterialUnitPrice = $("#parentMaterialUnitPrice");
 const $parentFieldUnitPrice = $("#parentFieldUnitPrice");
 
@@ -43,11 +43,12 @@ $searchButton.on("click", e => {
     }
 });
 
-$childQuantityInputs.each(function(index){
-    $(this).on("change", e => {
+const registerChildQtyChange = (input) => {
+    const $input = $(input);
+    $input.on("change", function (e) {
         calculateParentPricing();
     })
-});
+}
 
 const registerChildRowClick = (row) => {
     const $row = $(row);
@@ -89,6 +90,10 @@ const registerSearchResultsCheckboxClick = (checkbox) => {
         handleButtonState("data-search-results-checkbox", "#addChildrenButton");
     });
 };
+
+$childQuantityInputs.each((index, qtyInput) => {
+    registerChildQtyChange(qtyInput);
+});
 
 $childRows.each((index, childRow) => {
     registerChildRowClick(childRow);
@@ -153,8 +158,11 @@ const addChildren = () => {
                 //Add row click handler
                 registerChildRowClick($(`[data-child-row="${product.Product_Idn}"]`));
                 registerChildCheckboxClick($(`[data-child-checkbox="${product.Product_Idn}"]`));
+                registerChildQtyChange($(`[data-child-qty="${product.Product_Idn}"]`));
             });
 
+            check_num_handlers();
+            select_event_handler();
             calculateParentPricing();
 
         } else {
@@ -329,24 +337,12 @@ const calculateParentPricing = () => {
     let fieldUnitPrice = 0;
     let materialUnitPrice = 0;
     let quantity = 0;
-    // const form = document.getElementById('parentProductTable');
-    // const formData = $(form).serialize();
-
-    // FECI.request = $.ajax({
-    //     url: FECI.base_url + "product/save_children",
-    //     type: "POST",
-    //     dataType: "json",
-    //     data: formData,
-    //     success:function(response){    
-    //         $("#parentProductTable").load(window.location + " #parentProductTable");
-    //     }
-    // });
 
     //Calculate parent material and field unit price
-    $childQuantityInputs.each(function(index) {
+    $(".childQuantity").each(function(index) {
         quantity = parseFloat(strip_comma($(this).val()));
-        materialUnitPrice = parseFloat(strip_comma($($childMaterialUnitPrices[index]).val()));
-        fieldUnitPrice = parseFloat(strip_comma($($childFieldUnitPrices[index]).val()));
+        materialUnitPrice = parseFloat(strip_comma($($(".childMaterialUnitPrice")[index]).val()));
+        fieldUnitPrice = parseFloat(strip_comma($($(".childFieldUnitPrice")[index]).val()));
 
         parentMaterialUnitPrice += quantity * materialUnitPrice;
         parentFieldUnitPrice += quantity * fieldUnitPrice;

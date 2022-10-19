@@ -109,7 +109,10 @@ class Rfp_lib
         return $is_exception;
     }
 
-    public function is_worksheet_detail_exception($worksheet_idn, $product_idn)
+    /**
+     * $status_idns - simple array of statuses to query for, i.e. array(1, 2, 3)
+     */
+    public function is_worksheet_detail_exception($worksheet_idn, $product_idn, $status_idns = array())
     {
         $is_exception = false;
         $where = array();
@@ -124,8 +127,12 @@ class Rfp_lib
             $this->CI->db
                 ->select("RFPException_Idn")
                 ->from("RFPExceptions")
-                ->where($where)
-                ->where_in("RFPExceptionStatus_Idn", array(1,2));
+                ->where($where);
+
+            if (sizeof($status_idns) > 0)
+            {
+                $this->CI->db->where_in("RFPExceptionStatus_Idn", $status_idns);
+            }
 
             $query = $this->CI->db->get();
 
@@ -179,11 +186,12 @@ class Rfp_lib
 
     public function process_flow($where, $current_status_idn, $new_status_idn)
     {
-        $where = array();
         $set = array();
 
         if (sizeof($where) > 0 && $current_status_idn > 0 && $new_status_idn)
         {
+            $product_idn = $where['Product_Idn'];
+
             $where["RFPExceptionStatus_Idn"] = $current_status_idn;
 
             $set = array(
@@ -203,6 +211,13 @@ class Rfp_lib
                 {
                     $this->CI->m_rfp_exception->update($set, $where);
                 }
+            }
+
+            $is_child = $this->CI->product_lib->is_child($product_idn);
+
+            if ($is_child)
+            {
+                $this->process_child($product_idn);
             }
         }
     }
@@ -306,5 +321,24 @@ class Rfp_lib
         }
 
         return $results;
+    }
+
+    public function process_child($child_idn)
+    {
+
+        //Find top level parent
+        $top_level_parents = $this->CI->product_lib->get_top_level_parents($child_idn);
+
+        
+        foreach($top_level_parents as $top_level_parent_idn)
+        {
+            //If all children have RFP equal to 0, then change state to Product Updated (2)
+
+
+            //Else, change state to Children Partially Updated (4)
+
+        }
+
+        return true;
     }
 }

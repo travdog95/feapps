@@ -147,7 +147,8 @@
     <div class="col-sm-8">
       <div class="checkbox">
         <label>
-          <input name="RFP" id="RFP" type="checkbox" <?php if ($product['RFP'] == 1) echo "checked"; ?>> 
+          <input name="RFP" id="RFP" type="checkbox" <?php if ($product['RFP'] == 1) echo "checked"; ?> <?php if ($product['IsParent']) echo 'disabled="disabled"'; ?>> 
+          <input name=RFPSaved id="RFPSaved" type="hidden" value="<?php echo $product['RFP'] == 1 ? 1 : 0; ?>" />
         </label>
       </div>
     </div>

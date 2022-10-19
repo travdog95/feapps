@@ -16,6 +16,7 @@ class Worksheet_controller extends CI_Controller {
 		$this->load->model('m_reference_table');
 		$this->load->model('m_miscellaneous_detail');
 		$this->load->model('m_product_assembly_detail');
+		$this->load->model('m_rfp_exception');
 
         //Load libraries
         $this->load->library("worksheet");
@@ -1226,6 +1227,8 @@ class Worksheet_controller extends CI_Controller {
             // $delete['WorksheetDetails'] = $this->m_reference_table->delete("WorksheetDetails", $where);
             $delete['WorksheetDetails'] = $this->m_worksheet_detail->delete_by_worksheet($worksheet_idn);
 
+            //Delete RFP exceptions
+            $this->m_rfp_exception->delete($where);
 
             //Delete WorksheetAreas
             if ($worksheet['WorksheetMaster_Idn'] == 32) //Cross mains and lines

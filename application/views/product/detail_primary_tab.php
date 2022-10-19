@@ -66,13 +66,13 @@
   <div class="form-group form-group-sm">
     <label for="MaterialUnitPrice" class="col-sm-4 control-label">Material Unit Price</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control check_num2" id="MaterialUnitPrice" name="MaterialUnitPrice" placeholder="Material Unit Price" value="<?php echo number_format($product['MaterialUnitPrice'], 2); ?>">
+      <input type="text" class="form-control check_num2" id="MaterialUnitPrice" name="MaterialUnitPrice" placeholder="Material Unit Price" value="<?php echo number_format($product['MaterialUnitPrice'], 2); ?>" <?php if ($product['IsParent']) echo 'disabled="disabled"'; ?>>
     </div>
   </div>
   <div class="form-group form-group-sm">
     <label for="FieldUnitPrice" class="col-sm-4 control-label">Field Unit Price</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control check_num2" id="FieldUnitPrice" name="FieldUnitPrice" placeholder="Field Unit Price" value="<?php echo number_format($product['FieldUnitPrice'], 2); ?>">
+      <input type="text" class="form-control check_num2" id="FieldUnitPrice" name="FieldUnitPrice" placeholder="Field Unit Price" value="<?php echo number_format($product['FieldUnitPrice'], 2); ?>" <?php if ($product['IsParent']) echo 'disabled="disabled"'; ?>>
     </div>
   </div>
   <div class="form-group form-group-sm">

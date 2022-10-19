@@ -1,0 +1,3 @@
+alter table RFPExceptions 
+Add CreateDate datetime2(0),
+UpdateDate datetime2(0)

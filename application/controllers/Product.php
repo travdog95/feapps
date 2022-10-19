@@ -119,8 +119,9 @@ class Product extends CI_Controller {
 
 		if ($mode == "edit") 
 		{
+			$is_assembly_text = $data['product']['IsParent'] ? '<span class="em">Assembly</span> ' : "";
 			//Load sub header
-			$data['sub_header'] = "ID: ".$product_idn." - ".$data['product']['Name'];
+			$data['sub_header'] = $is_assembly_text."(".$product_idn.") ".$data['product']['Name'];
 		}
 
 		if ($mode == "copy")
@@ -208,7 +209,10 @@ class Product extends CI_Controller {
 				}
 			}
 
-			if (isset($post['RFP']) == false)
+			$rfpIsSet = isset($post['RFP']);
+
+			//If RFP was updated to unchecked
+			if ($post['RFPSaved'] == 1 && !$rfpIsSet)
 			{
 				$this->rfp_lib->process_flow(array("Product_Idn" => $post['Product_Idn']), 1, 2);
 			}
@@ -274,6 +278,9 @@ class Product extends CI_Controller {
 				//Update is_parent flag on Product
 				$this->product_lib->update_is_parent($where['Parent_Idn']);
 			}
+
+			$this->product_lib->calculate_assembly_prices($post['Parent_Idn']);
+
 		}
 
 		echo json_encode($save_results);
@@ -302,16 +309,17 @@ class Product extends CI_Controller {
 				$html = "";
 				$insert['Child_Idn'] = $child_idn;
 				$insert['Quantity'] = 1;
-				if (!$this->m_product_relationship->insert($insert))
-				{
-					$save_results["num_errors"]++;
-				}
-				else
+
+				if ($this->m_product_relationship->insert($insert))
 				{
 					$child = $this->m_product->get_product($child_idn, false, false);
 					$child['Quantity'] = 1;
 					$html = $this->load->view("product/product_child_row", array("child" => $child), true);
 					$save_results['added'][] = array("Product_Idn" => $child_idn, "Html" => $html);
+				}
+				else
+				{
+					$save_results["num_errors"]++;
 				}
 			}
 
@@ -322,9 +330,16 @@ class Product extends CI_Controller {
 			else
 			{
 				$save_results['return_code'] = 1;
+
 				//Update is_parent flag on Product
 				$this->product_lib->update_is_parent($post['Parent_Idn']);
+
+				//Remove RFP flag
+				$this->m_reference_table->update("Products", array("RFP" => 0), array("Product_Idn" => $post['Parent_Idn']));
 			}
+
+			//re-calculate assembly material unit and field prices
+			$this->product_lib->calculate_assembly_prices($post['Parent_Idn']);
 		}
 
 		echo json_encode($save_results);

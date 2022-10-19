@@ -714,7 +714,7 @@ class M_job extends CI_Model
                     $p['new_eup'] = $new_eup;
                     $p['old_eup'] = $old_eup;
 
-                    $p['IsRFPException'] = $this->rfp_lib->is_worksheet_detail_exception($p['Worksheet_Idn'], $p['Product_Idn']);
+                    $p['IsRFPException'] = $this->rfp_lib->is_worksheet_detail_exception($p['Worksheet_Idn'], $p['Product_Idn'], array(1,2));
 
                     $price_differences[] = $p;
                 }
