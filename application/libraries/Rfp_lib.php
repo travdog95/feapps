@@ -325,18 +325,45 @@ class Rfp_lib
 
     public function process_child($child_idn)
     {
-
+        $new_rfp_status_idn = 0;
         //Find top level parent
         $top_level_parents = $this->CI->product_lib->get_top_level_parents($child_idn);
-
         
         foreach($top_level_parents as $top_level_parent_idn)
         {
+            $children = $this->CI->m_product->get_children($top_level_parent_idn);
+            
             //If all children have RFP equal to 0, then change state to Product Updated (2)
-
-
             //Else, change state to Children Partially Updated (4)
+            $new_rfp_status_idn = $this->are_all_children_not_rfp($children) ? 2 : 4;
 
+            //update RFP status on parent
+            $this->CI->m_rfp_exception->update(array("RFPExceptionStatus_Idn" => $new_rfp_status_idn), array("Product_Idn" => $top_level_parent_idn));
+
+        }
+
+        return true;
+    }
+
+    public function are_all_children_not_rfp($children)
+    {
+        $child_children = array();
+
+        foreach ($children as $child)
+        {
+            if ($child['IsParent'] == 1)
+            {
+                $child_children = $this->CI->m_product->get_children($child['Product_Idn']);
+                if (!$this->are_all_children_not_rfp($child_children)) 
+                {
+                    return false;
+                }
+            }
+
+            if ($child['RFP'] == 1)
+            {
+                return false;
+            }
         }
 
         return true;

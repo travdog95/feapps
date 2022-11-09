@@ -367,7 +367,11 @@ class Product extends CI_Controller {
 			//Iterate over child products to calculate quantity and price
 			for($i = 0; $i < sizeof($post['Child_Idn']); $i++)
 			{
-				$update['Child_Idn'] = $post['Child_Idn'][$i];
+				$update = array(
+					'Child_Idn' => $post['Child_Idn'][$i],
+					'Parent_Idn' => $post['Parent_Idn']
+				);
+
 				$set['Quantity'] = $post['Quantity'][$i] == "" ? 0 : $post['Quantity'][$i];
 				if (!$this->m_product_relationship->update($set, $update))
 				{
@@ -379,7 +383,11 @@ class Product extends CI_Controller {
 			
 			$parentSet = array('MaterialUnitPrice' => $parentMatieralPrice, 'FieldUnitPrice' => $parentFieldPrice);
 			$where = array('Product_Idn' => $post['Parent_Idn']);
-			$update = $this->m_product->update($parentSet, $where);
+
+			if (!$this->m_product->update($parentSet, $where)) 
+			{
+				$hasErros = true;
+			}
 
 			$save_results['return_code'] = ($hasErrors) ? -1 : 1;
 		}
