@@ -12,11 +12,14 @@ class Test extends CI_Controller {
 
         //Load models
         $this->load->model('m_reference_table');
+        $this->load->model('m_product_relationship');
+        $this->load->model('m_product');
 		$this->load->model('m_menu');
 
         //Load test library
         $this->load->library('j');
-        $this->load->library('');
+        $this->load->library('unit_test');
+        $this->load->library('product_lib');
     }
 
     public function index($results = array())
@@ -39,6 +42,76 @@ class Test extends CI_Controller {
 
         //Load view
 		$this->load->view('tests/index', $data);
+    }
+
+    function assemblies()
+    {
+        		//Decare and initialize variables
+		$data = array(
+			'menus' => array(),
+			'active_page' => 'Assembly Tests',
+			'bread_crumbs' => array(
+				array(
+					'name' => 'Tests',
+					'link' => ''
+				)
+			),
+		);
+
+		//Load menus
+		$data['menus'] = $this->m_menu->get_menus();
+
+        //*** Count of Parents in Products and ProductRelationships Tables Match */
+
+        //Get all Parent_Idns from ProductRelationships table
+        $prod_relationship_parent_idns = $this->product_lib->get_all_product_relationship_parent_idns();
+
+        //Get all Parent_Idns from Products table
+        $prod_parent_idns = $this->product_lib->get_all_parent_idns();
+
+        $tablesMatch_Test = sizeof($prod_relationship_parent_idns) == sizeof($prod_parent_idns);
+
+        $tablesMatch_ExpectedResult = true;
+
+        $tablesMatch_TestName = 'Count of Parents in Products and ProductRelationships Tables Match';
+
+        $this->unit->run($tablesMatch_Test, $tablesMatch_ExpectedResult, $tablesMatch_TestName);
+
+        //** END TEST */
+
+        //Iterate over assemblies
+        foreach($prod_parent_idns as $parent_idn)
+        {
+            //Get product info of parent
+            $product = $this->product_lib->get_product($parent_idn);
+
+            //Calculate children prices
+            $children_prices = $this->product_lib->calculate_assembly_prices($parent_idn);
+
+            //Material Price test and expected result
+            $material_test = round($children_prices['MaterialUnitPrice'], 2) == round($product['MaterialUnitPrice'], 2);
+
+            $material_expected_result = true;
+
+            $material_test_name = "Parent/Children Material Price are equal (".$parent_idn.") <br /> Parent: $".number_format($product['MaterialUnitPrice'], 2)." Child: $".number_format($children_prices['MaterialUnitPrice'], 2);
+
+            $this->unit->run($material_test, $material_expected_result, $material_test_name);
+
+            //Field Price test and expected result
+            $field_test = round($children_prices['FieldUnitPrice'], 2) == round($product['FieldUnitPrice'], 2);
+
+            $field_expected_result = true;
+
+            $field_test_name = "Parent/Children Price Price are equal (".$parent_idn.") <br /> Parent: $".number_format($product['FieldUnitPrice'], 2)." Child: $".number_format($children_prices['FieldUnitPrice'], 2);
+
+            $this->unit->run($field_test, $field_expected_result, $field_test_name);
+        }
+
+        $data['report'] = $this->unit->report();
+
+        //Load view
+		$this->load->view('tests/assemblies', $data);
+
     }
 
     function job_recap($job_number, $recap_row_idn = 0)

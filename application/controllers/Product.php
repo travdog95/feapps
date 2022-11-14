@@ -115,7 +115,7 @@ class Product extends CI_Controller {
 		$data['menus'] = $this->m_menu->get_menus();
 
 		//Load Product
-		$data['product'] = $this->m_product->get_product($product_idn);
+		$data['product'] = $this->product_lib->get_product($product_idn);
 
 		if ($mode == "edit") 
 		{
@@ -152,7 +152,7 @@ class Product extends CI_Controller {
 		$data['menus'] = $this->m_menu->get_menus();
 
 		//Load Product
-		$data['product'] = $this->m_product->get_product($product_idn);
+		$data['product'] = $this->product_lib->get_product($product_idn);
 
 		if (empty($data['product']))
 		{
@@ -221,6 +221,12 @@ class Product extends CI_Controller {
 			{
 				$where = array("Product_Idn" => $post['Product_Idn']);
 				$save = $this->m_reference_table->update("Products", $set, $where);
+
+				if ($save && $this->product_lib->is_child($post['Product_Idn']))
+				{
+					//Find and update prices for parents
+					$this->product_lib->find_and_update_prices_for_parents($post['Product_Idn']);
+				}
 			}
 			else
 			{
@@ -262,7 +268,7 @@ class Product extends CI_Controller {
 				}
 				else
 				{
-					$product = $this->m_product->get_product($child_idn, false, false);
+					$product = $this->product_lib->get_product($child_idn, false, false);
 					$html = $this->load->view("product/product_search_results_row", array("search_result" => $product), true);
 					$save_results['deleted'][] = array("Product_Idn" => $child_idn, "Html" => $html);
 				}
@@ -275,12 +281,25 @@ class Product extends CI_Controller {
 			else
 			{
 				$save_results['return_code'] = 1;
+
 				//Update is_parent flag on Product
 				$this->product_lib->update_is_parent($where['Parent_Idn']);
+
+				//Update parent prices
+				if ($this->product_lib->calculate_and_update_assembly_prices($post['Parent_Idn']))
+				{
+					//if Parent is a child
+					if ($this->product_lib->is_child($post['Parent_Idn']))
+					{
+						//Find and update prices for parents
+						$this->product_lib->find_and_update_prices_for_parents($post['Parent_Idn']);
+					}
+				}
+				else
+				{
+					$save_results['return_code'] = -1;
+				}
 			}
-
-			$this->product_lib->calculate_assembly_prices($post['Parent_Idn']);
-
 		}
 
 		echo json_encode($save_results);
@@ -312,7 +331,7 @@ class Product extends CI_Controller {
 
 				if ($this->m_product_relationship->insert($insert))
 				{
-					$child = $this->m_product->get_product($child_idn, false, false);
+					$child = $this->product_lib->get_product($child_idn, false, false);
 					$child['Quantity'] = 1;
 					$html = $this->load->view("product/product_child_row", array("child" => $child), true);
 					$save_results['added'][] = array("Product_Idn" => $child_idn, "Html" => $html);
@@ -339,7 +358,14 @@ class Product extends CI_Controller {
 			}
 
 			//re-calculate assembly material unit and field prices
-			$this->product_lib->calculate_assembly_prices($post['Parent_Idn']);
+			$this->product_lib->calculate_and_update_assembly_prices($post['Parent_Idn']);
+
+			//if Parent is a child
+			if ($this->product_lib->is_child($post['Parent_Idn']))
+			{
+				//Find and update prices for parents
+				$this->product_lib->find_and_update_prices_for_parents($post['Parent_Idn']);
+			}
 		}
 
 		echo json_encode($save_results);
@@ -355,8 +381,6 @@ class Product extends CI_Controller {
 		$set = array();
 		$update = array();
 		$hasErrors = false;
-		$parentMatieralPrice = 0;
-		$parentFieldPrice = 0;
 		$parentSet = array();
 		$where = array();
 
@@ -372,23 +396,30 @@ class Product extends CI_Controller {
 					'Parent_Idn' => $post['Parent_Idn']
 				);
 
+				//Update the product relationship table
 				$set['Quantity'] = $post['Quantity'][$i] == "" ? 0 : $post['Quantity'][$i];
 				if (!$this->m_product_relationship->update($set, $update))
 				{
 					$hasErrors = true;
 				}
-				$parentMatieralPrice += $set['Quantity'] * $post['MaterialUnitPrice'][$i];
-				$parentFieldPrice += $set['Quantity'] * $post['FieldUnitPrice'][$i];
 			}
 			
-			$parentSet = array('MaterialUnitPrice' => $parentMatieralPrice, 'FieldUnitPrice' => $parentFieldPrice);
-			$where = array('Product_Idn' => $post['Parent_Idn']);
-
-			if (!$this->m_product->update($parentSet, $where)) 
+			//re-calculate assembly material unit and field prices
+			if (!$this->product_lib->calculate_and_update_assembly_prices($post['Parent_Idn']))
 			{
-				$hasErros = true;
+				$hasErrors = true;
 			}
 
+			//if Parent is a child
+			if ($this->product_lib->is_child($post['Parent_Idn']))
+			{
+				//Find and update prices for parents
+				if (!$this->product_lib->find_and_update_prices_for_parents($post['Parent_Idn']))
+				{
+					$hasErrors = true;
+				}
+			}
+			
 			$save_results['return_code'] = ($hasErrors) ? -1 : 1;
 		}
 
@@ -408,9 +439,9 @@ class Product extends CI_Controller {
 		{
 			$search_criteria = $post['searchInput'];
 			$parent_idn = $post['Parent_Idn'];
-			$parent = $this->m_product->get_product($parent_idn, true, false);
+			$parent = $this->product_lib->get_product($parent_idn, true, false);
 
-			$search_results = $this->m_product->get_search_results($parent_idn, $parent['Children'], $search_criteria);
+			$search_results = $this->product_lib->get_search_results($parent_idn, $parent['Children'], $search_criteria);
 
 			foreach($search_results as $product)
 			{

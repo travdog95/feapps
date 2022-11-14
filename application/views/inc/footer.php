@@ -1,7 +1,7 @@
 <!-- start: FOOTER -->
 <div class="footer clearfix">
     <div class="footer-inner">
-        2020 &copy; Fire Engineering Company Inc.
+        2022 &copy; Fire Engineering Company Inc.
     </div>
     <div class="footer-items">
         <span class="go-top"><i class="clip-chevron-up"></i></span>

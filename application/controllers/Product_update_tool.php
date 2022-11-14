@@ -13,6 +13,7 @@ class Product_Update_Tool extends CI_Controller {
 		//Load reference table model
 		$this->load->model('m_reference_table');
 		$this->load->model('m_menu');
+		$this->load->library("product_lib");
 
 		require_once APPPATH . 'third_party/ssp.class.php';
 
@@ -313,9 +314,13 @@ class Product_Update_Tool extends CI_Controller {
             "status" => 0,
             "updates" => 0,
             "errors" => 0,
-            "error_ids" => array()
+            "error_ids" => array(),
+			"logs" => array()
             );
         $query = false;
+		$price_changes = false;
+		$log = array();
+		$logs = array();
 
 		$sql = "SELECT p.Product_Idn,
 					s.MaterialUnitPrice,
@@ -333,7 +338,8 @@ class Product_Update_Tool extends CI_Controller {
 					p.ManufacturerPart_Id AS original_ManufacturerPart_Id,
 					s.ManufacturerPart_Id,
 					p.RFP AS original_RFP,
-					s.RFP
+					s.RFP,
+					p.IsParent
 				FROM ProductsStaging2 AS s
 				LEFT JOIN Products AS p ON (p.Product_Idn = s.Product_Idn)
 				WHERE p.MaterialUnitPrice <> s.MaterialUnitPrice
@@ -356,62 +362,88 @@ class Product_Update_Tool extends CI_Controller {
             {
                 foreach ($query->result_array() as $row)
                 {
-                    $set_data = array();
-
-					//Only update values that changes
-					if ($row['MaterialUnitPrice'] != $row['original_price'])
+					if ($row['IsParent'] == 0)
 					{
-						$set_data['MaterialUnitPrice'] = $row['MaterialUnitPrice'];
-					}
+						$set_data = array();
+						$price_changes = false;
+						$log = array(
+							"Product_Idn" => $row['Product_Idn'],
+							"Data" => array()
+						);
 
-					if ($row['FieldUnitPrice'] != $row['original_field'])
-					{
-						$set_data['FieldUnitPrice'] = $row['FieldUnitPrice'];
-					}
+						//Only update values that changes
+						if ($row['MaterialUnitPrice'] != $row['original_price'])
+						{
+							$set_data['MaterialUnitPrice'] = $row['MaterialUnitPrice'];
+							$price_changes = true;
+						}
 
-					if ($row['ShopUnitPrice'] != $row['original_shop'])
-					{
-						$set_data['ShopUnitPrice'] = $row['ShopUnitPrice'];
-					}
+						if ($row['FieldUnitPrice'] != $row['original_field'])
+						{
+							$set_data['FieldUnitPrice'] = $row['FieldUnitPrice'];
+							$price_changes = true;
+						}
 
-					if ($row['EngineerUnitPrice'] != $row['original_design'])
-					{
-						$set_data['EngineerUnitPrice'] = $row['EngineerUnitPrice'];
-					}
+						if ($row['ShopUnitPrice'] != $row['original_shop'])
+						{
+							$set_data['ShopUnitPrice'] = $row['ShopUnitPrice'];
+						}
 
-					if ($row['Name'] != $row['original_name'])
-					{
-						$set_data['Name'] = $row['Name'];
-					}
+						if ($row['EngineerUnitPrice'] != $row['original_design'])
+						{
+							$set_data['EngineerUnitPrice'] = $row['EngineerUnitPrice'];
+						}
 
-					if ($row['FECI_Id'] != $row['original_FECI_Id'])
-					{
-						$set_data['FECI_Id'] = $row['FECI_Id'];
-					}
+						if ($row['Name'] != $row['original_name'])
+						{
+							$set_data['Name'] = $row['Name'];
+						}
 
-					if ($row['ManufacturerPart_Id'] != $row['original_ManufacturerPart_Id'])
-					{
-						$set_data['ManufacturerPart_Id'] = $row['ManufacturerPart_Id'];
-					}
+						if ($row['FECI_Id'] != $row['original_FECI_Id'])
+						{
+							$set_data['FECI_Id'] = $row['FECI_Id'];
+						}
 
-					if ($row['RFP'] != $row['original_RFP'])
-					{
-						$set_data['RFP'] = $row['RFP'];
-					}
+						if ($row['ManufacturerPart_Id'] != $row['original_ManufacturerPart_Id'])
+						{
+							$set_data['ManufacturerPart_Id'] = $row['ManufacturerPart_Id'];
+						}
 
-					if ($this->db->update("Products", $set_data, array("Product_Idn" => $row['Product_Idn'])))
-					{
-						$results['updates']++;
-					}
-					else
-					{
-						$results['errors']++;
-						$results['error_ids'][] = $row['Product_Idn'];
-					}
+						if ($row['RFP'] != $row['original_RFP'])
+						{
+							$set_data['RFP'] = $row['RFP'];
+						}
 
+						if (sizeof($set_data) > 0)
+						{
+							if ($this->db->update("Products", $set_data, array("Product_Idn" => $row['Product_Idn'])))
+							{
+								$results['updates']++;
+								$log['Data'] = $set_data;
+								$logs[] = $log;
+
+								write_feci_log(array("Message" => json_encode($log), "Script" => "Product_update_tool->update_products()"));
+
+		
+								//If there was a change in material or field prices and the product is a child product
+								if ($price_changes && $this->product_lib->is_child($row['Product_Idn'])) {
+									//
+									$this->product_lib->find_and_update_prices_for_parents($row['Product_Idn']);
+								}
+							}
+							else
+							{
+								$results['errors']++;
+								$results['error_ids'][] = $row['Product_Idn'];
+							}
+		
+						}
+					} 
                 }
             }
 		}
+
+		$results['logs'] = $logs;
 
         echo json_encode($results);
     }

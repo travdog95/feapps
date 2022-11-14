@@ -9,36 +9,26 @@ class M_product_relationship extends CI_Model {
         $this->load->model('m_reference_table');
     }
 
-   /**
-    * get_product_idns
-    *
-    * @access   public
-    * @param    $worksheet_idn(integer)
-    * @return   array
-    */
-    
-    function get_children($parent_idn)
-    {
-        //Delcare and initialize variables
-        $query = false;
-        $children = array();
-        $child_product_idns = array();
-        $where = array();
+    /**
+     * get_schema
+     */
 
-        if ($parent_idn > 0)
-        {
-            $where = array(
-                "Parent_Idn" => $parent_idn,
-            );
-            $children = $this->m_reference_table->get_where($this->_table_name, $where);
-            
-            foreach ($children as $child)
-            {
-                $child_product_idns[] = $child['Child_Idn'];
-            }
-        }
-            
-        return $child_product_idns;
+    function get_schema()
+    {
+        return array(
+            "Parent_Idn" => array(
+                "dataType" => "integer",
+                "default" => 0
+            ),
+            "Child_Idn" => array(
+                "dataType" => "integer", 
+                "default" => 0
+            ),
+            "Quantity" => array(
+                "dataType" => "float", 
+                "default" => 1
+            )
+        );
     }
 
    /**
@@ -95,4 +85,5 @@ class M_product_relationship extends CI_Model {
 
         return $status;
     }
+
 }

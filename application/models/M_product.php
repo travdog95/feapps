@@ -8,6 +8,7 @@ class M_product extends CI_Model {
         parent::__construct();
 
         $this->load->model("m_reference_table");
+        $this->load->library("product_lib");
     }
 
     public function get_schema()
@@ -289,55 +290,6 @@ class M_product extends CI_Model {
         return $this->m_reference_table->delete($this->_table_name, $where);
     }
 
-    /*
-	 * Summary of get_product
-     * 
-     * Get product from Products table by Product_Idn, including foreign key id/name values
-     * 
-	 * @param mixed $product_idn
-	 * @return array
-	 */
-	public function get_product($product_idn, $get_children = true, $get_dropdown_data = true)
-	{
-        $product = array();
-        $products = array();
-        $metadata = array();
-        $dropdown_data = array();
-
-        if (isset($product_idn) && $product_idn > 0)
-        {
-
-        $products = $this->m_reference_table->get_where('Products', array('Product_Idn' => $product_idn));
-            
-            if (!empty($products)) 
-            {
-                $product = $products[0];
-            }
-        }
-        else 
-        {
-            $product = $this->set_defaults();
-        }
-
-        if (!empty($product))
-        {
-            if ($get_dropdown_data)
-            {
-                $dropdown_data = $this->get_dropdown_data($product);
-            }
-
-            if ($get_children)
-            {
-                $product['Children'] = $this->get_children($product_idn);
-            }
-
-            $metadata = $this->get_metadata($product);
-        }
-
-        return array_merge($product, $metadata, $dropdown_data);
-
-    }
-
     public function get_dropdown_data($product = array())
     {
         //Departments
@@ -464,105 +416,6 @@ class M_product extends CI_Model {
         $product['IsMainComponent'] = 0;
 
         return $product;
-    }
-
-    public function get_children($product_idn)
-    {
-        $children = array();
-        $product_relations = array();
-        $child = array();
-
-        $product_relations = $this->m_reference_table->get_where('ProductRelationships', array('Parent_Idn' => $product_idn));
-
-        foreach($product_relations as $product_relationship)
-        {
-            //Get child product
-            $child = $this->m_reference_table->get_where('Products', array('Product_Idn' => $product_relationship['Child_Idn']))[0];
-
-            $child['Quantity'] = $product_relationship['Quantity'];
-            
-            //Add metadata
-            $metadata = $this->get_metadata($child);
-
-            //Merge product with metadata and add to children array
-            $children[] = array_merge($child, $metadata);
-        }
-
-        return $children;
-    }
-
-    public function get_assembly_children($parent_idn)
-    {
-
-        $children = array();
-
-        $this->db->select('pr.Parent_Idn, pr.Child_Idn, pr.Quantity, p.MaterialUnitPrice, p.FieldUnitPrice, p.ShopUnitPrice, p.EngineerUnitPrice')
-                    ->from('Products AS p')
-                    ->join('ProductRelationships AS pr', 'p.Product_Idn = pr.Child_Idn')
-                    ->where(array('pr.Parent_Idn'=>$parent_idn));
-        $query = $this->db->get();
-
-        if($query->num_rows() > 0)
-        {
-            $children = $query->result_array();
-        }
-
-        return $children;
-    }
-
-    public function get_search_results($parent_idn, $children, $search_criteria, $add_metadata = true)
-    {
-        $results = array();
-        $products = array();
-        $where = array("ActiveFlag" => 1, "Product_Idn <>" => $parent_idn);
-        $metadata = array();
-        $children_idns = array();
-
-        //Put children_idns into array, so we can exlcude children from the search results
-        foreach($children as $child)
-        {
-            $children_idns[] = $child['Product_Idn'];
-        }
-
-        $this->db
-            ->select('p.*')
-            ->from("Products AS p")
-            ->join("Manufacturers AS m", "p.Manufacturer_Idn = m.Manufacturer_Idn", "left")
-            ->or_like("p.Name", $search_criteria)
-            ->or_like("Product_Idn", $search_criteria)
-            ->or_like("m.Name ", $search_criteria);
-    
-        $query = $this->db->get();
-            
-        if ($query == false)
-        {
-            write_feci_log(array("Message" => "SQL Error ".$this->db->last_query(), "Script" => get_caller_info()));
-        }
-        else
-        {
-            if ($query->num_rows() > 0)
-            {
-                foreach ($query->result_array() as $row)
-                {
-                    if (!in_array($row['Product_Idn'], $children_idns))
-                    {
-                        $products[] = $row;
-                    }
-                }
-            }
-        }
-
-        //Add metadata
-        if ($add_metadata)
-        {
-            foreach($products as $product)
-            {
-                $metadata = $this->get_metadata($product);
-                $results[] = array_merge($product, $metadata);
-            }
-        }
-
-        return $results;
     }
 
     public function get_metadata($product)

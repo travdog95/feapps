@@ -20,6 +20,9 @@ class Rfp_lib
         //Load models
         $this->CI->load->model('m_rfp_exception');
         $this->CI->load->model('m_product_relationship');
+
+        //Load Libraries
+        $this->CI->load->library("product_lib");
     }
 
     /**
@@ -46,7 +49,7 @@ class Rfp_lib
 
         if ($product_idn > 0)
         {
-            $child_idns = $this->CI->m_product_relationship->get_children($product_idn);
+            $child_idns = $this->CI->product_lib->get_child_idns($product_idn);
 
             foreach ($child_idns as $child_idn)
             {
@@ -331,7 +334,7 @@ class Rfp_lib
         
         foreach($top_level_parents as $top_level_parent_idn)
         {
-            $children = $this->CI->m_product->get_children($top_level_parent_idn);
+            $children = $this->CI->product_lib->get_children($top_level_parent_idn);
             
             //If all children have RFP equal to 0, then change state to Product Updated (2)
             //Else, change state to Children Partially Updated (4)
@@ -353,7 +356,7 @@ class Rfp_lib
         {
             if ($child['IsParent'] == 1)
             {
-                $child_children = $this->CI->m_product->get_children($child['Product_Idn']);
+                $child_children = $this->CI->product_lib->get_children($child['Product_Idn']);
                 if (!$this->are_all_children_not_rfp($child_children)) 
                 {
                     return false;
