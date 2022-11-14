@@ -1,0 +1,2 @@
+alter table Log 
+alter column Message nvarchar(MAX)
