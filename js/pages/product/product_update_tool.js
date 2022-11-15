@@ -76,7 +76,7 @@
 
         //Update products handlers
         $("#ConfirmUpdateProducts").on("click", function (e) {
-            if ($("#data tbody tr").length > 1) {
+            if ($("#data tbody tr").length > 0) {
                 $("#UpdateProductsConfirmation").modal("show");
             } else {
                 displayMessageBox("First, you need to upload a file!", "warning");
@@ -239,18 +239,14 @@
     }
 
     function finish_up(response, textStatus, jqXHR) {
-        // console.log(response);
-
         //Enable buttons
         $("#UpdateProductsConfirmation button").prop("disabled", false);
 
         var s = (response.updates == 1) ? "" : "s";
 
         //Update message
-        // $(".modal-message").html(response.updates + " product" + s + " updated!");
         $("#UpdateProductsConfirmation").modal("hide");
         displayMessageBox(response.updates + " product" + s + " updated!", "success");
-
     }
 
     function delete_staging_records() {
