@@ -286,7 +286,7 @@ class Product_lib
 
         $children = array();
 
-        $this->CI->db->select('pr.Parent_Idn, pr.Child_Idn, pr.Quantity, p.MaterialUnitPrice, p.FieldUnitPrice, p.ShopUnitPrice, p.EngineerUnitPrice')
+        $this->CI->db->select('pr.Parent_Idn, pr.Child_Idn, pr.Quantity, p.MaterialUnitPrice, p.FieldUnitPrice, p.ShopUnitPrice, p.EngineerUnitPrice, p.Name')
             ->from('Products AS p')
             ->join('ProductRelationships AS pr', 'p.Product_Idn = pr.Child_Idn')
             ->where(array('pr.Parent_Idn'=>$parent_idn));

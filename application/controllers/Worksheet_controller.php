@@ -21,6 +21,7 @@ class Worksheet_controller extends CI_Controller {
         //Load libraries
         $this->load->library("worksheet");
         $this->load->library("worksheet_master");
+        $this->load->library("product_lib");
 	}
 
     /**
@@ -1347,6 +1348,30 @@ class Worksheet_controller extends CI_Controller {
         {
             //Get assembly details data and load view
             $details = $this->m_reference_table->get_where("ProductAssemblyDetails", array("ProductAssembly_Idn" => $assembly_idn));
+
+            $html = $this->load->view("worksheet/assembly_details", array("details" => $details), true);
+        }
+        else
+        {
+            $html = "No details.";
+        }
+
+        echo $html;
+    }
+
+    /**
+     * Summary of get_assembly_details, return HTML
+     * @param mixed $assembly_idn 
+     */
+    function get_product_assembly_children_html($assembly_idn)
+    {
+        $html = "";
+        $details = array();
+
+        if ($assembly_idn > 0)
+        {
+            //Get assembly details data and load view
+            $details = $this->product_lib->get_assembly_children($assembly_idn);
 
             $html = $this->load->view("worksheet/assembly_details", array("details" => $details), true);
         }

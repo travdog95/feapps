@@ -125,7 +125,11 @@ table.cart-results-table td, table.cart-results-table th, table.cart-results-tab
     /*height: 35px;*/
 }
 
-.assembly:hover, .eq-brace:hover {
+.product-assembly {
+    font-weight: bold;
+}
+
+.assembly:hover, .eq-brace:hover, .product-assembly:hover {
     cursor: pointer;
 }
 

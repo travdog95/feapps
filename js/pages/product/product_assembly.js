@@ -181,6 +181,7 @@ const addChildren = () => {
     FECI.request.always(function() {
         //Enable inputs
         handleButtonState("data-search-results-row", "#addChildrenButton");
+        initAssemblyPage();
     });
 };
 
@@ -228,6 +229,7 @@ const deleteChildren = () => {
     FECI.request.always(function() {
         //Enable inputs
         handleButtonState("data-child-row", "#deleteChildrenButton");
+        initAssemblyPage();
     });
 };
 
@@ -353,3 +355,13 @@ const calculateParentPricing = () => {
     $parentFieldUnitPrice.html(number_format(parentFieldUnitPrice, 2, ","));
     
 };
+
+const initAssemblyPage = () => {
+    if ($(".child-row").length > 0) {
+        $saveChildrenButton.prop("disabled", false);
+    } else {
+        $saveChildrenButton.prop("disabled", true);
+    }
+}
+
+initAssemblyPage();

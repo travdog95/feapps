@@ -20,6 +20,11 @@ if ($Row['ProductAssembly_Idn'] > 0)
     array_push($product_name_classes, "assembly");
 }
 
+if (isset($Row['IsParent']) && $Row['IsParent'] == 1)
+{
+    array_push($product_name_classes, "product-assembly");
+}
+
 if ($Row['IsHead'])
 {
     array_push($row_classes, "head");
@@ -67,7 +72,7 @@ if ($Row['Product_Idn'] == 2489)
         <?php $Row['Name'] = (empty($Row['Name'])) ? "No Name" : $Row['Name']; ?>
 
         <?php if (empty($Row['Description'])):
-            $name_title = ($Row['ProductAssembly_Idn'] > 0) ? "Details" : "Name";
+            $name_title = ($Row['ProductAssembly_Idn'] > 0 || $Row['IsParent'] == 1) ? "Details" : "Name";
 			$title_attr = "data-title";
         else:
             //Strip out tabs, line and carriage returns
@@ -95,7 +100,7 @@ if ($Row['Product_Idn'] == 2489)
             $product_name .= ' <span class="em">RFP!</span>';
         endif; 
         ?>
-        <span id="Name<?php echo $id; ?>" class="name <?php echo implode(" ", $product_name_classes); ?>" <?php echo $title_attr; ?>="<?php echo $name_title; ?>"><?php echo $product_name; ?></span>
+        <span id="Name<?php echo $id; ?>" class="name <?php echo implode(' ', $product_name_classes); ?>" <?php echo $title_attr; ?>="<?php echo $name_title; ?>"><?php echo $product_name; ?></span>
         <?php echo $eq_brace_link; ?>
         <span class="category-watermark hidden-print"><?php echo $category_name; ?></span>
 	</td>

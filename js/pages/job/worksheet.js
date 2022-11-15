@@ -58,6 +58,8 @@ function worksheet_handlers() {
 
   eq_braces_handler();
 
+  product_assembly_handlers();
+
   //Event handler for delete button on copy job modal dialog
   $("#DeleteProductsConfirmation").click(function() {
     const products_checked = $(".delete:checked").length;
@@ -459,7 +461,7 @@ function assembly_handlers() {
           trigger: "manual",
           container: "#WorksheetTable",
           title: function() {
-            console.log($(this).data("title"));
+            // console.log($(this).data("title"));
             return (
               $(this).data("title") +
               '<span class="close a-close">&times;</span>'
@@ -478,6 +480,41 @@ function assembly_handlers() {
     });
   });
 }
+
+function product_assembly_handlers() {
+  //Assembly name click to show assembly details
+  $(".product-assembly").click(function() {
+    const a = $(this);
+    const product_assembly_idn = a.closest("tr").data("product_idn");
+    $.get(
+      FECI.base_url +
+        "worksheet_controller/get_product_assembly_children_html/" +
+        product_assembly_idn,
+      function(content) {
+        a.popover({
+          html: true,
+          content: content,
+          trigger: "manual",
+          container: "#WorksheetTable",
+          title: function() {
+            return (
+              'Details<span class="close a-close">&times;</span>'
+            );
+          }
+        }).popover("toggle");
+      }
+    );
+  });
+
+  $(".product-assembly").on("shown.bs.popover", function(e) {
+    let a = $(this);
+
+    $(".a-close").on("click", function(e) {
+      a.popover("toggle");
+    });
+  });
+}
+
 
 function eq_braces_handler() {
   //Show EQ Brace calculation details

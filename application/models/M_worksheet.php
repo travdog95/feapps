@@ -258,6 +258,7 @@ class M_worksheet extends CI_Model {
             "p.HangerType_Idn",
             "wm.DisplayShopHours",
             "p.RFP",
+            "p.IsParent"
         );
 
         //Load model
