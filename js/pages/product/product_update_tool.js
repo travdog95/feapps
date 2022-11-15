@@ -51,7 +51,9 @@
                     $("td:eq(7)", row).addClass("em");
                 }
                 //RFP
-                if (parseFloat(data[8]) !== parseFloat(data[19])) {
+                const stagingRFP = data[8] == 1 ? 1 : 0;
+                const productRFP = data[19] == 1 ? 1 : 0;
+                if (stagingRFP !== productRFP) {
                     $("td:eq(8)", row).addClass("em");
                 }
             }
@@ -99,6 +101,7 @@
                 complete: completeFn
             },
             before: function (file, inputElem) {
+                $('#fileUpload').val("");
             },
             error: function (err, file) {
                 console.log("ERROR:", err, file);

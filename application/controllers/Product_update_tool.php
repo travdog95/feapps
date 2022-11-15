@@ -14,6 +14,7 @@ class Product_Update_Tool extends CI_Controller {
 		$this->load->model('m_reference_table');
 		$this->load->model('m_menu');
 		$this->load->library("product_lib");
+		$this->load->library("product_update_tool_lib");
 
 		require_once APPPATH . 'third_party/ssp.class.php';
 
@@ -54,8 +55,9 @@ class Product_Update_Tool extends CI_Controller {
             "inserts" => 0,
             "errors" => 0,
             "error_ids" => array()
-            );
+        );
 		$product = array();
+		$staging_product = array();
 
 		if ($this->input->post())
 		{
@@ -74,7 +76,7 @@ class Product_Update_Tool extends CI_Controller {
 				{
 					if (!empty($row->ID))
 					{
-						$product = array(
+						$staging_product = array(
 							"Product_Idn" => string_filter($row->ID, ","),
 							"MaterialUnitPrice" => $row->Material == "" ? "0" : string_filter($row->Material, ","),
 							"ShopUnitPrice" => $row->Shop == "" ? "0" : string_filter($row->Shop, ","),
@@ -86,15 +88,19 @@ class Product_Update_Tool extends CI_Controller {
 							"RFP" => $row->RFP == "Yes" || $row->RFP == 1 ? 1 : 0,
 						);
 
-						//insert row
-						if ($this->m_reference_table->insert("ProductsStaging2", $product))
+						if ($this->product_update_tool_lib->has_differences($staging_product))
 						{
-							$results['inserts']++;
-						}
-						else
-						{
-							$results['errors']++;
-							$results['error_ids'][] = $row->Product_Idn;
+
+							//insert row
+							if ($this->m_reference_table->insert("ProductsStaging2", $staging_product))
+							{
+								$results['inserts']++;
+							}
+							else
+							{
+								$results['errors']++;
+								$results['error_ids'][] = $row->Product_Idn;
+							}
 						}
 					}
 				}
@@ -348,8 +354,14 @@ class Product_Update_Tool extends CI_Controller {
 					OR p.EngineerUnitPrice <> s.EngineerUnitPrice
 					OR p.Name <> s.Name
 					OR p.FECI_Id <> s.FECI_Id
+					OR (p.FECI_Id is null AND s.FECI_Id <> '')
+					OR (s.FECI_Id is null AND p.FECI_Id <> '')
 					OR p.ManufacturerPart_Id <> s.ManufacturerPart_Id
-					OR p.RFP <> s.RFP";
+					OR (p.ManufacturerPart_Id is null AND s.ManufacturerPart_Id <> '')
+					OR (s.ManufacturerPart_Id is null AND p.ManufacturerPart_Id <> '')
+					OR p.RFP <> s.RFP
+					OR (p.RFP is null AND s.RFP = 1)
+					OR (s.RFP is null AND p.RFP = 1)";
 		$query = $this->db->query($sql);
 
 		if ($query == false)
