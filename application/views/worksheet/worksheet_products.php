@@ -66,13 +66,19 @@ if ($Row['Product_Idn'] == 2489)
 		<input type="checkbox" name="Delete[]" id="Delete<?php echo $id; ?>" class="delete" value="<?php echo $id; ?>" title="Delete Item" />
 	</td>
 	<td>
-		<input type="text" name="Qty[<?php echo $id; ?>]" id="Qty<?php echo $id; ?>" class="check_num1 quantity calc-worksheet form-control input-xs monitor-change print-my-value text-center" value="<?php echo number_format($Row['Quantity'], 1); ?>" title="Quantity" data-recent-value="<?php echo $Row['Quantity']; ?>" />
+        <div class="input-group">
+            <input type="text" name="Qty[<?php echo $id; ?>]" id="Qty<?php echo $id; ?>" class="check_num1 quantity calc-worksheet form-control input-xs monitor-change print-my-value text-center" value="<?php echo number_format($Row['Quantity'], 1); ?>" title="Quantity" data-recent-value="<?php echo $Row['Quantity']; ?>" />
+
+            <?php if ($Row['WorksheetCategory_Idn'] == 89): ?>
+                <span class="input-group-addon input-xs">ft.</span>
+            <?php endif; ?>
+        </div>
 	</td>
 	<td class="left-aligned product-name">
         <?php $Row['Name'] = (empty($Row['Name'])) ? "No Name" : $Row['Name']; ?>
 
         <?php if (empty($Row['Description'])):
-            $name_title = ($Row['ProductAssembly_Idn'] > 0 || $Row['IsParent'] == 1) ? "Details" : "Name";
+            $name_title = ($Row['ProductAssembly_Idn'] > 0 || (isset($Row['IsParent']) && $Row['IsParent'] == 1)) ? "Details" : "Name";
 			$title_attr = "data-title";
         else:
             //Strip out tabs, line and carriage returns
