@@ -250,6 +250,11 @@ class M_product extends CI_Model {
                 "dataType" => "integer", 
                 "default" => 0
             ),
+            "IsParent" => array(
+                "dataType" => "boolean", 
+                "default" => 0
+            ),
+
         );
 
         return $schema;

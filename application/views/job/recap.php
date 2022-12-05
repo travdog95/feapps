@@ -280,7 +280,7 @@ $this->load->view('inc/site_header', $site_header_data);
                                                 <td>$<span id="total_direct_cost_3" class="total_direct_cost">0</span></td>
                                                 <td>$<span id="total_direct_cost_4" class="total_direct_cost">0</span></td>
                                                 <td>$<span id="total_direct_cost_5" class="total_direct_cost">0</span></td>
-                                                <td rowspan="3" class="nobgfill"></td>
+                                                <td>$<span id="total_direct_costs_total" class="total_direct_cost"></span></td>
                                             </tr>
                                             <tr>
                                                 <td>Mark-Up of Costs</td>
@@ -313,6 +313,8 @@ $this->load->view('inc/site_header', $site_header_data);
                                                         <span class="input-group-addon input-xs">%</span>
                                                     </div>
                                                 </td>
+                                                <td><strong>$<span id="mark_up_costs_total" class=""></span></strong></td>
+
                                             </tr>
                                             <tr class="danger bold">
                                                 <td>Total After Capacity Costs</td>
@@ -321,6 +323,7 @@ $this->load->view('inc/site_header', $site_header_data);
                                                 <td>$<span id="total_capacity_cost_3" class="total_capacity_cost">0</span></td>
                                                 <td>$<span id="total_capacity_cost_4" class="total_capacity_cost">0</span></td>
                                                 <td>$<span id="total_capacity_cost_5" class="total_capacity_cost">0</span></td>
+                                                <td class="nobgfill"></td>
                                             </tr>
 
                                             <!-- DARK GRAY SEPARATOR -->

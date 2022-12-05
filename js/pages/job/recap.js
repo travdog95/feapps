@@ -549,6 +549,7 @@ function calc_contingencies() {
 function calc_total_direct_costs() {
     //Total Direct Costs
     FECI.job.subtotals.total_direct_costs = [];
+    let grandTotal = 0;
 
     //Iterate through first five columns
     for (i = 1; i <= 5; i++) {
@@ -564,9 +565,14 @@ function calc_total_direct_costs() {
             }
         }
 
+        grandTotal += parseInt(number_format(FECI.job.subtotals.total_direct_costs[i], 0,""));
+
         //Set field value
         $("#total_direct_cost_" + i).text(number_format(FECI.job.subtotals.total_direct_costs[i], 0, ','));
     }
+
+    //Set total direct costs total field
+    $("#total_direct_costs_total").text(number_format(grandTotal, 0, ','));
 }
 
 function calc_mark_up_costs() {
@@ -576,6 +582,7 @@ function calc_mark_up_costs() {
     FECI.job.case1_subtotals.mark_ups = [];
     FECI.job.case2_subtotals.mark_ups = [];
     var mark_up_percent = 0;
+    let = markUpCostsTotal = 0;
 
     for (i = 1; i <= 5; i++) {
         //Bonded
@@ -603,7 +610,11 @@ function calc_mark_up_costs() {
         if (i == 3 || i == 5) {
             $("#mark_up_percent_" + i).val(number_format(FECI.job.subtotals.mark_up_percents[i] * 100, 4, ','));
         }
+
+        markUpCostsTotal += parseInt(number_format(FECI.job.subtotals.mark_ups[i], 0, ''));
     }
+
+    $("#mark_up_costs_total").text(number_format(markUpCostsTotal, 0, ","));
 
     //Case 1
     FECI.job.case1_subtotals.mark_ups[2] = Math.round(FECI.job.job_parms[38]['NumericValue'] * FECI.job.subtotals.total_direct_costs[2]);

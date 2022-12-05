@@ -1347,7 +1347,9 @@ class Worksheet_controller extends CI_Controller {
         if ($assembly_idn > 0)
         {
             //Get assembly details data and load view
-            $details = $this->m_reference_table->get_where("ProductAssemblyDetails", array("ProductAssembly_Idn" => $assembly_idn));
+            // $details = $this->m_reference_table->get_where("ProductAssemblyDetails", array("ProductAssembly_Idn" => $assembly_idn));
+
+            $details = $this->worksheet->get_assembly_details($assembly_idn);
 
             $html = $this->load->view("worksheet/assembly_details", array("details" => $details), true);
         }

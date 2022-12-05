@@ -2610,5 +2610,31 @@ class Worksheet
 
         return $matches;
     }
+
+    public function get_assembly_details($assembly_idn)
+    {
+        $details = array();
+
+        $this->CI->db
+            ->select("pad.*, p.RFP")
+            ->from("ProductAssemblyDetails AS pad")
+            ->join("Products AS p", "pad.Product_Idn = p.Product_Idn")
+            ->where("ProductAssembly_Idn", $assembly_idn);
+
+        $query = $this->CI->db->get();
+
+        if ($query)
+        {
+            if ($query->num_rows() > 0)
+            {
+                foreach ($query->result_array() as $row)
+                {
+                    $details[] = $row;
+                }
+            }
+        }
+
+        return $details;
+    }
 }
 // END Worksheet Class
