@@ -1,3 +1,5 @@
 .rfpRow:hover {
     cursor: pointer;
 }
+
+#rfpTable tfoot { display: table-header-group; }

@@ -35,7 +35,7 @@
             <!-- start: PAGE CONTENT -->
             <div class="row">
                 <div class="col-md-12">
-                    <table id="rfpTable" class="table table-hover table-condensed table-striped">
+                    <table id="rfpTable" class="table table-hover table-condensed table-striped display" style="width:100%">
                         <thead>
                             <tr>
 								<?php foreach ($column_headers as $index => $column_header): ?>
@@ -43,7 +43,7 @@
 								<?php endforeach; ?>
                             </tr>
                         </thead>
-                        <tbody>
+                        <!-- <tbody>
                             <?php foreach ($exceptions as $ex): ?>
                                 <tr class="rfpRow" data-product-idn="<?php echo $ex['Product_Idn']; ?>" title="Edit Product">
                                     <td><?php echo $ex['RFPStatus']; ?></td>
@@ -59,7 +59,7 @@
                                     <td><?php echo date("j-M-Y g:i A", strtotime($ex['UpdateDate'])); ?></td>
                                 </tr>
                             <?php endforeach; ?>
-                        </tbody>
+                        </tbody> -->
 						<tfoot>
                             <tr><?php foreach ($column_headers as $index => $column_header): ?>
                                 <th><?php echo $column_header; ?></th><?php endforeach; ?>
@@ -68,9 +68,6 @@
                     </table>
                 </div>
 
-                <div class="col-md-12 button-container">
-                    <input type="button" class="btn btn-default btn-primary" id="ConfirmUpdateProducts" name="ConfirmUpdateProducts" value="Update Products" title="Update Products" />
-                </div>
 			</div>
             <!-- end: PAGE CONTENT-->
         </div>

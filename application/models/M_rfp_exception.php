@@ -15,7 +15,7 @@ class M_rfp_exception extends CI_Model {
         return $this->m_reference_table->get_all($this->_table_name);
     }
 
-    function all_extended()
+    function all_extended($active_only = false)
     {
         //Declare and initialize variables
         $data = array();    
@@ -29,12 +29,24 @@ class M_rfp_exception extends CI_Model {
             ->join("Jobs AS j", "w.Job_Idn = j.Job_Idn AND w.ChangeOrder = j.ChangeOrder", "left")
             ->join("Users AS u", "j.CreatedBy_Idn = u.User_Idn", "left");
 
+        if ($active_only) 
+        {
+            $this->db->where("rfp.RFPExceptionStatus_Idn <> 3");
+        }
+
         $query = $this->db->get();
 
         if ($query)
         {
             foreach ($query->result_array() as $row)
             {
+                $row['JobNumber'] = format_job_number($row['Job_Idn'], $row['ChangeOrder']);
+                $row['FormattedJobDate'] = date("j-M-Y", strtotime($row['JobDate']));
+                $row['Assembly'] = $row['IsParent'] == 1 ? "Yes" : "No";
+                $row['FormattedCreateDate'] = date("j-M-Y g:i A", strtotime($row['CreateDate']));
+                $row['FormattedUpdateDate'] = date("j-M-Y g:i A", strtotime($row['UpdateDate']));
+                $row['EstimatorFullName'] = $row['FirstName']." ".$row['LastName'];
+
                 array_push($data, $row);
             }
         }

@@ -40,6 +40,11 @@ class Rfp_lib
         return $this->CI->m_rfp_exception->all_extended();
     }
 
+    public function get_active_exceptions()
+    {
+        return $this->CI->m_rfp_exception->all_extended(true);
+    }
+
     public function is_product_exception($product_idn)
     {
         $is_exception = false;
