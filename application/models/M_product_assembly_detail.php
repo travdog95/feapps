@@ -53,10 +53,22 @@ class M_product_assembly_detail extends CI_Model {
      */
     function delete($where)
     {
+        $Product_Idn = 0;
+
+        //Get Product_Idn if not passed in
+        if (!isset($where['Product_Idn']))
+        {
+            $Product_Idn = $this->m_reference_table->get_field($this->_table_name, "Product_Idn", $where);
+        }
+        else
+        {
+            $Product_Idn = $where['Product_Idn'];
+        }
+
         if ($this->m_reference_table->delete($this->_table_name, $where))
         {
             //check to see if an rfp exception needs to be created
-            if ($this->rfp_lib->is_product_exception($where['Product_Idn']))
+            if ($this->rfp_lib->is_product_exception($Product_Idn))
             {
                 $misc_detail_idn = $this->m_product_assembly->get_miscellaneous_detail_idn($data['ProductAssembly_Idn']);
                 $this->m_rfp_exception->delete("MiscellaneousDetail_Idn", $misc_detail_idn);
