@@ -216,20 +216,6 @@ class M_reference_table extends CI_Model {
             }
             else
             {
-                // if ($query->num_rows() > 0)
-                // {
-                //     foreach ($query->result_array() as $row)
-                //     {
-                //         if ($query->num_rows() == 1)
-                //         {
-                //             $data = $row[$field];
-                //         }
-                //         else
-                //         {
-                //             $data[] = $row[$field];
-                //         }
-                //     }
-                // }
                 if ($query->num_rows() == 1)
                 {
                     foreach ($query->result_array() as $row)

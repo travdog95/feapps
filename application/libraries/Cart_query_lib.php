@@ -579,14 +579,16 @@ class Cart_query_lib
 
         $sql_select = "p.RiserType_Idn, p.TrimPackageFlag, p.BackFlowType_Idn, p.ControlValve_Idn, p.FDCType_Idn, p.BellType_Idn, s.Rank AS SizeRank, p.Rank AS ProductRank, p.Product_Idn, p.Name, p.Description, MaterialUnitPrice, FieldUnitPrice, ShopUnitPrice";
 
-        $sql_where = "p.WorksheetCategory_Idn = {$worksheet_category_idn}";
+        // $sql_where = "p.WorksheetCategory_Idn = {$worksheet_category_idn}";
+        $sql_where = "p.ActiveFlag = 1 AND (";
+
         if (empty($riser_type))
         {
-            $sql_where .= " AND s.Value = '{$riser_size}'";
+            $sql_where .= "s.Value = '{$riser_size}'";
         }
         else
         {
-            $sql_where .= " AND (RiserType_Idn = {$riser_type} AND s.Value = '{$riser_size}')";
+            $sql_where .= "(RiserType_Idn = {$riser_type} AND s.Value = '{$riser_size}')";
         }
         $sql_group_by = "p.RiserType_Idn, p.TrimPackageFlag, p.BackFlowType_Idn, p.ControlValve_Idn, p.FDCType_Idn, p.BellType_Idn, s.Rank, p.Rank, p.Product_Idn, p.Name, p.Description, MaterialUnitPrice, FieldUnitPrice, ShopUnitPrice";
         $sql_order_by = "p.RiserType_Idn DESC, p.TrimPackageFlag DESC, p.BackFlowType_Idn DESC, p.ControlValve_Idn DESC, p.FDCType_Idn DESC, p.BellType_Idn DESC, s.Rank ASC, p.Rank ASC";
@@ -632,6 +634,8 @@ class Cart_query_lib
             $sql_where .= " OR (CheckValve_Idn = {$check_valve} AND s.Value = '{$riser_size}')";
         }
 
+        $sql_where .= ")";
+
         //If underground and riser sizes are different, pull in branch line/grooved fitting/conc red with the greater size
         $fitting_size = 0;
         $sql_reducer = "";
@@ -668,7 +672,7 @@ class Cart_query_lib
                 ->from($this->sql_from)
                 ->join("ProductSizes AS s", "p.ProductSize_Idn = s.ProductSize_Idn", "left")
                 ->where($sql_where)
-                ->where("p.ActiveFlag", 1)
+                // ->where("p.ActiveFlag", 1)
                 ->group_by($sql_group_by)
                 ->order_by($sql_order_by);
         }
