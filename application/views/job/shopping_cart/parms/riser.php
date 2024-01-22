@@ -29,7 +29,7 @@ $underground_sizes = $this->m_reference_table->get_where("ProductSizes", $sql_si
 	<?php foreach ($riser_types as $riser_type): ?>
         <div>
             <label>
-			<input type="radio" name="RiserType<?php echo $id; ?>" id="RiserType<?php echo $id."-".$riser_type['RiserType_Idn']; ?>" class="filter-results riser-type" value="<?php echo $riser_type['RiserType_Idn']; ?>" title="<?php echo quotes_to_entities($riser_type['Name']); ?>" <?php if ($riser_type['Rank'] == 1) echo 'checked="checked"'; ?> />
+			<input type="radio" name="RiserType<?php echo $id; ?>" id="RiserType<?php echo $id."-".$riser_type['RiserType_Idn']; ?>" class="filter-results riser-type" value="<?php echo $riser_type['RiserType_Idn']; ?>" title="<?php echo quotes_to_entities($riser_type['Name']); ?>" <?php if ($riser_type['Rank'] == 2) echo 'checked="checked"'; ?> />
 			<?php echo quotes_to_entities($riser_type['Name']); ?>
             </label>
         </div>
