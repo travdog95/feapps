@@ -584,11 +584,11 @@ class Cart_query_lib
 
         if (empty($riser_type))
         {
-            $sql_where .= "s.Value = '{$riser_size}'";
+            $sql_where .= "s.Value = '{$riser_size}' AND p.WorksheetCategory_Idn = {$worksheet_category_idn}";
         }
         else
         {
-            $sql_where .= "(RiserType_Idn = {$riser_type} AND s.Value = '{$riser_size}')";
+            $sql_where .= "(RiserType_Idn = {$riser_type} AND s.Value = '{$riser_size}') AND p.WorksheetCategory_Idn = {$worksheet_category_idn}";
         }
         $sql_group_by = "p.RiserType_Idn, p.TrimPackageFlag, p.BackFlowType_Idn, p.ControlValve_Idn, p.FDCType_Idn, p.BellType_Idn, s.Rank, p.Rank, p.Product_Idn, p.Name, p.Description, MaterialUnitPrice, FieldUnitPrice, ShopUnitPrice";
         $sql_order_by = "p.RiserType_Idn DESC, p.TrimPackageFlag DESC, p.BackFlowType_Idn DESC, p.ControlValve_Idn DESC, p.FDCType_Idn DESC, p.BellType_Idn DESC, s.Rank ASC, p.Rank ASC";
