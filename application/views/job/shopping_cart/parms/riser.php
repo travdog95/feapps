@@ -127,7 +127,7 @@ $underground_sizes = $this->m_reference_table->get_where("ProductSizes", $sql_si
     <?php $bell_types = $this->m_reference_table->get_where("BellTypes", "ActiveFlag = 1", "Rank ASC"); ?>
     <?php foreach ($bell_types as $bell_type): ?>
         <label class="radio-inline">
-			    <input type="radio" name="Bell<?php echo $id; ?>" id="Bell<?php echo $id."-".$bell_type['BellType_Idn']; ?>" class="filter-results" value="<?php echo $bell_type['BellType_Idn']; ?>" title="<?php echo quotes_to_entities($bell_type['Name']); ?>" <?php if ($bell_type['Rank'] == 1) echo 'checked="checked"'; ?> />
+			    <input type="radio" name="Bell<?php echo $id; ?>" id="Bell<?php echo $id."-".$bell_type['BellType_Idn']; ?>" class="filter-results" value="<?php echo $bell_type['BellType_Idn']; ?>" title="<?php echo quotes_to_entities($bell_type['Name']); ?>" <?php if ($bell_type['Rank'] == 2) echo 'checked="checked"'; ?> />
 	        <?php echo quotes_to_entities($bell_type['Name']); ?>
         </label>
     <?php endforeach; ?>
