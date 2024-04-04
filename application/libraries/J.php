@@ -98,6 +98,7 @@ class J
                     'created_by_idn' => $job['CreatedBy_Idn'],
                     'created_by_name' => $this->CI->m_user->get_first_name_by_idn($job['CreatedBy_Idn']),
 				    'created_date' => format_date($job['CreateDateTime']),
+                    'updated_date' => format_date($job['UpdateDateTime']),
 				    'prepared_bys' => $this->CI->m_job_prepared_by->get_prepared_bys($this->job_number),
                     'prepared_by_names' => $this->CI->m_job_prepared_by->get_prepared_by_names($this->job_number),
 				    'name' => $job['Name'],

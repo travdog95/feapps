@@ -66,8 +66,11 @@ $this->load->view('inc/site_header', $site_header_data);
                                         }
                                         ?>
                                     </div>
-
+                                    <!-- <div class="col-md-2 col-xs-2 text-center">
+                                        
+                                    </div> -->
 									<div class="col-md-4 col-xs-4 text-center">
+                                        <span class="bold"><em>Last Price Update:</em></span>
                                         <span><em><?php echo $job['formated_price_update_datetime']; ?></em></span><br />
                                         <?php if ($job['prices_outdated']): ?>
                                             <span><em>Prices are outdated!</em></span>
@@ -92,7 +95,12 @@ $this->load->view('inc/site_header', $site_header_data);
                                     <div class="col-md-4 col-xs-4 text-right">
                                         <span class="bold">Peer Review:</span>
                                     </div> 
-
+                                </div>
+                                <div class="row">
+                                    <div class="col-md col-xs-12">
+                                        <span class="bold">Last Modified: </span>
+                                        <span><?php echo $job['updated_date']; ?></span>
+                                    </div>
                                 </div>
                             </div>
 

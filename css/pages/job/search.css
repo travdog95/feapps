@@ -10,3 +10,9 @@ td {
 tfoot {
     display: table-header-group;
 }
+
+.row-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

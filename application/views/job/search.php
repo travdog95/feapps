@@ -30,7 +30,14 @@ $page_header_data = array(
 );
 $this->load->view('inc/page_header', $page_header_data); 
 ?>
-
+<div class="row row-center">
+	<div class="input-group">
+		<div class="input-group-btn">
+			<button type="button" id="filterSearchActive" class="btn filter-search <?php echo ($filter == "" || $filter == "active") ? "btn-primary": "btn-secondary"; ?>">Active</button>
+			<button type="button" id="filterSearchAll" class="btn filter-search <?php echo ($filter != "" && $filter != "active") ? "btn-primary": "btn-secondary"; ?> filter">All</button>
+		</div>
+	</div>
+</div>
 <!-- start: PAGE CONTENT -->
 <div class="row">
     <div class="col-md-12">
@@ -48,6 +55,7 @@ $this->load->view('inc/page_header', $page_header_data);
 				<th>Job Date</th>
 				<th>Updated Date</th>
 				<th>Updated By</th>
+				<th>Job Status</th>
 			</tr>
 	    </thead>
 		<tfoot>
@@ -63,6 +71,7 @@ $this->load->view('inc/page_header', $page_header_data);
                 <th>Job Date</th>
                 <th>Updated Date</th>
                 <th>Updated By</th>
+				<th>Job Status</th>
             </tr>
 		</tfoot>
 	    </table>

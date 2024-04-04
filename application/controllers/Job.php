@@ -25,7 +25,7 @@ class Job extends CI_Controller
      *
      * @return	job/search view
      */
-    public function search()
+    public function search($filter = "active")
     {
         //Decare and initialize variables
         $data = array(
@@ -41,6 +41,8 @@ class Job extends CI_Controller
 
         //Load menus
         $data['menus'] = $this->m_menu->get_menus();
+
+        $data['filter'] = $filter;
 
         //Load job search view
         $this->load->view('job/search', $data);
@@ -65,16 +67,24 @@ class Job extends CI_Controller
             $this->load->model("m_job");
 
             $this->db
-                ->select("j.Job_Idn, j.ChangeOrder, j.Name, Contractor, JobDate, IsShareable, IsParent, Parent_Idn, CreatedBy_Idn, CreateDateTime, UpdateDateTime, ub.FirstName AS UpdatedByFirstName, cb.FirstName AS CreatedByFirstName, f.Name AS FolderName, d.Description AS DepartmentName")
+                ->select("j.Job_Idn, j.ChangeOrder, j.Name, Contractor, JobDate, IsShareable, IsParent, Parent_Idn, CreatedBy_Idn, CreateDateTime, UpdateDateTime, ub.FirstName AS UpdatedByFirstName, cb.FirstName AS CreatedByFirstName, f.Name AS FolderName, d.Description AS DepartmentName, js.Name AS JobStatus ")
                 ->from('Jobs AS j')
                 ->join('Users AS ub', 'j.LastUpdatedBy_Idn = ub.User_Idn', 'left')
                 ->join('Users AS cb', 'j.CreatedBy_Idn = cb.User_Idn', 'left')
                 ->join('Folders AS f', 'j.Folder_Idn = f.Folder_Idn', 'left')
                 ->join('jpr_Department as d', 'j.Department_Idn = d.DepartmentId', 'left')
+                ->join('JobStatuses as js', 'j.JobStatus_Idn = js.JobStatus_Idn', 'left')
                 ->where("j.ActiveFlag", 1)
+                // ->where("js.JobStatus_Idn <> ", 4)
                 ->order_by('Name ASC, JobDate ASC');
 
-            if ($department_idn != "3") {
+            if ($get['filter'] == "active")
+            {
+                $this->db->where("js.JobStatus_Idn <> ", 4);
+            }
+
+            if ($department_idn != "3") 
+            {
                 $this->db->where("j.Department_Idn", $department_idn);
             }
 
@@ -116,7 +126,8 @@ class Job extends CI_Controller
                         'prepared_by' => $prepared_by,
                         'job_date' => $row['JobDate'],
                         'updated_date' => $row['UpdateDateTime'],
-                        'updated_by' => $row['UpdatedByFirstName']
+                        'updated_by' => $row['UpdatedByFirstName'],
+                        'job_status' => $row['JobStatus']
                         );
 
                     $results['data'][] = $data;

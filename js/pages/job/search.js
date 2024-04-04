@@ -4,6 +4,19 @@ $(function() {
   FECI.source_page = "search";
   FECI.source_modal = "";
 
+  const url = new URL(window.location.href);
+  const segments = url.pathname.split('/');
+  const filter = segments[3] ? segments[3] : "active";
+
+  $(".filter-search").on("click", function (e) {
+    const id = e.target.id
+    if (id == "filterSearchActive") {
+      window.location.href = FECI.base_url + "job/search/active";
+    } else {
+      window.location.href = FECI.base_url + "job/search/all";
+    }
+  })
+
   // Setup - add a text input to each footer cell
   $("#JobSearchResults tfoot th").each(function() {
     const title = $(this).text();
@@ -18,7 +31,8 @@ $(function() {
     ajax: {
       url: FECI.base_url + "job/get_jobs",
       data: {
-        department_idn: FECI.user.department_idn
+        department_idn: FECI.user.department_idn,
+        filter: filter
       }
     },
     columns: [
@@ -58,7 +72,8 @@ $(function() {
       { data: "prepared_by" },
       { data: "job_date" },
       { data: "updated_date" },
-      { data: "updated_by" }
+      { data: "updated_by" },
+      { data: "job_status" }
     ],
     order: [[3, "asc"]], //default to order by name
     stateSave: true,
