@@ -663,6 +663,7 @@ class Job extends CI_Controller
                     $data['job']['name'] = $parent_data['name'];
                     $data['job']['contractor'] = $parent_data['contractor'];
                     $data['job']['new_change_order'] = 1;
+                    $data['job']['is_locked'] = $this->m_job->is_job_locked($job_keys[0]);
                 }
             }
         } else {
@@ -1211,6 +1212,7 @@ class Job extends CI_Controller
             'parts_smarts_field_labor_rate' => $job_defaults[80]['NumericValue'],
             'estimate_type_idn' => 0,
             'job_type_idn' => ($department_idn == 1) ? 1 : 0, //default to Fire Alarm for Electronic Division jobs
+            'is_locked' => 0
         );
         
         //Load labor rates
@@ -1299,6 +1301,7 @@ class Job extends CI_Controller
                 'estimate_type_idn' => $job['EstimateType_Idn'],
                 'has_overtime' => (empty($job_parms[82]['AlphaValue']) || $job_parms[82]['AlphaValue'] == "Y") ? "Y" : "N",
                 'job_type_idn' => $job['JobType_Idn'],
+                'is_locked' => $job['IsLocked']
             );
             
             //Load labor rates
@@ -1750,7 +1753,7 @@ class Job extends CI_Controller
         
         //Re-format job_number with *
         $job_number = format_job_number($job_idn, "*");
-        
+
         //Call job/information
         $this->information($job_number);
     }
@@ -2555,6 +2558,27 @@ class Job extends CI_Controller
         }
 
         return $total;
+    }
+
+    public function lock_job()
+    {
+        $results = array(
+            "return_code" => 0
+        );
+
+        if (!empty($this->input->post("job_number"))) {
+            $job_number = $this->input->post("job_number");
+            $is_locked = $this->input->post("is_locked");
+            $set = array(
+                "IsLocked" => $is_locked
+                );
+
+            if ($this->m_job->save($job_number, $set)) {
+                $results['return_code'] = 1;
+            }
+        }
+
+        echo json_encode($results);
     }
 
 	// public function get_total_heads($job_number = 0)

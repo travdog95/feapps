@@ -299,10 +299,12 @@ echo form_open('job/save_information', $form_attributes);
 
         <div class="row">
             <div class="buttons-recap feci-buttons">
+                <?php if ($job['is_locked'] == 0): ?>
                 <p>
                     <input type="submit" id="save" name="save" class="save-button primary" value="Save">
                     <input type="submit" id="save_goto_recap" name="save_goto_recap" class="save-button primary" value="Save &amp; Go recap">
                 </p>
+                <?php endif; ?>
                 <input type="hidden" name="button_clicked" id="button_clicked" value="" />
             </div>
         </div>

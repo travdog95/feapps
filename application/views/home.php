@@ -40,7 +40,7 @@
                 <div class="col-md-6">
                     <?php $recent_jobs_data = array("title" => "My Recent Jobs", "table_id" => "MyRecentsTable"); ?>
                     <?php $this->load->view('widgets/jobs', $recent_jobs_data); ?>
-               </div>
+                </div>
             </div>
 			<div class="row">
 				<div class="col-md-6">

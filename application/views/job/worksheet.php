@@ -150,6 +150,8 @@ echo form_open('', $form_attributes);
                         
                     <!-- WORKSHEET MESSAGE -->
                     <?php if ($this->session->userdata('read_only') == 0): ?>
+                        <?php if ($job['is_locked'] == 0): ?>
+
                         <div class="message-wrapper feci-buttons">
                             <?php if ($worksheet_master['DisplayDeleteItemsButtons'] == 1): ?>
                             <p>
@@ -164,12 +166,15 @@ echo form_open('', $form_attributes);
                                 <button type="button" id="DeleteWorksheetConfirmation" class="secondary">Delete Worksheet</button>
                             </p>
                         </div>
+                        <?php endif; ?>
                         <!-- BUTTONS -->
                         <div class="buttons-recap feci-buttons">
+                            <?php if ($job['is_locked'] == 0): ?>
                             <p>
                                 <input type="submit" id="save" name="save" class="save-button primary" value="Save Worksheet">
                                 <input type="submit" id="save_goto_recap" name="save_goto_recap" class="save-button primary" value="Save Worksheet &amp; Go recap">
                             </p>
+                            <?php endif; ?>
                             <!-- <p>
                                 <button type="button" id="DeleteWorksheetConfirmation" class="secondary">Delete Worksheet</button>
                             </p> -->

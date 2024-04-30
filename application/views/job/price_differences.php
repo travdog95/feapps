@@ -122,6 +122,7 @@ echo form_open('job/update_prices', $form_attributes);
 	</div>
 </div>
 
+<?php if ($job['is_locked'] == 0): ?>
 <div class="row">
     <div class="buttons-recap feci-buttons">
         <p>
@@ -129,6 +130,7 @@ echo form_open('job/update_prices', $form_attributes);
         </p>
     </div>
 </div>
+<?php endif; ?>
 <?php echo form_close(); ?>
 </div> <!-- END: container -->
 </div> <!-- end: MAIN-CONTENT -->

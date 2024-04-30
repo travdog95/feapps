@@ -7,7 +7,8 @@ $copy_link = "";
 	<td colspan="<?php echo $worksheet_master['NumberOfColumns']; ?>" class="bold left-aligned row">
         <div class="row">
             <div class="col-md-3 hidden-print">
-				<?php if ($this->session->userdata('read_only') == 0): ?>
+				<?php //if ($this->session->userdata('read_only') == 0): ?>
+                <?php if ($job['is_locked'] == 0): ?>
                     <?php
                     $link_class = "open-shopping-cart";
                     $link_text = "Shop for";
@@ -32,6 +33,8 @@ $copy_link = "";
                     <?php if ($Row['WorksheetCategory_Idn'] == 100): ?>
                         <span>Total Field Hours &lt;<span id="TotalFieldHours"><?php echo number_format($Row['TotalFieldHours'], 1); ?></span>&gt;</span>
                     <?php endif; ?>
+                <?php else: ?>
+                    <?php echo $Row['Name']; ?>
                 <?php endif; ?>
             </div>
             <div class="col-md-6 text-center"><span class="text-center"><?php echo $row_title; ?></span></div>

@@ -133,7 +133,9 @@
 				<?php if ($this->session->userdata('read_only') == 0): ?>
 
 					<div class="col-md-12 text-center">
-						<input type="button" name="load_worksheet_parameters" id="load_worksheet_parameters" class="btn btn-primary btn-xs" value="Load Worksheet Parameters">
+						<?php if ($job['is_locked'] == 0): ?>
+							<input type="button" name="load_worksheet_parameters" id="load_worksheet_parameters" class="btn btn-primary btn-xs" value="Load Worksheet Parameters">
+						<?php endif; ?>
 					</div>
 				<?php endif; ?>
         </div>

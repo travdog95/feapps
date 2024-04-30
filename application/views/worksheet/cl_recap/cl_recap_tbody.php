@@ -5,7 +5,9 @@ $job_keys = get_job_keys($job['job_number']);
     <tr class="bold">
         <th colspan="2">
             Crossmain<br />
-            <?php if ($this->session->userdata('read_only') == 0): ?>
+            <?php //if ($this->session->userdata('read_only') == 0): ?>
+            <?php if ($job['is_locked'] == 0): ?>
+                 
                 <button id="OpenAddWorksheetModal" class="btn btn-primary btn-xs openAddWorksheetModal" title="Add Worksheet" data-worksheet_master_idn="10">Add Worksheet</button>&nbsp;
                 <button id="AddCrossmainMiscellaneousItem" class="btn btn-primary btn-xs add-miscellaneous" title="Add Miscellaneous Item" data-worksheet_master_idn="10" data-source="139">Add Misc Item</button>
             <?php endif; ?>
@@ -46,7 +48,8 @@ if (isset($miscellaneous_products[139]))
 <tbody id="BranchlineHeader">
     <tr class="bold">
         <th colspan="2">Branch Lines<br />
-            <?php if ($this->session->userdata('read_only') == 0): ?>
+            <?php //if ($this->session->userdata('read_only') == 0): ?>
+            <?php if ($job['is_locked'] == 0): ?>
                 <button id="OpenAddAreaModal" class="btn btn-primary btn-xs" title="Add Area">Add Area</button>
             <?php endif; ?>
         </th>
@@ -102,7 +105,8 @@ if (isset($miscellaneous_products[139]))
     <tr>
         <td colspan="<?php echo $worksheet_master['NumberOfColumns']; ?>" class="left-aligned bold">
             Finish Work &nbsp;&nbsp;
-            <?php if ($this->session->userdata('read_only') == 0): ?>
+            <?php // if ($this->session->userdata('read_only') == 0): ?>
+            <?php if ($job['is_locked'] == 0): ?>
                 <a href="#" id="AddFinishWork" class="add-miscellaneous" data-source="140">Add Finish Work</a>&nbsp;&nbsp;
                 <input type="checkbox" id="NoFinishWork" name="NoFinishWork" value="1" <?php if ($worksheet['NoFinishWorkFlag'] == 1) echo 'checked="checked"'; ?> /> <label for="NoFinishWork">No Finish Work</label>
             <?php endif; ?>
@@ -122,7 +126,8 @@ if (isset($miscellaneous_products[139]))
 <tbody id="Miscellaneous">
     <tr>
         <td colspan="<?php echo $worksheet_master['NumberOfColumns']; ?>" class="left-aligned">
-            <?php if ($this->session->userdata('read_only') == 0): ?>
+            <?php // if ($this->session->userdata('read_only') == 0): ?>
+            <?php if ($job['is_locked'] == 0): ?>
                 <a href="#" id="AddMiscellaneousItem" class="add-miscellaneous" data-source="108">Add Miscellaneous Item</a>&nbsp;&nbsp;
             <?php else: ?>
                 <strong>Miscellaneous Items</strong>

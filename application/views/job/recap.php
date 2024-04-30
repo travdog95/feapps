@@ -526,14 +526,25 @@ $this->load->view('inc/site_header', $site_header_data);
                             <!-- BUTTONS -->
                             <?php if ($this->session->userdata('read_only') == 0): ?>
 
-                                <div class="buttons-recap feci-buttons">
-                                    <p>
+                                <div class="feci-buttons recap-buttons-container">
+                                    <div>
+                                        <?php if ($this->session->userdata('is_admin') == 1): ?>
+                                            <?php if ($job['is_locked'] == 1): ?>
+                                                <button class="danger" id="unlock_job">Unlock Job</button>
+                                            <?php else: ?>
+                                                <button class="danger" id="lock_job">Lock Job</button>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div>
                                         <?php if ($this->session->userdata('user_idn') == 3 || $this->session->userdata('user_idn') == 32): ?>
                                             <button class="primary" id="accounting">Accounting Data</button>
                                         <?php endif; ?>
-                                        <!-- <button class="primary" id="generatePDF">Generate PDF</button> -->
-                                        <input type="submit" class="primary" id="save_recap" value="save recap" /> 
-                                    </p>
+
+                                        <?php if ($job['is_locked'] == 0): ?>
+                                            <input type="submit" class="primary" id="save_recap" value="save recap" /> 
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
                             <?php endif; ?>
                              <!-- /END BUTTONS -->
@@ -557,6 +568,7 @@ $this->load->view('inc/site_header', $site_header_data);
 <?php $this->load->view('job/modals/copy_job'); ?>
 <?php $this->load->view('job/modals/remove_child_jobs'); ?>
 <?php $this->load->view('job/modals/delete_jobs'); ?>
+<?php $this->load->view('modals/confirmation'); ?>
 
 <?php $this->load->view('inc/footer'); ?>
 

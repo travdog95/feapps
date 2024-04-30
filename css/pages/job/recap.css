@@ -1,16 +1,22 @@
 ﻿.modal-wide .modal-dialog {
-    width: 60%;
+	width: 60%;
 }
 
 .recap-header {
-    /*font-size: 1.2em;*/
+	/*font-size: 1.2em;*/
 }
 
 #total {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 #notes {
-    width: 100%;
-    height: 250px;
+	width: 100%;
+	height: 250px;
+}
+
+.recap-buttons-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }

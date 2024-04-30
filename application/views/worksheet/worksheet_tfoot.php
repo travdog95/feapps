@@ -18,7 +18,8 @@ if ($worksheet_master['WorksheetMaster_Idn'] == 7)
     <tr class="worksheet-total">
         <td colspan="5" class="text-center thick-border-top thick-border-bottom">
             ADJUSTMENT FACTORS
-            <?php if ($this->session->userdata('read_only') == 0): ?>
+            <?php //if ($this->session->userdata('read_only') == 0): ?>
+            <?php if ($job['is_locked'] == 0): ?>
                 <span class="pull-right"><a href="#" id="AddAdjustmentFactor" title="Add Adjustment Factor" data-worksheet_idn="<?php echo $worksheet['Worksheet_Idn']; ?>">Add</a></span>
             <?php endif; ?>
         </td>

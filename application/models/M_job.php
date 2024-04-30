@@ -723,4 +723,30 @@ class M_job extends CI_Model
 
         return $price_differences;
     }
+
+    public function is_job_locked($job_number)
+    {
+        $is_locked = false;
+        $job_keys = get_job_keys($job_number);
+        $sql = "";
+
+        if (!empty($job_keys)) {
+            $sql = "SELECT Job_Idn, ChangeOrder, IsLocked
+					FROM Jobs
+					WHERE Job_Idn = {$job_keys[0]}
+						AND ChangeOrder = {$job_keys[1]}";
+
+            $query = $this->db->query($sql);
+
+            if ($query) {
+                if ($query->num_rows() == 1) {
+                    foreach ($query->result_array() as $row) {
+                        $is_locked = ($row['IsLocked'] == 1) ? true : false;
+                    }
+                }
+            }
+        }
+
+        return $is_locked;
+    }
 }

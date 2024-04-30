@@ -129,6 +129,7 @@ class J
                     "formated_price_update_datetime" => date_format(date_create($job_price_update_datetime), "M j, Y g:i:s A"),
                     "prices_outdated" => ($job_price_update_datetime < get_latest_price_update("datetime")),
                     //"total_sqft" => $job['TotalSqft'],
+                    "is_locked" => $job['IsLocked'],
 			    );
 
                 //Total sqft
