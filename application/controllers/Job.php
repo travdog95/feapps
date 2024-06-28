@@ -18,6 +18,9 @@ class Job extends CI_Controller
         $this->load->model('m_menu');
 
         $this->load->library("rfp_lib");
+
+        require_once APPPATH . 'third_party/ssp.class.php';
+
     }
     
     /*
@@ -48,7 +51,7 @@ class Job extends CI_Controller
         $this->load->view('job/search', $data);
     }
 
-    public function get_jobs()
+    public function get_jobs_old()
     {
         $results = array(
             "data" => array()
@@ -74,13 +77,23 @@ class Job extends CI_Controller
                 ->join('Folders AS f', 'j.Folder_Idn = f.Folder_Idn', 'left')
                 ->join('jpr_Department as d', 'j.Department_Idn = d.DepartmentId', 'left')
                 ->join('JobStatuses as js', 'j.JobStatus_Idn = js.JobStatus_Idn', 'left')
-                ->where("j.ActiveFlag", 1)
-                // ->where("js.JobStatus_Idn <> ", 4)
                 ->order_by('Name ASC, JobDate ASC');
 
             if ($get['filter'] == "active")
             {
-                $this->db->where("js.JobStatus_Idn <> ", 4);
+                $this->db->where("j.JobStatus_Idn <> ", 4);
+                $this->db->where("j.ActiveFlag", 1);
+            }
+
+            if ($get['filter'] == "archived")
+            {
+                $this->db->where("j.JobStatus_Idn", 4);
+                $this->db->where("j.ActiveFlag", 1);
+            }
+
+            if ($get['filter'] == "deleted")
+            {
+                $this->db->where("j.ActiveFlag", 0);
             }
 
             if ($department_idn != "3") 
@@ -140,6 +153,290 @@ class Job extends CI_Controller
         } else {
             return $results;
         }
+    }
+
+    public function get_jobs()
+    {
+		$results = array(
+			"data" 				=> array(),
+			"recordsTotal" 		=> 0,
+			"recordsFiltered" 	=> 0,
+			"draw" 				=> 0,
+			"request"			=> $this->input->post(),
+		);
+
+		$post = $this->input->post();
+
+		$columns = array(
+            array(
+                "db" => null,
+                "dt" => "Select",
+            ),
+            array(
+                "db" => null,
+                "dt" => "Actions",
+            ),
+            array(
+                "db" => "Job_Idn",
+                "dt" => "JobNumber",
+				"searchable" => true
+            ),
+            array(
+                "db" => "j.Name",
+                "dt" => "JobName",
+				"searchable" => true
+            ),
+            array(
+                "db" => "f.Name",
+                "dt" => "FolderName",
+            ),
+            array(
+                "db" => "d.Description",
+                "dt" => "DepartmentName",
+            ),
+            array(
+                "db" => "Contractor",
+                "dt" => "Contractor",
+            ),
+            array(
+                "db" => "db.FirstName",
+                "dt" => "CreatedByFirstName",
+            ),
+            array(
+                "db" => "JobDate",
+                "dt" => "JobDate",
+				// "searchable" => true
+            ),
+            array(
+                "db" => "UpdateDateTime",
+                "dt" => "UpdateDateTime",
+				// "searchable" => true
+            ),
+            array(
+                "db" => "ub.FirstName",
+                "dt" => "UpdatedByFirstName",
+				// "searchable" => true
+            ),
+            array(
+                "db" => "js.Name",
+                "dt" => "JobStatus",
+				// "searchable" => true
+            ),
+            
+        );
+        $prepared_bys = array();
+
+        $select = "";
+        $from = "";
+        $joins = array();
+        $wheres = array();
+        $i = 0;
+
+        if ($post['department_idn'] != "") 
+        {
+            $department_idn = $post['department_idn'];
+
+            //Load model
+            $this->load->model("m_job");
+
+            $select = "
+                CONCAT(Job_Idn, '-', ChangeOrder) AS JobNumber,
+                j.Name AS JobName, 
+                f.Name AS FolderName,
+                d.Description AS DepartmentName,
+                Contractor, 
+                cb.FirstName AS CreatedByFirstName, 
+                JobDate,
+                UpdateDateTime,
+                ub.FirstName AS UpdatedByFirstName, 
+                js.Name AS JobStatus,
+                IsShareable, IsParent, Parent_Idn, CreatedBy_Idn, CreateDateTime";
+
+            $from = "Jobs AS j";
+
+            $joins = array(
+                array('Users AS ub', 'j.LastUpdatedBy_Idn = ub.User_Idn', 'left'),
+                array('Users AS cb', 'j.CreatedBy_Idn = cb.User_Idn', 'left'),
+                array('Folders AS f', 'j.Folder_Idn = f.Folder_Idn', 'left'),
+                array('jpr_Department as d', 'j.Department_Idn = d.DepartmentId', 'left'),
+                array('JobStatuses as js', 'j.JobStatus_Idn = js.JobStatus_Idn', 'left')
+            );
+
+            $order_by = SSP::order($post, $columns);
+
+            $dtColumns = SSP::pluck( $columns, 'dt' );
+
+            //Get all records
+            $this->db
+                ->select($select)
+                ->from($from)
+                ->order_by($order_by);
+
+            foreach ($joins as $join) 
+            {
+                $this->db->join($join[0], $join[1], $join[2]);
+            }
+
+            // Build Search
+            if (isset($post['search']) && $post['search']['value'] != '') 
+            {
+                $str = $post['search']['value'];
+    
+                for ( $i=0, $ien=count($post['columns']) ; $i<$ien ; $i++ ) {
+                    $requestColumn = $post['columns'][$i];
+                    $columnIdx = array_search( $requestColumn['data'], $dtColumns );
+                    $column = $columns[ $columnIdx ];
+    
+                    if ( isset($column['searchable']) && $column['searchable'] == 'true' ) {
+                        $this->db->or_like($column['db'], $str);
+                    }
+                }
+            }
+    
+            //Build where statements
+            if ($post['filter'] == "active")
+            {
+                $this->db->where("j.JobStatus_Idn <> ", 4);
+                $this->db->where("j.ActiveFlag", 1);
+            }
+
+            if ($post['filter'] == "archived")
+            {
+                $this->db->where("j.JobStatus_Idn", 4);
+                $this->db->where("j.ActiveFlag", 1);
+            }
+
+            if ($post['filter'] == "deleted")
+            {
+                $this->db->where("j.ActiveFlag", 0);
+            }
+
+            if ($department_idn != "3") 
+            {
+                $this->db->where("j.Department_Idn", $department_idn);
+            }
+
+            $queryAllRows = $this->db->get();
+
+            if ($queryAllRows) 
+            {
+                $results['recordsTotal'] = $queryAllRows->num_rows();
+                $results['recordsFiltered'] = $queryAllRows->num_rows();
+            }
+
+                // foreach ($query->result_array() as $row) {
+                //     $job_number = ($row['ChangeOrder'] > 0) ? $row['Job_Idn']."-".$row['ChangeOrder'] : $row['Job_Idn'];
+
+                //     $prepared_bys_where = array(
+                //         'Job_Idn' => $row['Job_Idn'],
+                //         'ChangeOrder' => $row['ChangeOrder']
+                //     );
+
+                //     //Check for PreparedBys records and load as array into PreparedBys field
+                //     $prepared_bys = $this->m_job->get_prepared_by_names($prepared_bys_where);
+
+                //     $prepared_by = (sizeof($prepared_bys) > 0) ? $row['CreatedByFirstName'].", ".implode(",", $prepared_bys) : $row['CreatedByFirstName'];
+
+                //     $folder_name = ($row['FolderName'] == null) ? "" : $row['FolderName'];
+
+                // }
+
+            //Get Records to display
+            $this->db
+                ->select($select)
+                ->from($from)
+                ->order_by($order_by);
+    
+            foreach ($joins as $join) 
+            {
+                $this->db->join($join[0], $join[1], $join[2]);
+            }
+    
+            //Build search
+            if (isset($post['search']) && $post['search']['value'] != '') 
+            {
+                $str = $post['search']['value'];
+    
+                for ( $i=0, $ien=count($post['columns']) ; $i<$ien ; $i++ ) {
+                    $requestColumn = $post['columns'][$i];
+                    $columnIdx = array_search( $requestColumn['data'], $dtColumns );
+                    $column = $columns[ $columnIdx ];
+    
+                    if ( isset($column['searchable']) && $column['searchable'] == 'true' ) {
+                        $this->db->or_like($column['db'], $str);
+                    }
+                }
+            }
+    
+            //Build where statements
+            if ($post['filter'] == "active")
+            {
+                $this->db->where("j.JobStatus_Idn <> ", 4);
+                $this->db->where("j.ActiveFlag", 1);
+            }
+
+            if ($post['filter'] == "archived")
+            {
+                $this->db->where("j.JobStatus_Idn", 4);
+                $this->db->where("j.ActiveFlag", 1);
+            }
+
+            if ($post['filter'] == "deleted")
+            {
+                $this->db->where("j.ActiveFlag", 0);
+            }
+
+            if ($department_idn != "3") 
+            {
+                $this->db->where("j.Department_Idn", $department_idn);
+            }
+            
+            //Build limit statement
+            if (isset($post['start']) && $post['length'] != -1) 
+            {
+                $this->db->limit(intval($post['length']), intval($post['start']));
+            }
+    
+            //Query database
+            $query = $this->db->get();
+    
+            if ($query == false)
+            {
+                write_feci_log(array("Message" => "SQL Error ".$this->db->last_query(), "Script" => __METHOD__));
+            }
+            else
+            {
+                if ($query->num_rows() > 0)
+                {
+                    $results['draw'] = isset ( $post['draw'] ) ?
+                        intval( $post['draw'] + 1 ) :
+                        0;
+                    
+                    // foreach ($query->result_array() as $row)
+                    // {
+                    //     $rowValues = array();
+                    //     foreach($row as $field => $value)
+                    //     {
+                    //         $rowValues[] = $value;
+                    //     }
+                    //     $results['data'][] = $rowValues;
+                    // }
+
+                    foreach ($query->result() as $row)
+                    {
+                        // $rowValues = array();
+                        // foreach($row as $field => $value)
+                        // {
+                        //     $rowValues[] = $value;
+                        // }
+                        $results['data'][] = $row;
+                    }
+
+                }
+            }
+        }
+
+        echo json_encode($results);
     }
 
     /*
@@ -583,6 +880,65 @@ class Job extends CI_Controller
         }
     }
     
+        /*
+     * delete
+     *
+     * Delete job by setting ActiveFlag = 0
+     *
+     * @param	$ajax(int) if not = 0, the call is an ajax call and will return JSON
+     * @param 	$job_numbers(array) array of job numbers
+     * @return 	$restults(array)
+     */
+    
+     public function archive($ajax = 0, $job_numbers = array())
+     {
+         //Declare and initialize variables
+         $results = array(
+             'return_code' => 0,
+             'num_jobs_archived' => 0,
+             'job_numbers_archived' => array()
+         );
+         //$job_keys = array();
+         $post = $this->input->post();
+ 
+         //If post call, load into $job_numbers array
+         if (isset($post) && !empty($post)) {
+             $job_numbers = $post['job_numbers'];
+         }
+     
+         if (!empty($job_numbers)) {
+             //Loop through jobs and set Archived = 0
+             foreach ($job_numbers as $job_number) {
+                $job_keys = get_job_keys($job_number);
+                    $set = array(
+                        'JobStatus_Idn' => 4
+                    );
+                    $where = array(
+                        'Job_Idn' => $job_keys[0],
+                        'ChangeOrder' => $job_keys[1]
+                    );
+                 if ($this->m_reference_table->update("jobs", $set, $where)) {
+                     $results['num_jobs_archived']++;
+                     $results['job_numbers_archived'][] = $job_number;
+                     write_feci_log('Job '.$job_number.' archived.');
+                 } else {
+                     $results['return_code'] = -1;
+                     write_feci_log('Error deleting job '.$job_number.'.');
+                 }
+             }
+             
+             if ($results['return_code'] == 0) {
+                 $results['return_code'] = 1;
+             }
+         }
+ 
+         if ($ajax == 0) {
+             return $results;
+         } else {
+             echo json_encode($results);
+         }
+     }
+ 
     /*
      * information
      *

@@ -8,7 +8,7 @@ class Product_Update_Tool extends CI_Controller {
 		parent::__construct();
 
 		//Check authentication
-        check_auth();
+    check_auth();
 
 		//Load reference table model
 		$this->load->model('m_reference_table');

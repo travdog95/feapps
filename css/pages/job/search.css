@@ -1,18 +1,22 @@
 /* CSS Document */
 tr.shareable td {
-	background-color: #FC6;
+	background-color: #fc6;
 }
 
 td {
-	font-weight: bold;	
+	font-weight: bold;
 }
 
 tfoot {
-    display: table-header-group;
+	display: table-header-group;
 }
 
 .row-center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.button-group {
+	margin-bottom: 5px;
 }
