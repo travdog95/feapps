@@ -77,15 +77,20 @@ class Product_Update_Tool extends CI_Controller {
 					if (!empty($row->ID))
 					{
 						$staging_product = array(
-							"Product_Idn" => string_filter($row->ID, ","),
-							"MaterialUnitPrice" => $row->Material == "" ? "0" : string_filter($row->Material, ","),
-							"ShopUnitPrice" => $row->Shop == "" ? "0" : string_filter($row->Shop, ","),
-							"FieldUnitPrice" => $row->Field == "" ? "0" : string_filter($row->Field, ","),
-							"EngineerUnitPrice" => $row->Engineer == "" ? "0" : string_filter($row->Engineer, ","),
-							"Name" => $row->Name,
+							"Product_Idn" => string_filter($row->ID, ","),	
+							"MaterialUnitPrice" => $row->Material == "" ? "0" : string_filter($row->Material, ","),	
+							"ShopUnitPrice" => $row->Shop == "" ? "0" : string_filter($row->Shop, ","),	
+							"FieldUnitPrice" => $row->Field == "" ? "0" : string_filter($row->Field, ","),	
+							"EngineerUnitPrice" => $row->Engineer == "" ? "0" : string_filter($row->Engineer, ","),	
+							"Name" => $row->Name,	
+							"Description" => $row->Description,
+							"Rank" => $row->Rank,
 							"FECI_Id" => $row->FECI_Id,
+							//"Manufacturer_Idn" => $row->Manufacturer_Idn,
 							"ManufacturerPart_Id" => $row->ManufacturerPart_Id,
+							"DomesticFlag" => $row->Domestic == "Yes" || $row->Domestic == 1 ? 1 : 0,
 							"RFP" => $row->RFP == "Yes" || $row->RFP == 1 ? 1 : 0,
+							"ActiveFlag" => $row->Active == "Yes" || $row->Active == 1 ? 1 : 0
 						);
 
 						if ($this->product_update_tool_lib->has_differences($staging_product))
@@ -130,79 +135,95 @@ class Product_Update_Tool extends CI_Controller {
 				"searchable" => true
             ),
             array(
-                "db" => "s.Name",
-                "dt" => 1,
-				"searchable" => true
-            ),
-            array(
                 "db" => "s.MaterialUnitPrice",
-                "dt" => 2,
+                "dt" => 1,
             ),
             array(
                 "db" => "s.FieldUnitPrice",
-                "dt" => 3,
+                "dt" => 2,
             ),
             array(
                 "db" => "s.ShopUnitPrice",
-                "dt" => 4,
+                "dt" => 3,
             ),
             array(
                 "db" => "s.EngineerUnitPrice",
+                "dt" => 4,
+            ),
+			array(
+                "db" => "s.Name",
                 "dt" => 5,
+				"searchable" => true
+            ),
+			array(
+                "db" => "s.Description",
+                "dt" => 6,
+            ),
+			array(
+                "db" => "s.Rank",
+                "dt" => 7,
             ),
             array(
                 "db" => "s.FECI_Id",
-                "dt" => 6,
-				"searchable" => true
-            ),
-            array(
-                "db" => "s.ManufacturerPart_Id",
-                "dt" => 7,
-				"searchable" => true
-            ),
-            array(
-                "db" => "s.RFP",
                 "dt" => 8,
 				"searchable" => true
             ),
             array(
-                "db" => "w.Name",
+                "db" => "s.ManufacturerPart_Id",
                 "dt" => 9,
 				"searchable" => true
             ),
             array(
-                "db" => "c.Name",
+                "db" => "s.RFP",
                 "dt" => 10,
 				"searchable" => true
             ),
             array(
-                "db" => "d.Description",
+                "db" => "w.Name",
                 "dt" => 11,
+				"searchable" => true
+            ),
+            array(
+                "db" => "c.Name",
+                "dt" => 12,
+				"searchable" => true
+            ),
+            array(
+                "db" => "d.Description",
+                "dt" => 13,
 				"searchable" => true
             ),
         );
 
 		$select = "
 			s.Product_Idn,
-			s.Name,
 			s.MaterialUnitPrice,
 			s.FieldUnitPrice,
 			s.ShopUnitPrice,
 			s.EngineerUnitPrice,
+			s.Name,
+			s.Description,
+			s.Rank,
 			s.FECI_Id,
 			s.ManufacturerPart_Id,
+			S.DomesticFlag,
 			s.RFP,
+			s.ActiveFlag,
 			w.Name AS Worksheet,
 			c.Name AS Category,
 			d.Description AS Department,
-			p.Name as CurrentName,
 			p.MaterialUnitPrice AS CurrentMaterialUnitPrice,
 			p.FieldUnitPrice AS CurrentFieldUnitPrice,
 			p.ShopUnitPrice AS CurrentShopUnitPrice,
 			p.EngineerUnitPrice AS CurrentEngineerUnitPrice,
+			p.Name AS CurrentName,
+			p.Description AS CurrentDescription,
+			p.Rank AS CurrentRank,
 			p.FECI_Id AS CurrentFECI_Id,
 			p.ManufacturerPart_Id AS CurrentManufacturerPart_Id,
-			p.RFP AS CurrentRFP";
+			p.DomesticFlag AS CurrentDomestic,
+			p.RFP AS CurrentRFP,
+			p.ActiveFlag AS CurrentActive";
 		$from = "ProductsStaging2 AS s";
 		$joins = array( 
 			array("Products AS p", "p.Product_Idn = s.Product_Idn", "left"),
@@ -339,12 +360,20 @@ class Product_Update_Tool extends CI_Controller {
 					p.EngineerUnitPrice AS original_design,
 					s.Name,
 					p.Name AS original_name,
+					s.Description,
+					p.Description AS original_description,
+					s.Rank,
+					P.Rank AS original_rank,
 					p.FECI_Id AS original_FECI_Id,
 					s.FECI_Id,
 					p.ManufacturerPart_Id AS original_ManufacturerPart_Id,
 					s.ManufacturerPart_Id,
+					s.DomesticFlag,
+					p.DomesticFlag AS original_domestic,
 					p.RFP AS original_RFP,
 					s.RFP,
+					s.ActiveFlag,
+					p.ActiveFlag AS original_active,
 					p.IsParent
 				FROM ProductsStaging2 AS s
 				LEFT JOIN Products AS p ON (p.Product_Idn = s.Product_Idn)
@@ -353,15 +382,21 @@ class Product_Update_Tool extends CI_Controller {
 					OR p.ShopUnitPrice <> s.ShopUnitPrice
 					OR p.EngineerUnitPrice <> s.EngineerUnitPrice
 					OR p.Name <> s.Name
+					OR p.Description <> s.Description
+					OR p.Rank <> s.Rank
 					OR p.FECI_Id <> s.FECI_Id
 					OR (p.FECI_Id is null AND s.FECI_Id <> '')
 					OR (s.FECI_Id is null AND p.FECI_Id <> '')
 					OR p.ManufacturerPart_Id <> s.ManufacturerPart_Id
 					OR (p.ManufacturerPart_Id is null AND s.ManufacturerPart_Id <> '')
 					OR (s.ManufacturerPart_Id is null AND p.ManufacturerPart_Id <> '')
+					OR p.DomesticFlag <> s.DomesticFlag
 					OR p.RFP <> s.RFP
 					OR (p.RFP is null AND s.RFP = 1)
-					OR (s.RFP is null AND p.RFP = 1)";
+					OR (s.RFP is null AND p.RFP = 1)
+					OR p.ActiveFlag <> s.ActiveFlag
+					OR (p.ActiveFlag is null AND s.ActiveFlag = 1)
+					OR (s.ActiveFlag is null AND p.ActiveFlag = 1)";
 		$query = $this->db->query($sql);
 
 		if ($query == false)
@@ -411,6 +446,16 @@ class Product_Update_Tool extends CI_Controller {
 							$set_data['Name'] = $row['Name'];
 						}
 
+						if ($row['Description'] != $row['original_description'])
+						{
+							$set_data['Description'] = $row['Description'];
+						}
+
+						if ($row['Rank'] != $row['original_rank'])
+						{
+							$set_data['Rank'] = $row['Rank'];
+						}
+
 						if ($row['FECI_Id'] != $row['original_FECI_Id'])
 						{
 							$set_data['FECI_Id'] = $row['FECI_Id'];
@@ -421,9 +466,19 @@ class Product_Update_Tool extends CI_Controller {
 							$set_data['ManufacturerPart_Id'] = $row['ManufacturerPart_Id'];
 						}
 
+						if ($row['DomesticFlag'] != $row['original_domestic'])
+						{
+							$set_data['DomesticFlag'] = $row['DomesticFlag'];
+						}
+
 						if ($row['RFP'] != $row['original_RFP'])
 						{
 							$set_data['RFP'] = $row['RFP'];
+						}
+
+						if ($row['ActiveFlag'] != $row['original_active'])
+						{
+							$set_data['ActiveFlag'] = $row['ActiveFlag'];
 						}
 
 						if (sizeof($set_data) > 0)

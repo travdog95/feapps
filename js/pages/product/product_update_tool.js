@@ -22,39 +22,59 @@
             stateSave: true,
             pageLength: 25,
             rowCallback: function (row, data) {
-                //Product Name
-                if (data[1] !== data[12]) {
+                //Material Unit Price
+                if (parseFloat(data[1]) !== parseFloat(data[16])) {
                     $("td:eq(1)", row).addClass("em");
                 }
-                //Material Unit Price
-                if (parseFloat(data[2]) !== parseFloat(data[13])) {
+                //Field Unit Price
+                if (parseFloat(data[2]) !== parseFloat(data[17])) {
                     $("td:eq(2)", row).addClass("em");
                 }
-                //Field Unit Price
-                if (parseFloat(data[3]) !== parseFloat(data[14])) {
+                //Shop Unit Price
+                if (parseFloat(data[3]) !== parseFloat(data[18])) {
                     $("td:eq(3)", row).addClass("em");
                 }
-                //Shop Unit Price
-                if (parseFloat(data[4]) !== parseFloat(data[15])) {
+                //Design/Engineer Unit Price
+                if (parseFloat(data[4]) !== parseFloat(data[19])) {
                     $("td:eq(4)", row).addClass("em");
                 }
-                //Design/Engineer Unit Price
-                if (parseFloat(data[5]) !== parseFloat(data[16])) {
+                //Name
+                if (data[5] !== data[20]) {
                     $("td:eq(5)", row).addClass("em");
                 }
-                //FECI ID
-                if (data[6] !== data[17]) {
+                //Description
+                if (data[6] !== data[21]) {
                     $("td:eq(6)", row).addClass("em");
                 }
-                //Manufacturer Part ID
-                if (data[7] !== data[18]) {
+                //Rank
+                if (data[7] !== data[22]) {
                     $("td:eq(7)", row).addClass("em");
                 }
-                //RFP
-                const stagingRFP = data[8] == 1 ? 1 : 0;
-                const productRFP = data[19] == 1 ? 1 : 0;
-                if (stagingRFP !== productRFP) {
+                //FECI_ID
+                if (data[8] !== data[23]) {
                     $("td:eq(8)", row).addClass("em");
+                }
+                //ManufacturerPart_Id
+                if (data[9] !== data[24]) {
+                    $("td:eq(9)", row).addClass("em");
+                }
+                //DomesticFlag
+                const stagingDomestic = data[10] == 1 ? 1 : 0;
+                const productDomestic = data[25] == 1 ? 1 : 0;
+                if (stagingDomestic !== productDomestic) {
+                    $("td:eq(10)", row).addClass("em");
+                }
+                //RFP
+                const stagingRFP = data[11] == 1 ? 1 : 0;
+                const productRFP = data[26] == 1 ? 1 : 0;
+                if (stagingRFP !== productRFP) {
+                    $("td:eq(11)", row).addClass("em");
+                }
+                //ActiveFlag
+                const stagingActive = data[12] == 1 ? 1 : 0;
+                const productActive = data[27] == 1 ? 1 : 0;
+                if (stagingActive !== productActive) {
+                    $("td:eq(12)", row).addClass("em");
                 }
             }
         });       

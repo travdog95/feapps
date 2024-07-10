@@ -540,21 +540,24 @@ class Worksheet
                     {
                         foreach ($basic_approprations as $basic_appropriation)
                         {
-                            $adjustment_factor_value = ($basic_appropriation['AdjustmentFactor_Idn'] == 0) ? 1 : $basic_appropriation['AdjustmentFactorValue'];
-
+                            $adjustment_factor_value = ($basic_appropriation['AdjustmentFactor_Idn'] == 0) ? 1 : string_filter($basic_appropriation['AdjustmentFactorValue'], ",");
+                            $labor_class_value = string_filter($basic_appropriation['LaborClassValue'], ",");
+                            $quantity = string_filter($basic_appropriation['Quantity'], ",");
                             if ($basic_appropriation['AdjustmentFactor_Idn'] == 148) //Identical or Similar Systems
                             {
                                 //Calc qtys
-                                $original_sys_qty = $basic_appropriation['OriginalSystemQuantity'];
-                                $identical_qty = $basic_appropriation['Quantity'] - $original_sys_qty;
+                                $original_sys_qty = string_filter($basic_appropriation['OriginalSystemQuantity'], ",");
+                                $identical_qty = $quantity - $original_sys_qty;
                                 //Original
-                                $engineering_hours += number_format(round($basic_appropriation['LaborClassValue'] * $basic_appropriation['AdjustmentFactorValue'], 2) * $original_sys_qty, 2);
+                                $engineering_hours += number_format(round($labor_class_value * string_filter($basic_appropriation['AdjustmentFactorValue'], ","), 2) * $original_sys_qty, 2);
                                 //Identical
-                                $engineering_hours += number_format(round(.25 * $basic_appropriation['LaborClassValue'],2) * $identical_qty, 2) ;
+                                $engineering_hours += number_format(round(.25 * $labor_class_value, 2) * $identical_qty, 2) ;
                             }
                             else
                             {
-                                $engineering_hours += number_format(round($basic_appropriation['LaborClassValue'] * $adjustment_factor_value,2) * $basic_appropriation['Quantity'], 2) ;
+                                $engineering_hours_multiplier = number_format(round($labor_class_value * $adjustment_factor_value,2) * $quantity, 2);
+                                $filtered_eng_hours = filter_var($engineering_hours_multiplier, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+                                $engineering_hours += $filtered_eng_hours;
                             }
                         }
                     }
@@ -662,7 +665,9 @@ class Worksheet
 		{
             foreach ($additional_costs as $row)
             {
-				$additional_cost += number_format($row['Quantity'] * $row['FieldManHours'], 2);
+				$additional_cost_calc = number_format($row['Quantity'] * $row['FieldManHours'], 2);
+                $filtered_additional_cost = filter_var($additional_cost_calc, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+                $additional_cost += $filtered_additional_cost;
             }
 		}
 

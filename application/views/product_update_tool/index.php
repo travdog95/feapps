@@ -39,7 +39,7 @@
 					<input name="upload" id="upload" type="button" value="Upload" class="btn btn-default btn-primary" />
 				</div>
 				<?php
-				$column_headers = array('ID', 'Product Name','Material','Field','Shop','Design','FECI ID', 'Manufacturer Part ID',"RFP","Worksheet","Category","Department");
+				$column_headers = array('ID','Material','Field','Shop','Design','Name','Description','Rank','FECI ID', 'Manufacturer Part ID','Domestic',"RFP",'Active',"Worksheet","Category","Department");
                 // $column_headers = array('ID', 'Product Name', 'FECI ID', 'Manufacturer Part ID', 'RFP', 'Department');
                 $num_rows_staging = 0;
 				?>

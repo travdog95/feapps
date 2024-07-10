@@ -214,7 +214,7 @@ class Product extends CI_Controller {
 			//If RFP was updated to unchecked
 			if ($post['RFPSaved'] == 1 && !$rfpIsSet)
 			{
-				$this->rfp_lib->process_flow(array("Product_Idn" => $post['Product_Idn']), 1, 2);
+				print_r($this->rfp_lib->process_flow(array("Product_Idn" => $post['Product_Idn']), 1, 2));
 			}
 
 			if ($post['Mode'] == "edit")

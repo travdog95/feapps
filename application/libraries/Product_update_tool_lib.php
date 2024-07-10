@@ -11,7 +11,7 @@ class Product_update_tool_lib
     //Public members
     //Private members
     private $CI;
-    private $_differences = array("MaterialUnitPrice", "FieldUnitPrice", "ShopUnitPrice","Name","FECI_Id","ManufacturerPart_Id","RFP");
+    private $_differences = array("MaterialUnitPrice", "FieldUnitPrice", "ShopUnitPrice","Name","Description","Rank","FECI_Id","ManufacturerPart_Id","DomesticFlag","RFP","Description","ActiveFlag");
 
     public function __construct()
     {
