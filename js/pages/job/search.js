@@ -25,7 +25,7 @@ $(function () {
 
 	// Setup - add a text input to each footer cell
 	$("#JobSearchResults tfoot th").each(function () {
-		const title = $(this).text();
+		const title = $(this).text();;
 		//Exclude copy column
 		if (title != "") {
 			$(this).html('<input type="text" placeholder="Search ' + title + '" />');
@@ -167,8 +167,12 @@ $(function () {
 				FECI.request.abort();
 			}
 
-			const action = $(this).html() === "Delete" ? "delete" : "archive";
-			const messageText = $(this).html() === "Delete" ? "deleted" : "archived";
+			const action = $(this).html() === "Delete" ? "delete"
+				: $(this).html() === "Archive" ? "archive"
+				: "unarchive";
+			const messageText = $(this).html() === "Delete" ? "delete"
+				: $(this).html() === "Archive" ? "archive"
+				: "unarchived";
 
 			FECI.request = $.ajax({
 				url: `${FECI.base_url}job/${action}/1`,
@@ -250,6 +254,26 @@ $(function () {
 
 			//Button text
 			$("#delete_jobs").html("Archive");
+
+			//Show modal dialog
+			$("#delete_jobs_modal").modal("show");
+		} else {
+			displayMessageBox("No jobs are selected!");
+		}
+	});
+
+	//Unarchive jobs
+	$("#unarchiveJobs").on("click", function () {
+		let jobs_checked = $(".delete-job:checked").length;
+
+		if (jobs_checked > 0) {
+			$("#delete_jobs_modal .modal-header .modal-title").html("Unarchive Jobs");
+
+			//Load dialog body
+			$("#delete_jobs_modal .modal-body p").html("Unarchive selected jobs?");
+
+			//Button text
+			$("#delete_jobs").html("Unarchive");
 
 			//Show modal dialog
 			$("#delete_jobs_modal").modal("show");

@@ -938,7 +938,56 @@ class Job extends CI_Controller
              echo json_encode($results);
          }
      }
- 
+
+     public function unarchive($ajax = 0, $job_numbers = array())
+     {
+         //Declare and initialize variables
+         $results = array(
+             'return_code' => 0,
+             'num_jobs_unarchived' => 0,
+             'job_numbers_unarchived' => array()
+         );
+         //$job_keys = array();
+         $post = $this->input->post();
+     
+         //If post call, load into $job_numbers array
+         if (isset($post) && !empty($post)) {
+             $job_numbers = $post['job_numbers'];
+         }
+     
+         if (!empty($job_numbers)) {
+             //Loop through jobs and set Archived = 0
+             foreach ($job_numbers as $job_number) {
+                $job_keys = get_job_keys($job_number);
+                    $set = array(
+                        'JobStatus_Idn' => 1
+                    );
+                    $where = array(
+                        'Job_Idn' => $job_keys[0],
+                        'ChangeOrder' => $job_keys[1]
+                    );
+                 if ($this->m_reference_table->update("jobs", $set, $where)) {
+                     $results['num_jobs_unarchived']++;
+                     $results['job_numbers_unarchived'][] = $job_number;
+                     write_feci_log('Job '.$job_number.' unarchived.');
+                 } else {
+                     $results['return_code'] = -1;
+                     write_feci_log('Error deleting job '.$job_number.'.');
+                 }
+             }
+             
+             if ($results['return_code'] == 0) {
+                 $results['return_code'] = 1;
+             }
+         }
+     
+         if ($ajax == 0) {
+             return $results;
+         } else {
+             echo json_encode($results);
+         }
+     }
+
     /*
      * information
      *

@@ -83,6 +83,7 @@ $this->load->view('inc/page_header', $page_header_data);
   <div class="col-md-12">
     <button type="button" class="btn btn-secondary delete_jobs" id="deleteJobs"><span class="glyphicon glyphicon-trash glyphicon-xs" title="Delete selected jobs" aria-hidden="true"></span></button>
 		<button type="button" class="btn btn-secondary archive_jobs" id="archiveJobs"><span class="glyphicon glyphicon-folder-close glyphicon-xs" title="Archive selected jobs" aria-hidden="true"></span></button>
+		<button type="button" class="btn btn-secondary unarchive_jobs" id="unarchiveJobs"><span class="glyphicon glyphicon-folder-open glyphicon-xs" title="Unarchive selected jobs" aria-hidden="true"></span></button>
 	</div>
 </div>
 </div>

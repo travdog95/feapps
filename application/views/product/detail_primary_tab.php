@@ -143,4 +143,15 @@
       </div>
     </div>
   </div>
+
+  <div class="form-group form-group-sm form-checkbox" style="display: none;">
+    <label for="IsParent" class="col-sm-4 control-label">Assembly Parent?</label>
+    <div class="col-sm-8">
+      <div class="checkbox">
+        <label>
+          <input name="IsParent" id="IsParent" type="checkbox" disabled value="1" type="hidden" <?php if ($product['IsParent'] == 1) echo "checked"; ?>> 
+        </label>
+      </div>
+    </div>
+  </div>
 </form>
