@@ -23,14 +23,14 @@ $(function () {
 		}
 	});
 
-	// Setup - add a text input to each footer cell
-	$("#JobSearchResults tfoot th").each(function () {
-		const title = $(this).text();;
-		//Exclude copy column
-		if (title != "") {
-			$(this).html('<input type="text" placeholder="Search ' + title + '" />');
-		}
-	});
+	// // Setup - add a text input to each footer cell
+	// $("#JobSearchResults tfoot th").each(function () {
+	// 	const title = $(this).text();
+	// 	//Exclude copy column
+	// 	if (title != "") {
+	// 		$(this).html('<input type="text" placeholder="Search ' + title + '" />');
+	// 	}
+	// });
 
 	//Initialize table
 	const table = $("#JobSearchResults").DataTable({
@@ -91,6 +91,29 @@ $(function () {
 			{ data: "JobStatus" },
 		],
 		order: [[3, "asc"]], //default to order by name
+		initComplete: function () {
+			this.api()
+				.columns()
+				.every(function () {
+					let column = this;
+					let title = column.footer().textContent;
+
+					if (title === "") {
+						return;
+					}
+					// Create input element
+					let input = document.createElement("input");
+					input.placeholder = title;
+					column.footer().replaceChildren(input);
+
+					// Event listener for user input
+					input.addEventListener("keyup", () => {
+						if (column.search() !== this.value) {
+							column.search(input.value).draw();
+						}
+					});
+				});
+		},
 		// stateSave: true,
 		// createdRow: function (row, data, dataIndex) {
 		// 	$(row).attr("data-job_number", data.job_number);
@@ -167,12 +190,18 @@ $(function () {
 				FECI.request.abort();
 			}
 
-			const action = $(this).html() === "Delete" ? "delete"
-				: $(this).html() === "Archive" ? "archive"
-				: "unarchive";
-			const messageText = $(this).html() === "Delete" ? "delete"
-				: $(this).html() === "Archive" ? "archive"
-				: "unarchived";
+			const action =
+				$(this).html() === "Delete"
+					? "delete"
+					: $(this).html() === "Archive"
+					? "archive"
+					: "unarchive";
+			const messageText =
+				$(this).html() === "Delete"
+					? "delete"
+					: $(this).html() === "Archive"
+					? "archive"
+					: "unarchived";
 
 			FECI.request = $.ajax({
 				url: `${FECI.base_url}job/${action}/1`,

@@ -292,7 +292,27 @@ class Job extends CI_Controller
                     }
                 }
             }
-    
+
+                        // Individual column filtering
+		    if ( isset( $post['columns'] ) ) 
+            {
+			    for ( $i=0, $ien=count($post['columns']) ; $i<$ien ; $i++ ) 
+                {
+                    $requestColumn = $post['columns'][$i];
+                    $columnIdx = array_search( $requestColumn['data'], $dtColumns );
+                    $column = $columns[ $columnIdx ];
+
+                    $str = $requestColumn['search']['value'];
+
+                    if ( $requestColumn['searchable'] == 'true' && $str != '' ) 
+                    {
+                        // $binding = self::bind( $bindings, '%'.$str.'%', PDO::PARAM_STR );
+                        // $columnSearch[] = "[".$column['db']."] LIKE ".$binding;
+                        $this->db->or_like($column['db'], $str);
+                    }
+                }
+            }
+
             //Build where statements
             if ($post['filter'] == "active")
             {
@@ -316,6 +336,7 @@ class Job extends CI_Controller
                 $this->db->where("j.Department_Idn", $department_idn);
             }
 
+            //Get all rows
             $queryAllRows = $this->db->get();
 
             if ($queryAllRows) 
@@ -368,6 +389,27 @@ class Job extends CI_Controller
                 }
             }
     
+            // Individual column filtering
+		    if ( isset( $post['columns'] ) ) 
+            {
+			    for ( $i=0, $ien=count($post['columns']) ; $i<$ien ; $i++ ) 
+                {
+                    $requestColumn = $post['columns'][$i];
+                    $columnIdx = array_search( $requestColumn['data'], $dtColumns );
+                    $column = $columns[ $columnIdx ];
+
+                    $str = $requestColumn['search']['value'];
+
+                    if ( $requestColumn['searchable'] == 'true' && $str != '' ) 
+                    {
+                        // $binding = self::bind( $bindings, '%'.$str.'%', PDO::PARAM_STR );
+                        // $columnSearch[] = "[".$column['db']."] LIKE ".$binding;
+                        $this->db->or_like($column['db'], $str);
+                    }
+                }
+            }
+    
+
             //Build where statements
             if ($post['filter'] == "active")
             {
