@@ -23,17 +23,9 @@ $(function () {
 		}
 	});
 
-	// // Setup - add a text input to each footer cell
-	// $("#JobSearchResults tfoot th").each(function () {
-	// 	const title = $(this).text();
-	// 	//Exclude copy column
-	// 	if (title != "") {
-	// 		$(this).html('<input type="text" placeholder="Search ' + title + '" />');
-	// 	}
-	// });
-
 	//Initialize table
 	const table = $("#JobSearchResults").DataTable({
+		// orderCellsTop: true,
 		processing: true,
 		serverSide: true,
 		// saveState: true,
@@ -96,15 +88,27 @@ $(function () {
 				.columns()
 				.every(function () {
 					let column = this;
-					let title = column.footer().textContent;
+					let title = column.header().textContent;
 
 					if (title === "") {
 						return;
 					}
+
+					// Check if the column is searchable
+					if (!column.settings()[0].aoColumns[column.index()].bSearchable) {
+						return;
+					}
+
 					// Create input element
 					let input = document.createElement("input");
 					input.placeholder = title;
-					column.footer().replaceChildren(input);
+					input.style.color = "black"; // Change the text color to red
+					column.header().replaceChildren(input);
+
+					// Stop propagation to prevent sorting when clicking on input
+					input.addEventListener("click", (e) => {
+						e.stopPropagation();
+					});
 
 					// Event listener for user input
 					input.addEventListener("keyup", () => {
@@ -114,39 +118,7 @@ $(function () {
 					});
 				});
 		},
-		// stateSave: true,
-		// createdRow: function (row, data, dataIndex) {
-		// 	$(row).attr("data-job_number", data.job_number);
-		// 	$(row).attr("data-job_name", data.name);
-		// },
-		// responsive: true
 	});
-
-	// // Restore state
-	// let state = table.state.loaded();
-	// if (state) {
-	// 	table
-	// 		.columns()
-	// 		.eq(0)
-	// 		.each(function (colIdx) {
-	// 			var colSearch = state.columns[colIdx].search;
-	// 			if (colSearch.search) {
-	// 				$("input", table.column(colIdx).footer()).val(colSearch.search);
-	// 			}
-	// 		});
-
-	// 	table.draw();
-	// }
-
-	// // Apply the search
-	// table
-	// 	.columns()
-	// 	.eq(0)
-	// 	.each(function (colIdx) {
-	// 		$("input", table.column(colIdx).footer()).on("keyup change", function () {
-	// 			table.column(colIdx).search(this.value).draw();
-	// 		});
-	// 	});
 
 	//Delete job(s) handlers
 

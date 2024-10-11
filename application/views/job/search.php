@@ -59,6 +59,21 @@ $this->load->view('inc/page_header', $page_header_data);
 					<th>Updated By</th>
 					<th>Job Status</th>
 				</tr>
+				<tr>
+					<th></th>
+					<th></th>
+					<th>Job Number</th>
+					<th>Name</th>
+					<th>Folder</th>
+					<th>Department</th>
+					<th>Contractor</th>
+					<th>Prepared By</th>
+					<th>Job Date</th>
+					<th>Updated Date</th>
+					<th>Updated By</th>
+					<th>Job Status</th>
+				</tr>
+
 	    </thead>
 			<tfoot>
 				<tr> 
