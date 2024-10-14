@@ -199,7 +199,7 @@ class Job extends CI_Controller
                 "dt" => "Contractor",
             ),
             array(
-                "db" => "db.FirstName",
+                "db" => "cb.FirstName",
                 "dt" => "CreatedByFirstName",
             ),
             array(
