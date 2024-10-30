@@ -240,7 +240,7 @@ class Job extends CI_Controller
             $this->load->model("m_job");
 
             $select = "
-                j.Job_Idn AS JobNumber,
+                CONCAT(Job_Idn, '-', ChangeOrder) AS JobNumber,
                 j.Name AS JobName, 
                 f.Name AS FolderName,
                 d.Description AS DepartmentName,
