@@ -528,6 +528,9 @@ $this->load->view('inc/site_header', $site_header_data);
 
                                 <div class="feci-buttons recap-buttons-container">
                                     <div>
+                                        <?php if ($job['is_locked'] == 0): ?>
+                                            <input type="submit" class="primary" id="save_recap" value="save recap" /> 
+                                        <?php endif; ?>
                                         <?php if ($this->session->userdata('is_admin') == 1): ?>
                                             <?php if ($job['is_locked'] == 1): ?>
                                                 <button class="danger" id="unlock_job">Unlock Job</button>
@@ -540,10 +543,6 @@ $this->load->view('inc/site_header', $site_header_data);
                                     <div>
                                         <?php if ($this->session->userdata('user_idn') == 3 || $this->session->userdata('user_idn') == 32): ?>
                                             <button class="primary" id="accounting">Accounting Data</button>
-                                        <?php endif; ?>
-
-                                        <?php if ($job['is_locked'] == 0): ?>
-                                            <input type="submit" class="primary" id="save_recap" value="save recap" /> 
                                         <?php endif; ?>
                                     </div>
                                 </div>

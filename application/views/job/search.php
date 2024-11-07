@@ -1,7 +1,7 @@
 <?php $this->load->view('inc/header'); ?>
 
 <!-- <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>lib/DataTables-1.10.15/css/dataTables.bootstrap.min.css" /> -->
-<link href="https://cdn.datatables.net/v/bs/dt-2.0.8/datatables.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/pages/job/search.css" />
 
 </head>
@@ -43,7 +43,7 @@ $this->load->view('inc/page_header', $page_header_data);
 <!-- start: PAGE CONTENT -->
 <div class="row">
   <div class="col-md-12">
-	  <table id="JobSearchResults" class="table table-striped table-hover table-bordered display nowrap responsive" summary="Job search results." data-page-length='25' style="width: 100%">
+	  <table id="JobSearchResults" class="table table-striped table-hover table-bordered display responsive" summary="Job search results." data-page-length='25' style="width: auto">
 	    <thead>
 				<tr>
 					<th></th>
