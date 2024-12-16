@@ -530,11 +530,11 @@ $this->load->view('inc/site_header', $site_header_data);
                                     <div>
                                         <?php if ($this->session->userdata('is_admin') == 1): ?>
                                             <?php if ($job['is_locked'] == 1): ?>
-                                                <button class="danger" id="unlock_job">Unlock Job</button>
+                                                <input type="button" class="danger input-button" id="unlock_job" value="Unlock Job"/>
                                             <?php endif; ?>
                                         <?php endif; ?>
                                         <?php if ($job['is_locked'] == 0): ?>
-                                                <button class="danger" id="lock_job">Lock Job</button>
+                                            <input type="button" class="danger input-button" id="lock_job" value="Lock Job"/>
                                         <?php endif; ?>
                                     </div>
                                     <div>

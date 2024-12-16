@@ -259,7 +259,7 @@ textarea.notes {
 /***************************************************************************/
 
 .feci-buttons input[type="submit"],
-.feci-buttons button {
+.feci-buttons button, .input-button {
     border: none;
     outline: none;
     -moz-border-radius: 5px;
@@ -286,8 +286,8 @@ textarea.notes {
   background: #404040;
 }
 
-.feci-buttons input[type="submit"].danger, 
-.feci-buttons button.danger {
+.feci-buttons input[type="submit"].danger, input[type="button"].danger,
+.feci-buttons button.danger{
   padding: 10px 25px;
   margin-bottom: 5px;
   background: red;

@@ -182,16 +182,16 @@ function recap_handlers() {
 		}
 	});
 
-	document.getElementById('job_recap').addEventListener('keydown', function(e) {
-		// Check if Enter was pressed
-		if (e.key === 'Enter') {
-		  // Prevent the default action
-		  e.preventDefault();
+	// document.getElementById('job_recap').addEventListener('keydown', function(e) {
+	// 	// Check if Enter was pressed
+	// 	if (e.key === 'Enter') {
+	// 	  // Prevent the default action
+	// 	  e.preventDefault();
 		  
-		  // Trigger the button click
-		  document.getElementById('save_recap').click();
-		}
-	  });
+	// 	  // Trigger the button click
+	// 	  document.getElementById('save_recap').click();
+	// 	}
+	//   });
 
 	$("#job_recap").submit(function (e) {
 		e.preventDefault();
