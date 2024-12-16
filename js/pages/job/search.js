@@ -25,10 +25,9 @@ $(function () {
 
 	//Initialize table
 	const table = $("#JobSearchResults").DataTable({
-		// orderCellsTop: true,
 		processing: true,
 		serverSide: true,
-		// saveState: true,
+		stateSave: true,
 		pageLength: 25,
 		ajax: {
 			url: FECI.base_url + "job/get_jobs",
@@ -105,6 +104,9 @@ $(function () {
 					input.style.color = "black"; // Change the text color to red
 					column.header().replaceChildren(input);
 
+					//Set the input value to the current search value
+					$(input).val(column.search());
+
 					// Stop propagation to prevent sorting when clicking on input
 					input.addEventListener("click", (e) => {
 						e.stopPropagation();
@@ -119,7 +121,7 @@ $(function () {
 				});
 		},
 	});
-
+	  
 	//Delete job(s) handlers
 
 	//Check to see if element is already bound to event
