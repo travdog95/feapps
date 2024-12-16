@@ -289,11 +289,12 @@ class Job extends CI_Controller
     
                     if ( isset($column['searchable']) && $column['searchable'] == 'true' ) {
                         $this->db->or_like($column['db'], $str);
+                        // $this->db->like($column['db'], $str);
                     }
                 }
             }
 
-                        // Individual column filtering
+            // Individual column filtering
 		    if ( isset( $post['columns'] ) ) 
             {
 			    for ( $i=0, $ien=count($post['columns']) ; $i<$ien ; $i++ ) 
@@ -308,7 +309,8 @@ class Job extends CI_Controller
                     {
                         // $binding = self::bind( $bindings, '%'.$str.'%', PDO::PARAM_STR );
                         // $columnSearch[] = "[".$column['db']."] LIKE ".$binding;
-                        $this->db->or_like($column['db'], $str);
+                        // $this->db->or_like($column['db'], $str);
+                        $this->db->like($column['db'], $str);
                     }
                 }
             }
@@ -385,6 +387,7 @@ class Job extends CI_Controller
     
                     if ( isset($column['searchable']) && $column['searchable'] == 'true' ) {
                         $this->db->or_like($column['db'], $str);
+                        // $this->db->like($column['db'], $str);
                     }
                 }
             }
@@ -404,7 +407,8 @@ class Job extends CI_Controller
                     {
                         // $binding = self::bind( $bindings, '%'.$str.'%', PDO::PARAM_STR );
                         // $columnSearch[] = "[".$column['db']."] LIKE ".$binding;
-                        $this->db->or_like($column['db'], $str);
+                        // $this->db->or_like($column['db'], $str);
+                        $this->db->like($column['db'], $str);
                     }
                 }
             }
@@ -448,32 +452,16 @@ class Job extends CI_Controller
             }
             else
             {
+                $results['draw'] = isset ( $post['draw'] ) ?
+                    intval( $post['draw'] + 1 ) : 0;
+                
+                $results['data'] = [];
                 if ($query->num_rows() > 0)
                 {
-                    $results['draw'] = isset ( $post['draw'] ) ?
-                        intval( $post['draw'] + 1 ) :
-                        0;
-                    
-                    // foreach ($query->result_array() as $row)
-                    // {
-                    //     $rowValues = array();
-                    //     foreach($row as $field => $value)
-                    //     {
-                    //         $rowValues[] = $value;
-                    //     }
-                    //     $results['data'][] = $rowValues;
-                    // }
-
                     foreach ($query->result() as $row)
                     {
-                        // $rowValues = array();
-                        // foreach($row as $field => $value)
-                        // {
-                        //     $rowValues[] = $value;
-                        // }
                         $results['data'][] = $row;
                     }
-
                 }
             }
         }
