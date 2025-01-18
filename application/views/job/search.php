@@ -43,54 +43,54 @@ $this->load->view('inc/page_header', $page_header_data);
 <!-- start: PAGE CONTENT -->
 <div class="row">
   <div class="col-md-12">
-	  <table id="JobSearchResults" class="table table-striped table-hover table-bordered display responsive" summary="Job search results." data-page-length='25' style="width: auto">
+	  <table id="JobSearchResults" class="table table-striped table-hover table-bordered display responsive" summary="Job search results." data-page-length='25' style="width: 100%">
 	    <thead>
 				<tr>
 					<th></th>
 					<th>Copy</th>
 					<th>Job Number</th>
 					<th>Name</th>
-					<th>Folder</th>
-					<th>Department</th>
+					<!-- <th>Folder</th>
+					<th>Department</th> -->
 					<th>Contractor</th>
 					<th>Prepared By</th>
 					<th>Job Date</th>
-					<th>Updated Date</th>
-					<th>Updated By</th>
-					<th>Job Status</th>
+					<!-- <th>Updated Date</th> -->
+					<th>Updated By</th> 
+					<!--<th>Job Status</th>-->
 				</tr>
 				<tr>
 					<th></th>
 					<th></th>
 					<th>Job Number</th>
 					<th>Name</th>
-					<th>Folder</th>
-					<th>Department</th>
+					<!-- <th>Folder</th>
+					<th>Department</th> -->
 					<th>Contractor</th>
 					<th>Prepared By</th>
 					<th>Job Date</th>
-					<th>Updated Date</th>
-					<th>Updated By</th>
-					<th>Job Status</th>
+					<!-- <th>Updated Date</th> -->
+					<th>Updated By</th> 
+					<!--<th>Job Status</th>-->
 				</tr>
 
 	    </thead>
-			<tfoot>
+			<!-- <tfoot>
 				<tr> 
 					<th></th>
 					<th></th>
 					<th>Job Number</th>
-					<th>Name</th>
-					<th>Folder</th>
-					<th>Department</th>
-					<th>Contractor</th>
+					<th>Name</th> -->
+					<!-- <th>Folder</th>
+					<th>Department</th> -->
+					<!-- <th>Contractor</th>
 					<th>Prepared By</th>
-					<th>Job Date</th>
-					<th>Updated Date</th>
-					<th>Updated By</th>
-					<th>Job Status</th>
-				</tr>
-			</tfoot>
+					<th>Job Date</th> -->
+					<!-- <th>Updated Date</th>
+					<th>Updated By</th> 
+					<th>Job Status</th>-->
+				<!-- </tr>
+			</tfoot> -->
 	  </table>
   </div>
 </div>

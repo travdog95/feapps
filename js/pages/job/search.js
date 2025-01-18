@@ -72,14 +72,14 @@ $(function () {
 					return link;
 				},
 			},
-			{ data: "FolderName" },
-			{ data: "DepartmentName" },
+			// { data: "FolderName" },
+			// { data: "DepartmentName" },
 			{ data: "Contractor" },
 			{ data: "CreatedByFirstName" },
 			{ data: "JobDate" },
-			{ data: "UpdateDateTime" },
+			// { data: "UpdateDateTime" },
 			{ data: "UpdatedByFirstName" },
-			{ data: "JobStatus" },
+			// { data: "JobStatus" },
 		],
 		order: [[3, "asc"]], //default to order by name
 		initComplete: function () {
@@ -100,6 +100,12 @@ $(function () {
 
 					// Create input element
 					let input = document.createElement("input");
+
+					// if input is not Job Name, set width to 100px
+					if (title !== "Name") {
+						input.style.width = "100px";
+					}
+					
 					input.placeholder = title;
 					input.style.color = "black"; // Change the text color to red
 					column.header().replaceChildren(input);
