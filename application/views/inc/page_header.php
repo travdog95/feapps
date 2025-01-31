@@ -39,7 +39,7 @@
 	</div>
 </div>
 
-<?php if (isset($job['is_locked']) && $job['is_locked'] == 1): ?>
+<?php if (isset($job['is_locked']) && $job['is_locked'] == 1 && isset($job['new_change_order']) && $job['new_change_order'] == 0): ?>
     <div class="job-is-locked">Job is locked</div>
 <?php endif; ?>
 <!-- <div class="message alert" role="alert"><?php if (isset($_REQUEST['message']) && !empty($_REQUEST['message'])) echo $_REQUEST['message']; ?></div> -->

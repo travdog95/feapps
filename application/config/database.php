@@ -75,8 +75,8 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	// 'hostname' => 'wisp-dev2016\SQLEXPRESS01',
-	'hostname' => 'wisp-dev2016\SQLEXPRESS',
+	'hostname' => 'wisp-dev2016\SQLEXPRESS01',
+	// 'hostname' => 'wisp-dev2016\SQLEXPRESS',
 	'username' => 'feapps50',
 	'password' => 'TkoConsulting1',
 	'database' => 'feapps51',
