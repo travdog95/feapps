@@ -55,7 +55,7 @@ $this->load->view('inc/page_header', $page_header_data);
 					<th>Contractor</th>
 					<th>Prepared By</th>
 					<th>Job Date</th>
-					<!-- <th>Updated Date</th> -->
+					<th>Updated Date</th>
 					<th>Updated By</th> 
 					<!--<th>Job Status</th>-->
 				</tr>
@@ -69,7 +69,7 @@ $this->load->view('inc/page_header', $page_header_data);
 					<th>Contractor</th>
 					<th>Prepared By</th>
 					<th>Job Date</th>
-					<!-- <th>Updated Date</th> -->
+					<th>Updated Date</th>
 					<th>Updated By</th> 
 					<!--<th>Job Status</th>-->
 				</tr>

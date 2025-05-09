@@ -7,7 +7,7 @@
     </td>
     <td><?php echo $child['Product_Idn']; ?></td>
     <td><?php echo $child['Name']; ?></td>
-    <td><input type='text' class='check_num1 input-xs form-control childQuantity' data-child-qty="<?php echo $child['Product_Idn']; ?>" name='Quantity[]' value='<?php echo number_format($child['Quantity'],1); ?>'/></td>
+    <td><input type='text' class='check_num2 input-xs form-control childQuantity' data-child-qty="<?php echo $child['Product_Idn']; ?>" name='Quantity[]' value='<?php echo number_format($child['Quantity'],2); ?>'/></td>
     <td><?php echo $child['Department']; ?></td>
     <td><?php echo $child['WorksheetMaster']; ?></td>
     <td><?php echo $child['WorksheetCategory']; ?></td>

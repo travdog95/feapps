@@ -77,7 +77,7 @@ $(function () {
 			{ data: "Contractor" },
 			{ data: "CreatedByFirstName" },
 			{ data: "JobDate" },
-			// { data: "UpdateDateTime" },
+			{ data: "UpdateDateTime" },
 			{ data: "UpdatedByFirstName" },
 			// { data: "JobStatus" },
 		],
